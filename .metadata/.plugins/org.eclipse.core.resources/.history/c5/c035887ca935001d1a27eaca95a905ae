@@ -1,0 +1,26 @@
+package bagissto.core;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testCases {
+
+	public static void configBrowserExe() {
+		System.getProperty("webdriver.chrome.driver", "user.dir"+"/chromedriver");
+		
+	}
+	
+	public static void openBrowser(WebDriver driver, String URL) {
+		//WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().window().maximize(); 
+		driver.get("http://192.168.15.237/bagisto-demo/public/");
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+	}
+
+}
