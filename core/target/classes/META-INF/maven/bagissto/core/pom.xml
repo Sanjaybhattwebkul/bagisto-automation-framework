@@ -14,11 +14,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <dependencies>
+ <dependencies>
+    <!-- more dependencies ... -->
     <dependency>
-	    <groupId>org.seleniumhq.selenium</groupId>
-	    <artifactId>selenium-java</artifactId>
-	    <version>4.2.2</version>
-	</dependency>
-  </dependencies>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.4.0</version>
+    </dependency>
+    <!-- more dependencies ... -->
+</dependencies>
+
 </project>
