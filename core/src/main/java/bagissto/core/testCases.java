@@ -28,15 +28,16 @@ public class testCases {
 	}
 	
 	public static void addToCart(WebDriver driver, String[] cartProducts) {
-		
-		int j=1;
-		List<WebElement> products = driver.findElements(By.cssSelector("div.card-body")); // products array		
-		for (int i=1;i<products.size();i++) {
-			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList
-			
+		int j=0;
+		List<WebElement> products = driver.findElements(By.xpath("//div[@class='product-name']/span")); // products array	
+		System.out.println(products);
+		for (int i = 1; i<products.size(); i++) {
+			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList			
 			if (itemForAddToCart.contains(products)) {
 				j++;
-				driver.findElement(By.xpath("//button[@class='btn btn-add-to-cart.small-padding']")).click();
+				//click on add to cart button
+				System.out.println("clicked");
+				//driver.findElement(By.xpath("//button[@class='btn btn-add-to-cart.small-padding']")).get(i).click();
 			}
 			
 			if(j == cartProducts.length) {

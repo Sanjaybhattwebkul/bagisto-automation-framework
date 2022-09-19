@@ -1,0 +1,29 @@
+package bagissto.core;
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int j = 0;
+		for(int i=1;i<=100;i++) {
+			if (i == 1) {
+				System.out.println("not prime"+1);
+			}
+			
+			
+//			System.out.println(j);
+			      if (j % 2 == 0) {
+			    	  System.out.println("not prime"+i);
+			      }else {
+			    	  System.out.println("prime number"+i);  
+			      }
+			    	  
+			      	 
+		}
+		
+
+	}
+	
+
+
+}
