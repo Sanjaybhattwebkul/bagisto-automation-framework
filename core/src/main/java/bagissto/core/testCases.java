@@ -29,7 +29,7 @@ public class testCases {
 		   js.executeScript("window.scrollBy(0,440)");
 	}
 	
-	public static void addToCart(WebDriver driver, String[] cartProducts) {
+	public static void addToCart(WebDriver driver, String[] cartProducts,String flashMessage) {		
 		int j=0; 
 		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array
 	
@@ -40,10 +40,15 @@ public class testCases {
 				j++;
 				//click on add to cart button				
 				driver.findElements(By.xpath("//div[@class='add-to-cart-btn pl0']/form/button")).get(i).click();
+				driver.findElement(By.xpath(flashMessage)).click();	//close flash message
 				if(j == cartProducts.length) {
 					break;
 				}
 			}
 		}		
+	}
+	
+	public static void customerLogin(WebDriver driver,String Locator) {
+		driver.findElement(By.cssSelector(Locator)).click();
 	}
 }
