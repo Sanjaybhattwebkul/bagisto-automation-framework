@@ -37,10 +37,11 @@ public class testCases {
 				j++;
 				System.out.println(products);
 				//click on add to cart button
-				driver.findElements(By.xpath("//div[@class='add-to-cart-btn pl0']/form/button")).get(i).click();
-				if(j == cartProducts.length) {
-					break;
-				}
+				driver.findElements(By.xpath("//div[@class='add-to-cart-btn pl0']/form/button")).get(i).click();				
+			}
+			
+			if(j == cartProducts.length) {
+				break;
 			}			
 		}		
 	}

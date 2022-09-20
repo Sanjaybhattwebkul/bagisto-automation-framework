@@ -13,7 +13,7 @@ public class index extends testCases{
 		openBrowser(driver,"http://192.168.15.237/bagisto-demo/public/");
 		scrollDown(driver);
 		Thread.sleep(2000);
-		String[] cartProducts = {"Sunglasses","Men's Polo T-shirt"}; // products for add to cart.
+		String[] cartProducts = {"Men's Polo T-shirt","Sunglasses"}; // products for add to cart.
 		addToCart(driver,cartProducts); // add-Product-to-cart
 		
 	}
