@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.CdpVersionFinder;
+
 
 
 public class testCases {
@@ -31,17 +33,17 @@ public class testCases {
 		int j=0; 
 		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array
 	
-		for (int i = 1; i<products.size(); i++) {
-			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList			
-			if (itemForAddToCart.contains(products)) {
+		for (int i = 1; i<products.size(); i++) {		
+			String formattedName =products.get(i).getText();	// get productName from productCard				
+			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
+			if (itemForAddToCart.contains(formattedName)) {
 				j++;
-				System.out.println(products);
-				//click on add to cart button
+				//click on add to cart button				
 				driver.findElements(By.xpath("//div[@class='add-to-cart-btn pl0']/form/button")).get(i).click();
 				if(j == cartProducts.length) {
 					break;
 				}
-			}			
+			}
 		}		
 	}
 }
