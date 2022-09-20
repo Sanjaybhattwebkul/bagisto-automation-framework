@@ -29,12 +29,19 @@ public class testCases {
 		   js.executeScript("window.scrollBy(0,440)");
 	}
 	
+	public static void scrollUp(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		   js.executeScript("window.scrollBy(0,-650)");
+	}
+	
 	public static void addToCart(WebDriver driver, String[] cartProducts,String flashMessage) {		
 		int j=0; 
+		scrollDown(driver);
 		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array
 	
 		for (int i = 1; i<products.size(); i++) {		
-			String formattedName =products.get(i).getText();	// get productName from productCard				
+			String formattedName =products.get(i).getText();	// get productName from productCard	
+			System.out.println(formattedName);
 			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
 			if (itemForAddToCart.contains(formattedName)) {
 				j++;
@@ -49,6 +56,8 @@ public class testCases {
 	}
 	
 	public static void customerLogin(WebDriver driver,String Locator) {
+		scrollUp(driver);
 		driver.findElement(By.cssSelector(Locator)).click();
+		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
 	}
 }
