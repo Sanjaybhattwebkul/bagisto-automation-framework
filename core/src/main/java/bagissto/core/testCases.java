@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.CdpVersionFinder;
 
 
 
@@ -31,7 +30,7 @@ public class testCases {
 	
 	public static void scrollUp(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		   js.executeScript("window.scrollBy(0,-650)");
+		   js.executeScript("window.scrollBy(0,-900)");
 	}
 	
 	public static void addToCart(WebDriver driver, String[] cartProducts,String flashMessage) {		
@@ -41,7 +40,6 @@ public class testCases {
 	
 		for (int i = 1; i<products.size(); i++) {		
 			String formattedName =products.get(i).getText();	// get productName from productCard	
-			System.out.println(formattedName);
 			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
 			if (itemForAddToCart.contains(formattedName)) {
 				j++;
@@ -55,9 +53,13 @@ public class testCases {
 		}		
 	}
 	
-	public static void customerLogin(WebDriver driver,String Locator) {
+	public static void customerLogin(WebDriver driver,String Locator,String[] loginCredentials) {
 		scrollUp(driver);
 		driver.findElement(By.cssSelector(Locator)).click();
 		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
+		driver.findElement(By.xpath("//input[@name='email']")).sendKeys(loginCredentials[0]);		
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(loginCredentials[1]);
+		driver.findElement(By.cssSelector("input[type='submit']")).click();			
+	
 	}
 }
