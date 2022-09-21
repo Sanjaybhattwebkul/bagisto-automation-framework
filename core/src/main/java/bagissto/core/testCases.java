@@ -1,6 +1,7 @@
 package bagissto.core;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -61,5 +62,18 @@ public class testCases {
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(loginCredentials[1]);
 		driver.findElement(By.cssSelector("input[type='submit']")).click();			
 	
+	}
+	
+	public static void veryfyMiniCartPrice(WebDriver driver,String xPath) {		
+		driver.findElement(By.xpath("//div[@id='mini-cart']")).click();
+		List<WebElement> tdText = driver.findElements(By.xpath(xPath));		
+		int sum=0;
+		for(int i=0; i<tdText.size(); i++) {
+			// convert string to integer			
+			sum =sum + Integer.parseInt(tdText.get(i).getText().substring(1));
+		}
+		
+		System.out.println(sum);		
+           
 	}
 }
