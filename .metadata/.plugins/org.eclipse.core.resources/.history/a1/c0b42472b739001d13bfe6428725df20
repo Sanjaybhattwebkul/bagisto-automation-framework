@@ -81,10 +81,10 @@ public class testCases {
 			 actualAmount =actualAmount + intsTotalAmount;
 		}
 		System.out.println(actualAmount);
-		double total = Double.parseDouble(driver.findElement(By.cssSelector(".modal-footer h5:nth-child(2)")).getText().substring(1));
+		double total = Double.parseDouble(driver.findElement(By.xpath(".modal-footer h5:nth-child(2)")).getText());
 		 // convert into int
 		 int grandTotalAmount = (int)total;	
-		 System.out.println("Grand Integer - " + grandTotalAmount);
+		 System.out.println("Integer - " + grandTotalAmount);
 		//System.out.println(ExpectAmount);
 		//Assert.assertEquals(ExpectAmount,actualAmount); // check if(givenAmout==sum);
 		

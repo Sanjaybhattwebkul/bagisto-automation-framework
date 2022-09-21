@@ -74,17 +74,14 @@ public class testCases {
 		for(int i=0; i<miniCartmount.size(); i++) {
 			
 			//convert string to double
-			 double itemAmount = Double.parseDouble(miniCartmount.get(i).getText().substring(1));
+			 double data = Double.parseDouble(miniCartmount.get(i).getText().substring(1));
 			 // convert into int
-			 int intsTotalAmount = (int)itemAmount;	
-			 System.out.println("Integer - " + intsTotalAmount);
-			 actualAmount =actualAmount + intsTotalAmount;
+			 int value = (int)data;	
+			 System.out.println("Integer - " + value);
+			 actualAmount =actualAmount + value;
 		}
 		System.out.println(actualAmount);
-		double total = Double.parseDouble(driver.findElement(By.cssSelector(".modal-footer h5:nth-child(2)")).getText().substring(1));
-		 // convert into int
-		 int grandTotalAmount = (int)total;	
-		 System.out.println("Grand Integer - " + grandTotalAmount);
+		//int ExpectAmount = Integer.parseInt(driver.findElement(By.xpath(".modal-footer h5:nth-child(2)")).getText());
 		//System.out.println(ExpectAmount);
 		//Assert.assertEquals(ExpectAmount,actualAmount); // check if(givenAmout==sum);
 		
