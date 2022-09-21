@@ -9,6 +9,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import dev.failsafe.internal.util.Assert;
+
 
 
 public class testCases {
@@ -67,13 +69,15 @@ public class testCases {
 	public static void veryfyMiniCartPrice(WebDriver driver,String xPath) {		
 		driver.findElement(By.xpath("//div[@id='mini-cart']")).click();
 		List<WebElement> tdText = driver.findElements(By.xpath(xPath));		
-		int sum=0;
+		int actualAmount=0;
 		for(int i=0; i<tdText.size(); i++) {
 			// convert string to integer			
-			sum =sum + Integer.parseInt(tdText.get(i).getText().substring(1));
+			actualAmount =actualAmount + Integer.parseInt(tdText.get(i).getText().substring(1));
 		}
-		
-		System.out.println(sum);		
+		System.out.println(actualAmount);
+		int ExpectAmount = Integer.parseInt(driver.findElement(By.xpath(".modal-footer h5:nth-child(2)")).getText());
+		Assert.assertEquals(ExpectAmount,actualAmount); // check if(givenAmout==sum);
+				
            
 	}
 }
