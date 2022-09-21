@@ -8,9 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.testng.Assert;
-import dev.failsafe.internal.util.Assert;
-
+import org.testng.Assert;
 
 
 public class testCases {
@@ -80,13 +78,13 @@ public class testCases {
 			 System.out.println("Integer - " + intsTotalAmount);
 			 actualAmount =actualAmount + intsTotalAmount;
 		}
-		System.out.println(actualAmount);
+		System.out.println("Accepted Amount - " +actualAmount);
 		double total = Double.parseDouble(driver.findElement(By.cssSelector(".modal-footer h5:nth-child(2)")).getText().substring(1));
 		 // convert into int
 		 int grandTotalAmount = (int)total;	
-		 System.out.println("Grand Integer - " + grandTotalAmount);
-		//System.out.println(ExpectAmount);
-		//Assert.assertEquals(ExpectAmount,actualAmount); // check if(givenAmout==sum);
+		 System.out.println("Actual Amount - " + grandTotalAmount);
+		 Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==sum);
+		
 		
 		
            
