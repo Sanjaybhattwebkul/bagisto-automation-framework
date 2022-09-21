@@ -15,7 +15,7 @@ public class index extends testCases{
 		openBrowser(driver,"http://192.168.15.237/sanjay-bagisto/public/");
 		Thread.sleep(2000);
 		addToCart(driver,cartProducts,"//a[@class='close']"); // add-Product-to-cart
-		customerLogin(driver,"div[class*='welcome-content']",loginCredentials);
+		customerLogin(driver,"div[class*='welcome-content']",loginCredentials); // customer Login
 		veryfyMiniCartPrice(driver,"//span[@class='card-total-price fw6']");
 		
 	}
