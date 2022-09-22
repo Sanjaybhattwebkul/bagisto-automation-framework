@@ -74,14 +74,25 @@ public class testCases {
 		int actualAmount=0;
 		for(int i=0; i<miniCartmount.size(); i++) {			
 			//convert string to double
-			 double itemAmount = Double.parseDouble(miniCartmount.get(i).getText().substring(1));
+			String rawAmount = miniCartmount.get(i).getText().substring(1);
+			String finalAmount = rawAmount.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price
+			 System.out.println(finalAmount);
+			double itemAmount = Double.parseDouble(finalAmount);
+			
+			 
 			 // convert into int
 			 int intsTotalAmount = (int)itemAmount;	
+			 //int itemsAmount  = intsTotalAmount.replaceAll("[^a-zA-Z0-9]", " ");
+			 
 			 System.out.println("Integer - " + intsTotalAmount);
+			 
 			 actualAmount =actualAmount + intsTotalAmount;
 		}	
 		
-		double total = Double.parseDouble(driver.findElement(By.cssSelector(locator[2])).getText().substring(1));
+		String rawGrandAmount = driver.findElement(By.cssSelector(locator[2])).getText().substring(1);
+		String finalGrandAmount = rawGrandAmount.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price
+		System.out.println(finalGrandAmount);		 
+		double total = Double.parseDouble(finalGrandAmount);
 		 // convert into int
 		 int grandTotalAmount = (int)total;			 
 		 Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
