@@ -37,7 +37,7 @@ public class testCases extends Functions {
 		}		
 	}
 	
-	public static void customerLogin(WebDriver driver,String Locator,String[] loginCredentials) throws InterruptedException {
+	public static void customerLogin(WebDriver driver,String Locator,String[] loginCredentials) {
 		scrollUp(driver);
 		driver.findElement(By.cssSelector(Locator)).click();
 		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
@@ -70,5 +70,12 @@ public class testCases extends Functions {
 		int grandTotalAmount = (int)total;	 // convert into int		 
 		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
 		System.out.println("Test case is pass");	        
+	}
+	
+	public static void VerifyShoppingCart(WebDriver driver,String[] cartLocator) {
+		
+		driver.findElement(By.xpath("//div[@id='cart-modal-content']/div/a")).click();
+		updateCart(driver,3,cartLocator);
+		System.out.println("Cart updated successfully");
 	}
 }
