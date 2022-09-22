@@ -1,0 +1,11 @@
+package bagissto.core;
+
+import org.openqa.selenium.By;
+
+public class Functions {
+
+	public String void removeComma(String str) {		
+		return str.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price				 
+	}
+
+}

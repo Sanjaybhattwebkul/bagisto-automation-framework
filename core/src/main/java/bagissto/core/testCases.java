@@ -1,10 +1,8 @@
 package bagissto.core;
-
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,12 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
-public class testCases {
-
-	public static void configBrowserExe(String fileName) {
-		System.getProperty("webdriver.chrome.driver", "user.dir"+ fileName);
-		
-	}
+public class testCases extends Functions {
 	
 	public static void openBrowser(WebDriver driver, String URL) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -25,23 +18,11 @@ public class testCases {
 		driver.get(URL);
 	}
 	
-	public static void scrollDown(WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		   js.executeScript("window.scrollBy(0,440)");
-	}
-	
-	public static void scrollUp(WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		   js.executeScript("window.scrollBy(0,-900)");
-	}
-	
 	public static void addToCart(WebDriver driver, String[] cartProducts,String flashMessage) {		
 		int j=0; 
 		scrollDown(driver);
-		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array
-	
-		for (int i = 1; i<products.size(); i++) {	
-			
+		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array	
+		for (int i = 1; i<products.size(); i++) {				
 			String formattedName =products.get(i).getText();	// get productName from productCard	
 			List<String> itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
 			if (itemForAddToCart.contains(formattedName)) {
@@ -64,8 +45,7 @@ public class testCases {
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
 		driver.findElement(By.xpath("//input[@name='email']")).sendKeys(loginCredentials[0]);		
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(loginCredentials[1]);
-		driver.findElement(By.cssSelector("input[type='submit']")).click();			
-	
+		driver.findElement(By.cssSelector("input[type='submit']")).click();		
 	}
 	
 	public static void veryfyMiniCartPrice(WebDriver driver,String[] locator) {		
@@ -73,30 +53,22 @@ public class testCases {
 		List<WebElement> miniCartmount = driver.findElements(By.xpath(locator[1]));
 		int actualAmount=0;
 		for(int i=0; i<miniCartmount.size(); i++) {			
-			//convert string to double
-			String rawAmount = miniCartmount.get(i).getText().substring(1);
-			String finalAmount = rawAmount.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price
-			 System.out.println(finalAmount);
-			double itemAmount = Double.parseDouble(finalAmount);
 			
-			 
-			 // convert into int
-			 int intsTotalAmount = (int)itemAmount;	
-			 //int itemsAmount  = intsTotalAmount.replaceAll("[^a-zA-Z0-9]", " ");
-			 
-			 System.out.println("Integer - " + intsTotalAmount);
-			 
-			 actualAmount =actualAmount + intsTotalAmount;
+			String finalAmount =	removeComma(miniCartmount.get(i).getText().substring(1));// remove , from price
+			System.out.println(finalAmount);
+			//convert string to double
+			double itemAmount = Double.parseDouble(finalAmount);
+			// convert into int
+			int intsTotalAmount = (int)itemAmount;				 
+			System.out.println("Amount - " + intsTotalAmount);			 
+			actualAmount =actualAmount + intsTotalAmount;
 		}	
 		
-		String rawGrandAmount = driver.findElement(By.cssSelector(locator[2])).getText().substring(1);
-		String finalGrandAmount = rawGrandAmount.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price
+		String finalGrandAmount  = removeComma(driver.findElement(By.cssSelector(locator[2])).getText().substring(1));		
 		System.out.println(finalGrandAmount);		 
 		double total = Double.parseDouble(finalGrandAmount);
-		 // convert into int
-		 int grandTotalAmount = (int)total;			 
-		 Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
-		 System.out.println("Test case is pass");
-	        
+		int grandTotalAmount = (int)total;	 // convert into int		 
+		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
+		System.out.println("Test case is pass");	        
 	}
 }
