@@ -1,13 +1,14 @@
 package bagissto.core;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
@@ -39,9 +40,10 @@ public class testCases {
 		scrollDown(driver);
 		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array
 	
-		for (int i = 1; i<products.size(); i++) {		
+		for (int i = 1; i<products.size(); i++) {	
+			
 			String formattedName =products.get(i).getText();	// get productName from productCard	
-			List itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
+			List<String> itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
 			if (itemForAddToCart.contains(formattedName)) {
 				j++;
 				//click on add to cart button				
@@ -58,35 +60,32 @@ public class testCases {
 		scrollUp(driver);
 		driver.findElement(By.cssSelector(Locator)).click();
 		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
-		Thread.sleep(2000);
+		WebDriverWait w =new WebDriverWait(driver,Duration.ofSeconds(10)); // Object of WebDriverWaite for explicit waite.
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
 		driver.findElement(By.xpath("//input[@name='email']")).sendKeys(loginCredentials[0]);		
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(loginCredentials[1]);
 		driver.findElement(By.cssSelector("input[type='submit']")).click();			
 	
 	}
 	
-	public static void veryfyMiniCartPrice(WebDriver driver,String xPath) {		
-		driver.findElement(By.xpath("//div[@id='mini-cart']")).click();
-		List<WebElement> miniCartmount = driver.findElements(By.xpath(xPath));
+	public static void veryfyMiniCartPrice(WebDriver driver,String[] locator) {		
+		driver.findElement(By.xpath(locator[0])).click();
+		List<WebElement> miniCartmount = driver.findElements(By.xpath(locator[1]));
 		int actualAmount=0;
-		for(int i=0; i<miniCartmount.size(); i++) {
-			
+		for(int i=0; i<miniCartmount.size(); i++) {			
 			//convert string to double
 			 double itemAmount = Double.parseDouble(miniCartmount.get(i).getText().substring(1));
 			 // convert into int
 			 int intsTotalAmount = (int)itemAmount;	
 			 System.out.println("Integer - " + intsTotalAmount);
 			 actualAmount =actualAmount + intsTotalAmount;
-		}
-		System.out.println("Accepted Amount - " +actualAmount);
-		double total = Double.parseDouble(driver.findElement(By.cssSelector(".modal-footer h5:nth-child(2)")).getText().substring(1));
+		}	
+		
+		double total = Double.parseDouble(driver.findElement(By.cssSelector(locator[2])).getText().substring(1));
 		 // convert into int
-		 int grandTotalAmount = (int)total;	
-		 System.out.println("Actual Amount - " + grandTotalAmount);
-		 Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==sum);
-		
-		
-		
-           
+		 int grandTotalAmount = (int)total;			 
+		 Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
+		 System.out.println("Test case is pass");
+	        
 	}
 }

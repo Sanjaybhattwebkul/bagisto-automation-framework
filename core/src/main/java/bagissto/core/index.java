@@ -9,6 +9,7 @@ public class index extends testCases{
 
 	public static void main(String[] args) throws InterruptedException {
 		String[] cartProducts = {"Sunglasses","Men's Polo T-shirt"}; // products for add to cart.	
+		String[] locators = {"//div[@id='mini-cart']","//span[@class='card-total-price fw6']",".modal-footer h5:nth-child(2)"}; // products for add to cart.	
 		String[] loginCredentials= {"tom@example.com","tom123"};	
 		configBrowserExe("/chromedriver"); //geckodriver		
 		WebDriver driver = new ChromeDriver(); //new FirefoxDriver();		
@@ -16,7 +17,7 @@ public class index extends testCases{
 		Thread.sleep(2000);
 		addToCart(driver,cartProducts,"//a[@class='close']"); // add-Product-to-cart
 		customerLogin(driver,"div[class*='welcome-content']",loginCredentials); // customer Login
-		veryfyMiniCartPrice(driver,"//span[@class='card-total-price fw6']");
+		veryfyMiniCartPrice(driver,locators);
 		
 	}
 
