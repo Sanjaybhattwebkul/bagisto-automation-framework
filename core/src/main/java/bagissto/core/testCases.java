@@ -22,11 +22,11 @@ public class testCases extends Functions {
 		int j=0; 
 		scrollDown(driver);
 		List<WebElement> products = driver.findElements(By.cssSelector("div.product-name")); // products array	
-		for (int i = 1; i<products.size(); i++) {				
+		for (int i = 0; i<products.size(); i++) {				
 			String formattedName =products.get(i).getText();	// get productName from productCard	
 			List<String> itemForAddToCart = Arrays.asList(cartProducts); //Convert stringArray to arrayList	
 			if (itemForAddToCart.contains(formattedName)) {
-				j++;
+				j++; System.out.println(formattedName);
 				//click on add to cart button				
 				driver.findElements(By.xpath("//div[@class='add-to-cart-btn pl0']/form/button")).get(i).click();
 				driver.findElement(By.xpath(flashMessage)).click();	//close flash message
@@ -72,10 +72,10 @@ public class testCases extends Functions {
 		System.out.println("Test case is pass");	        
 	}
 	
-	public static void VerifyShoppingCart(WebDriver driver,String[] cartLocator) {
+	public static void VerifyShoppingCart(WebDriver driver,String[] productsForUpdate) throws InterruptedException {
 		
 		driver.findElement(By.xpath("//div[@id='cart-modal-content']/div/a")).click();
-		updateCart(driver,3,cartLocator);
+		updateCart(driver,3,productsForUpdate);
 		System.out.println("Cart updated successfully");
 	}
 }

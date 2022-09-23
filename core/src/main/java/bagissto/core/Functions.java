@@ -1,7 +1,15 @@
 package bagissto.core;
+import java.time.Duration;
+import java.time.temporal.TemporalAmount;
+import java.util.Arrays;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Functions {
 
@@ -24,11 +32,29 @@ public class Functions {
 		
 	}
 	
-	public static void updateCart(WebDriver driver, int productQuantity, String[] cartLocator) {
-		for(int i=0; i<productQuantity; i++) {
-			driver.findElement(By.cssSelector(cartLocator[0])).click(); // Click on + icon
-		}
+	public static void updateCart(WebDriver driver, int productQuantity,String[] products) throws InterruptedException {
 		
-		driver.findElement(By.xpath(cartLocator[1])).click(); // Click on Update Cart button
+		List<WebElement> productNames = driver.findElements(By.xpath("//span[@class='fs20 fw6 link-color']"));
+		Thread.sleep(2000);
+		int k =0;
+		for(int j=0; j< productNames.size(); j++) {
+			k++;	
+			String name = productNames.get(j).getText();
+			System.out.println(name);
+			List productsForUpdate = Arrays.asList(products); // convert array into array list for easy search
+			if(productsForUpdate.contains(name)) {
+				updateProductsQuantity(driver,productQuantity,j); // Click on + icon 
+			}
+			if(k == productNames.size()) {
+				break;
+			}
+			driver.findElement(By.xpath("//div[@class='misc']/button")).click(); // click on update cart button
+		}
+	}
+	
+	public static void updateProductsQuantity(WebDriver driver, int productQuantity,int j) throws InterruptedException {
+		for(int i=0; i<productQuantity; i++) {			
+			driver.findElements(By.cssSelector(".increase i")).get(j).click(); // Click on + icon
+		}		
 	}
 }
