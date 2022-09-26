@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.Iterator;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -45,12 +47,12 @@ public class testCases extends Functions {
 	
 	public static void customerLogin(WebDriver driver,String[] loginLocators,String[] loginCredentials) {
 		scrollUp(driver);
-		driver.findElement(By.cssSelector(loginLocators[0])).click();
+		driver.findElement(By.cssSelector(loginLocators[2])).click();
 		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
 		WebDriverWait w =new WebDriverWait(driver,Duration.ofSeconds(10)); // Object of WebDriverWaite for explicit waite.
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
-		driver.findElement(By.xpath(loginLocators[1])).sendKeys(loginCredentials[0]);		
-		driver.findElement(By.xpath(loginLocators[2])).sendKeys(loginCredentials[1]);
+		driver.findElement(By.xpath(loginLocators[0])).sendKeys(loginCredentials[0]);		
+		driver.findElement(By.xpath(loginLocators[1])).sendKeys(loginCredentials[1]);
 		driver.findElement(By.cssSelector("input[type='submit']")).click();		
 	}
 	
@@ -114,13 +116,6 @@ public class testCases extends Functions {
 	}
 	
 	public static void createSimpleProduct(WebDriver driver, String[] loginLocators) {
-		driver.switchTo().newWindow(WindowType.TAB);
-		Set<String> handles = driver.getWindowHandles();
-		Iterator<String> it = handles.iterator();
-		String parentWindowId = it.next();
-		String childWindow = it.next();
-		driver.switchTo().window(childWindow);
-		driver.get("http://192.168.15.237/bagisto4.5/public/admin/login");
 		adminLogin(driver,loginLocators);
 		
 	}

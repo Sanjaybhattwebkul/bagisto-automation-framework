@@ -12,7 +12,7 @@ public class index extends testCases{
 		String[] miniCartLocators = {"//div[@id='mini-cart']","//span[@class='card-total-price fw6']",".modal-footer h5:nth-child(2)"}; // products for add to cart.	
 		String[] loginCredentials= {"tom@example.com","tom123"};
 		String FlashMessage = "//a[@class='close']";
-		String[] loginLocators = {"div[class*='welcome-content']","//input[@name='email']","//input[@name='password']"};
+		String[] loginLocators = {"//input[@name='email']","//input[@name='password']","div[class*='welcome-content']"};
 		configBrowserExe("/chromedriver"); //geckodriver		
 		WebDriver driver = new ChromeDriver(); //new FirefoxDriver();		
 		openBrowser(driver,"http://192.168.15.237/sanjay-bagisto/public/");		
