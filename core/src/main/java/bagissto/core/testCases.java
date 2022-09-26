@@ -110,4 +110,32 @@ public class testCases extends Functions {
 		Assert.assertEquals(orders.size(), filteredOrder.size()); 
 		
 	}
+	
+	public static void JavaStreamExample(WebDriver driver) {
+		// Load the URL
+		driver.get("http://automationpractice.com/index.php");
+		//List<String> allProductNames = new ArrayList<>();
+		
+		// Locating all product names at home page
+		/*
+		 * We do not need to store list of web elements as well. We can get the stream of found web elements
+		 * and apply aggregate function forEach(). Logic behind forEach is to get the text of each web element
+		 * and add to list. We are using lambda expression inside forEach.  
+		 */
+		
+		//driver.findElements(By.xpath("//ul[contains(@class,'active')]//a[@class='product-name']"))
+		//.stream()
+		//.forEach(product -> allProductNames.add(product.getText()));
+		
+		// Print count of product found
+		//System.out.println("Total product found : "+allProductNames.size());
+		
+		// Printing product names
+		//System.out.println("All product names are : ");
+		//allProductNames.forEach(name -> System.out.println(name));
+		
+		
+		// closing the browser
+		driver.quit();
+	}
 }
