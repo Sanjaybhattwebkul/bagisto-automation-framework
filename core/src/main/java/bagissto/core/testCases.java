@@ -102,6 +102,7 @@ public class testCases extends Functions {
 		
 		System.out.println("Actual orders after filter="+orders.size());
 		// Collect all data which contain 300 AS B
+		// JAVA Stream with Anonymous Classes
 		List<Object> filteredOrder = orders.stream().filter(new Predicate<WebElement>() {
 					public boolean test(WebElement order) {
 						return order.getText().contains("300");
