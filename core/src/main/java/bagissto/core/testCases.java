@@ -1,10 +1,16 @@
 package bagissto.core;
 import java.time.Duration;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -50,18 +56,18 @@ public class testCases extends Functions {
 	
 	public static void veryfyMiniCartPrice(WebDriver driver,String[] locator) {		
 		driver.findElement(By.xpath(locator[0])).click();
-		List<WebElement> miniCartmount = driver.findElements(By.xpath(locator[1]));
+		List<WebElement> miniCartmount = driver.findElements(By.xpath(locator[1]));		
 		int actualAmount=0;
 		for(int i=0; i<miniCartmount.size(); i++) {			
 			
 			String finalAmount =	removeComma(miniCartmount.get(i).getText().substring(1));// remove , from price
-			System.out.println(finalAmount);
 			//convert string to double
 			double itemAmount = Double.parseDouble(finalAmount);
 			// convert into int
 			int intsTotalAmount = (int)itemAmount;				 
-			System.out.println("Amount - " + intsTotalAmount);			 
+			System.out.println(actualAmount+ "+" + intsTotalAmount);			 
 			actualAmount =actualAmount + intsTotalAmount;
+			
 		}	
 		
 		String finalGrandAmount  = removeComma(driver.findElement(By.cssSelector(locator[2])).getText().substring(1));		
@@ -77,5 +83,34 @@ public class testCases extends Functions {
 		driver.findElement(By.xpath("//div[@id='cart-modal-content']/div/a")).click();
 		updateCart(driver,3,productsForUpdate);
 		System.out.println("Cart updated successfully");
+	}
+	
+	public static void verifyOrdersFilter(WebDriver driver,String FlashMessage) throws InterruptedException {
+		//driver.findElement(By.xpath(FlashMessage)).click();	//close flash message		
+		driver.findElement(By.cssSelector("div[class*='welcome-content']")).click();
+		driver.findElement(By.xpath("//div[@class='dropdown-container']/ul/li[2]")).click();
+		WebElement searchBox = driver.findElement(By.cssSelector("#search-field"));
+		searchBox.click();
+		searchBox.sendKeys("300");
+		Actions a = new Actions(driver);
+		searchBox.sendKeys(Keys.ENTER); //Press Enter keys*/
+		
+		
+		// Get all the records after search 300  as A
+		Thread.sleep(2000);
+		List<WebElement> orders = driver.findElements(By.xpath("//tr/td[3]"));
+		
+		System.out.println("Actual orders after filter="+orders.size());
+		// Collect all data which contain 300 AS B
+		List<Object> filteredOrder = orders.stream().filter(new Predicate<WebElement>() {
+					public boolean test(WebElement order) {
+						return order.getText().contains("300");
+					}
+				}).collect(Collectors.toList());
+		
+		System.out.println("Orders size  Found after filter="+filteredOrder.size());
+		// Check A== B 
+		Assert.assertEquals(orders.size(), filteredOrder.size()); 
+		
 	}
 }

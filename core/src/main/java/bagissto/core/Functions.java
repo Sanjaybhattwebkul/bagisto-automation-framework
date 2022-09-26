@@ -1,15 +1,10 @@
 package bagissto.core;
-import java.time.Duration;
-import java.time.temporal.TemporalAmount;
 import java.util.Arrays;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Functions {
 
@@ -36,12 +31,12 @@ public class Functions {
 		
 		List<WebElement> productNames = driver.findElements(By.xpath("//span[@class='fs20 fw6 link-color']"));
 		Thread.sleep(2000);
-		int k =0;
+		int k =0;		
 		for(int j=0; j< productNames.size(); j++) {
 			k++;	
 			String name = productNames.get(j).getText();
 			System.out.println(name);
-			List productsForUpdate = Arrays.asList(products); // convert array into array list for easy search
+			List<String> productsForUpdate = Arrays.asList(products); // convert array into array list for easy search
 			if(productsForUpdate.contains(name)) {
 				updateProductsQuantity(driver,productQuantity,j); // Click on + icon 
 			}
