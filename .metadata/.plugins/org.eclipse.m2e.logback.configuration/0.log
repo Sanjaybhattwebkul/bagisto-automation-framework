@@ -3971,3 +3971,27 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.beanshell
 2022-09-26 17:15:34,726 [Worker-85: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
 2022-09-26 17:15:34,726 [Worker-85: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-09-26 17:15:34,726 [Worker-85: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources
+2022-09-26 17:39:43,504 [Worker-88: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:39:43,504 [Worker-88: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
+2022-09-26 17:39:43,506 [Worker-88: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:39:43,506 [Worker-88: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources
+2022-09-26 17:44:43,578 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:44:43,579 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
+2022-09-26 17:44:43,579 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:44:43,579 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources
+2022-09-26 17:44:56,979 [Worker-84: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:44:56,979 [Worker-84: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
+2022-09-26 17:44:56,980 [Worker-84: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:44:56,980 [Worker-84: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources
+2022-09-26 17:45:12,723 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:45:12,723 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
+2022-09-26 17:45:12,724 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:45:12,724 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources
+2022-09-26 17:45:56,224 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:45:56,224 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
+2022-09-26 17:45:56,225 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:45:56,226 [Worker-89: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources
+2022-09-26 17:46:06,450 [Worker-87: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:46:06,450 [Worker-87: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/main/resources
+2022-09-26 17:46:06,450 [Worker-87: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-26 17:46:06,450 [Worker-87: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/core/src/test/resources

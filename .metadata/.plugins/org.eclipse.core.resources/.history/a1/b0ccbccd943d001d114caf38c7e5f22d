@@ -1,5 +1,6 @@
 package bagissto.core;
 import java.time.Duration;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
@@ -9,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -56,7 +58,7 @@ public class testCases extends Functions {
 		driver.findElement(By.xpath(locator[0])).click();
 		List<WebElement> miniCartmount = driver.findElements(By.xpath(locator[1]));		
 		int actualAmount=0;
-		for(int i=0; i<miniCartmount.size(); i++) {	
+		for(int i=0; i<miniCartmount.size(); i++) {			
 			
 			String finalAmount =	removeComma(miniCartmount.get(i).getText().substring(1));// remove , from price
 			//convert string to double
@@ -90,6 +92,7 @@ public class testCases extends Functions {
 		WebElement searchBox = driver.findElement(By.cssSelector("#search-field"));
 		searchBox.click();
 		searchBox.sendKeys("300");
+		Actions a = new Actions(driver);
 		searchBox.sendKeys(Keys.ENTER); //Press Enter keys*/		
 		
 		// Get all the records after search 300  as A
