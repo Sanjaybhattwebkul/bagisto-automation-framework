@@ -18,7 +18,7 @@ public class index extends testCases{
 		openBrowser(driver,"http://192.168.15.237/sanjay-bagisto/public/");		
 		Thread.sleep(2000);
 		addToCart(driver,cartProducts,FlashMessage); // add-Product-to-cart
-		customerLogin(driver,loginCredentials,loginLocators); // customer Login	
+		customerLogin(driver,loginLocators,loginCredentials); // customer Login	
 		veryfyMiniCartPrice(driver,miniCartLocators);		
 		//VerifyShoppingCart(driver,cartProducts);
 		verifyOrdersFilter(driver,FlashMessage); //TODO FIX

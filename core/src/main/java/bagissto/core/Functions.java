@@ -54,7 +54,7 @@ public class Functions {
 	}
 	
 	public static void adminLogin(WebDriver driver,String[] loginLocators) {
-		driver.findElement(By.xpath(loginLocators[0])).sendKeys("admin@example.com");		
-		driver.findElement(By.xpath(loginLocators[1])).sendKeys("admin123");
+		driver.findElement(By.xpath(loginLocators[1])).sendKeys("admin@example.com");		
+		driver.findElement(By.xpath(loginLocators[2])).sendKeys("admin123");
 	}
 }

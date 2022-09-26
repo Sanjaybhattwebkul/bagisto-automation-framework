@@ -45,7 +45,7 @@ public class testCases extends Functions {
 	
 	public static void customerLogin(WebDriver driver,String[] loginLocators,String[] loginCredentials) {
 		scrollUp(driver);
-		driver.findElement(By.cssSelector(loginLocators[0])).click();
+		driver.findElement(By.cssSelector("div[class*='welcome-content']")).click();
 		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
 		WebDriverWait w =new WebDriverWait(driver,Duration.ofSeconds(10)); // Object of WebDriverWaite for explicit waite.
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
