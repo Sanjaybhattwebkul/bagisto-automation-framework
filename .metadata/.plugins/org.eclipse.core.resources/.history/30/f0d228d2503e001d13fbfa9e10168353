@@ -1,0 +1,11 @@
+package Velocity;
+import org.testng.annotations.Test;
+
+public class Customerlogin extends bagissto.core.testCases{
+	
+	@Test
+	public static void customerLogin() {
+		customerLogin();
+	}
+
+}

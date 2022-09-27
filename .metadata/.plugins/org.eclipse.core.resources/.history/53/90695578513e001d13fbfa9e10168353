@@ -1,0 +1,14 @@
+package Velocity;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class Customerlogin extends bagissto.core.testCases{
+	
+	private static final WebDriver  = null;
+
+	@Test
+	public static void Login() {
+		customerLogin(null, null, null);
+	}
+
+}

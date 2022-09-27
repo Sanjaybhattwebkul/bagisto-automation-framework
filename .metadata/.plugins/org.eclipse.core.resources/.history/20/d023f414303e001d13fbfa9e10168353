@@ -1,0 +1,12 @@
+package Velocity;
+
+import org.testng.annotations.Test;
+
+public class Customerlogin {
+	
+	@Test
+	public static void CustomerLogin() {
+		System.out.println("helo");
+	}
+
+}
