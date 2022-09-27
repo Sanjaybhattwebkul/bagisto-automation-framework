@@ -1,4 +1,6 @@
 package bagissto.core;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
@@ -74,7 +76,7 @@ public class testCases extends Functions {
 		System.out.println(finalGrandAmount);		 
 		double total = Double.parseDouble(finalGrandAmount);
 		int grandTotalAmount = (int)total;	 // convert into int		 
-		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
+		AssertJUnit.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
 		System.out.println("Test case is pass");	        
 	}
 	
@@ -102,6 +104,7 @@ public class testCases extends Functions {
 		// Collect all data which contain 300 AS B
 		// JAVA Stream with Anonymous Classes
 		List<Object> filteredOrder = orders.stream().filter(new Predicate<WebElement>() {
+					@Test
 					public boolean test(WebElement order) {
 						return order.getText().contains("300");
 					}
@@ -109,7 +112,7 @@ public class testCases extends Functions {
 		
 		System.out.println("Orders size  Found after filter="+filteredOrder.size());
 		// Check A== B 
-		Assert.assertEquals(orders.size(), filteredOrder.size()); 
+		AssertJUnit.assertEquals(orders.size(), filteredOrder.size()); 
 		
 	}
 	
