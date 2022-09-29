@@ -56,6 +56,17 @@ public class testCases extends Functions {
 		driver.findElement(By.cssSelector("input[type='submit']")).click();		
 	}
 	
+	public static void testNgCustomerLogin(WebDriver driver,String[] loginLocators,String email,String password) {
+		scrollUp(driver);
+		driver.findElement(By.cssSelector("div[class*='welcome-content']")).click();
+		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
+		WebDriverWait w =new WebDriverWait(driver,Duration.ofSeconds(10)); // Object of WebDriverWaite for explicit waite.
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
+		driver.findElement(By.xpath(loginLocators[1])).sendKeys(email);		
+		driver.findElement(By.xpath(loginLocators[2])).sendKeys(password);
+		driver.findElement(By.cssSelector("input[type='submit']")).click();		
+	}
+	
 	public static void veryfyMiniCartPrice(WebDriver driver,String[] locator) {		
 		driver.findElement(By.xpath(locator[0])).click();
 		List<WebElement> miniCartmount = driver.findElements(By.xpath(locator[1]));		
