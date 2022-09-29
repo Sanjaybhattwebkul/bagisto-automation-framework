@@ -15,7 +15,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 
 public class testCases extends Functions {
@@ -57,6 +56,7 @@ public class testCases extends Functions {
 	}
 	
 	public static void testNgCustomerLogin(WebDriver driver,String[] loginLocators,String email,String password) {
+		//boolean isLoggedIn = false;
 		scrollUp(driver);
 		driver.findElement(By.cssSelector("div[class*='welcome-content']")).click();
 		driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
@@ -64,7 +64,12 @@ public class testCases extends Functions {
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
 		driver.findElement(By.xpath(loginLocators[1])).sendKeys(email);		
 		driver.findElement(By.xpath(loginLocators[2])).sendKeys(password);
-		driver.findElement(By.cssSelector("input[type='submit']")).click();		
+		driver.findElement(By.cssSelector("input[type='submit']")).click();	
+	/*	if(!isError) {
+			isLoggedIn = true;
+		}
+		return isLoggedIn;*/
+		
 	}
 	
 	public static void veryfyMiniCartPrice(WebDriver driver,String[] locator) {		
