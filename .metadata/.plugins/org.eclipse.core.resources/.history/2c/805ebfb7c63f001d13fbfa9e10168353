@@ -1,0 +1,13 @@
+package Velocity;
+
+import org.testng.annotations.Test;
+
+public class test {
+
+	@Test
+	public static void demo()  {
+			
+		System.out.println("Velocity theme of bagisto using testNG");
+		
+	}
+}
