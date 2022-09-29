@@ -23,11 +23,9 @@ public class Customerlogin extends bagissto.core.testCases{
 	}
 	
 	@Test(dependsOnMethods={"openBrowser", "waite"}, dataProvider="loginTestData" )	 
-	public static void Login(String email, String password) {		
+	public static void Login(String email, String password, String type) {		
 		String[] loginLocators = {"div[class*='welcome-content']","//input[@name='email']","//input[@name='password']"};	
-		boolean isError = driver.findElement(By.id("alert-container")).isDisplayed();
-		System.out.println(isError);
-		testNgCustomerLogin(driver,loginLocators,email,password); // customer Login
+		testNgCustomerLogin(driver,loginLocators,email,password,type); // customer Login
 		
 	}
 	
@@ -43,11 +41,13 @@ public class Customerlogin extends bagissto.core.testCases{
 	
 	@DataProvider
 	public static Object[][] loginTestData() {	
-		Object data[][]=new Object[2][2];
-		data[0][0]="tom@example.com";
-		data[0][1]="tom123";
-		data[1][0]="test@email.com";
-		data[1][1]="password";
+		Object data[][]=new Object[3][3];
+		data[0][0]="test@example.com";
+		data[0][1]="password";
+		data[0][2]="invalid";
+		data[1][0]="tom@example.com";
+		data[1][1]="tom123";
+		data[1][2]="valid";
 		return data;		
 	}
 

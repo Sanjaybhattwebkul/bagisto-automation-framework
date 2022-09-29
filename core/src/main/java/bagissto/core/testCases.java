@@ -55,7 +55,7 @@ public class testCases extends Functions {
 		driver.findElement(By.cssSelector("input[type='submit']")).click();		
 	}
 	
-	public static void testNgCustomerLogin(WebDriver driver,String[] loginLocators,String email,String password) {
+	public static void testNgCustomerLogin(WebDriver driver,String[] loginLocators,String email,String password,String type) {
 		//boolean isLoggedIn = false;
 		scrollUp(driver);
 		driver.findElement(By.cssSelector("div[class*='welcome-content']")).click();
@@ -65,6 +65,17 @@ public class testCases extends Functions {
 		driver.findElement(By.xpath(loginLocators[1])).sendKeys(email);		
 		driver.findElement(By.xpath(loginLocators[2])).sendKeys(password);
 		driver.findElement(By.cssSelector("input[type='submit']")).click();	
+		if(type == "invalid") {
+			boolean isError = driver.findElement(By.id("alert-container")).isDisplayed();
+			if(isError) {
+				System.out.println("Test Data is "+type+"And isError="+isError);
+			}
+			
+		} else {
+			System.out.println("Test Data is "+type);
+			
+		}
+		
 	/*	if(!isError) {
 			isLoggedIn = true;
 		}

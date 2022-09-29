@@ -7,8 +7,8 @@
       <class name="Velocity.Customerlogin">
         <methods>
           <include name="configureBrowser"/>
+          <include name="Login" invocation-numbers="2"/>
           <include name="openBrowser"/>
-          <include name="Login" invocation-numbers="1"/>
           <include name="waite"/>
           <include name="testMethod"/>
         </methods>
