@@ -22,12 +22,10 @@ public class Customerlogin extends bagissto.core.testCases{
 		openBrowser(driver,URL);	// URL from testNg.xml file
 	}
 	
-	 @Test(dependsOnMethods={"openBrowser", "waite"}, dataProvider="loginTestData" )
-	 
+	@Test(dependsOnMethods={"openBrowser", "waite"}, dataProvider="loginTestData" )	 
 	public static void Login(String email, String password) {		
 		String[] loginLocators = {"div[class*='welcome-content']","//input[@name='email']","//input[@name='password']"};	
-		testNgCustomerLogin(driver,loginLocators,email,password); // customer Login	
-		
+		testNgCustomerLogin(driver,loginLocators,email,password); // customer Login			
 	}
 	
 	@AfterMethod
@@ -47,8 +45,7 @@ public class Customerlogin extends bagissto.core.testCases{
 		data[0][1]="testPassword";
 		data[1][0]="tom@example.com";
 		data[1][1]="tom123";
-		return data;	
-		
+		return data;		
 	}
 
 }

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-29T13:53:53 IST" name="Suite" finished-at="2022-09-29T13:54:02 IST" duration-ms="8495">
+  <suite started-at="2022-09-29T14:45:17 IST" name="Suite" finished-at="2022-09-29T14:45:26 IST" duration-ms="8534">
     <groups>
     </groups>
-    <test started-at="2022-09-29T13:53:53 IST" name="Test" finished-at="2022-09-29T13:54:02 IST" duration-ms="8495">
+    <test started-at="2022-09-29T14:45:17 IST" name="Test" finished-at="2022-09-29T14:45:26 IST" duration-ms="8534">
       <class name="Velocity.Customerlogin">
-        <test-method is-config="true" signature="configureBrowser()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:53:53 IST" name="configureBrowser" finished-at="2022-09-29T13:53:53 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="configureBrowser()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:17 IST" name="configureBrowser" finished-at="2022-09-29T14:45:17 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureBrowser -->
-        <test-method signature="openBrowser(java.lang.String)[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:53:53 IST" name="openBrowser" finished-at="2022-09-29T13:53:57 IST" duration-ms="3715" status="PASS">
+        <test-method signature="openBrowser(java.lang.String)[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:17 IST" name="openBrowser" finished-at="2022-09-29T14:45:21 IST" duration-ms="3768" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,19 +22,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:53:57 IST" name="testMethod" finished-at="2022-09-29T13:53:57 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:21 IST" name="testMethod" finished-at="2022-09-29T14:45:21 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod -->
-        <test-method signature="waite()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:53:57 IST" name="waite" finished-at="2022-09-29T13:53:59 IST" duration-ms="2004" status="PASS">
+        <test-method signature="waite()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:21 IST" name="waite" finished-at="2022-09-29T14:45:23 IST" duration-ms="2001" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- waite -->
-        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:53:59 IST" name="testMethod" finished-at="2022-09-29T13:53:59 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:23 IST" name="testMethod" finished-at="2022-09-29T14:45:23 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod -->
-        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:53:59 IST" name="Login" data-provider="loginTestData" finished-at="2022-09-29T13:54:00 IST" depends-on-methods="Velocity.Customerlogin.waite, bagissto.core.testCases.openBrowser" duration-ms="1273" status="PASS">
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:23 IST" name="Login" data-provider="loginTestData" finished-at="2022-09-29T14:45:24 IST" depends-on-methods="Velocity.Customerlogin.waite, bagissto.core.testCases.openBrowser" duration-ms="1322" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,7 +50,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:54:00 IST" name="Login" data-provider="loginTestData" finished-at="2022-09-29T13:54:02 IST" depends-on-methods="Velocity.Customerlogin.waite, bagissto.core.testCases.openBrowser" duration-ms="1451" status="PASS">
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:24 IST" name="Login" data-provider="loginTestData" finished-at="2022-09-29T14:45:26 IST" depends-on-methods="Velocity.Customerlogin.waite, bagissto.core.testCases.openBrowser" duration-ms="1383" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,11 +66,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:54:00 IST" name="testMethod" finished-at="2022-09-29T13:54:00 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:24 IST" name="testMethod" finished-at="2022-09-29T14:45:24 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod -->
-        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T13:54:02 IST" name="testMethod" finished-at="2022-09-29T13:54:02 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="testMethod()[pri:0, instance:Velocity.Customerlogin@73ab3aac]" started-at="2022-09-29T14:45:26 IST" name="testMethod" finished-at="2022-09-29T14:45:26 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod -->

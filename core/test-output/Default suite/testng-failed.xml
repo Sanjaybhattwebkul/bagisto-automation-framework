@@ -6,9 +6,10 @@
       <class name="Velocity.Customerlogin">
         <methods>
           <include name="configureBrowser"/>
-          <include name="openBrowser"/>
           <include name="Login"/>
+          <include name="openBrowser"/>
           <include name="waite"/>
+          <include name="testMethod"/>
         </methods>
       </class> <!-- Velocity.Customerlogin -->
     </classes>
