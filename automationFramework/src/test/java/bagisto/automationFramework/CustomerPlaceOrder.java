@@ -11,6 +11,7 @@ public class CustomerPlaceOrder extends baseTest{
 		// TODO Auto-generated method stub
 		LandingPage LandingPageObject = launcVelocity();		
 		LandingPageObject.customerLogin("tom@example.com","tom123");
+		LandingPageObject.gotoHomePage();
 	}                    
 
 }

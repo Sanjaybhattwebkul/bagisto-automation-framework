@@ -23,6 +23,9 @@ public class LandingPage {
 	@FindBy(css="input[type='submit']")
 	WebElement loginButton;
 	
+	@FindBy(css="a[class*='navbar-brand']")
+	WebElement logo;
+	
 	public void customerLogin(String email, String password) {
 		System.out.println("i am login page and password= "+password);
 		userEmail.sendKeys(email);
@@ -31,6 +34,10 @@ public class LandingPage {
 		
 		//create object of CatalogProduct class and can access by calling any function of LandingPage class. 
 		//return  new CatalogProduct(driver);
+	}
+	
+	public void gotoHomePage() {
+		logo.click();
 	}
 	
 	public void goTo()

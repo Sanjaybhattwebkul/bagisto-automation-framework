@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-04T18:48:54 IST" name="Default suite" finished-at="2022-10-04T18:48:58 IST" duration-ms="3731">
+  <suite started-at="2022-10-04T19:26:31 IST" name="Default suite" finished-at="2022-10-04T19:26:35 IST" duration-ms="4452">
     <groups>
     </groups>
-    <test started-at="2022-10-04T18:48:54 IST" name="Default test" finished-at="2022-10-04T18:48:58 IST" duration-ms="3731">
+    <test started-at="2022-10-04T19:26:31 IST" name="Default test" finished-at="2022-10-04T19:26:35 IST" duration-ms="4452">
       <class name="bagisto.automationFramework.CustomerPlaceOrder">
-        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@3cebbb30]" started-at="2022-10-04T18:48:54 IST" name="placeOrder" finished-at="2022-10-04T18:48:58 IST" duration-ms="3681" status="PASS">
+        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@3cebbb30]" started-at="2022-10-04T19:26:31 IST" name="placeOrder" finished-at="2022-10-04T19:26:35 IST" duration-ms="4406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrder -->
