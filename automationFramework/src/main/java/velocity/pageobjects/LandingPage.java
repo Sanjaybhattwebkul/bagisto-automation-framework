@@ -31,17 +31,14 @@ public class LandingPage {
 		userEmail.sendKeys(email);
 		passwordElement.sendKeys(password);
 		loginButton.click();
-		
-		//create object of CatalogProduct class and can access by calling any function of LandingPage class. 
-		//return  new CatalogProduct(driver);
-	}
-	
-	public void gotoHomePage() {
-		logo.click();
 	}
 	
 	public void goTo()
 	{
 		driver.get("http://192.168.15.237/sanjay-bagisto/public/customer/login");
+	}
+	
+	public void gotoHomePage() {
+		logo.click();
 	}
 }
