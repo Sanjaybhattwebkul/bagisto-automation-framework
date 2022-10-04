@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-04T17:34:02 IST" name="Default suite" finished-at="2022-10-04T17:34:04 IST" duration-ms="2336">
+  <suite started-at="2022-10-04T17:41:46 IST" name="Default suite" finished-at="2022-10-04T17:41:52 IST" duration-ms="5483">
     <groups>
     </groups>
-    <test started-at="2022-10-04T17:34:02 IST" name="Default test" finished-at="2022-10-04T17:34:04 IST" duration-ms="2336">
+    <test started-at="2022-10-04T17:41:46 IST" name="Default test" finished-at="2022-10-04T17:41:52 IST" duration-ms="5483">
       <class name="bagisto.automationFramework.CustomerPlaceOrder">
-        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@3cebbb30]" started-at="2022-10-04T17:34:02 IST" name="placeOrder" finished-at="2022-10-04T17:34:04 IST" duration-ms="2294" status="FAIL">
+        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@12aba8be]" started-at="2022-10-04T17:41:47 IST" name="placeOrder" finished-at="2022-10-04T17:41:52 IST" duration-ms="5437" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because "this.userEmail" is null]]>
@@ -15,7 +15,7 @@
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because "this.userEmail" is null
 at bagisto.automationFramework.velocity.LandingPage.customerLogin(LandingPage.java:27)
-at bagisto.automationFramework.CustomerPlaceOrder.placeOrder(CustomerPlaceOrder.java:13)
+at bagisto.automationFramework.CustomerPlaceOrder.placeOrder(CustomerPlaceOrder.java:14)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -1,4 +1,4 @@
-package bagisto.automationFramework.velocity;
+package velocity.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

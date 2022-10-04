@@ -5,9 +5,8 @@ import java.time.Duration;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import bagisto.automationFramework.velocity.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import velocity.pageobjects.LandingPage;
 
 public class baseTest {
 	public WebDriver driver;
