@@ -10,7 +10,7 @@ public class LandingPage {
 	WebDriver driver;
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, driver);
+		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(name="email")
@@ -20,10 +20,11 @@ public class LandingPage {
 	WebElement passwordElement;
 	
 	
-	@FindBy(xpath="input[type='submit']")
+	@FindBy(css="input[type='submit']")
 	WebElement loginButton;
 	
-	public void customerLogin(String email,String password) {
+	public void customerLogin(String email, String password) {
+		System.out.println("i am login page and password= "+password);
 		userEmail.sendKeys(email);
 		passwordElement.sendKeys(password);
 		loginButton.click();
