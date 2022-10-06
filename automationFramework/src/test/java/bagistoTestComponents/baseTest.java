@@ -5,8 +5,9 @@ import java.time.Duration;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import velocity.pageobjects.LandingPage;
+import velocity.pageobjects.ProductListing;
 
 public class baseTest {
 	public WebDriver driver;
@@ -35,12 +36,23 @@ public class baseTest {
 		driver.manage().window().maximize();
 		return driver;
 	}
-
-	public LandingPage launcVelocity() throws IOException {
+	
+	
+	public ProductListing launcVelocity() throws IOException {
 		
 		driver = initlizeBrowser();
-		LandingPage LandingPage = new LandingPage(driver);
-		LandingPage.goTo();  // open browser/site
-		return LandingPage; // LandingPage object ko is liye return kiya kyuki loginApplication() function bhi call  ho ra hai.
+		goToVelocityShop();  // open browser/site
+		ProductListing ProductListing = new ProductListing(driver);
+		return ProductListing; // LandingPage object ko is liye return kiya kyuki loginApplication() function bhi call  ho ra hai.
+	}
+	
+	public void goToVelocityShop() {
+		driver.get("http://192.168.15.237/sanjay-bagisto/public/");
+		//scrollDown(driver);
+	}
+	
+	@AfterTest
+	public void closeBrowser() {
+		driver.close();
 	}
 }

@@ -20,19 +20,34 @@ public class ProductListing extends AbstractComponent{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css="card-body")
+	@FindBy(css=".card-body")
 	List<WebElement> products;
+
+	@FindBy(css=".alert-dismissible")  //alert alert-success 
+	WebElement flashMessage;
 	
-	By getProductsBy = By.cssSelector("card-body");
+	By getProductsBy = By.cssSelector(".card-body");
+	By addToCartButton = By.cssSelector(".btn-add-to-cart");
+			
 	
-	public List<WebElement> getProductList(){
+	public List<WebElement> getProductList() throws InterruptedException{
 		waitForElementToAppear(getProductsBy);
 		return (List<WebElement>) products;
 	}
-	public WebElement getProductByName(String productName) {
+	
+	public WebElement getProductByName(String productName) throws InterruptedException {
 		WebElement prod =	getProductList().stream().filter(product->
 		product.findElement(By.cssSelector("span")).getText().equals(productName)).findFirst().orElse(null);
 		return prod;
+	}
+	
+	public void addProductToCart(String ProductName) throws InterruptedException {
+		//System.out.println(ProductName);
+		WebElement ProName = getProductByName(ProductName);
+		ProName.findElement(addToCartButton).click();
+		waitForWebElementToAppear(flashMessage); // waite while flash message is displaying
+		waiteForElementToDisAppear(flashMessage); // waite till loader will display
+		scrollUp(driver);
 	}
 	
 }

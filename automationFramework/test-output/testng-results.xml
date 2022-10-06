@@ -2,15 +2,19 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-04T19:26:31 IST" name="Default suite" finished-at="2022-10-04T19:26:35 IST" duration-ms="4452">
+  <suite started-at="2022-10-06T18:59:01 IST" name="Default suite" finished-at="2022-10-06T18:59:09 IST" duration-ms="8320">
     <groups>
     </groups>
-    <test started-at="2022-10-04T19:26:31 IST" name="Default test" finished-at="2022-10-04T19:26:35 IST" duration-ms="4452">
+    <test started-at="2022-10-06T18:59:01 IST" name="Default test" finished-at="2022-10-06T18:59:09 IST" duration-ms="8320">
       <class name="bagisto.automationFramework.CustomerPlaceOrder">
-        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@3cebbb30]" started-at="2022-10-04T19:26:31 IST" name="placeOrder" finished-at="2022-10-04T19:26:35 IST" duration-ms="4406" status="PASS">
+        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@537f60bf]" started-at="2022-10-06T18:59:01 IST" name="placeOrder" finished-at="2022-10-06T18:59:09 IST" duration-ms="8160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrder -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bagisto.automationFramework.CustomerPlaceOrder@537f60bf]" started-at="2022-10-06T18:59:09 IST" name="closeBrowser" finished-at="2022-10-06T18:59:09 IST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- bagisto.automationFramework.CustomerPlaceOrder -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

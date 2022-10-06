@@ -1,14 +1,16 @@
 package velocity.pageobjects;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage {
+import bagisto.automationFramework.AbstractComponent;
+
+public class LandingPage extends AbstractComponent{
 	
 	WebDriver driver;
 	public LandingPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -26,19 +28,16 @@ public class LandingPage {
 	@FindBy(css="a[class*='navbar-brand']")
 	WebElement logo;
 	
-	public void customerLogin(String email, String password) {
+	public ProductListing customerLogin(String email, String password) {
 		System.out.println("i am login page and password= "+password);
 		userEmail.sendKeys(email);
 		passwordElement.sendKeys(password);
 		loginButton.click();
+		return new ProductListing(driver);
 	}
-	
-	public void goTo()
-	{
-		driver.get("http://192.168.15.237/sanjay-bagisto/public/customer/login");
-	}
-	
-	public void gotoHomePage() {
+
+	public void goToHomePage() {
 		logo.click();
+		
 	}
 }

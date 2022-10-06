@@ -5,6 +5,7 @@
     <classes>
       <class name="bagisto.automationFramework.CustomerPlaceOrder">
         <methods>
+          <include name="closeBrowser"/>
           <include name="placeOrder"/>
         </methods>
       </class> <!-- bagisto.automationFramework.CustomerPlaceOrder -->

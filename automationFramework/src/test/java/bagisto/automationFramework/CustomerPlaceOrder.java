@@ -1,17 +1,20 @@
 package bagisto.automationFramework;
-import java.io.IOException;
 import org.testng.annotations.Test;
+import java.io.IOException;
 import bagistoTestComponents.baseTest;
-import velocity.pageobjects.LandingPage;
+import velocity.pageobjects.ProductListing;
 
 public class CustomerPlaceOrder extends baseTest{
-
+	
 	@Test
-	public void placeOrder() throws IOException {
-		// TODO Auto-generated method stub
-		LandingPage LandingPageObject = launcVelocity();		
-		LandingPageObject.customerLogin("tom@example.com","tom123");
-		LandingPageObject.gotoHomePage();
+	public void placeOrder() throws IOException, InterruptedException {
+		String productName = "Sunglasses";
+		ProductListing ProductListingObj = launcVelocity();
+		ProductListingObj.addProductToCart(productName);
+		/*
+		ProductListing ProductListingObj = LandingPageObject.customerLogin("tom@example.com","tom123");
+		LandingPageObject.goToHomePage();*/
+		
 	}                    
 
 }
