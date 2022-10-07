@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
+<suite parallel="tests" name="Suite">
+  <test thread-count="5" name="CustomerCheckout">
     <classes>
-      <class name="bagisto.automationFramework.CustomerPlaceOrder"/>
+      <class name="bagisto.automationFramework.CustomerCheckout"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="GuestCheckout">
+    <classes>
+      <class name="bagisto.automationFramework.GuestCheckout"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
