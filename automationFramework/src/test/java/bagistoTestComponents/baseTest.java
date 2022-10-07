@@ -53,6 +53,6 @@ public class baseTest {
 	
 	@AfterTest
 	public void closeBrowser() {
-		driver.close();
+		//driver.close();
 	}
 }

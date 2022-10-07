@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
 import bagisto.automationFramework.AbstractComponent;
 
 public class CustomerLogin extends AbstractComponent {
@@ -33,8 +35,15 @@ public class CustomerLogin extends AbstractComponent {
 	@FindBy(css="input[type='submit']")
 	WebElement loginButton;
 	
+	@Test
+	public void goToLoginPage() {
+		closeFlashMessage();
+		loginpOPuP.click();
+		loginPopButton.click();
+	}
 	
-	public LandingPage customerLogin(String[] loginCredentials) {
+	//@Test(dependsOnMethods= {"goToLoginPage"})
+	public LandingPage customerLogin(String[] loginCredentials) throws InterruptedException {
 		userEmail.sendKeys(loginCredentials[0]);
 		passwordElement.sendKeys(loginCredentials[1]);
 		loginButton.click();

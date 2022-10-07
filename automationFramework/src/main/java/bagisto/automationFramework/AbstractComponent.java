@@ -24,6 +24,9 @@ public class AbstractComponent {
 		@FindBy(css="a[class*='navbar-brand']")
 		WebElement logo;
 		
+		@FindBy(xpath="//a[@class='close']")
+		WebElement flashMessage;
+		
 		public void goToCartPage() {
 			cart.click();
 			//return  new CartPage(driver);
@@ -49,7 +52,7 @@ public class AbstractComponent {
 			   js.executeScript("window.scrollBy(0,-900)");
 		}
 		
-		public void waiteForElementToDisAppear(WebElement element) throws InterruptedException {
+		public void waiteForElementToDisAppear() throws InterruptedException {
 			Thread.sleep(2000);
 			//WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5)); 
 			//waite.until(ExpectedConditions.invisibilityOf(element));
@@ -58,6 +61,10 @@ public class AbstractComponent {
 		public void goToHomePage() {
 			logo.click();
 			
+		}
+		
+		public void closeFlashMessage() {
+			flashMessage.click();
 		}
 		
 }

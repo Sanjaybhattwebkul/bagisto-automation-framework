@@ -15,6 +15,7 @@ public class CustomerPlaceOrder extends baseTest{
 		
 		ProductListing ProductListingObj = launcVelocity();
 		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);		
+		CustomerLoginobj.goToLoginPage();
 		LandingPage LandingPageObj = CustomerLoginobj.customerLogin(loginCredential);
 		LandingPageObj.goToCartPage();
 		
