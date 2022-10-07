@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-07T18:29:14 IST" name="Suite" finished-at="2022-10-07T18:29:24 IST" duration-ms="9487">
+  <suite started-at="2022-10-07T18:48:48 IST" name="Suite" finished-at="2022-10-07T18:49:16 IST" duration-ms="27859">
     <groups>
     </groups>
-    <test started-at="2022-10-07T18:29:14 IST" name="GuestCheckout" finished-at="2022-10-07T18:29:14 IST" duration-ms="17">
+    <test started-at="2022-10-07T18:48:48 IST" name="GuestCheckout" finished-at="2022-10-07T18:48:59 IST" duration-ms="10596">
       <class name="bagisto.automationFramework.GuestCheckout">
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bagisto.automationFramework.GuestCheckout@273e7444]" started-at="2022-10-07T18:29:14 IST" name="closeBrowser" finished-at="2022-10-07T18:29:14 IST" duration-ms="5" status="PASS">
+        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.GuestCheckout@273e7444]" started-at="2022-10-07T18:48:48 IST" name="placeOrder" finished-at="2022-10-07T18:48:59 IST" duration-ms="10567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bagisto.automationFramework.GuestCheckout@273e7444]" started-at="2022-10-07T18:48:59 IST" name="closeBrowser" finished-at="2022-10-07T18:48:59 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- bagisto.automationFramework.GuestCheckout -->
     </test> <!-- GuestCheckout -->
-    <test started-at="2022-10-07T18:29:14 IST" name="CustomerCheckout" finished-at="2022-10-07T18:29:24 IST" duration-ms="9487">
+    <test started-at="2022-10-07T18:48:48 IST" name="CustomerCheckout" finished-at="2022-10-07T18:49:16 IST" duration-ms="27859">
       <class name="bagisto.automationFramework.CustomerCheckout">
-        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerCheckout@54bff557]" started-at="2022-10-07T18:29:14 IST" name="placeOrder" finished-at="2022-10-07T18:29:24 IST" duration-ms="9455" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method signature="placeOrder()[pri:0, instance:bagisto.automationFramework.CustomerCheckout@54bff557]" started-at="2022-10-07T18:48:48 IST" name="placeOrder" finished-at="2022-10-07T18:49:16 IST" duration-ms="27829" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[stale element reference: element is not attached to the page document
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='mini-cart']"}
   (Session info: chrome=106.0.5249.91)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'sanjay237', ip: '192.168.15.237', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-48-generic', java.version: '17.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fd9161b30a2c99f641e5184b54f32b81, sendKeysToElement {id=1ed18848-a50a-428f-b88b-fcdcc7dfb9e5, value=[Ljava.lang.CharSequence;@6a226bf1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /tmp/.com.google.Chrome.QQE32R}, goog:chromeOptions: {debuggerAddress: localhost:46621}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46621/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (fd9161b30a2c99f641e5184b54f32b81)] -> name: email]
-Session ID: fd9161b30a2c99f641e5184b54f32b81]]>
+Command: [53a8be5e368e58d0aa777798fcef9a8d, findElement {using=xpath, value=//div[@id='mini-cart']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /tmp/.com.google.Chrome.3W4x04}, goog:chromeOptions: {debuggerAddress: localhost:46103}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46103/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 53a8be5e368e58d0aa777798fcef9a8d]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='mini-cart']"}
   (Session info: chrome=106.0.5249.91)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'sanjay237', ip: '192.168.15.237', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-48-generic', java.version: '17.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fd9161b30a2c99f641e5184b54f32b81, sendKeysToElement {id=1ed18848-a50a-428f-b88b-fcdcc7dfb9e5, value=[Ljava.lang.CharSequence;@6a226bf1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /tmp/.com.google.Chrome.QQE32R}, goog:chromeOptions: {debuggerAddress: localhost:46621}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46621/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (fd9161b30a2c99f641e5184b54f32b81)] -> name: email]
-Session ID: fd9161b30a2c99f641e5184b54f32b81
+Command: [53a8be5e368e58d0aa777798fcef9a8d, findElement {using=xpath, value=//div[@id='mini-cart']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /tmp/.com.google.Chrome.3W4x04}, goog:chromeOptions: {debuggerAddress: localhost:46103}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46103/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 53a8be5e368e58d0aa777798fcef9a8d
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -52,16 +54,15 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
-at velocity.pageobjects.CustomerLogin.customerLogin(CustomerLogin.java:47)
-at bagisto.automationFramework.CustomerCheckout.placeOrder(CustomerCheckout.java:19)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+at bagisto.automationFramework.AbstractComponent.goToCartPage(AbstractComponent.java:31)
+at bagisto.automationFramework.CustomerCheckout.placeOrder(CustomerCheckout.java:20)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -87,11 +88,11 @@ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bagisto.automationFramework.CustomerCheckout@54bff557]" started-at="2022-10-07T18:29:24 IST" name="closeBrowser" finished-at="2022-10-07T18:29:24 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bagisto.automationFramework.CustomerCheckout@54bff557]" started-at="2022-10-07T18:49:16 IST" name="closeBrowser" finished-at="2022-10-07T18:49:16 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
