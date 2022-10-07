@@ -1,13 +1,10 @@
 package velocity.pageobjects;
-
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import bagisto.automationFramework.AbstractComponent;
 
 public class ProductListing extends AbstractComponent{
@@ -41,13 +38,14 @@ public class ProductListing extends AbstractComponent{
 		return prod;
 	}
 	
-	public void addProductToCart(String ProductName) throws InterruptedException {
+	public CustomerLogin addProductToCart(String ProductName) throws InterruptedException {
 		//System.out.println(ProductName);
 		WebElement ProName = getProductByName(ProductName);
 		ProName.findElement(addToCartButton).click();
 		waitForWebElementToAppear(flashMessage); // waite while flash message is displaying
 		waiteForElementToDisAppear(flashMessage); // waite till loader will display
 		scrollUp(driver);
+		return new CustomerLogin(driver);
 	}
 	
 }

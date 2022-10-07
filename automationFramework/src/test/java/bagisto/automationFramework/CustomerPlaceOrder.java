@@ -2,6 +2,8 @@ package bagisto.automationFramework;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import bagistoTestComponents.baseTest;
+import velocity.pageobjects.CustomerLogin;
+import velocity.pageobjects.LandingPage;
 import velocity.pageobjects.ProductListing;
 
 public class CustomerPlaceOrder extends baseTest{
@@ -9,11 +11,12 @@ public class CustomerPlaceOrder extends baseTest{
 	@Test
 	public void placeOrder() throws IOException, InterruptedException {
 		String productName = "Sunglasses";
+		String[] loginCredential= {"tom@example.com","tom123"};	
+		
 		ProductListing ProductListingObj = launcVelocity();
-		ProductListingObj.addProductToCart(productName);
-		/*
-		ProductListing ProductListingObj = LandingPageObject.customerLogin("tom@example.com","tom123");
-		LandingPageObject.goToHomePage();*/
+		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);		
+		LandingPage LandingPageObj = CustomerLoginobj.customerLogin(loginCredential);
+		LandingPageObj.goToCartPage();
 		
 	}                    
 

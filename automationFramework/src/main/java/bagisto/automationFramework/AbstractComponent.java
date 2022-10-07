@@ -18,11 +18,14 @@ public class AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 	//driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
-		@FindBy(css="[routerlink*='cart']")
+		@FindBy(xpath="//div[@id='mini-cart']")
 		WebElement cart;
 		
+		@FindBy(css="a[class*='navbar-brand']")
+		WebElement logo;
+		
 		public void goToCartPage() {
-			//cart.click();
+			cart.click();
 			//return  new CartPage(driver);
 		}
 		
@@ -50,6 +53,11 @@ public class AbstractComponent {
 			Thread.sleep(2000);
 			//WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5)); 
 			//waite.until(ExpectedConditions.invisibilityOf(element));
+		}		
+		
+		public void goToHomePage() {
+			logo.click();
+			
 		}
 		
 }

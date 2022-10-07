@@ -1,15 +1,8 @@
 package velocity.pageobjects;
-
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import bagisto.automationFramework.AbstractComponent;
 
 public class CustomerLogin extends AbstractComponent {
@@ -30,19 +23,21 @@ public class CustomerLogin extends AbstractComponent {
 	@FindBy(xpath="//a[@class='theme-btn fs14 fw6'][1]")
 	WebElement loginPopButton;
 	
-	//@FindBy(xpath="")
+	@FindBy(name="email")
+	WebElement userEmail;
+	
+	@FindBy(id="password")
+	WebElement passwordElement;
 	
 	
-	public void login() {
-		scrollUp(driver);
-		loginpOPuP.click();
-		loginPopButton.click();
-		
-		WebDriverWait w =new WebDriverWait(driver,Duration.ofSeconds(10)); // Object of WebDriverWaite for explicit waite.
-		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));		
-		/*
-		driver.findElement(By.xpath(loginLocators[1])).sendKeys(loginCredentials[0]);		
-		driver.findElement(By.xpath(loginLocators[2])).sendKeys(loginCredentials[1]);
-		driver.findElement(By.cssSelector("input[type='submit']")).click();	*/
+	@FindBy(css="input[type='submit']")
+	WebElement loginButton;
+	
+	
+	public LandingPage customerLogin(String[] loginCredentials) {
+		userEmail.sendKeys(loginCredentials[0]);
+		passwordElement.sendKeys(loginCredentials[1]);
+		loginButton.click();
+		return new LandingPage(driver);
 	}
 }
