@@ -1,4 +1,6 @@
 package velocity.pageobjects;
+import java.util.HashMap;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,9 +45,9 @@ public class CustomerLogin extends AbstractComponent {
 	}
 	
 	//@Test(dependsOnMethods= {"goToLoginPage"})
-	public LandingPage customerLogin(String[] loginCredentials) throws InterruptedException {
-		userEmail.sendKeys(loginCredentials[0]);
-		passwordElement.sendKeys(loginCredentials[1]);
+	public LandingPage customerLogin(HashMap<String, String> input) throws InterruptedException {
+		userEmail.sendKeys(input.get("email"));
+		passwordElement.sendKeys(input.get("password"));
 		loginButton.click();
 		return new LandingPage(driver);
 	}
