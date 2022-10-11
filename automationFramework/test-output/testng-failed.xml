@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="bagisto.automationFramework.CustomerCheckout">
+      <class name="Shop.Tests.CustomerCheckout">
         <methods>
-          <include name="placeOrder" invocation-numbers="0"/>
           <include name="closeBrowser"/>
+          <include name="placeOrder" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- bagisto.automationFramework.CustomerCheckout -->
+      </class> <!-- Shop.Tests.CustomerCheckout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

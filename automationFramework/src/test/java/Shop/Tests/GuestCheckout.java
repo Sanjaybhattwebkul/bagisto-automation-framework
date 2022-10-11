@@ -1,8 +1,9 @@
-package bagisto.automationFramework;
+package Shop.Tests;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
-import bagistoTestComponents.baseTest;
+
+import Shop.TestComponents.baseTest;
 import velocity.pageobjects.ProductListing;
 
 public class GuestCheckout extends baseTest {

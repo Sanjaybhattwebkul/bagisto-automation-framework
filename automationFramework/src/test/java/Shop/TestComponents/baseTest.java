@@ -1,4 +1,4 @@
-package bagistoTestComponents;
+package Shop.TestComponents;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;

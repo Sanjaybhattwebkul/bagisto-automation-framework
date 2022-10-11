@@ -1,10 +1,12 @@
-package bagisto.automationFramework;
+package Shop.Tests;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import Shop.TestComponents.baseTest;
+
 import java.io.IOException;
 import java.util.HashMap;
 
-import bagistoTestComponents.baseTest;
 import velocity.pageobjects.CustomerLogin;
 import velocity.pageobjects.LandingPage;
 import velocity.pageobjects.ProductListing;
