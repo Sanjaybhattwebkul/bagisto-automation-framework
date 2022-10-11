@@ -6,6 +6,7 @@ import Shop.TestComponents.baseTest;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import velocity.pageobjects.CustomerLogin;
 import velocity.pageobjects.LandingPage;
@@ -27,20 +28,12 @@ public class CustomerCheckout extends baseTest{
 	}     
 	
 	
-	// By using DataProvider the above placeOrder Test should be run for each test data of HashMap
+	// By using DataProvider the above placeOrder Test should be run for each test data of JSON/HashMap/Object
 	@DataProvider
-	public Object[][] getTestData() {
-		HashMap<String,String> map = new HashMap<String,String>();
-		map.put("email","tom@example.com");
-		map.put("password","tom123");
-		map.put("productName", "Sunglasses");
-		
-		HashMap<String,String> map1 = new HashMap<String,String>();
-		map1.put("email","user@example.com");
-		map1.put("password","admin123");
-		map1.put("productName", "Men's Bomber");
-		
-		return new Object[][] {{map},{map1}};
+	public Object[][] getTestData() throws IOException {
+		// We can use Object,HashMap and JSON file for send data 
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//Shop//TestData//TestData.json");
+		return new Object[][]  {{data.get(0)}, {data.get(1) } };
 	}
 
 }
