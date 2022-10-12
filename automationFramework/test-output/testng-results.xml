@@ -2,12 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-11T19:36:17 IST" name="Default suite" finished-at="2022-10-11T19:36:36 IST" duration-ms="18528">
+  <suite started-at="2022-10-12T15:44:43 IST" name="Default suite" finished-at="2022-10-12T15:44:59 IST" duration-ms="15789">
     <groups>
     </groups>
-    <test started-at="2022-10-11T19:36:17 IST" name="Default test" finished-at="2022-10-11T19:36:36 IST" duration-ms="18528">
+    <test started-at="2022-10-12T15:44:43 IST" name="Default test" finished-at="2022-10-12T15:44:59 IST" duration-ms="15789">
       <class name="Shop.Tests.CustomerCheckout">
-        <test-method signature="placeOrder(java.util.HashMap)[pri:0, instance:Shop.Tests.CustomerCheckout@2c1b194a]" started-at="2022-10-11T19:36:18 IST" name="placeOrder" data-provider="getTestData" finished-at="2022-10-11T19:36:27 IST" duration-ms="9519" status="PASS">
+        <test-method is-config="true" signature="extentReportConfig()[pri:0, instance:Shop.Tests.CustomerCheckout@3cebbb30]" started-at="2022-10-12T15:44:43 IST" name="extentReportConfig" finished-at="2022-10-12T15:44:43 IST" duration-ms="218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportConfig -->
+        <test-method signature="placeOrder(java.util.HashMap)[pri:0, instance:Shop.Tests.CustomerCheckout@3cebbb30]" started-at="2022-10-12T15:44:44 IST" name="placeOrder" data-provider="getTestData" finished-at="2022-10-12T15:44:51 IST" duration-ms="7782" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrder -->
-        <test-method signature="placeOrder(java.util.HashMap)[pri:0, instance:Shop.Tests.CustomerCheckout@2c1b194a]" started-at="2022-10-11T19:36:27 IST" name="placeOrder" data-provider="getTestData" finished-at="2022-10-11T19:36:36 IST" duration-ms="8654" status="PASS">
+        <test-method signature="placeOrder(java.util.HashMap)[pri:0, instance:Shop.Tests.CustomerCheckout@3cebbb30]" started-at="2022-10-12T15:44:51 IST" name="placeOrder" data-provider="getTestData" finished-at="2022-10-12T15:44:59 IST" duration-ms="7499" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckout@2c1b194a]" started-at="2022-10-11T19:36:36 IST" name="closeBrowser" finished-at="2022-10-11T19:36:36 IST" duration-ms="118" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckout@3cebbb30]" started-at="2022-10-12T15:44:59 IST" name="closeBrowser" finished-at="2022-10-12T15:44:59 IST" duration-ms="110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
