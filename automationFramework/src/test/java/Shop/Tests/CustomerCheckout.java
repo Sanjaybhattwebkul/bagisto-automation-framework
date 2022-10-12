@@ -1,5 +1,5 @@
 package Shop.Tests;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -20,7 +20,7 @@ public class CustomerCheckout extends baseTest{
 	
 	ExtentReports extentObj;
 	
-	@BeforeTest
+	@BeforeSuite
 	public void extentReportConfig()
 	{
 		String path = System.getProperty("user.dir")+"//Reports//report.html"; // Create Report folder and report.html file

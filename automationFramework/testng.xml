@@ -3,12 +3,12 @@
 <suite parallel="tests" name="Suite">
   <test thread-count="5" name="CustomerCheckout">
     <classes>
-      <class name="bagisto.automationFramework.CustomerCheckout"/>
+      <class name="Shop.Tests.CustomerCheckout"/>
     </classes>
   </test> <!-- Test -->
   <test thread-count="5" name="GuestCheckout">
     <classes>
-      <class name="bagisto.automationFramework.GuestCheckout"/>
+      <class name="Shop.Tests.GuestCheckout"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
