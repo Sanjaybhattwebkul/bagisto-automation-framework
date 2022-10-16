@@ -38,7 +38,7 @@ public class Listeners implements ITestListener {
 		// TODO Auto-generated method stub
 		//ITestListener.super.onTestFailure(result);
 		String FilePath=null;
-		extentTest.get().fail(result.getThrowable());
+		extentTest.get().fail(result.getThrowable()); 
 		// get driver object from result parameter, because the result have all data of test class even WebDriver also.
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
