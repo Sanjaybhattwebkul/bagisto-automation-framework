@@ -5,8 +5,8 @@
     <classes>
       <class name="Shop.Tests.CustomerCheckout">
         <methods>
+          <include name="CustomerplaceOrder" invocation-numbers="1"/>
           <include name="closeBrowser"/>
-          <include name="placeOrder" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- Shop.Tests.CustomerCheckout -->
     </classes>

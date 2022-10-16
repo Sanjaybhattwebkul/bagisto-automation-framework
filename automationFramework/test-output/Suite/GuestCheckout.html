@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>GuestCheckout</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Oct 16 16:29:34 IST 2022</td>
+<td>Started on:</td><td>Sun Oct 16 16:44:20 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6934 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14857 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,21 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Shop.Tests.GuestCheckout.placeOrder()'><b>placeOrder</b><br>Test class: Shop.Tests.GuestCheckout</td>
+<td></td>
+<td>6</td>
+<td>Shop.Tests.GuestCheckout@7ae42ce3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -78,16 +91,16 @@ function toggleAllBoxes() {
 <td title='Shop.Tests.GuestCheckout.placeOrder()'><b>placeOrder</b><br>Test class: Shop.Tests.GuestCheckout</td>
 <td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.findElement(org.openqa.selenium.By)&quot; because &quot;ProName&quot; is null
 	at velocity.pageobjects.ProductListing.addProductToCart(ProductListing.java:44)
-	at Shop.Tests.GuestCheckout.placeOrder(GuestCheckout.java:15)
+	at Shop.Tests.GuestCheckout.placeOrder(GuestCheckout.java:16)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1363978635", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1363978635'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.findElement(org.openqa.selenium.By)&quot; because &quot;ProName&quot; is null
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1621732031", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1621732031'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.findElement(org.openqa.selenium.By)&quot; because &quot;ProName&quot; is null
 	at velocity.pageobjects.ProductListing.addProductToCart(ProductListing.java:44)
-	at Shop.Tests.GuestCheckout.placeOrder(GuestCheckout.java:15)
+	at Shop.Tests.GuestCheckout.placeOrder(GuestCheckout.java:16)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,8 +125,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>6</td>
-<td>Shop.Tests.GuestCheckout@22f31dec</td></tr>
+<td>8</td>
+<td>Shop.Tests.GuestCheckout@7ae42ce3</td></tr>
 </table><p>
 </body>
 </html>

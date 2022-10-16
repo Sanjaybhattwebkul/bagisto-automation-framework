@@ -13,7 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,7 +63,7 @@ public class baseTest {
 		//scrollDown(driver);
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void closeBrowser() {
 		driver.close();
 	}

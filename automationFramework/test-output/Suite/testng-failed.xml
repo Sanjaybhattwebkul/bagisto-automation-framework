@@ -14,4 +14,14 @@
       </class> <!-- Shop.Tests.GuestCheckout -->
     </classes>
   </test> <!-- GuestCheckout(failed) -->
+  <test thread-count="5" parallel="tests" name="CustomerCheckout(failed)">
+    <classes>
+      <class name="Shop.Tests.CustomerCheckout">
+        <methods>
+          <include name="CustomerplaceOrder" invocation-numbers="1"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- Shop.Tests.CustomerCheckout -->
+    </classes>
+  </test> <!-- CustomerCheckout(failed) -->
 </suite> <!-- Failed suite [Suite] -->
