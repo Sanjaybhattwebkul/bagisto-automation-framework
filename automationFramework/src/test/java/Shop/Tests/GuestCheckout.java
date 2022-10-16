@@ -12,7 +12,7 @@ public class GuestCheckout extends baseTest {
 	public void placeOrder() throws IOException, InterruptedException {
 		String productName = "Sunglasses";			
 		ProductListing ProductListingObj = launcVelocity();
-		ProductListingObj.addProductToCart(productName);	
+		ProductListingObj.addProductToCart("Sunglasses");	
 	}
 
 }

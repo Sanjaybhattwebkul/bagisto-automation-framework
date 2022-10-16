@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Shop.TestComponents.Listeners"/>
+  </listeners>
   <test thread-count="5" parallel="tests" name="GuestCheckout(failed)">
     <classes>
       <class name="Shop.Tests.GuestCheckout">
@@ -11,15 +14,4 @@
       </class> <!-- Shop.Tests.GuestCheckout -->
     </classes>
   </test> <!-- GuestCheckout(failed) -->
-  <test thread-count="5" parallel="tests" name="CustomerCheckout(failed)">
-    <classes>
-      <class name="Shop.Tests.CustomerCheckout">
-        <methods>
-          <include name="extentReportConfig"/>
-          <include name="closeBrowser"/>
-          <include name="placeOrder" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Shop.Tests.CustomerCheckout -->
-    </classes>
-  </test> <!-- CustomerCheckout(failed) -->
 </suite> <!-- Failed suite [Suite] -->

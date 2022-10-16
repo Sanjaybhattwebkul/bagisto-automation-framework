@@ -13,7 +13,7 @@ import com.aventstack.extentreports.Status;
 
 import resources.ExtentReporterNG;
 
-public class Listeners implements ITestListener {
+public class Listeners  extends baseTest implements ITestListener {
 
 	ExtentTest test; // variable declare
 	ExtentReports extent = ExtentReporterNG.getReportObject();  // static function call from ExtentReporterNG() class
