@@ -1,24 +1,21 @@
-<project>
- xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>bagisto</groupId>
+ 
+   <groupId>bagisto</groupId>
   <artifactId>automationFramework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>automationFramework</name>
+  <name>MavenScrach</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-     <maven.compiler.source>1.8</maven.compiler.source>
-     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
-     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
@@ -43,32 +40,10 @@
 	    <artifactId>jackson-databind</artifactId>
 	    <version>2.13.4</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
-		    <groupId>com.aventstack</groupId>
-		    <artifactId>extentreports</artifactId>
-		    <version>5.0.9</version>
-		</dependency>
-	  </dependencies>
-	<profiles>
-	  <profile>
-		  <id>Regression</id>
-		  <build>
-		    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-		      <plugins>
-			      <plugin>
-			        <groupId>org.apache.maven.plugins</groupId>
-			        <artifactId>maven-surefire-plugin</artifactId>
-			        <version>3.0.0-M7</version>
-			        <configuration>
-			          <suiteXmlFiles>
-			            <suiteXmlFile>testng.xml</suiteXmlFile>
-			          </suiteXmlFiles>
-			        </configuration>
-			      </plugin>
-			   </plugins>
-		     </pluginManagement>
-		 </build>  
-		</profile>
-	</profiles>
+	    <groupId>com.aventstack</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>5.0.9</version>
+	</dependency>
+ </dependencies>
 </project>
