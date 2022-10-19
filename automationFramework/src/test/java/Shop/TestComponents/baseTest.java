@@ -14,6 +14,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
@@ -36,8 +37,12 @@ public class baseTest {
 		String browserName = prop.getProperty("browser"); // get the browser name from GlobalData.properties file
 
 		if (browserName.equalsIgnoreCase("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless"); // If we want to run testCases in Headless mode
+			
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
+			
 			System.out.println("BROWSER NAME=" + browserName);
 		} else if (browserName.equalsIgnoreCase("fireFox")) {
 			// FireFox
