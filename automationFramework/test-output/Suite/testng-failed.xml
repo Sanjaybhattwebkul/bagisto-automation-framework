@@ -4,21 +4,11 @@
   <listeners>
     <listener class-name="Shop.TestComponents.Listeners"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="GuestCheckout(failed)">
-    <classes>
-      <class name="Shop.Tests.GuestCheckout">
-        <methods>
-          <include name="placeOrder"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- Shop.Tests.GuestCheckout -->
-    </classes>
-  </test> <!-- GuestCheckout(failed) -->
   <test thread-count="5" parallel="tests" name="CustomerCheckout(failed)">
     <classes>
       <class name="Shop.Tests.CustomerCheckout">
         <methods>
-          <include name="CustomerplaceOrder" invocation-numbers="0 0 1"/>
+          <include name="CustomerplaceOrder" invocation-numbers="1"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- Shop.Tests.CustomerCheckout -->
