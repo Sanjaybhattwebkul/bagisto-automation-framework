@@ -15,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
@@ -34,22 +35,26 @@ public class baseTest {
 		FileInputStream files = new FileInputStream(
 				"/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
 		prop.load(files); // load the GlobalData.properties file.
-		String browserName = prop.getProperty("browser"); // get the browser name from GlobalData.properties file
-
+		//String browserName = prop.getProperty("browser"); // get the browser name from GlobalData.properties file
+		
+		// If Browser Name is getting from Maven Command the it will take from there else from GlobalData file.
+		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
+		//System.out.println(System.getProperty("user.dir"+"/geckodriver"));		
+		
 		if (browserName.equalsIgnoreCase("chrome")) {
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless"); // If we want to run testCases in Headless mode
-			
+			//ChromeOptions options = new ChromeOptions();
+			//options.addArguments("--headless"); // If we want to run testCases in Headless mode			
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 			
-			System.out.println("BROWSER NAME=" + browserName);
 		} else if (browserName.equalsIgnoreCase("fireFox")) {
-			// FireFox
+			//System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"/geckodriver");		
+			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
+			driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("edge")) {
-			// edge browser
+			// edge browser // edge browser
 		} else {
-			System.out.println("BROWSER NAME=" + browserName);
+			System.out.println("I AM ELSE AND BROWSER NAME=" + browserName);
 
 		}
 
