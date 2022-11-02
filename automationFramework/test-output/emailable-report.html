@@ -9,36 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">CustomerCheckout</a></td><td class="num">2</td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">27,329</td><td></td><td></td></tr>
+<tr><td><a href="#t0">GuestCheckout</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">13,234</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CustomerCheckout &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="1">Shop.Tests.CustomerCheckout</td><td><a href="#m0">CustomerplaceOrder</a></td><td rowspan="1">1666273814541</td><td rowspan="1">7402</td></tr><tr><th colspan="4">CustomerCheckout &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">Shop.Tests.CustomerCheckout</td><td><a href="#m1">CustomerplaceOrder</a></td><td rowspan="2">1666273822062</td><td rowspan="2">8681</td></tr><tr class="passedeven"><td><a href="#m2">CustomerplaceOrder</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">GuestCheckout &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Shop.Tests.GuestCheckout</td><td><a href="#m0">placeOrder</a></td><td rowspan="1">1667278224361</td><td rowspan="1">13083</td></tr></tbody>
 </table>
-<h2>CustomerCheckout</h2><h3 id="m0">Shop.Tests.CustomerCheckout#CustomerplaceOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=admin123, email=user@example.com, productName=Men&apos;s Bomber}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=106.0.5249.119)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;sanjay237&apos;, ip: &apos;192.168.15.237&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.15.0-50-generic&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [585c5ff5a5e7e833991bb2c7b75d5000, sendKeysToElement {id=3145da23-55cf-4ce4-bea1-675dcc8d3f79, value=[Ljava.lang.CharSequence;@1dcedc93}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /tmp/.com.google.Chrome.GuNNuO}, goog:chromeOptions: {debuggerAddress: localhost:39971}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39971/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (585c5ff5a5e7e833991bb2c7b75d5000)] -&gt; name: email]
-Session ID: 585c5ff5a5e7e833991bb2c7b75d5000
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.sendKeys(Unknown Source)
-	at velocity.pageobjects.CustomerLogin.customerLogin(CustomerLogin.java:49)
-	at Shop.Tests.CustomerCheckout.CustomerplaceOrder(CustomerCheckout.java:32)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Shop.Tests.CustomerCheckout#CustomerplaceOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=admin123, email=user@example.com, productName=Men&apos;s Bomber}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Shop.Tests.CustomerCheckout#CustomerplaceOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=tom123, email=tom@example.com, productName=Sunglasses}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>GuestCheckout</h2><h3 id="m0">Shop.Tests.GuestCheckout#placeOrder</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

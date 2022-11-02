@@ -21,7 +21,7 @@ public class CustomerLogin extends AbstractComponent {
 	
 	//driver.findElement(By.cssSelector("div[class*='welcome-content']")).click();
 	@FindBy(css="div[class*='welcome-content']")
-	WebElement loginpOPuP;
+	WebElement loginPoPup;
 	
 	//driver.findElement(By.xpath("//a[@class='theme-btn fs14 fw6'][1]")).click();
 	@FindBy(xpath="//a[@class='theme-btn fs14 fw6'][1]")
@@ -40,7 +40,7 @@ public class CustomerLogin extends AbstractComponent {
 	@Test
 	public void goToLoginPage() {
 		closeFlashMessage();
-		loginpOPuP.click();
+		loginPoPup.click();
 		loginPopButton.click();
 	}
 	
