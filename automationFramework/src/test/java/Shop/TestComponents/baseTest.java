@@ -79,7 +79,7 @@ public class baseTest {
 
 	@AfterMethod
 	public void closeBrowser() {
-		driver.close();
+		//driver.close();
 	}
 
 	// This function will get data from JSON file and return the data in from of

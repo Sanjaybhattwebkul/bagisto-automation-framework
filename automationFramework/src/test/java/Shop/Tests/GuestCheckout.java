@@ -9,7 +9,8 @@ import velocity.pageobjects.ProductListing;
 
 public class GuestCheckout extends baseTest {
 	
-	@Test(retryAnalyzer = Retry.class)
+	//@test(retryAnalyzer = Retry.class)
+	@Test
 	public void placeOrder() throws IOException, InterruptedException {
 		String productName = "Sunglasses";			
 		ProductListing ProductListingObj = launcVelocity();

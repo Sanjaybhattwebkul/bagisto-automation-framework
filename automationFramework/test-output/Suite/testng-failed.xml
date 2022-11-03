@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="CustomerCheckout(failed)">
+  <test thread-count="5" name="VerifyMiniCartPricing(failed)">
     <classes>
-      <class name="Shop.Tests.CustomerCheckout">
+      <class name="Shop.Tests.VerifyMiniCart">
         <methods>
-          <include name="CustomerplaceOrder" invocation-numbers="1"/>
+          <include name="VerifyMiniCart"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- Shop.Tests.CustomerCheckout -->
+      </class> <!-- Shop.Tests.VerifyMiniCart -->
     </classes>
-  </test> <!-- CustomerCheckout(failed) -->
+  </test> <!-- VerifyMiniCartPricing(failed) -->
 </suite> <!-- Failed suite [Suite] -->

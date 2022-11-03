@@ -3,13 +3,13 @@
 	{
 		"email" 	  : "tom@example.com",
 		"password" 	  : "tom123",
-		"productName" : "Sunglasses"
+		"productName" : "Men's Bomber"
 	},
 	
 	{
 		"email"		  : "user@example.com",
 		"password"    : "admin123",
-		"productName" : "Men's Bomber"
+		"productName" :  "Sunglasses"
 	}
 
 ]

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-01T10:20:24 IST" name="Suite" finished-at="2022-11-01T10:20:37 IST" duration-ms="13234">
+  <suite started-at="2022-11-03T15:15:55 IST" name="Default suite" finished-at="2022-11-03T15:16:02 IST" duration-ms="7639">
     <groups>
     </groups>
-    <test started-at="2022-11-01T10:20:24 IST" name="GuestCheckout" finished-at="2022-11-01T10:20:37 IST" duration-ms="13234">
-      <class name="Shop.Tests.GuestCheckout">
-        <test-method signature="placeOrder()[pri:0, instance:Shop.Tests.GuestCheckout@47987356]" started-at="2022-11-01T10:20:24 IST" name="placeOrder" finished-at="2022-11-01T10:20:37 IST" duration-ms="13083" status="PASS">
+    <test started-at="2022-11-03T15:15:55 IST" name="Default test" finished-at="2022-11-03T15:16:02 IST" duration-ms="7639">
+      <class name="Shop.Tests.VerifyMiniCart">
+        <test-method signature="VerifyMiniCartPrice()[pri:0, instance:Shop.Tests.VerifyMiniCart@47987356]" started-at="2022-11-03T15:15:55 IST" name="VerifyMiniCartPrice" finished-at="2022-11-03T15:16:02 IST" duration-ms="7596" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- placeOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.GuestCheckout@47987356]" started-at="2022-11-01T10:20:37 IST" name="closeBrowser" finished-at="2022-11-01T10:20:37 IST" duration-ms="119" status="PASS">
+        </test-method> <!-- VerifyMiniCartPrice -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.VerifyMiniCart@47987356]" started-at="2022-11-03T15:16:02 IST" name="closeBrowser" finished-at="2022-11-03T15:16:02 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- Shop.Tests.GuestCheckout -->
-    </test> <!-- GuestCheckout -->
-  </suite> <!-- Suite -->
+      </class> <!-- Shop.Tests.VerifyMiniCart -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

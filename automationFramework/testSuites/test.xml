@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite  name="Suite">
 	 <!-- Test -->
-	<test thread-count="5" name="CustomerCheckout">
+	<test thread-count="5" name="test">
 		<classes>
-			<class name="Shop.Tests.CustomerCheckout" />
+			<class name="Shop.Tests.test" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
