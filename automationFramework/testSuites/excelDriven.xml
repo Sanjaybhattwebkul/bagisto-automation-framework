@@ -4,7 +4,7 @@
 	 <!-- Test -->
 	<test thread-count="5" name="dataDriven">
 		<classes>
-			<class name="ExcelDriven.dataDriven" />
+			<class name="ExcelDriven.getExcelData" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

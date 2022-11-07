@@ -29,8 +29,7 @@ public class dataDriven {
 	public static ArrayList<String> getata(String testcaseName) throws IOException {
 		ArrayList<String> a = new ArrayList<String>();
 
-		FileInputStream fis = new FileInputStream(
-				"//home/users//sanjay.bhatt//Documents//demodata.Bagisto-TestCase.ods");
+		FileInputStream fis = new FileInputStream("//home/users//sanjay.bhatt//Documents//demodata.Bagisto-TestCase.ods");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis); // XSSFWorkbook poi api ki predefinded class h .
 
 		int sheets = workbook.getNumberOfSheets(); // get total number of sheet in demodata.xlsx file
