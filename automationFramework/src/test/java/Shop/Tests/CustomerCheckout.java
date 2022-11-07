@@ -29,7 +29,8 @@ public class CustomerCheckout extends baseTest {
 		ProductListing ProductListingObj = launcVelocity();
 		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(input.get("productName"));
 		CustomerLoginobj.goToLoginPage();
-		LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input);
+		//LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input);
+		LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input.get("email"),input.get("password"));
 		LandingPageObj.goToCartPage();
 		// extentObj.flush();
 

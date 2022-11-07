@@ -1,5 +1,7 @@
 package velocity.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,15 +17,21 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//div[@id='mini-cart']")
-	WebElement catIcon;
-	
 	@FindBy(xpath="//a[@class='close']")
 	WebElement CloseFlashMessage;
 	
+	@FindBy(xpath="//div[@id='mini-cart']")
+	WebElement catIcon;
+	
+	@FindBy(xpath="//span[@class='card-total-price fw6']")
+	WebElement productsPrice;
 	
 	public void clickOnCartIcon() {
 		CloseFlashMessage.click();
 		catIcon.click();
+		//List<WebElement> miniCartmount = (List<WebElement>) productsPrice;		
+		//int actualAmount=0;
 	}
+	
+	
 }

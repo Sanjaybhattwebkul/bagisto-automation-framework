@@ -73,7 +73,7 @@ public class baseTest {
 	}
 
 	public void goToVelocityShop() {
-		driver.get("http://192.168.15.237/bagisto4.5/public/");
+		driver.get("http://192.168.15.237/bagistoTest/public/");
 		// scrollDown(driver);
 	}
 

@@ -45,10 +45,18 @@ public class CustomerLogin extends AbstractComponent {
 	}
 	
 	//@Test(dependsOnMethods= {"goToLoginPage"})
-	public LandingPage customerLogin(HashMap<String, String> input) throws InterruptedException {
+	/*public LandingPage customerLogin(HashMap<String, String> input) throws InterruptedException {
 		userEmail.sendKeys(input.get("email"));
 		passwordElement.sendKeys(input.get("password"));
 		loginButton.click();
 		return new LandingPage(driver);
 	}
+	*/
+	public LandingPage customerLogin(String email, String Password) throws InterruptedException {
+		userEmail.sendKeys(email);
+		passwordElement.sendKeys(Password);
+		loginButton.click();
+		return new LandingPage(driver);
+	}
+	
 }
