@@ -8,11 +8,11 @@ Feature: Purchase the order from Ecommerce Website
   @Regression
   Scenario Outline: Positive Test of Submitting the order
   
-    Given Logged in with username <name> and password <password>
-    When I add product <productName> to Cart
+    Given I add product <productName> to Cart
+    When Logged in with username <name> and password <password>
     And Checkout <productName> and submit the order
     Then "THANKYOU FOR THE ORDER." message is displayed on ConfirmationPage
 
     Examples: 
-      | name  		       					|  password    |   productName |
-      | sanjay.bhatt371@webkul.in |  admin123    |   ZARA COAT 3 | 
+      | name  		      |  password |   productName  |
+      | tom@example.com |  tom123   |   Sunglasses   | 
