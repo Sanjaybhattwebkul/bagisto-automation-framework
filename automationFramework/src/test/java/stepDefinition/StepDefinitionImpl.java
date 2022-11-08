@@ -1,21 +1,16 @@
 package stepDefinition;
 
 import java.io.IOException;
-
-import com.aventstack.extentreports.util.Assert;
-
 import Shop.TestComponents.baseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import velocity.pageobjects.CustomerLogin;
-import velocity.pageobjects.LandingPage;
-import velocity.pageobjects.ProductListing;
+import velocity.pageobjects.*;
 
 public class StepDefinitionImpl extends baseTest {
 	
 	public ProductListing ProductListingObj;
 	public CustomerLogin CustomerLoginobj;
-	public LandingPage LandingPageObj;
+	public MiniCarPriceValidate MiniCarPriceValidate;
 	
 	@Given("I landed on Velocity Page")
 	public void I_landed_on_Velocity_Page() throws IOException {
@@ -32,8 +27,11 @@ public class StepDefinitionImpl extends baseTest {
 	@Given("^Logged in with username (.+) and password (.+)$")
 	public void Logged_in_username_and_password(String userName,String Passsword) throws InterruptedException {
 		CustomerLoginobj.goToLoginPage();
-		LandingPageObj = CustomerLoginobj.customerLogin(userName,Passsword);
-		LandingPageObj.goToCartPage();
+		
+		MiniCarPriceValidate MiniCarPriceValidate = CustomerLoginobj.customerLogin(userName,Passsword);			
+		CartPageVerify CartPageVerify = MiniCarPriceValidate.verifyMiniCartPrice();	//verifyMiniCartPrice	
+		CartPageVerify.gotoCartPage();
+
 	}
 	
 	 @Then("{string} message is displayed on ConfirmationPage")

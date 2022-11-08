@@ -1,37 +1,28 @@
 package Shop.Tests;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import Shop.TestComponents.Retry;
-import Shop.TestComponents.baseTest;
-import velocity.pageobjects.CustomerLogin;
-import velocity.pageobjects.LandingPage;
-import velocity.pageobjects.ProductListing;
+import Shop.TestComponents.*;
+import velocity.pageobjects.*;
 
 public class CustomerCheckout extends baseTest {
 
-	@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
-	public void CustomerplaceOrder(HashMap<String, String> input) throws IOException, InterruptedException {
-		// String productName = "Sunglasses"; [now productName value will get from
-		// HashMap]
-		// String[] loginCredential= {"tom@example.com","tom123"}; [now login
-		// Credentials will get from HashMap]
+	//CustomerplaceOrder(HashMap<String, String> input) // if getting data from json file
+	//@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
+	@Test(dataProvider = "getTestData")
+	public void CustomerplaceOrder(String email,String password,String productName) throws IOException, InterruptedException {
+		
 
-		// extentObj.createTest("Customer Checkout"); // ExtentReport bnayega or Test
-		// Name Inital Test hoga
-		// extentObj.createTest ab Listeners ka use kr k call hoga
-
+		// input.get("productName") if data is getting from json file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
-		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(input.get("productName"));
+		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
 		CustomerLoginobj.goToLoginPage();
-		//LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input);
-		LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input.get("email"),input.get("password"));
-		LandingPageObj.goToCartPage();
+		//LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input);		
+		MiniCarPriceValidate MiniCarobj = CustomerLoginobj.customerLogin(email,password);			
+		MiniCarobj.verifyMiniCartPrice();	//verifyMiniCartPrice
+		/*CartPageVerify CartPageVerify = MiniCarobj.verifyMiniCartPrice();	//verifyMiniCartPrice	
+		CartPageVerify.gotoCartPage();*/
 		// extentObj.flush();
 
 	}
@@ -39,11 +30,19 @@ public class CustomerCheckout extends baseTest {
 	// By using DataProvider the above placeOrder Test should be run for each test
 	// data of JSON/HashMap/Object
 	@DataProvider
-	public Object[][] getTestData() throws IOException {
+	public Object[][] getTestData(){	
+		
+		return new Object[][] {{"tom@example.com","tom123","Men's Bomber"}};
+	}
+	
+	/* if getting the testdata from json file then use this method.
+	 * public Object[][] getTestData() throws IOException {
 		// We can use Object,HashMap and JSON file for send data
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "//src//test//java//Shop//TestData//TestData.json");
 		return new Object[][] { { data.get(0) }, { data.get(1) } };
-	}
+		//if in TestData.json file thre will be multiple set of data then then test will multiple time with different-2. data.
+		
+	}*/
 
 }

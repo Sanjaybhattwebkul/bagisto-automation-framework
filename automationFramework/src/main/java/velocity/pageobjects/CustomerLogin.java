@@ -1,12 +1,10 @@
 package velocity.pageobjects;
-import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
 import bagisto.automationFramework.AbstractComponent;
 
 public class CustomerLogin extends AbstractComponent {
@@ -52,11 +50,11 @@ public class CustomerLogin extends AbstractComponent {
 		return new LandingPage(driver);
 	}
 	*/
-	public LandingPage customerLogin(String email, String Password) throws InterruptedException {
+	public MiniCarPriceValidate customerLogin(String email, String Password) throws InterruptedException {
 		userEmail.sendKeys(email);
 		passwordElement.sendKeys(Password);
 		loginButton.click();
-		return new LandingPage(driver);
+		return new MiniCarPriceValidate(driver);
 	}
 	
 }

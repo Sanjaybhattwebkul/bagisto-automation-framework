@@ -1,14 +1,11 @@
 package velocity.pageobjects;
 
 import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.AssertJUnit;
-
+import org.testng.Assert;
 import bagisto.automationFramework.AbstractComponent;
 
 public class MiniCarPriceValidate  extends AbstractComponent{
@@ -21,22 +18,16 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 	
 	@FindBy(xpath="//a[@class='close']")
 	WebElement CloseFlashMessage;
-	
-	@FindBy(xpath="//div[@id='mini-cart']")
-	WebElement catIcon;
-	
+		
 	@FindBy(xpath="//span[@class='card-total-price fw6']")
 	List<WebElement> productsPrice;
 	
 	@FindBy(css=".modal-footer h5:nth-child(2)")
 	WebElement FormattedPrice;
 	
-	public void clickOnCartIcon() {
-		CloseFlashMessage.click();
-		catIcon.click();
-	}
-	
-	public void verifyPrice() {	
+	public CartPageVerify verifyMiniCartPrice() throws InterruptedException {	
+		clickOnCartIcon();		
+		System.out.println("INSIDE THE VERIFY MINICART METHOD");
 		List<WebElement> miniCartmount = (List<WebElement>) productsPrice;		
 		int actualAmount=0;
 		for(int i=0; i<miniCartmount.size(); i++) {				
@@ -53,9 +44,15 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 		System.out.println(finalGrandAmount);		 
 		double total = Double.parseDouble(finalGrandAmount);
 		int grandTotalAmount = (int)total;	 // convert into int		 
-		AssertJUnit.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
+		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
 		System.out.println("Test case is pass");
+		return new CartPageVerify(driver);
 	}
 	
+	public void clickOnCartIcon() {
+		System.out.println("INSIDE THE CLICK CART ICON FUNCTION");
+		CloseFlashMessage.click();
+		clickOnCartIcon();
+	}
 	
 }

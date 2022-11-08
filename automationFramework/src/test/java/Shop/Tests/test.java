@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 import Shop.TestComponents.baseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
