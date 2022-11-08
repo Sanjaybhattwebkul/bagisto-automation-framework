@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ExcelDriven.dataDriven">
+      <class name="Shop.Tests.VerifyMiniCart">
         <methods>
-          <include name="Excel"/>
+          <include name="VerifyMiniCartPrice"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- ExcelDriven.dataDriven -->
+      </class> <!-- Shop.Tests.VerifyMiniCart -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

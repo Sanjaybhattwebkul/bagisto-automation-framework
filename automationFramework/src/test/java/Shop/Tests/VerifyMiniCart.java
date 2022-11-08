@@ -15,5 +15,6 @@ public class VerifyMiniCart extends baseTest {
 		ProductListingObj.addProductToCart("Sunglasses");
 		MiniCarPriceValidate MiniCarobj = new MiniCarPriceValidate(driver);
 		MiniCarobj.clickOnCartIcon();
+		MiniCarobj.verifyPrice();
 	}	
 }

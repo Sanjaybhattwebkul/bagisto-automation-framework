@@ -67,4 +67,8 @@ public class AbstractComponent {
 			flashMessage.click();
 		}
 		
+		public static String removeComma(String str) {		
+			return str.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price				 
+		}
+		
 }

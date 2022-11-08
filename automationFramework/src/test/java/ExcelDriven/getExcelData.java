@@ -14,15 +14,19 @@ import org.testng.annotations.Test;
 
 public class getExcelData {
 
-	@Test(dataProvider = "excelTestData")
+	//@Test(dataProvider = "excelTestData")
+	@Test
 	public static void main() throws IOException {
+		
 		Object data = getData();
 		System.out.println(data);
+		System.out.println("Welcome in Ecel driven");
 	}
+	
 	
 	@DataProvider(name = "excelTestData")
 	public static Object[][] getData() throws IOException {
-		FileInputStream fis = new FileInputStream("//home/users//sanjay.bhatt//Documents//demodata.Bagisto-TestCase.ods");
+		FileInputStream fis = new FileInputStream("//home/users//sanjay.bhatt//Documents//Bagisto-TestCase.ods");
 		XSSFWorkbook xwb = new XSSFWorkbook(fis);
 		XSSFSheet sheet = xwb.getSheetAt(1); 
 		int rowCOunt = sheet.getPhysicalNumberOfRows();
@@ -38,6 +42,5 @@ public class getExcelData {
 			}
 		}
 		return data;
-	}
-	
+	}	
 }
