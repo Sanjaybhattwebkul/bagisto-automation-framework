@@ -18,12 +18,8 @@ public class CustomerCheckout extends baseTest {
 		ProductListing ProductListingObj = launcVelocity();
 		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
 		CustomerLoginobj.goToLoginPage();
-		//LandingPage LandingPageObj = CustomerLoginobj.customerLogin(input);		
 		MiniCarPriceValidate MiniCarobj = CustomerLoginobj.customerLogin(email,password);			
-		MiniCarobj.verifyMiniCartPrice();	//verifyMiniCartPrice
-		/*CartPageVerify CartPageVerify = MiniCarobj.verifyMiniCartPrice();	//verifyMiniCartPrice	
-		CartPageVerify.gotoCartPage();*/
-		// extentObj.flush();
+		
 
 	}
 

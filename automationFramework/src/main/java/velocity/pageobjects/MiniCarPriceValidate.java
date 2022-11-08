@@ -26,7 +26,8 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 	WebElement FormattedPrice;
 	
 	public CartPageVerify verifyMiniCartPrice() throws InterruptedException {	
-		clickOnCartIcon();		
+		CloseFlashMessage.click();
+		clickOnCartIcon();	
 		System.out.println("INSIDE THE VERIFY MINICART METHOD");
 		List<WebElement> miniCartmount = (List<WebElement>) productsPrice;		
 		int actualAmount=0;
@@ -47,12 +48,6 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
 		System.out.println("Test case is pass");
 		return new CartPageVerify(driver);
-	}
-	
-	public void clickOnCartIcon() {
-		System.out.println("INSIDE THE CLICK CART ICON FUNCTION");
-		CloseFlashMessage.click();
-		clickOnCartIcon();
 	}
 	
 }
