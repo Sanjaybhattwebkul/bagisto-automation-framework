@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import bagisto.automationFramework.AbstractComponent;
 
@@ -27,9 +28,9 @@ public class CartPageVerify extends AbstractComponent{
 	
 	By plusIcon = By.cssSelector(".increase");	
 	
-	By quantity = By.id("//input[@id='quantity-changer']"); // get model attribute's value
+	By quantity = By.cssSelector("#quantity-changer"); // get model attribute's value
 	
-	By totalPrice = By.cssSelector("span[class='card-current-price fw6 mr10']");
+	By GrandTotalPrice = By.xpath("//span[@class='card-current-price fw6 mr10']");
 	
 	// Get Item Container
 	public List<WebElement> getAllItems() {
@@ -39,18 +40,39 @@ public class CartPageVerify extends AbstractComponent{
 	//verify price with quantity
 	public void calCulatePrice() {		
 		List<WebElement> itemContainer = cartItemContainer;
+		int oneProductsPrice=0;
+		int oneProductQuantity=0;
+		int totalPrice =0;
+		int GrandPrice = 0;
 		
-		for(WebElement price:itemContainer ) {
-			String p = price.findElement(formattedPrice).getText();
-			System.out.println(p);
+		for(WebElement price:itemContainer) {
+			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
+			System.out.println("One Products Price = " +oneProductsPrice);				
+		    oneProductQuantity = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
+		    System.out.println("One Products Quantity = " +oneProductQuantity);	
+			totalPrice = (oneProductsPrice*oneProductQuantity);
+			System.out.println("One Products total Price= " +totalPrice);	
+			
+			GrandPrice =getActualPrice(price.findElement(GrandTotalPrice).getText().substring(1));
+			System.out.println("Total Price= " +GrandPrice);	
+			Assert.assertEquals(totalPrice,GrandPrice); // check if(givenAmout==actualAmount);
+
+			
 		}		
 	}
 	
 	
-	public void IncreaseQuantity() {
-		//TODO  -> Verify Products price. quantity*price
+	public int getActualPrice(String price) {
+		String itemPrice =	removeComma(price);// remove , from price	
+		double amount = Double.parseDouble(itemPrice); //convert string to double
+		int intPrice = (int)amount;  // convert into int	
+		return intPrice;
 		
-		//List<WebElement> itemContainer = getAllItems();		
-		//getAllItems().stream().map(data->data.findElement(By.cssSelector(".increase"))).getClass();	
 	}
 }
+
+
+
+
+
+
