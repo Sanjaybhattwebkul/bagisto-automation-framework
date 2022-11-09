@@ -37,12 +37,13 @@ public class CartPageVerify extends AbstractComponent{
 	}
 	
 	//verify price with quantity
-	public String calCulatePrice() {
-		WebElement Container = (WebElement) getAllItems();
-		String Price = Container.findElement(formattedPrice).getText();
-		return  Price;
-		//System.out.println(Price);
+	public void calCulatePrice() {		
+		List<WebElement> itemContainer = cartItemContainer;
 		
+		for(WebElement price:itemContainer ) {
+			String p = price.findElement(formattedPrice).getText();
+			System.out.println(p);
+		}		
 	}
 	
 	

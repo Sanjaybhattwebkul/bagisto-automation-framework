@@ -22,8 +22,8 @@ public class CustomerCheckout extends baseTest {
 		AbstractObj.clickOnCartIcon();
 		AbstractObj.gotoCartPage();
 		CartPageVerify CartPagobj = new CartPageVerify(driver);
-		String formattedPrice = CartPagobj.calCulatePrice();
-		System.out.println(formattedPrice);
+		CartPagobj.calCulatePrice();
+		
 		
 		
 	}
