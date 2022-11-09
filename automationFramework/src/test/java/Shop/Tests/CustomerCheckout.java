@@ -13,9 +13,7 @@ public class CustomerCheckout extends baseTest {
 	//@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
 	@Test(dataProvider = "getTestData")
 	public void CustomerplaceOrder(String email,String password,String productName) throws IOException, InterruptedException {
-		
-
-		// input.get("productName") if data is getting from json file // productName .json file m key ka name h.
+		//input.get("productName") if data is getting from json file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
 		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
 		CustomerLoginobj.goToLoginPage();
@@ -23,6 +21,11 @@ public class CustomerCheckout extends baseTest {
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
 		AbstractObj.clickOnCartIcon();
 		AbstractObj.gotoCartPage();
+		CartPageVerify CartPagobj = new CartPageVerify(driver);
+		String formattedPrice = CartPagobj.calCulatePrice();
+		System.out.println(formattedPrice);
+		
+		
 	}
 
 	// By using DataProvider the above placeOrder Test should be run for each test

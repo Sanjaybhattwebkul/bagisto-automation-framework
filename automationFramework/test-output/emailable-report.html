@@ -9,10 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">CustomerCheckout</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">10,007</td><td></td><td></td></tr>
+<tr><td><a href="#t0">CustomerCheckout</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">10,023</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CustomerCheckout &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Shop.Tests.CustomerCheckout</td><td><a href="#m0">CustomerplaceOrder</a></td><td rowspan="1">1667977032216</td><td rowspan="1">9951</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CustomerCheckout &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Shop.Tests.CustomerCheckout</td><td><a href="#m0">CustomerplaceOrder</a></td><td rowspan="1">1667993898459</td><td rowspan="1">9986</td></tr></tbody>
 </table>
-<h2>CustomerCheckout</h2><h3 id="m0">Shop.Tests.CustomerCheckout#CustomerplaceOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>tom@example.com</td><td>tom123</td><td>Men&apos;s Bomber</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>CustomerCheckout</h2><h3 id="m0">Shop.Tests.CustomerCheckout#CustomerplaceOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>tom@example.com</td><td>tom123</td><td>Men&apos;s Bomber</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">java.lang.ClassCastException: class jdk.proxy2.$Proxy16 cannot be cast to class org.openqa.selenium.WebElement (jdk.proxy2.$Proxy16 is in module jdk.proxy2 of loader &apos;app&apos;; org.openqa.selenium.WebElement is in unnamed module of loader &apos;app&apos;)
+	at velocity.pageobjects.CartPageVerify.calCulatePrice(CartPageVerify.java:41)
+	at Shop.Tests.CustomerCheckout.CustomerplaceOrder(CustomerCheckout.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
