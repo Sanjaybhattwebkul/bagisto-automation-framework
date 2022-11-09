@@ -27,15 +27,18 @@ public class AbstractComponent {
 		@FindBy(xpath="//a[@class='close']")
 		WebElement flashMessage;
 		
-		@FindBy(css="  a[class*='remove-decoration']")
+		@FindBy(css="a[class*='remove-decoration']")
 		WebElement viewCart;
+		
+		@FindBy(linkText="View Shopping Cart")
+		WebElement viewShoppingCart;
 		
 		public void clickOnCartIcon() {
 			cart.click();
 		}
-		
+				
 		public void gotoCartPage() {
-			viewCart.click();
+			viewShoppingCart.click();
 		}
 		
 		public  void waitForElementToAppear(By findBy) {

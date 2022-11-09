@@ -3,6 +3,7 @@ package Shop.Tests;
 import java.io.IOException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import bagisto.automationFramework.*;
 import Shop.TestComponents.*;
 import velocity.pageobjects.*;
 
@@ -18,9 +19,10 @@ public class CustomerCheckout extends baseTest {
 		ProductListing ProductListingObj = launcVelocity();
 		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
 		CustomerLoginobj.goToLoginPage();
-		MiniCarPriceValidate MiniCarobj = CustomerLoginobj.customerLogin(email,password);			
-		
-
+		CustomerLoginobj.customerLogin(email,password);	
+		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
+		AbstractObj.clickOnCartIcon();
+		AbstractObj.gotoCartPage();
 	}
 
 	// By using DataProvider the above placeOrder Test should be run for each test
