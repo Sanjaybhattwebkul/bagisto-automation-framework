@@ -30,7 +30,7 @@ public class CartPageVerify extends AbstractComponent{
 	
 	By quantity = By.cssSelector("#quantity-changer"); // get model attribute's value
 	
-	By GrandTotalPrice = By.xpath("//span[@class='card-current-price fw6 mr10']");
+	By subTotalPrice = By.xpath("//span[@class='card-current-price fw6 mr10']");
 	
 	// Get Item Container
 	public List<WebElement> getAllItems() {
@@ -41,21 +41,21 @@ public class CartPageVerify extends AbstractComponent{
 	public void calCulatePrice() {		
 		List<WebElement> itemContainer = cartItemContainer;
 		int oneProductsPrice=0;
-		int oneProductQuantity=0;
+		int Qty=0;
 		int totalPrice =0;
-		int GrandPrice = 0;
+		int Subtotal = 0;
 		
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);				
-		    oneProductQuantity = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
-		    System.out.println("One Products Quantity = " +oneProductQuantity);	
-			totalPrice = (oneProductsPrice*oneProductQuantity);
+			Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
+		    System.out.println("One Products Quantity = " +Qty);	
+			totalPrice = (oneProductsPrice*Qty);
 			System.out.println("One Products total Price= " +totalPrice);	
 			
-			GrandPrice =getActualPrice(price.findElement(GrandTotalPrice).getText().substring(1));
-			System.out.println("Total Price= " +GrandPrice);	
-			Assert.assertEquals(totalPrice,GrandPrice); // check if(givenAmout==actualAmount);
+			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
+			System.out.println("Total Price= " +Subtotal);	
+			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==Subtotal);
 
 			
 		}		
