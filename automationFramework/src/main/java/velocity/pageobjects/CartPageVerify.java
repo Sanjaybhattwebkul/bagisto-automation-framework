@@ -32,14 +32,9 @@ public class CartPageVerify extends AbstractComponent{
 	
 	By subTotalPrice = By.xpath("//span[@class='card-current-price fw6 mr10']");
 	
-	// Get Item Container
-	public List<WebElement> getAllItems() {
-		return cartItemContainer;
-	}
-	
 	//verify price with quantity
 	public void calCulatePrice() {		
-		List<WebElement> itemContainer = cartItemContainer;
+		List<WebElement> itemContainer = cartItemContainer; //Get Item Container
 		int oneProductsPrice=0;
 		int Qty=0;
 		int totalPrice =0;
@@ -54,18 +49,19 @@ public class CartPageVerify extends AbstractComponent{
 			System.out.println("One Products total Price= " +totalPrice);	
 			
 			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
-			System.out.println("Total Price= " +Subtotal);	
+			System.out.println("SubTotal= " +Subtotal);	
 			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==Subtotal);
-
+			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;
 			
 		}		
 	}
 	
 	
 	public int getActualPrice(String price) {
+		int intPrice=0;
 		String itemPrice =	removeComma(price);// remove , from price	
 		double amount = Double.parseDouble(itemPrice); //convert string to double
-		int intPrice = (int)amount;  // convert into int	
+		intPrice = (int)amount;  // convert into int	
 		return intPrice;
 		
 	}
