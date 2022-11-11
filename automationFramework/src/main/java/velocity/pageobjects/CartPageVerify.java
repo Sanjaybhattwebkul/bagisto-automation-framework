@@ -1,5 +1,6 @@
 package velocity.pageobjects;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -20,6 +21,8 @@ public class CartPageVerify extends AbstractComponent{
 		PageFactory.initElements(driver, this); //PageFactory TestNG ka part h is se annotation use kr skte h.
 	}
 	
+	@FindBy(xpath="//div[@class='order-summary fs16']/div[1]/span[2]")
+	WebElement minicartSubtotal; //total cart price in cart summary box
 	
 	@FindBy(xpath="//div[@class='cart-item-list']/div")
 	List<WebElement> cartItemContainer;
@@ -39,20 +42,19 @@ public class CartPageVerify extends AbstractComponent{
 		int Qty=0;
 		int totalPrice =0;
 		int Subtotal = 0;
-		
+		List<Integer>subtotal = new ArrayList<Integer>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);				
 			Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
 		    System.out.println("One Products Quantity = " +Qty);	
 			totalPrice = (oneProductsPrice*Qty);
-			System.out.println("One Products total Price= " +totalPrice);	
-			
+			System.out.println("One Products total Price= " +totalPrice);				
 			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
-			System.out.println("SubTotal= " +Subtotal);	
-			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==Subtotal);
-			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;
-			
+			System.out.println("SubTotal= " +Subtotal);				
+			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==subTotal);
+			subtotal.add(Subtotal); // Add subTotal of each product in arrayList
+			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;			
 		}		
 	}
 	
