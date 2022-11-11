@@ -42,7 +42,7 @@ public class CartPageVerify extends AbstractComponent{
 		int Qty=0;
 		int totalPrice =0;
 		int Subtotal = 0;
-		List<Integer>subtotal = new ArrayList<Integer>();
+		List<Integer> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);				
