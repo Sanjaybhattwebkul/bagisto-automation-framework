@@ -55,7 +55,13 @@ public class CartPageVerify extends AbstractComponent{
 			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==subTotal);
 			subtotal.add(Subtotal); // Add subTotal of each product in arrayList
 			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;			
-		}		
+		}	
+		
+		double sumOFprices = sumOfEachProductsPrice(subtotal); // sum each price subtotal
+		System.out.println("Sum of each products price =" + sumOFprices);
+		// get subTotal from cart summary
+		// Match cart summary subTotal price and sumOfEachProductsPrice
+		
 	}
 	
 	
@@ -66,6 +72,13 @@ public class CartPageVerify extends AbstractComponent{
 		intPrice = (int)amount;  // convert into int	
 		return intPrice;
 		
+	}
+	
+	public double sumOfEachProductsPrice(List<Integer> subtotal ) {
+		double sum = 0;
+		for(Integer price : subtotal)
+		    sum += price;
+		return sum;
 	}
 }
 
