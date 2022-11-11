@@ -33,7 +33,7 @@ public class CartPageVerify extends AbstractComponent{
 	
 	By quantity = By.cssSelector("#quantity-changer"); // get model attribute's value
 	
-	By subTotalPrice = By.xpath("//span[@class='card-current-price fw6 mr10']");
+	By subTotalPrice = By.cssSelector("div[class='product-price fs18 col-1'] :nth-child(1)");
 	
 	//verify price with quantity
 	public void calCulatePrice() {		
