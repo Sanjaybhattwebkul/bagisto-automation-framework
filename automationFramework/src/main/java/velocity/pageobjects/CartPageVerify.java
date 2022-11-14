@@ -59,7 +59,7 @@ public class CartPageVerify extends AbstractComponent{
 		
 		double sumOFprices = sumOfEachProductsPrice(subtotal); // sum each price subtotal
 		System.out.println("Sum of each products price =" + sumOFprices);
-		// get subTotal from cart summary
+		// get subTotal from cart summary  ////div[@class='order-summary fs16']/div/span[2]
 		// Match cart summary subTotal price and sumOfEachProductsPrice
 		
 	}
