@@ -29,6 +29,12 @@ public class CartPageVerify extends AbstractComponent{
 	
 	@FindBy(xpath="//span[@class='col-4 text-right']")
 	WebElement cartSummarySubTotal;
+	
+	@FindBy(xpath="//div[@id='discount-detail']/span[1]")
+	WebElement DiscountContainr;
+	
+	@FindBy(xpath="//div[@id='discount-detail']/span[2]")
+	WebElement discountAmount;
 		
 	By formattedPrice =By.cssSelector("div[class='product-price'] :nth-child(1)"); // 1 product's price	
 	
@@ -45,6 +51,7 @@ public class CartPageVerify extends AbstractComponent{
 		int Qty=0;
 		int totalPrice =0;
 		int Subtotal = 0;
+		String totalDiscountPrice = null;
 		List<Integer> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
@@ -69,6 +76,19 @@ public class CartPageVerify extends AbstractComponent{
 		// Match cart summary subTotal price and sumOfEachProductsPrice
 		Assert.assertEquals(sumOFprices,cartSummaryTotalPrice); // check if(givenAmout==actualAmount);
 		
+		// Check If discount and verify Price after Discount
+		if(checkDiscount()) {
+			//TODO  Verify discount price
+			totalDiscountPrice = discountAmount.getText();
+			
+			System.out.println("Total Discount=" +getActualPrice(totalDiscountPrice));
+		}else {
+			System.out.println("No discunt");
+		}
+		
+		int GrandTotal = (cartSummaryTotalPrice - getActualPrice(totalDiscountPrice));
+		System.out.println("GrandTotal="+ GrandTotal);
+		
 	}
 	
 	
@@ -86,6 +106,10 @@ public class CartPageVerify extends AbstractComponent{
 		for(Integer price : subtotal)
 		    sum += price;
 		return sum;
+	}
+	
+	public boolean checkDiscount() {
+		return DiscountContainr.isDisplayed();
 	}
 }
 
