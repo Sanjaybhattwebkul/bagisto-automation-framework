@@ -80,4 +80,8 @@ public class AbstractComponent {
 			return str.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price				 
 		}
 		
+		public String getSubTotalOfCartSummary(WebElement cartSummarySubTotal) {
+			return cartSummarySubTotal.getText();
+		}
+		
 }

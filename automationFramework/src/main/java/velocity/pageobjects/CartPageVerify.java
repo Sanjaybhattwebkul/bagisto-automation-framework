@@ -26,6 +26,9 @@ public class CartPageVerify extends AbstractComponent{
 	
 	@FindBy(xpath="//div[@class='cart-item-list']/div")
 	List<WebElement> cartItemContainer;
+	
+	@FindBy(xpath="//span[@class='col-4 text-right']")
+	WebElement cartSummarySubTotal;
 		
 	By formattedPrice =By.cssSelector("div[class='product-price'] :nth-child(1)"); // 1 product's price	
 	
@@ -59,8 +62,12 @@ public class CartPageVerify extends AbstractComponent{
 		
 		double sumOFprices = sumOfEachProductsPrice(subtotal); // sum each price subtotal
 		System.out.println("Sum of each products price =" + sumOFprices);
-		// get subTotal from cart summary  ////div[@class='order-summary fs16']/div/span[2]
+		// get subTotal from cart summary 
+		String cartSummaryFormattedSubtotal = getSubTotalOfCartSummary(cartSummarySubTotal);
+		int cartSummaryTotalPrice = getActualPrice(cartSummaryFormattedSubtotal);  //convert to integer
+		System.out.println("Actual Price ="+cartSummaryTotalPrice+ " And Expected Price = "+sumOFprices);
 		// Match cart summary subTotal price and sumOfEachProductsPrice
+		Assert.assertEquals(sumOFprices,cartSummaryTotalPrice); // check if(givenAmout==actualAmount);
 		
 	}
 	

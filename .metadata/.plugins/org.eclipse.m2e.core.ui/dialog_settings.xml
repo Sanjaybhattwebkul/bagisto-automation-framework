@@ -25,12 +25,16 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="bagissto.testProject"/>
+			<item value="bagissto.testproject"/>
 			<item value="bagissto.core"/>
 		</list>
 		<list key="groupId">
 			<item value="bagissto"/>
 		</list>
 		<list key="artifactId">
+			<item value="testProject"/>
+			<item value="testproject"/>
 			<item value="core"/>
 		</list>
 		<list key="projectNameTemplate">
