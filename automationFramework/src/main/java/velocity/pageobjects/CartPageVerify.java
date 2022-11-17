@@ -47,12 +47,12 @@ public class CartPageVerify extends AbstractComponent{
 	//verify price with quantity
 	public void calCulatePrice() {		
 		List<WebElement> itemContainer = cartItemContainer; //Get Item Container
-		int oneProductsPrice=0;
+		double oneProductsPrice=0;
 		int Qty=0;
-		int totalPrice =0;
-		int Subtotal = 0;
+		double totalPrice =0;
+		double Subtotal = 0;
 		String totalDiscountPrice = null;
-		List<Integer> subtotal = new ArrayList<>();
+		List<Double> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);				
@@ -71,7 +71,7 @@ public class CartPageVerify extends AbstractComponent{
 		System.out.println("Sum of each products price =" + sumOFprices);
 		// get subTotal from cart summary 
 		String cartSummaryFormattedSubtotal = getSubTotalOfCartSummary(cartSummarySubTotal);
-		int cartSummaryTotalPrice = getActualPrice(cartSummaryFormattedSubtotal);  //convert to integer
+		double cartSummaryTotalPrice = getActualPrice(cartSummaryFormattedSubtotal);  //convert to integer
 		System.out.println("Actual Price ="+cartSummaryTotalPrice+ " And Expected Price = "+sumOFprices);
 		// Match cart summary subTotal price and sumOfEachProductsPrice
 		Assert.assertEquals(sumOFprices,cartSummaryTotalPrice); // check if(givenAmout==actualAmount);
@@ -86,24 +86,24 @@ public class CartPageVerify extends AbstractComponent{
 			System.out.println("No discunt");
 		}
 		
-		int GrandTotal = (cartSummaryTotalPrice - getActualPrice(totalDiscountPrice));
+		double GrandTotal = (cartSummaryTotalPrice - getActualPrice(totalDiscountPrice));
 		System.out.println("GrandTotal="+ GrandTotal);
 		
 	}
 	
 	
-	public int getActualPrice(String price) {
-		int intPrice=0;
+	public double getActualPrice(String price) {
+		double amount=0;
 		String itemPrice =	removeComma(price);// remove , from price	
-		double amount = Double.parseDouble(itemPrice); //convert string to double
-		intPrice = (int)amount;  // convert into int	
-		return intPrice;
+		amount = Double.parseDouble(itemPrice); //convert string to double
+		//intPrice = (int)amount;  // convert into int	
+		return amount;
 		
 	}
 	
-	public double sumOfEachProductsPrice(List<Integer> subtotal ) {
+	public double sumOfEachProductsPrice(List<Double> subtotal ) {
 		double sum = 0;
-		for(Integer price : subtotal)
+		for(Double price : subtotal)
 		    sum += price;
 		return sum;
 	}
