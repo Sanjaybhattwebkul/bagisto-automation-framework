@@ -14,11 +14,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -27,7 +25,7 @@ import velocity.pageobjects.ProductListing;
 
 public class baseTest {
 	public WebDriver driver;
-
+	public 	String ShopURL; 
 	public WebDriver initlizeBrowser() throws IOException {
 
 		// Get GlobalData using Properties class
@@ -35,6 +33,7 @@ public class baseTest {
 		FileInputStream files = new FileInputStream(
 				"/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
 		prop.load(files); // load the GlobalData.properties file.
+		ShopURL = prop.getProperty("ShopURL");
 		//String browserName = prop.getProperty("browser"); // get the browser name from GlobalData.properties file
 		
 		// If Browser Name is getting from Maven Command the it will take from there else from GlobalData file.
@@ -62,7 +61,7 @@ public class baseTest {
 		driver.manage().window().maximize();
 		return driver;
 	}
-
+	
 	public ProductListing launcVelocity() throws IOException {
 
 		driver = initlizeBrowser();
@@ -73,7 +72,7 @@ public class baseTest {
 	}
 
 	public void goToVelocityShop() {
-		driver.get("http://192.168.15.237/bagistoTest/public/");
+		driver.get(ShopURL);
 		// scrollDown(driver);
 	}
 
@@ -97,15 +96,16 @@ public class baseTest {
 	}
 
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
-		TakesScreenshot ss = (TakesScreenshot) driver;
-		File source = ss.getScreenshotAs(OutputType.FILE);
+		TakesScreenshot ss = (TakesScreenshot) driver; //TakesScreenshot IS INTERFACE.
+		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.
 		File File = new File(System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png");
-		FileUtils.copyFile(source, File);
+		FileUtils.copyFile(source, File); //copyFile is static method of FileUtils class
 		return System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png";
 	}
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+		
 
 	}
 }

@@ -27,7 +27,7 @@
 							<version>3.0.0-M7</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testSuites/testng.xml</suiteXmlFile>
+									<suiteXmlFile>shopTestSuites/testng.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -47,7 +47,7 @@
 							<version>3.0.0-M7</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testSuites/guestCheckout.xml</suiteXmlFile>
+									<suiteXmlFile>shopTestSuites/guestCheckout.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -67,7 +67,7 @@
 							<version>3.0.0-M7</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testSuites/customerCheckout.xml</suiteXmlFile>
+									<suiteXmlFile>shopTestSuites/customerCheckout.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>

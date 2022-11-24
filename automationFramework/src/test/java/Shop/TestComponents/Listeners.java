@@ -63,6 +63,7 @@ public class Listeners  extends baseTest implements ITestListener {
 			e.printStackTrace();
 		}
 		
+		//By using this function we can display screenshot on extends report.
 		extentTest.get().addScreenCaptureFromPath(FilePath, result.getMethod().getMethodName()); //store screenshot to given path
 	}
 

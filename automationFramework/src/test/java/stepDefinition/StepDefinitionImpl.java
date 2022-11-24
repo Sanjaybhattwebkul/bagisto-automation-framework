@@ -29,7 +29,7 @@ public class StepDefinitionImpl extends baseTest {
 		CustomerLoginobj.goToLoginPage();
 		
 		MiniCarPriceValidate MiniCarPriceValidate = CustomerLoginobj.customerLogin(userName,Passsword);			
-		CartPageVerify CartPageVerify = MiniCarPriceValidate.verifyMiniCartPrice();	//verifyMiniCartPrice	
+		CartPriceVerify CartPageVerify = MiniCarPriceValidate.verifyMiniCartPrice();	//verifyMiniCartPrice	
 		CartPageVerify.gotoCartPage();
 
 	}

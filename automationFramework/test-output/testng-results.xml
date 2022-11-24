@@ -2,37 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-17T16:36:19 IST" name="Default suite" finished-at="2022-11-17T16:36:37 IST" duration-ms="17423">
+  <suite started-at="2022-11-24T20:15:34 IST" name="Default suite" finished-at="2022-11-24T20:15:39 IST" duration-ms="4621">
     <groups>
     </groups>
-    <test started-at="2022-11-17T16:36:19 IST" name="Default test" finished-at="2022-11-17T16:36:37 IST" duration-ms="17423">
-      <class name="Shop.Tests.CustomerCheckout">
-        <test-method signature="CustomerplaceOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Shop.Tests.CustomerCheckout@53ce1329]" started-at="2022-11-17T16:36:19 IST" name="CustomerplaceOrder" data-provider="getTestData" finished-at="2022-11-17T16:36:37 IST" duration-ms="17390" status="PASS">
+    <test started-at="2022-11-24T20:15:34 IST" name="Default test" finished-at="2022-11-24T20:15:39 IST" duration-ms="4621">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@53ce1329]" started-at="2022-11-24T20:15:34 IST" name="login" data-provider="getTestData" finished-at="2022-11-24T20:15:39 IST" duration-ms="4583" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[tom@example.com]]>
+                <![CDATA[admin@example.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[tom123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Men's Bomber]]>
+                <![CDATA[admin123]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CustomerplaceOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckout@53ce1329]" started-at="2022-11-17T16:36:37 IST" name="closeBrowser" finished-at="2022-11-17T16:36:37 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.AdminLoginTest@53ce1329]" started-at="2022-11-24T20:15:39 IST" name="closeBrowser" finished-at="2022-11-24T20:15:39 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- Shop.Tests.CustomerCheckout -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

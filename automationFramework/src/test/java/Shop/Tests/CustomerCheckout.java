@@ -16,12 +16,13 @@ public class CustomerCheckout extends baseTest {
 		//input.get("productName") if data is getting from json file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
 		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
+		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
 		CustomerLoginobj.goToLoginPage();
 		CustomerLoginobj.customerLogin(email,password);	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
 		AbstractObj.clickOnCartIcon();
 		AbstractObj.gotoCartPage();
-		CartPageVerify CartPagobj = new CartPageVerify(driver);
+		CartPriceVerify CartPagobj = new CartPriceVerify(driver);
 		CartPagobj.calCulatePrice();
 		
 		

@@ -53,7 +53,7 @@ public class AbstractComponent {
 		
 		public static void scrollDown(WebDriver driver) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			   js.executeScript("window.scrollBy(0,440)");
+			js.executeScript("window.scrollBy(0,440)");
 		}
 		
 		public static void scrollUp(WebDriver driver) {
