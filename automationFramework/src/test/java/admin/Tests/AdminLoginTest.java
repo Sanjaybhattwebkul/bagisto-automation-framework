@@ -15,7 +15,7 @@ import admin.pageobjects.LoginPageObject;
 
 public class AdminLoginTest extends adminBaseTest {
 	@Test(dataProvider = "getTestData")
-	public void login(String email,String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		LoginPageObject LoginPageObject = launcAdminPanel();
 		System.out.println("db_Email="+getCredentialsFromDB().get(0));			
 		LoginPageObject.adminLogin(getCredentialsFromDB().get(0),password);
@@ -25,7 +25,7 @@ public class AdminLoginTest extends adminBaseTest {
 	@DataProvider
 	public Object[][] getTestData(){	
 		
-		return new Object[][] {{"admin@example.com","admin123"}};
+		return new Object[][] {{"admin123"}};
 	}
 	
 	@SuppressWarnings("deprecation")
