@@ -18,7 +18,8 @@ public class CartPriceVerify extends AbstractComponent{
 	public CartPriceVerify(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver, this); //PageFactory TestNG ka part h is se annotation use kr skte h.
+		PageFactory.initElements(driver, driver); //PageFactory TestNG ka part h is se annotation use kr skte h.
+		// 1st argument is value and second Parameter is variable
 	}
 	
 	@FindBy(xpath="//div[@class='order-summary fs16']/div[1]/span[2]")
