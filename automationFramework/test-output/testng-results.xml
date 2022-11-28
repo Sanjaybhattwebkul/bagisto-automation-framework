@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-28T16:02:20 IST" name="Default suite" finished-at="2022-11-28T16:02:29 IST" duration-ms="8747">
+  <suite started-at="2022-11-28T16:34:01 IST" name="Default suite" finished-at="2022-11-28T16:34:10 IST" duration-ms="8384">
     <groups>
     </groups>
-    <test started-at="2022-11-28T16:02:20 IST" name="Default test" finished-at="2022-11-28T16:02:29 IST" duration-ms="8747">
+    <test started-at="2022-11-28T16:34:01 IST" name="Default test" finished-at="2022-11-28T16:34:10 IST" duration-ms="8384">
       <class name="admin.Tests.AdminLoginTest">
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@31fa1761]" started-at="2022-11-28T16:02:20 IST" name="login" data-provider="getTestData" finished-at="2022-11-28T16:02:29 IST" duration-ms="8714" status="PASS">
+        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@957e06]" started-at="2022-11-28T16:34:01 IST" name="login" data-provider="getTestData" finished-at="2022-11-28T16:34:10 IST" duration-ms="8352" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.AdminLoginTest@31fa1761]" started-at="2022-11-28T16:02:29 IST" name="closeBrowser" finished-at="2022-11-28T16:02:29 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.AdminLoginTest@957e06]" started-at="2022-11-28T16:34:10 IST" name="closeBrowser" finished-at="2022-11-28T16:34:10 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
