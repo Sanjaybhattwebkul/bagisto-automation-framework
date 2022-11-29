@@ -27,7 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class adminBaseTest {
-	public WebDriver driver;
+	public static WebDriver driver;
 	public 	String AdminURL; 
 	public WebDriver initlizeBrowser() throws IOException {
 

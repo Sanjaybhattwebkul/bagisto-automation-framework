@@ -14,7 +14,7 @@ import admin.pageobjects.LoginPageObject;
 
 
 public class AdminLoginTest extends adminBaseTest {
-	@Test(dataProvider = "getTestData")
+	@Test(dataProvider = "getTestData",groups={"AdminLoginTest.login"})
 	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		LoginPageObject LoginPageObject = launcAdminPanel();
 		System.out.println("db_Email="+getCredentialsFromDB().get(0));			

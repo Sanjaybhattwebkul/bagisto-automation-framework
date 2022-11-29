@@ -42,6 +42,7 @@ public class CreateProduct extends AbstractComponent{
 	By selectType = By.id("type");
 	
 	public void createSimpleProduct() {
+		System.out.println("Create product function started"); 
 		catalogIcon.click();
 		 waitForElementToAppear(addButton); //explicitly wait
 		 addProduct.click();
