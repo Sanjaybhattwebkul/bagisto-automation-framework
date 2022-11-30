@@ -1,5 +1,7 @@
 package bagisto.automationFramework;
 
+import java.util.*;
+import java.text.*;  
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -120,6 +122,25 @@ public class AbstractComponent {
 	public String getDate(String type) {
 		SimpleDateFormat formatter = new SimpleDateFormat(type);
 		return formatter.format(new Date());
+
+	}
+	
+	/*
+	 * Get After Date
+	 */
+	public String getAfterDate(String dateBefore) {
+		SimpleDateFormat beforeDate = new SimpleDateFormat(dateBefore);
+		Calendar cal = Calendar.getInstance();
+		try {
+			cal.setTime(beforeDate.parse(dateBefore));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		cal.add(Calendar.DAY_OF_MONTH, 3); // date after 3 days
+		String dateAfter = beforeDate.format(cal.getTime());
+		System.out.println(dateAfter + " is the date after adding 3 days.");
+		return dateAfter;
+		// TODO get day from date and return
 
 	}
 
