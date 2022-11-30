@@ -73,8 +73,11 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(xpath="/html[1]/body[1]/div[1]/div[4]/div[1]/div[1]/div[2]/form[1]/div[2]/div[7]/div[2]/div[1]/div[1]/div[1]/label[1]")
 	WebElement addImage;
 	
-	@FindBy(xpath="label[class='image-item draggable']")
+	@FindBy(css="label[class='image-item draggable']")
 	WebElement selectImage;
+	
+	@FindBy(xpath="//div[@class='page-action']/button")
+	WebElement saveProductButton;
 
 	public void editSimpleProduct() throws InterruptedException {
 		productsName.sendKeys("Automoate Product");
@@ -109,8 +112,14 @@ public class EditProductPageObject extends AbstractComponent {
 		defaultInventory.sendKeys("450");
 		inventorySection.click(); // hide inventory section
 		imageSection.click();
-		addImage.clear();
+		addImage.click();
+		System.out.println(selectImage.isDisplayed());
+		Thread.sleep(1000);
+		System.out.println(selectImage.isDisplayed());
 		selectImage.click();
+		uploadFile("//home//users//sanjay.bhatt//Downloads//new.png");
+		Thread.sleep(2000);
+		saveProductButton.click();
 		
 	}
 }
