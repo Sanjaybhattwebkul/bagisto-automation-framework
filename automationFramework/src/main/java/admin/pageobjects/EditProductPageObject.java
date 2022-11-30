@@ -59,7 +59,7 @@ public class EditProductPageObject extends AbstractComponent {
 		scrollDown(driver,440);		
 		guestCheckout.click();
 		descriptionSection.click();
-		scrollDown(driver,200);	
+		scrollDown(driver,320);	
 		driver.switchTo().frame("short_description_ifr"); // Switch to short description frame
 		driver.findElement(By.tagName("p")).sendKeys("Short description By Selenium Automation");
 		driver.switchTo().defaultContent(); // Switch to main DOM
