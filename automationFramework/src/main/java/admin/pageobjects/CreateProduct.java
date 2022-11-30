@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import bagisto.automationFramework.*;
 
 public class CreateProduct extends AbstractComponent{
@@ -41,8 +40,7 @@ public class CreateProduct extends AbstractComponent{
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	
-	public void createSimpleProduct() {
-		System.out.println("Create product function started"); 
+	public EditProductPageObject createSimpleProduct() { 
 		catalogIcon.click();
 		 waitForElementToAppear(addButton); //explicitly wait
 		 addProduct.click();
@@ -55,6 +53,7 @@ public class CreateProduct extends AbstractComponent{
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
 		 productSKU.sendKeys("mens-tshirt");
 		 saveProduct.click();
+		 return new EditProductPageObject(driver);
 	}
 	
 }

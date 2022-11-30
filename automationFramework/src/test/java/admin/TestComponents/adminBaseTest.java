@@ -88,7 +88,12 @@ public class adminBaseTest {
 		return data;
 		// {map, map}
 	}
-
+	
+	/**
+	 * 
+	 * This function will take a screenshot of any element and save it to inside Reports directory
+	 * 
+	 */
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
 		TakesScreenshot ss = (TakesScreenshot) driver; //TakesScreenshot IS INTERFACE.
 		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.
@@ -114,7 +119,7 @@ public class adminBaseTest {
 
 		try {
 
-			// Setting clipboard with file location
+			// Setting ClipBoard with file location
 			setClipboardData(fileLocation);
 			// native key strokes for CTRL, V and ENTER keys
 			Robot robot = new Robot();

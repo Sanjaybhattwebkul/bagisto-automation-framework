@@ -14,6 +14,12 @@ import admin.pageobjects.LoginPageObject;
 
 
 public class AdminLoginTest extends adminBaseTest {
+	
+	/**
+	 * 
+	 * We can call this method for testNG annotation from another class by its group name 
+	 * 
+	 */
 	@Test(dataProvider = "getTestData",groups={"AdminLoginTest.login"})
 	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		LoginPageObject LoginPageObject = launcAdminPanel();
@@ -22,12 +28,22 @@ public class AdminLoginTest extends adminBaseTest {
 		
 	}
 	
+	/**
+	 * 
+	 * This Method is using @DataProvider annotation of testNG and provide data to login function.
+	 * 
+	 */
 	@DataProvider
-	public Object[][] getTestData(){	
-		
+	public Object[][] getTestData(){			
 		return new Object[][] {{"admin123"}};
 	}
 	
+	/**
+	 * 
+	 * This method will get data from database and send to AdminLoginTest function.
+	 * 
+	 */
+
 	@SuppressWarnings("deprecation")
 	public ArrayList<String> getCredentialsFromDB() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		ArrayList<String> adminCredentials = new ArrayList<String>();
@@ -38,9 +54,7 @@ public class AdminLoginTest extends adminBaseTest {
 		ResultSet rs = s.executeQuery("Select * from admins Where name ='Example';");
 		while(rs.next()) {
 			adminCredentials.add(rs.getString("email"));
-			adminCredentials.add(rs.getString("password"));
-		   //System.out.println(rs.getString("Name")); 
-		   //System.out.println(rs.getString("email")); 
+			adminCredentials.add(rs.getString("password"));		   
 		}  
 		return adminCredentials;
 	}
