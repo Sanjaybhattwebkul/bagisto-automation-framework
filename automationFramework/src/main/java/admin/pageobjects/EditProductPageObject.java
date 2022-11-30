@@ -49,6 +49,12 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(id="special_price")
 	WebElement specialPrice;
 	
+	@FindBy(name="special_price_from")
+	WebElement specialPriceFromDate;
+	
+	@FindBy(name="special_price_to")
+	WebElement specialPriceToDate;
+	
 	public void editSimpleProduct() throws InterruptedException {
 		productsName.sendKeys("Automoate Product");
 		scrollDown(driver,440);			
@@ -70,5 +76,7 @@ public class EditProductPageObject extends AbstractComponent {
 		priceSection.click();
 		productsPrice.sendKeys("4500");
 		specialPrice.sendKeys("3500");
+		specialPriceFromDate.click();
+		handleCalendarDate(getDate("d"),getDate("MMMM")); /*handling calendar*/
 	}
 }
