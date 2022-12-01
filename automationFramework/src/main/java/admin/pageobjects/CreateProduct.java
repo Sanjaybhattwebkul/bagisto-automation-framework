@@ -37,6 +37,9 @@ public class CreateProduct extends AbstractComponent{
 	@FindBy(xpath="//p[text()='Product created successfully.']")
 	WebElement successMessage;
 	
+	@FindBy(xpath="//a[@id='335'][1]")
+	WebElement editIcon;
+	
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	
@@ -51,9 +54,16 @@ public class CreateProduct extends AbstractComponent{
 		 attributeFamily.click();
 		 Select Family = new Select(attributeFamily);
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
-		 productSKU.sendKeys("mens-tshirt");
+		 productSKU.sendKeys("Watch");
 		 saveProduct.click();
 		 return new EditProductPageObject(driver);
+	}
+	
+	public EditProductPageObject edit() {
+		catalogIcon.click();
+		waitForElementToAppear(addButton);
+		editIcon.click();
+		return new EditProductPageObject(driver);
 	}
 	
 }

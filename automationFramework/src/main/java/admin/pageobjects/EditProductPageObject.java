@@ -79,8 +79,8 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(xpath="//div[@class='page-action']/button")
 	WebElement saveProductButton;
 
-	public void editSimpleProduct() throws InterruptedException {
-		productsName.sendKeys("Automoate Product");
+	public void editSimpleProduct() throws InterruptedException {	
+		productsName.sendKeys("Product-By Selnium Automation");
 		scrollDown(driver,440);			
 		isNew.click();
 		isFeatured.click();
@@ -101,9 +101,10 @@ public class EditProductPageObject extends AbstractComponent {
 		productsPrice.sendKeys("4500");
 		specialPrice.sendKeys("3500");
 		specialPriceFromDate.click();
-		handleCalendarDate(getDate("d"),getDate("MMMM")); /* handling calendar */
+		
+		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		specialPriceToDate.click();
-		handleCalendarDate(getDate("d"),getDate("MMMM")); /* Select current date */
+		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
 		scrollDown(driver,250);	//priceSection.click();
 		shippingSection.click();
 		scrollDown(driver,450);
@@ -117,7 +118,7 @@ public class EditProductPageObject extends AbstractComponent {
 		Thread.sleep(1000);
 		System.out.println(selectImage.isDisplayed());
 		selectImage.click();
-		uploadFile("//home//users//sanjay.bhatt//Downloads//new.png");
+		uploadFile("//home//users//sanjay.bhatt//Downloads//watch2.png");
 		Thread.sleep(2000);
 		saveProductButton.click();
 		

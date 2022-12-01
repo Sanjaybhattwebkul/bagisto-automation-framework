@@ -5,7 +5,6 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.text.*;  
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -28,8 +27,7 @@ public class AbstractComponent {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	// driver.findElement(By.cssSelector("[routerLink*='cart']")).click();
+	
 	@FindBy(xpath = "//div[@id='mini-cart']")
 	WebElement cart;
 
@@ -45,13 +43,15 @@ public class AbstractComponent {
 	@FindBy(linkText = "View Shopping Cart")
 	WebElement viewShoppingCart;
 
-	@FindBy(xpath = "//span[contains(@aria-label,'November ')]")
-	List<WebElement> totalDates;
+	/*@FindBy(xpath = "//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,'December')]")
+	List<WebElement> totalDates;*/
 	
-	@FindBy(xpath="//div[contains(@class,'open')]/div/div/div/select")
-				   //div[@class='flatpickr-calendar hasWeeks animate arrowTop arrowLeft open']/div/div/div/select
+	@FindBy(xpath="//div[contains(@class,'open')]/div/div/div/select")				 
 	WebElement monthsDropdown;
 
+	@FindBy(xpath="//div[contains(@class,'open')]/div/span[2]")
+	WebElement nextMonth;
+	
 	public void clickOnCartIcon() {
 		cart.click();
 	}
@@ -104,48 +104,39 @@ public class AbstractComponent {
 	}
 
 	public void handleCalendarDate(String date,String currentMonth) throws InterruptedException {
-		monthsDropdown.click();
-		Select selectMonth = new Select(monthsDropdown); 	// select the current moth from calendar			
-		selectMonth.selectByVisibleText(currentMonth); 	
-		
-		// Select the given date
-		int count = totalDates.size(); // count total dates on calendar
-		for (int i = 0; i < count; i++) {
-			String text = totalDates.get(i).getText(); // get text of dateBox
-			if (text.equalsIgnoreCase(date)) {
-				totalDates.get(i).click(); // click on dateBox
-				System.out.println(text);
+		 Select selectMonth = new Select(monthsDropdown); 	
+		 WebElement month = selectMonth.getFirstSelectedOption();
+	     String selectedoption = month.getText();
+	     boolean  selectedMonthIsCurrentMonth = selectedoption.equalsIgnoreCase(currentMonth);
+	     if(! selectedMonthIsCurrentMonth) {
+	    	 while (selectedoption != currentMonth) {
+				 Thread.sleep(1000);
+				 nextMonth.click(); // click on next arrow
+			}
+	     }
+	     
+	     List<WebElement> currentMonthsDates = driver.findElements(By.xpath("//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,"+currentMonth+")]"));
+	     for (int i = 0; i < currentMonthsDates.size(); i++) {
+			String text = currentMonthsDates.get(i).getText(); // get text of dateBox
+			if (text.equalsIgnoreCase(date)) {								
+				currentMonthsDates.get(i).click(); // click on dateBox
 				break;
 			}
 		}
-	}
-
-	/*
-	 * Get current date
-	 */
-	public String getDate(String type) {
-		SimpleDateFormat formatter = new SimpleDateFormat(type);
-		return formatter.format(new Date());
-
 	}
 	
 	/*
 	 * Get After Date
 	 */
-	public String getAfterDate(String dateBefore) {
-		SimpleDateFormat beforeDate = new SimpleDateFormat(dateBefore);
-		Calendar cal = Calendar.getInstance();
-		try {
-			cal.setTime(beforeDate.parse(dateBefore));
-		} catch (ParseException e) {
-			e.printStackTrace();
+	public String getDate(String rquestType,String formatType) {
+		Calendar calendar = Calendar.getInstance();  // get a calendar instance, which defaults to "now"	   	
+		Date requestFormat = calendar.getTime();		 
+		if(rquestType=="AFTER_DATE") {
+			calendar.add(Calendar.DAY_OF_YEAR, 5);
+			requestFormat = calendar.getTime();
 		}
-		cal.add(Calendar.DAY_OF_MONTH, 3); // date after 3 days
-		String dateAfter = beforeDate.format(cal.getTime());
-		System.out.println(dateAfter + " is the date after adding 3 days.");
-		return dateAfter;
-		// TODO get day from date and return
-
+		
+		return  new SimpleDateFormat(formatType).format(requestFormat);
 	}
 	
 	/**
@@ -153,7 +144,6 @@ public class AbstractComponent {
 	 * This method will set any parameter string to the system's clipboard.
 	 * 
 	 */
-
 	public static void setClipboardData(String string) {
 		//StringSelection is a class that can be used for copy and paste operations.
 		StringSelection stringSelection = new StringSelection(string);
@@ -167,9 +157,7 @@ public class AbstractComponent {
 	 * 
 	 */
 	public static void uploadFile(String fileLocation) {
-
 		try {
-
 			// Setting ClipBoard with file location
 			setClipboardData(fileLocation);
 			// native key strokes for CTRL, V and ENTER keys
@@ -180,12 +168,9 @@ public class AbstractComponent {
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-
 		} catch (Exception exp) {
 			exp.printStackTrace();
-
 		}
-
 	}
 
 }
