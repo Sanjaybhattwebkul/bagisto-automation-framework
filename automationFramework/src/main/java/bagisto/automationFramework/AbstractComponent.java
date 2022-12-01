@@ -108,12 +108,14 @@ public class AbstractComponent {
 		 WebElement month = selectMonth.getFirstSelectedOption();
 	     String selectedoption = month.getText();
 	     boolean  selectedMonthIsCurrentMonth = selectedoption.equalsIgnoreCase(currentMonth);
-	     if(! selectedMonthIsCurrentMonth) {
+	     if (! selectedMonthIsCurrentMonth) {
 	    	 while (selectedoption != currentMonth) {
 				 Thread.sleep(1000);
 				 nextMonth.click(); // click on next arrow
 			}
 	     }
+	     
+	     handleLastDatesOfMonth(date); // check if next date is greater then last date of months.
 	     
 	     List<WebElement> currentMonthsDates = driver.findElements(By.xpath("//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,"+currentMonth+")]"));
 	     for (int i = 0; i < currentMonthsDates.size(); i++) {
@@ -122,6 +124,20 @@ public class AbstractComponent {
 				currentMonthsDates.get(i).click(); // click on dateBox
 				break;
 			}
+		}
+	}
+	
+	/*
+	 * Click on next button if next date if greater then 30 or 31
+	 */
+	public void handleLastDatesOfMonth(String date) {
+		switch (date)
+		{
+		    case "27": nextMonth.click();
+		        break;
+		    case "28": nextMonth.click();
+		        break;
+		    default: 
 		}
 	}
 	
