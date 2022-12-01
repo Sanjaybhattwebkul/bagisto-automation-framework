@@ -103,6 +103,9 @@ public class AbstractComponent {
 		return cartSummarySubTotal.getText();
 	}
 
+	/*
+	 * Handle calendar dates and click on request date for special price apply.
+	 */
 	public void handleCalendarDate(String date,String currentMonth) throws InterruptedException {
 		 Select selectMonth = new Select(monthsDropdown); 	
 		 WebElement month = selectMonth.getFirstSelectedOption();
@@ -115,8 +118,7 @@ public class AbstractComponent {
 			}
 	     }
 	     
-	     handleLastDatesOfMonth(date); // check if next date is greater then last date of months.
-	     
+	     handleLastDatesOfMonth(date); // check if next date is greater then last date of months.	     
 	     List<WebElement> currentMonthsDates = driver.findElements(By.xpath("//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,"+currentMonth+")]"));
 	     for (int i = 0; i < currentMonthsDates.size(); i++) {
 			String text = currentMonthsDates.get(i).getText(); // get text of dateBox
