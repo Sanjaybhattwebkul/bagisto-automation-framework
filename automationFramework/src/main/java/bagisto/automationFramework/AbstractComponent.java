@@ -133,13 +133,9 @@ public class AbstractComponent {
 	 * Click on next button if next date if greater then 30 or 31
 	 */
 	public void handleLastDatesOfMonth(String date) {
-		switch (date)
-		{
-		    case "27": nextMonth.click();
-		        break;
-		    case "28": nextMonth.click();
-		        break;
-		    default: 
+		
+		if(Integer.parseInt(date) >= 27) {
+			nextMonth.click();
 		}
 	}
 	
