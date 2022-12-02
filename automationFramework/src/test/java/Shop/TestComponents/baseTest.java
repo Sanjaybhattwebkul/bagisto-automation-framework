@@ -73,7 +73,6 @@ public class baseTest {
 
 	public void goToVelocityShop() {
 		driver.get(ShopURL);
-		// scrollDown(driver);
 	}
 
 	@AfterMethod

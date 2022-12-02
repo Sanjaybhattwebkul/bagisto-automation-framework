@@ -15,8 +15,8 @@ public class CustomerCheckout extends baseTest {
 	public void CustomerplaceOrder(String email,String password,String productName) throws IOException, InterruptedException {
 		//input.get("productName") if data is getting from json file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
-		CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
 		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(productName);
+		CustomerLogin CustomerLoginobj = ProductListingObj.addItemToCart();
 		CustomerLoginobj.goToLoginPage();
 		CustomerLoginobj.customerLogin(email,password);	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
@@ -36,7 +36,6 @@ public class CustomerCheckout extends baseTest {
 		
 		return new Object[][] {{"tom@example.com","tom123","Men's Bomber"}};
 	}
-	
 	
 	/* if getting the testdata from json file then use this method.
 	 * public Object[][] getTestData() throws IOException {

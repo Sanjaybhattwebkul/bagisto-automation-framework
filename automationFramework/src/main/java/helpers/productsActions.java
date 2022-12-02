@@ -1,8 +1,6 @@
 package helpers;
 
 import java.util.List;
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import bagisto.automationFramework.AbstractComponent;
 
 public class productsActions extends AbstractComponent{
-WebDriver driver;
+	WebDriver driver;
 	
 	public productsActions(WebDriver driver) {
 		super(driver); // initialize driver to parent class constructor
@@ -34,10 +32,11 @@ WebDriver driver;
 	@FindBy(css="a[title='Add product to compare list']")
 	List<WebElement> compareIcon;
 	
+	/*
+	 * @void
+	 * Add Three Products to the cart.
+	 */
 	public void addProductTo(String actionType) throws InterruptedException {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,450)");
-		
 		for(int i=0;i<3; i++) {
 			
 			switch(actionType) {
@@ -61,6 +60,10 @@ WebDriver driver;
 		}
 	}
 	
+	/*
+	 * @void
+	 * Perform Mouse over event
+	 */
 	public void mouseOver(WebElement element) {
 		 Actions action = new Actions(driver);
 		  action.moveToElement(element).build().perform();

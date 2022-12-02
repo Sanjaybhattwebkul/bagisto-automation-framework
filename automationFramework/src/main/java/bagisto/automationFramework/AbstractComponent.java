@@ -52,10 +52,18 @@ public class AbstractComponent {
 	@FindBy(xpath="//div[contains(@class,'open')]/div/span[2]")
 	WebElement nextMonth;
 	
+	/*
+	 * @void
+	 * Visible miniCart
+	 */
 	public void clickOnCartIcon() {
 		cart.click();
 	}
 
+	/*
+	 * @void
+	 * Redirect to cart page
+	 */
 	public void gotoCartPage() {
 		viewShoppingCart.click();
 	}
@@ -64,41 +72,73 @@ public class AbstractComponent {
 		WebDriverWait waite = new WebDriverWait(driver, Duration.ofSeconds(5));
 		waite.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 	}
-
+	
+	/*
+	 * @void
+	 * Explicitly wait for element Appear. 
+	 */
 	public void waitForWebElementToAppear(WebElement findBy) {
 		WebDriverWait waite = new WebDriverWait(driver, Duration.ofSeconds(5));
 		waite.until(ExpectedConditions.visibilityOf(findBy));
 	}
-
+	
+	/*
+	 * @void
+	 * Scroll Down the DOM
+	 */
 	public static void scrollDown(WebDriver driver, int to) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0," + to + ")");
 	}
 
+	/*
+	 * @void
+	 * Scroll UP the DOM
+	 */
 	public static void scrollUp(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-900)");
 	}
-
+	
+	/*
+	 * @void
+	 * Explicitly wait for element disappear. 
+	 */
 	public void waiteForElementToDisAppear(WebElement element) throws InterruptedException {
 		
 		 WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5));
 		 waite.until(ExpectedConditions.invisibilityOf(element));
 	}
 
+	/*
+	 * @void
+	 * Redirect to shop.
+	 */
 	public void goToHomePage() {
 		logo.click();
 
 	}
-
+	
+	/*
+	 * @void
+	 * Close the flash message
+	 */
 	public void closeFlashMessage() {
 		flashMessage.click();
 	}
 
+	/*
+	 * @Srting
+	 * Remove comma from given string
+	 */
 	public static String removeComma(String str) {
 		return str.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price
 	}
 
+	/*
+	 * @String
+	 * Get the subTotal from cart-summary secTnion.
+	 */
 	public String getSubTotalOfCartSummary(WebElement cartSummarySubTotal) {
 		return cartSummarySubTotal.getText();
 	}
