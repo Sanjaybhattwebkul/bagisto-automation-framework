@@ -12,7 +12,6 @@ public class CreateSimpleProductTest extends adminBaseTest {
 	public void Create() throws IOException, InterruptedException {
 		CreateProduct CreateProduct = new CreateProduct(driver);
 		EditProductPageObject editProductObj = CreateProduct.createSimpleProduct();	
-		//EditProductPageObject editProductObj =CreateProduct.edit();
 		editProductObj.editSimpleProduct();
 	}
 	

@@ -43,7 +43,8 @@ public class ProductListing extends AbstractComponent{
 		WebElement ProName = getProductByName(ProductName);
 		ProName.findElement(addToCartButton).click();
 		waitForWebElementToAppear(flashMessage); // waite while flash message is displaying
-		waiteForElementToDisAppear(); // waite till loader will display
+		Thread.sleep(1000);
+		//waiteForElementToDisAppear(); // waite till loader will display
 		scrollUp(driver);
 		return new CustomerLogin(driver);
 	}

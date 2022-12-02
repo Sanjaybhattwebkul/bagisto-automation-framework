@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="admin.Tests.CreateSimpleProductTest" class="method navigator-link" hash-for-method="Create">Create</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="admin.Tests.AdminLoginTest" class="method navigator-link" hash-for-method="login(admin123)">login(admin123)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Shop.Tests.CustomerCheckout" class="method navigator-link" hash-for-method="CustomerplaceOrder(tom@example.com, tom123, Men&#039;s Bomber)">CustomerplaceOrder(tom@example.com, tom123, Men's Bomber)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,30 +122,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">admin.Tests.AdminLoginTest</span>
+              <span class="class-name">Shop.Tests.CustomerCheckout</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="login(admin123)">
-                  </a> <!-- login(admin123) -->
-                  <span class="method-name">login</span>
-                  <span class="parameters">(admin123)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
-          <div class="suite-Default_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">admin.Tests.CreateSimpleProductTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Create">
-                  </a> <!-- Create -->
-                  <span class="method-name">Create</span>
+                  <a name="CustomerplaceOrder(tom@example.com, tom123, Men&#039;s Bomber)">
+                  </a> <!-- CustomerplaceOrder(tom@example.com, tom123, Men's Bomber) -->
+                  <span class="method-name">CustomerplaceOrder</span>
+                  <span class="parameters">(tom@example.com, tom123, Men's Bomber)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +138,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/tmp/testng-eclipse--949359775/testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse--328166476/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -167,8 +147,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;admin.Tests.AdminLoginTest&quot;/&gt;
-      &lt;class name=&quot;admin.Tests.CreateSimpleProductTest&quot;/&gt;
+      &lt;class name=&quot;Shop.Tests.CustomerCheckout&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -182,7 +161,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Default test (2 classes)</span>
+                <span class="test-name">Default test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -192,14 +171,6 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">AdminLoginTest.login</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">login</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -216,20 +187,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Create')
-data.setCell(0, 2, 'admin.Tests.CreateSimpleProductTest')
-data.setCell(0, 3, 42477);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'login')
-data.setCell(1, 2, 'admin.Tests.AdminLoginTest')
-data.setCell(1, 3, 5209);
+data.setCell(0, 1, 'CustomerplaceOrder')
+data.setCell(0, 2, 'Shop.Tests.CustomerCheckout')
+data.setCell(0, 3, 11082);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 47 seconds</span>
+              <span class="suite-total-time">Total running time: 11 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -255,25 +222,14 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">admin.Tests.AdminLoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Shop.Tests.CustomerCheckout</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">login(admin123)</span>
+                <span class="method-name">CustomerplaceOrder(tom@example.com, tom123, Men's Bomber)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">5211 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">admin.Tests.CreateSimpleProductTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">Create</span>
-                <span class="method-start">5215 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">47693 ms</span>
+                <span class="method-start">11098 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

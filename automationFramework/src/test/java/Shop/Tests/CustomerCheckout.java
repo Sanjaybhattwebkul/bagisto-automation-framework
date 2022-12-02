@@ -37,6 +37,7 @@ public class CustomerCheckout extends baseTest {
 		return new Object[][] {{"tom@example.com","tom123","Men's Bomber"}};
 	}
 	
+	
 	/* if getting the testdata from json file then use this method.
 	 * public Object[][] getTestData() throws IOException {
 		// We can use Object,HashMap and JSON file for send data

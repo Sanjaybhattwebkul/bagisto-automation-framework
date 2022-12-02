@@ -80,10 +80,10 @@ public class AbstractComponent {
 		js.executeScript("window.scrollBy(0,-900)");
 	}
 
-	public void waiteForElementToDisAppear() throws InterruptedException {
-		Thread.sleep(2000);
-		// WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5));
-		// waite.until(ExpectedConditions.invisibilityOf(element));
+	public void waiteForElementToDisAppear(WebElement element) throws InterruptedException {
+		
+		 WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5));
+		 waite.until(ExpectedConditions.invisibilityOf(element));
 	}
 
 	public void goToHomePage() {
