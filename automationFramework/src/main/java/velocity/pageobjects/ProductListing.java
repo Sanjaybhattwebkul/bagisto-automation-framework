@@ -67,7 +67,7 @@ public class ProductListing extends AbstractComponent{
 	 */
 	public CustomerLogin addItemToCart() throws InterruptedException {
 		productsActions ProductActions =  new productsActions(driver);
-		ProductActions.addProductTo("CART");
+		ProductActions.addProductTo("CART",3);	
 		return new CustomerLogin(driver);
 	}
 	

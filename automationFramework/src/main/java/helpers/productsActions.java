@@ -20,7 +20,7 @@ public class productsActions extends AbstractComponent{
 	@FindBy(css=".alert-dismissible")  //alert alert-success 
 	WebElement flashMessage;
 	
-	@FindBy(css=".btn-add-to-cart")
+	@FindBy(css="*[class*='add-to-cart-btn']") //.btn-add-to-cart
 	List<WebElement> cardButton;
 	
 	@FindBy(css=".product-image-container")
@@ -36,8 +36,8 @@ public class productsActions extends AbstractComponent{
 	 * @void
 	 * Add Three Products to the cart.
 	 */
-	public void addProductTo(String actionType) throws InterruptedException {
-		for(int i=0;i<3; i++) {
+	public void addProductTo(String actionType,int count) throws InterruptedException {
+		for(int i=0;i<count; i++) {
 			
 			switch(actionType) {
 			  case "CART":
@@ -66,6 +66,6 @@ public class productsActions extends AbstractComponent{
 	 */
 	public void mouseOver(WebElement element) {
 		 Actions action = new Actions(driver);
-		  action.moveToElement(element).build().perform();
+		 action.moveToElement(element).build().perform();
 	}
 }

@@ -15,6 +15,6 @@ public class test extends baseTest{
 		js.executeScript("window.scrollBy(0,400");
 		launcVelocity();		
 		productsActions ProductActions =  new productsActions(driver);
-		ProductActions.addProductTo("COMPARE");
+		ProductActions.addProductTo("COMPARE",3);
 	}
 }

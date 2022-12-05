@@ -24,9 +24,6 @@ public class CustomerCheckout extends baseTest {
 		AbstractObj.gotoCartPage();
 		CartPriceVerify CartPagobj = new CartPriceVerify(driver);
 		CartPagobj.calCulatePrice();
-		
-		
-		
 	}
 
 	// By using DataProvider the above placeOrder Test should be run for each test
