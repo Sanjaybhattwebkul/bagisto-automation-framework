@@ -8,7 +8,6 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,7 +18,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import velocity.pageobjects.ProductListing;
 

@@ -21,10 +21,10 @@ public class CustomerCheckout extends baseTest {
 		CustomerLoginobj.customerLogin(email,password);	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
 		AbstractObj.clickOnCartIcon();
-		AbstractObj.gotoCartPage();
-		CartPriceVerify CartPagobj = new CartPriceVerify(driver);
+		CartPriceVerify CartPagobj = AbstractObj.gotoCartPage();		
 		CartPagobj.calCulatePrice();
-		CartPagobj.processToCheckout();
+		CheckoutPageObject CheckoutObject = CartPagobj.processToCheckout();
+		CheckoutObject.placeOrder();
 	}
 
 	// By using DataProvider the above placeOrder Test should be run for each test

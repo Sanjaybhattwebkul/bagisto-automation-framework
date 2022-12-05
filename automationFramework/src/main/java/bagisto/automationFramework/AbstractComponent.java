@@ -19,6 +19,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import velocity.pageobjects.CartPriceVerify;
+
 public class AbstractComponent {
 
 	WebDriver driver;
@@ -64,8 +66,9 @@ public class AbstractComponent {
 	 * @void
 	 * Redirect to cart page
 	 */
-	public void gotoCartPage() {
+	public CartPriceVerify gotoCartPage() {
 		viewShoppingCart.click();
+		return new CartPriceVerify(driver);
 	}
 
 	public void waitForElementToAppear(By findBy) {

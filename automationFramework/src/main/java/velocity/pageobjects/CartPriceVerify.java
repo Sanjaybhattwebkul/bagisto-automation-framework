@@ -95,8 +95,9 @@ public class CartPriceVerify extends AbstractComponent{
 		
 	}
 	
-	public void processToCheckout() {
+	public CheckoutPageObject processToCheckout() {
 		processToCheckOut.click();
+		return new CheckoutPageObject(driver);
 	}
 	
 	

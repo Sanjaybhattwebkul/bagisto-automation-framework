@@ -10,7 +10,7 @@ public class CreateSimpleProductTest extends adminBaseTest {
 	//Make WebDriver static in Base-test	
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void Create() throws IOException, InterruptedException {
-		CreateProduct CreateProduct = new CreateProduct(driver);
+		CreateProductPageObject CreateProduct = new CreateProductPageObject(driver);
 		EditProductPageObject editProductObj = CreateProduct.createSimpleProduct();	
 		editProductObj.editSimpleProduct();
 	}
