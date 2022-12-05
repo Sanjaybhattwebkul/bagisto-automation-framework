@@ -36,6 +36,9 @@ public class CartPriceVerify extends AbstractComponent{
 	
 	@FindBy(xpath="//div[@id='discount-detail']/span[2]")
 	WebElement discountAmount;
+	
+	@FindBy(xpath="//div[contains(@class,'order-summary-container')]//a[contains(@class,'theme-btn ')]")
+	WebElement processToCheckOut;
 		
 	By formattedPrice =By.cssSelector("div[class='product-price'] :nth-child(1)"); // 1 product's price	
 	
@@ -90,6 +93,10 @@ public class CartPriceVerify extends AbstractComponent{
 		double GrandTotal = (cartSummaryTotalPrice - getActualPrice(totalDiscountPrice));
 		System.out.println("GrandTotal="+ GrandTotal);
 		
+	}
+	
+	public void processToCheckout() {
+		processToCheckOut.click();
 	}
 	
 	

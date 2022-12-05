@@ -23,6 +23,9 @@ public class productsActions extends AbstractComponent{
 	@FindBy(css="*[class*='add-to-cart-btn']") //.btn-add-to-cart
 	List<WebElement> cardButton;
 	
+	@FindBy(css="button[class*='buynow']")
+	List<WebElement> bynowButton;
+	
 	@FindBy(css=".product-image-container")
 	List<WebElement> productCard;
 	
@@ -44,13 +47,16 @@ public class productsActions extends AbstractComponent{
 				  cardButton.get(i).click();
 			    break;
 			  case "COMPARE":
-				  mouseOver(productCard.get(i));				   
+				  mouseOver(productCard.get(i));				  
 				  compareIcon.get(i).click();	 			 
 				break;
 			  case "WISHLIST":				  
 				  mouseOver(productCard.get(i));				  
 				  wishlistIcon.get(i).click(); 
 			    break;
+			  case "BUYNOW":					  				  
+					bynowButton.get(i).click(); 
+				break;
 			  default:
 			    // TODO some other action
 			}
@@ -67,5 +73,9 @@ public class productsActions extends AbstractComponent{
 	public void mouseOver(WebElement element) {
 		 Actions action = new Actions(driver);
 		 action.moveToElement(element).build().perform();
+	}
+	
+	public void viewProduct(WebElement element) {
+		element.click();
 	}
 }

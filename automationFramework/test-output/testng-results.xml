@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-05T11:06:18 IST" name="Default suite" finished-at="2022-12-05T11:06:36 IST" duration-ms="18103">
+  <suite started-at="2022-12-05T13:50:20 IST" name="Default suite" finished-at="2022-12-05T13:50:38 IST" duration-ms="17825">
     <groups>
     </groups>
-    <test started-at="2022-12-05T11:06:18 IST" name="Default test" finished-at="2022-12-05T11:06:36 IST" duration-ms="18103">
+    <test started-at="2022-12-05T13:50:20 IST" name="Default test" finished-at="2022-12-05T13:50:38 IST" duration-ms="17825">
       <class name="Shop.Tests.CustomerCheckout">
-        <test-method signature="CustomerplaceOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Shop.Tests.CustomerCheckout@31fa1761]" started-at="2022-12-05T11:06:18 IST" name="CustomerplaceOrder" data-provider="getTestData" finished-at="2022-12-05T11:06:36 IST" duration-ms="18068" status="PASS">
+        <test-method signature="CustomerplaceOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Shop.Tests.CustomerCheckout@31fa1761]" started-at="2022-12-05T13:50:20 IST" name="CustomerplaceOrder" data-provider="getTestData" finished-at="2022-12-05T13:50:38 IST" duration-ms="17791" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,7 +28,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CustomerplaceOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckout@31fa1761]" started-at="2022-12-05T11:06:36 IST" name="closeBrowser" finished-at="2022-12-05T11:06:36 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckout@31fa1761]" started-at="2022-12-05T13:50:38 IST" name="closeBrowser" finished-at="2022-12-05T13:50:38 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
