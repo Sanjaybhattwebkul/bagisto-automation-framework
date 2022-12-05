@@ -4,10 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import com.aventstack.extentreports.util.Assert;
+import org.testng.Assert;
 import bagisto.automationFramework.AbstractComponent;
-import org.testng.asserts.*;
-
 
 public class CheckoutPageObject extends AbstractComponent {
 	WebDriver driver;
@@ -43,11 +41,9 @@ public class CheckoutPageObject extends AbstractComponent {
 		paymentMethod.click();
 		scrollDown(driver,1000);
 		placeOrderButton.click();
-		//boolean isorderConfirmed = orderConfirmation.isDisplayed();
-		
-		//Assert.assertTrue(false);
-		
-		if(orderConfirmation.isDisplayed()) {
+		boolean isOrderConfirmed = orderConfirmation.isDisplayed();
+		Assert.assertTrue(isOrderConfirmed);
+		if(isOrderConfirmed) {
 			System.out.println(orderConfirmation.isDisplayed());
 			System.out.println(orderConfirmation.getText());
 			System.out.println("Your Order ID is "+ orderID.getText());
