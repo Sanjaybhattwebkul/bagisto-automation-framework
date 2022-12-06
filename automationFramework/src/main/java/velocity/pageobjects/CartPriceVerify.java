@@ -31,12 +31,13 @@ public class CartPriceVerify extends AbstractComponent{
 	@FindBy(xpath="//span[@class='col-4 text-right']")
 	WebElement cartSummarySubTotal;
 	
-	@FindBy(xpath="//div[@id='discount-detail']/span[1]")
+	@FindBy(id="discount-detail")
 	WebElement DiscountContainr;
 	
 	@FindBy(xpath="//div[@id='discount-detail']/span[2]")
 	WebElement discountAmount;
 	
+	////a[text()='Proceed to checkout']
 	@FindBy(xpath="//div[contains(@class,'order-summary-container')]//a[contains(@class,'theme-btn ')]")
 	WebElement processToCheckOut;
 		

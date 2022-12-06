@@ -40,6 +40,18 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
 	WebElement descriptionSection;
 	
+	@FindBy(xpath="//iframe[@id='short_description_ifr']")
+	WebElement shortDescriptionIframe;
+	
+	@FindBy(id="short_description")
+	WebElement shoertDescriptionTextarea;
+	
+	@FindBy(xpath="//iframe[@id='description_ifr']")
+	WebElement descriptionIframe;
+	
+	@FindBy(id="description")
+	WebElement DescriptionTextarea;
+	
 	@FindBy(xpath="//div[@class='page-content']/div[4]/div[1]")
 	WebElement priceSection;
 		
@@ -90,12 +102,25 @@ public class EditProductPageObject extends AbstractComponent {
 		guestCheckout.click();
 		descriptionSection.click();
 		scrollDown(driver,320);	
-		driver.switchTo().frame("short_description_ifr"); // Switch to short description frame
-		driver.findElement(By.tagName("p")).sendKeys("Short description By Selenium Automation");
-		driver.switchTo().defaultContent(); // Switch to main DOM
-		driver.switchTo().frame("description_ifr"); // Switch to description frame
-		driver.findElement(By.tagName("p")).sendKeys("This product is created by Selenium Aumatation");
-		driver.switchTo().defaultContent();
+		
+		if (shortDescriptionIframe.isDisplayed()) {
+			driver.switchTo().frame("short_description_ifr"); // Switch to short description frame
+			driver.findElement(By.tagName("p")).sendKeys("Short description By Selenium Automation");
+			driver.switchTo().defaultContent(); // Switch to main DOM
+			
+		} else {
+			
+			shoertDescriptionTextarea.sendKeys("Short description By Selenium Automation");
+		}
+		
+		if (descriptionIframe.isDisplayed()) {
+			driver.switchTo().frame("description_ifr"); // Switch to description frame
+			driver.findElement(By.tagName("p")).sendKeys("This product is created by Selenium Aumatation");		
+			driver.switchTo().defaultContent();
+			
+		} else {
+			DescriptionTextarea.sendKeys("This product is created by Selenium Aumatation");
+		}
 		scrollDown(driver,800);	//descriptionSection.click();
 		priceSection.click();
 		productsPrice.sendKeys("4500");
@@ -111,14 +136,14 @@ public class EditProductPageObject extends AbstractComponent {
 		productsWeight.sendKeys("0.6");
 		inventorySection.click();
 		defaultInventory.sendKeys("450");
-		inventorySection.click(); // hide inventory section
+		//inventorySection.click(); // hide inventory section
 		imageSection.click();
 		addImage.click();
 		System.out.println(selectImage.isDisplayed());
 		Thread.sleep(1000);
 		System.out.println(selectImage.isDisplayed());
 		selectImage.click();
-		uploadFile("//home//users//sanjay.bhatt//Downloads//watch2.png");
+		uploadFile("//home//users//sanjay.bhatt//Downloads//img-new.png");
 		Thread.sleep(2000);
 		saveProductButton.click();
 		

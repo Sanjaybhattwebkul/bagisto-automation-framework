@@ -54,7 +54,7 @@ public class CreateProductPageObject extends AbstractComponent{
 		 attributeFamily.click();
 		 Select Family = new Select(attributeFamily);
 		 Family.selectByVisibleText("Default"); // Select Attribute Family
-		 productSKU.sendKeys("Watch");
+		 productSKU.sendKeys("t-shirt-automate");
 		 saveProduct.click();
 		 return new EditProductPageObject(driver);
 	}

@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import admin.TestComponents.*;
@@ -23,7 +22,7 @@ public class AdminLoginTest extends adminBaseTest {
 	@Test(dataProvider = "getTestData",groups={"AdminLoginTest.login"})
 	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		LoginPageObject LoginPageObject = launcAdminPanel();
-		System.out.println("db_Email="+getCredentialsFromDB().get(0));			
+		System.out.println("db_Email="+getCredentialsFromDB().get(0));	
 		LoginPageObject.adminLogin(getCredentialsFromDB().get(0),password);
 		
 	}
