@@ -3,18 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="admin.Tests.AdminLoginTest">
+      <class name="admin.Tests.ProductPriceVerifyTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="login"/>
+          <include name="priceVerify"/>
         </methods>
-      </class> <!-- admin.Tests.AdminLoginTest -->
-      <class name="admin.Tests.CreateSimpleProductTest">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="Create"/>
-        </methods>
-      </class> <!-- admin.Tests.CreateSimpleProductTest -->
+      </class> <!-- admin.Tests.ProductPriceVerifyTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
