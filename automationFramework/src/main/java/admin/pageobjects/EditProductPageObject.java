@@ -104,20 +104,15 @@ public class EditProductPageObject extends AbstractComponent {
 		scrollDown(driver,320);	
 		
 		if (shortDescriptionIframe.isDisplayed()) {
-			driver.switchTo().frame("short_description_ifr"); // Switch to short description frame
-			driver.findElement(By.tagName("p")).sendKeys("Short description By Selenium Automation");
-			driver.switchTo().defaultContent(); // Switch to main DOM
-			
+			switchToFrame("short_description_ifr","Short description By Selenium Automation");			
+			backToMainPage();			
 		} else {
-			
 			shoertDescriptionTextarea.sendKeys("Short description By Selenium Automation");
 		}
 		
 		if (descriptionIframe.isDisplayed()) {
-			driver.switchTo().frame("description_ifr"); // Switch to description frame
-			driver.findElement(By.tagName("p")).sendKeys("This product is created by Selenium Aumatation");		
-			driver.switchTo().defaultContent();
-			
+			switchToFrame("description_ifr","This product is created by Selenium Aumatation");			
+			backToMainPage();		
 		} else {
 			DescriptionTextarea.sendKeys("This product is created by Selenium Aumatation");
 		}
@@ -147,5 +142,14 @@ public class EditProductPageObject extends AbstractComponent {
 		Thread.sleep(2000);
 		saveProductButton.click();
 		
+	}
+	
+	public void switchToFrame(String frameId,String value) {
+		driver.switchTo().frame(frameId); // Switch to short description frame
+		driver.findElement(By.tagName("p")).sendKeys(value);
+	}
+	
+	public void backToMainPage() {
+		driver.switchTo().defaultContent(); 
 	}
 }
