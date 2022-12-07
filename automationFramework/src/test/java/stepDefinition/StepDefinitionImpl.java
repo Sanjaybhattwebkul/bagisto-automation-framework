@@ -1,12 +1,12 @@
 package stepDefinition;
 
 import java.io.IOException;
-import Shop.TestComponents.baseTest;
+import baseComponent.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import velocity.pageobjects.*;
 
-public class StepDefinitionImpl extends baseTest {
+public class StepDefinitionImpl extends BaseTest {
 	
 	public ProductListing ProductListingObj;
 	public CustomerLogin CustomerLoginobj;

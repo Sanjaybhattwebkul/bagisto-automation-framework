@@ -4,16 +4,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import helpers.getProductsPrice;
 
 public class PricePageObject extends getProductsPrice{
 
-	WebDriver driver;
+	public WebDriver driver;
+	
 	public PricePageObject(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
 	}
 	
 	public ArrayList<String> getPriceFromBackend() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {

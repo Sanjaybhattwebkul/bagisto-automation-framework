@@ -1,4 +1,4 @@
-package admin.TestComponents;
+package baseComponent;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -17,19 +17,22 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import admin.pageobjects.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import admin.pageobjects.LoginPageObject;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import velocity.pageobjects.ProductListing;
 
-
-public class adminBaseTest {
+public class BaseTest {
+	
 	public static WebDriver driver;
 	public 	String AdminURL; 
+	public 	String ShopURL; 
+	
 	public WebDriver initlizeBrowser() throws IOException {
 
 		// Get GlobalData using Properties class
@@ -38,13 +41,14 @@ public class adminBaseTest {
 				"/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
 		prop.load(files); // load the GlobalData.properties file.
 		AdminURL = prop.getProperty("AdminURL");
+		ShopURL = prop.getProperty("ShopURL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 				
 		if (browserName.equalsIgnoreCase("chrome")) {	
 			WebDriverManager.chromedriver().setup();
-			ChromeOptions chromeOption = new ChromeOptions();
-			chromeOption.addArguments("--start-fullscreen");		
-			driver = new ChromeDriver(chromeOption);
+			/*ChromeOptions chromeOption = new ChromeOptions();
+			chromeOption.addArguments("--start-fullscreen");	*/	
+			driver = new ChromeDriver();
 			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {		
 			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
@@ -76,6 +80,20 @@ public class adminBaseTest {
 	public void goToAdminPanel() {
 		driver.get(AdminURL);
 	}
+	
+	public ProductListing launcVelocity() throws IOException {
+
+		driver = initlizeBrowser();
+		goToVelocityShop(); // open browser/site
+		ProductListing ProductListing = new ProductListing(driver);
+		return ProductListing; // LandingPage object ko is liye return kiya kyuki loginApplication() function
+								// bhi call ho ra hai.
+	}
+
+	public void goToVelocityShop() {
+		driver.get(ShopURL);
+	}
+	
 
 	@AfterMethod
 	public void closeBrowser() {

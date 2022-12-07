@@ -3,9 +3,9 @@ package admin.Tests;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import admin.pageobjects.*;
-import admin.TestComponents.adminBaseTest;
+import baseComponent.BaseTest;
 
-public class CreateSimpleProductTest extends adminBaseTest {
+public class CreateSimpleProductTest extends BaseTest {
 	
 	//Make WebDriver static in Base-test	
 	@Test(dependsOnGroups={"AdminLoginTest.login"})

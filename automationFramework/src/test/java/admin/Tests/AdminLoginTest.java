@@ -8,11 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import admin.TestComponents.*;
 import admin.pageobjects.LoginPageObject;
+import baseComponent.BaseTest;
 
 
-public class AdminLoginTest extends adminBaseTest {
+public class AdminLoginTest extends BaseTest {
 	
 	/**
 	 * 

@@ -2,14 +2,12 @@ package Shop.Tests;
 
 import java.io.IOException;
 import java.sql.SQLException;
-
 import org.testng.annotations.Test;
-import Shop.TestComponents.baseTest;
-import helpers.getProductsPrice;
+import baseComponent.BaseTest;
 import helpers.productsActions;
 
 
-public class test extends baseTest{
+public class test extends BaseTest{
 	@Test
 	public void testCase() throws IOException, InterruptedException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		//JavascriptExecutor js = (JavascriptExecutor) driver;

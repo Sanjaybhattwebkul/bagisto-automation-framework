@@ -4,10 +4,10 @@ import java.io.IOException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import bagisto.automationFramework.*;
-import Shop.TestComponents.*;
+import baseComponent.*;
 import velocity.pageobjects.*;
 
-public class CustomerCheckoutTest extends baseTest {
+public class CustomerCheckoutTest extends BaseTest {
 
 	//CustomerplaceOrder(HashMap<String, String> input) // if getting data from json file
 	//@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)

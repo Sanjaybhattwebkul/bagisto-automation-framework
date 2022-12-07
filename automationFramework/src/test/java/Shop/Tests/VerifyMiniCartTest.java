@@ -2,11 +2,11 @@ package Shop.Tests;
 
 import java.io.IOException;
 import org.testng.annotations.Test;
-import Shop.TestComponents.baseTest;
+import baseComponent.BaseTest;
 import velocity.pageobjects.*;
 
 
-public class VerifyMiniCartTest extends baseTest {
+public class VerifyMiniCartTest extends BaseTest {
 
 	@Test
 	public void VerifyMiniCartPrice() throws InterruptedException, IOException {

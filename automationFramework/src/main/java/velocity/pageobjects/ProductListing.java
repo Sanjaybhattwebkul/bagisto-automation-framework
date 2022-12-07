@@ -5,10 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import bagisto.automationFramework.AbstractComponent;
 import helpers.productsActions;
 
-public class ProductListing extends AbstractComponent{
+public class ProductListing extends productsActions{
 	
 	WebDriver driver;
 	
@@ -65,9 +64,8 @@ public class ProductListing extends AbstractComponent{
 	 * @Object
 	 * Add Multiple products to the cart.
 	 */
-	public CustomerLogin addItemToCart() throws InterruptedException {
-		productsActions ProductActions =  new productsActions(driver);
-		ProductActions.addProductTo("CART",3);	
+	public CustomerLogin addItemToCart() throws InterruptedException {		
+		addProductTo("CART",3);	
 		return new CustomerLogin(driver);
 	}
 	

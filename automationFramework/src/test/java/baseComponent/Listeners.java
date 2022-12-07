@@ -1,4 +1,4 @@
-package Shop.TestComponents;
+package baseComponent;
 
 import java.io.IOException;
 
@@ -6,14 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import resources.ExtentReporterNG;
 
-public class Listeners  extends baseTest implements ITestListener {
+public class Listeners  extends BaseTest implements ITestListener {
 
 	ExtentTest test; // variable declare
 	ExtentReports extent = ExtentReporterNG.getReportObject();  // static function call from ExtentReporterNG() class

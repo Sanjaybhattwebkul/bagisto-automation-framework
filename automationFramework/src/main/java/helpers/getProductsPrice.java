@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import bagisto.automationFramework.AbstractComponent;
 
 public class getProductsPrice extends AbstractComponent{
@@ -14,7 +13,7 @@ public class getProductsPrice extends AbstractComponent{
 	public getProductsPrice(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	
 	}
 	
 	/*
@@ -40,10 +39,7 @@ public class getProductsPrice extends AbstractComponent{
 		double amount=0;
 		String itemPrice =	removeComma(price);// remove , from price	
 		amount = Double.parseDouble(itemPrice); //convert string to double
-		//intPrice = (int)amount;  // convert into int	
 		return amount;
 		
 	}
-	
-
 }
