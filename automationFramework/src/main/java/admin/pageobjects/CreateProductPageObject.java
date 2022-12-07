@@ -15,10 +15,7 @@ public class CreateProductPageObject extends AbstractComponent{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//div[@class='navbar-left']/ul/li[3]")
-	WebElement catalogIcon;
-	
+		
 	@FindBy(linkText ="Add Product")
 	WebElement addProduct;
 	
@@ -44,7 +41,7 @@ public class CreateProductPageObject extends AbstractComponent{
 	By selectType = By.id("type");
 	
 	public EditProductPageObject createSimpleProduct() { 
-		catalogIcon.click();
+		 gotoProductsPage();
 		 waitForElementToAppear(addButton); //explicitly wait
 		 addProduct.click();
 		 waitForElementToAppear(selectType);
@@ -60,7 +57,7 @@ public class CreateProductPageObject extends AbstractComponent{
 	}
 	
 	public EditProductPageObject edit() {
-		catalogIcon.click();
+		gotoProductsPage();
 		waitForElementToAppear(addButton);
 		editIcon.click();
 		return new EditProductPageObject(driver);

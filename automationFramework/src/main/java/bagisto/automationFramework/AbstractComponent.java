@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import velocity.pageobjects.CartPriceVerify;
+import velocity.pageobjects.SearchProduct;
 
 public class AbstractComponent {
 
@@ -43,16 +44,22 @@ public class AbstractComponent {
 	WebElement viewCart;
 
 	@FindBy(linkText = "View Shopping Cart")
-	WebElement viewShoppingCart;
-
-	/*@FindBy(xpath = "//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,'December')]")
-	List<WebElement> totalDates;*/
+	WebElement viewShoppingCart;	
 	
 	@FindBy(xpath="//div[contains(@class,'open')]/div/div/div/select")				 
 	WebElement monthsDropdown;
 
 	@FindBy(xpath="//div[contains(@class,'open')]/div/span[2]")
 	WebElement nextMonth;
+	
+	@FindBy(xpath="//div[@class='navbar-left']/ul/li[3]")
+	WebElement catalogIcon;
+	
+	@FindBy(xpath="//tbody/tr[1]/td[2]")
+	WebElement lastProductID;
+	
+	@FindBy(css="span[title='Visit Shop']")
+	WebElement visitShop;
 	
 	/*
 	 * @void
@@ -61,7 +68,28 @@ public class AbstractComponent {
 	public void clickOnCartIcon() {
 		cart.click();
 	}
+	
+	public void gotoProductsPage() {
+		catalogIcon.click();
+	}
 
+	/*
+	 * @Void
+	 * Go to shop
+	 */
+	public SearchProduct visitShop() {
+		visitShop.click();
+		return new SearchProduct(driver);
+	}
+	
+	/*
+	 * @Integer
+	 * get Last created  product's ID	
+	 */
+	public int getCreatedProductId() {
+		return Integer.parseInt(lastProductID.getText());
+	}
+	
 	/*
 	 * @void
 	 * Redirect to cart page

@@ -5,30 +5,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import bagisto.automationFramework.AbstractComponent;
 
-public class ProductPriceVerify extends AbstractComponent{
+public class getProductsPrice extends AbstractComponent{
 	
 	WebDriver driver;
-	public ProductPriceVerify(WebDriver driver) {
+	public getProductsPrice(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-	}
-	
-	@FindBy(xpath="//tbody/tr[1]/td[2]")
-	WebElement lastProductID;
-	
-	/*
-	 * @String
-	 * get Last created  product's ID	
-	 */
-	public String getCreatedProductId() {
-		return lastProductID.getText();
 	}
 	
 	/*
@@ -45,5 +31,19 @@ public class ProductPriceVerify extends AbstractComponent{
 		ResultSet data = s.executeQuery("Select * from "+tableName+" Where product_id  ='"+productID+"' AND customer_group_id='"+customerGroupID+"';");		 
 		return data;
 	}
+	
+	/*
+	 * @double
+	 * Remove $ and , from the price and return the actual price
+	 */
+	public double getActualPrice(String price) {
+		double amount=0;
+		String itemPrice =	removeComma(price);// remove , from price	
+		amount = Double.parseDouble(itemPrice); //convert string to double
+		//intPrice = (int)amount;  // convert into int	
+		return amount;
+		
+	}
+	
 
 }

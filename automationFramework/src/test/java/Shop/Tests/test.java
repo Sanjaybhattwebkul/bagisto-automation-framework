@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.testng.annotations.Test;
 import Shop.TestComponents.baseTest;
-import helpers.ProductPriceVerify;
+import helpers.getProductsPrice;
 import helpers.productsActions;
 
 

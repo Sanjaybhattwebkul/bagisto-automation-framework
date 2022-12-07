@@ -2,17 +2,15 @@ package velocity.pageobjects;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import helpers.getProductsPrice;
 
-import bagisto.automationFramework.AbstractComponent;
-
-public class CartPriceVerify extends AbstractComponent{
+public class CartPriceVerify extends getProductsPrice{
 	
 	WebDriver driver;
 	public CartPriceVerify(WebDriver driver) {
@@ -100,17 +98,7 @@ public class CartPriceVerify extends AbstractComponent{
 		processToCheckOut.click();
 		return new CheckoutPageObject(driver);
 	}
-	
-	
-	public double getActualPrice(String price) {
-		double amount=0;
-		String itemPrice =	removeComma(price);// remove , from price	
-		amount = Double.parseDouble(itemPrice); //convert string to double
-		//intPrice = (int)amount;  // convert into int	
-		return amount;
-		
-	}
-	
+
 	public double sumOfEachProductsPrice(List<Double> subtotal ) {
 		double sum = 0;
 		for(Double price : subtotal)

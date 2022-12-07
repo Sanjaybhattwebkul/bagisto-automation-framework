@@ -89,7 +89,7 @@ public class EditProductPageObject extends AbstractComponent {
 	WebElement selectImage;
 	
 	@FindBy(xpath="//div[@class='page-action']/button")
-	WebElement saveProductButton;
+	WebElement saveProductButton;	
 
 	public void editSimpleProduct() throws InterruptedException {	
 		productsName.sendKeys("Product-By Selnium Automation");
