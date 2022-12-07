@@ -18,6 +18,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import velocity.pageobjects.CartPriceVerify;
 import velocity.pageobjects.SearchProduct;
@@ -71,6 +72,13 @@ public class AbstractComponent {
 	
 	public void gotoProductsPage() {
 		catalogIcon.click();
+	}
+	
+	/*
+	 * Soft assertion
+	 */
+	public SoftAssert softAsset() {
+		return  new SoftAssert();
 	}
 
 	/*

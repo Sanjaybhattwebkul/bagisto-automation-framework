@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
 import bagisto.automationFramework.AbstractComponent;
 
 public class CheckoutPageObject extends AbstractComponent {
@@ -42,12 +43,14 @@ public class CheckoutPageObject extends AbstractComponent {
 		scrollDown(driver,1000);
 		placeOrderButton.click();
 		boolean isOrderConfirmed = orderConfirmation.isDisplayed();
-		Assert.assertTrue(isOrderConfirmed);
+		SoftAssert softAssert = softAsset();			
+		softAssert.assertTrue(isOrderConfirmed);		
 		if(isOrderConfirmed) {
-			System.out.println(orderConfirmation.isDisplayed());
+			System.out.println(orderConfirmation.isDisplayed());					
 			System.out.println(orderConfirmation.getText());
 			System.out.println("Your Order ID is "+ orderID.getText());
 		}
+		softAssert.assertAll();
 	}
 	
 	

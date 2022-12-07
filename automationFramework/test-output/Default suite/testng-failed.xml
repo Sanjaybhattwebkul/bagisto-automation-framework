@@ -6,7 +6,7 @@
       <class name="Shop.Tests.CustomerCheckoutTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="CustomerplaceOrder" invocation-numbers="0 0"/>
+          <include name="CustomerplaceOrder" invocation-numbers="0"/>
         </methods>
       </class> <!-- Shop.Tests.CustomerCheckoutTest -->
     </classes>
