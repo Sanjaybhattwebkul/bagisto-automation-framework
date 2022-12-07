@@ -1,10 +1,10 @@
-package Shop.Tests;
+package common;
 
 import java.sql.SQLException;
 import java.util.List;
 import org.testng.annotations.Test;
 import baseComponent.BaseTest;
-import common.PricePageObject;
+import velocity.pageobjects.SearchProduct;
 
 public class VerifyProductPriceTest extends BaseTest {
 	
@@ -13,6 +13,8 @@ public class VerifyProductPriceTest extends BaseTest {
 		PricePageObject priceObj = new PricePageObject(driver);			
 		List<String> price =    priceObj.getPriceFromBackend();		
 		System.out.println(price.get(0));
+		SearchProduct ob = priceObj.visitShop();
+		
 		
 	}
 }

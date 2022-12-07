@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-07T18:56:11 IST" name="Default suite" finished-at="2022-12-07T18:56:57 IST" duration-ms="45548">
+  <suite started-at="2022-12-07T19:02:57 IST" name="Default suite" finished-at="2022-12-07T19:03:03 IST" duration-ms="5175">
     <groups>
       <group name="AdminLoginTest.login">
         <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" name="login" class="admin.Tests.AdminLoginTest"/>
       </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-07T18:56:11 IST" name="Default test" finished-at="2022-12-07T18:56:57 IST" duration-ms="45548">
+    <test started-at="2022-12-07T19:02:57 IST" name="Default test" finished-at="2022-12-07T19:03:03 IST" duration-ms="5175">
       <class name="admin.Tests.AdminLoginTest">
-        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" started-at="2022-12-07T18:56:11 IST" name="login" data-provider="getTestData" finished-at="2022-12-07T18:56:16 IST" duration-ms="4937" status="PASS">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" started-at="2022-12-07T19:02:57 IST" name="login" data-provider="getTestData" finished-at="2022-12-07T19:03:02 IST" duration-ms="4169" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,21 +21,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" started-at="2022-12-07T18:56:16 IST" name="closeBrowser" finished-at="2022-12-07T18:56:16 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" started-at="2022-12-07T19:03:02 IST" name="closeBrowser" finished-at="2022-12-07T19:03:02 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- admin.Tests.AdminLoginTest -->
-      <class name="admin.Tests.CreateSimpleProductTest">
-        <test-method signature="Create()[pri:0, instance:admin.Tests.CreateSimpleProductTest@25641d39]" started-at="2022-12-07T18:56:16 IST" name="Create" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-07T18:56:57 IST" duration-ms="40574" status="PASS">
+      <class name="common.VerifyProductPriceTest">
+        <test-method signature="verifyPrice()[pri:0, instance:common.VerifyProductPriceTest@25641d39]" started-at="2022-12-07T19:03:02 IST" name="verifyPrice" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-07T19:03:03 IST" duration-ms="966" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Create -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProductTest@25641d39]" started-at="2022-12-07T18:56:57 IST" name="closeBrowser" finished-at="2022-12-07T18:56:57 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyPrice -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:common.VerifyProductPriceTest@25641d39]" started-at="2022-12-07T19:03:03 IST" name="closeBrowser" finished-at="2022-12-07T19:03:03 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- admin.Tests.CreateSimpleProductTest -->
+      </class> <!-- common.VerifyProductPriceTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
