@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import bagisto.automationFramework.*;
+import abstraction.*;
 import baseComponent.*;
 import velocity.pageobjects.*;
 

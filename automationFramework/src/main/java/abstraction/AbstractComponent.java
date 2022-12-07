@@ -1,4 +1,4 @@
-package bagisto.automationFramework;
+package abstraction;
 
 import java.util.*;
 import java.awt.Robot;

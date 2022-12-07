@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
-import bagisto.automationFramework.AbstractComponent;
+import abstraction.AbstractComponent;
 
 public class CheckoutPageObject extends AbstractComponent {
 	WebDriver driver;

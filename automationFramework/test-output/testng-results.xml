@@ -1,133 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="0" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-07T18:50:16 IST" name="Default suite" finished-at="2022-12-07T18:50:40 IST" duration-ms="23876">
+  <suite started-at="2022-12-07T18:56:11 IST" name="Default suite" finished-at="2022-12-07T18:56:57 IST" duration-ms="45548">
     <groups>
+      <group name="AdminLoginTest.login">
+        <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" name="login" class="admin.Tests.AdminLoginTest"/>
+      </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-07T18:50:16 IST" name="Default test" finished-at="2022-12-07T18:50:40 IST" duration-ms="23876">
-      <class name="Shop.Tests.CustomerCheckoutTest">
-        <test-method retried="true" signature="CustomerplaceOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Shop.Tests.CustomerCheckoutTest@66f57048]" started-at="2022-12-07T18:50:16 IST" name="CustomerplaceOrder" data-provider="getTestData" finished-at="2022-12-07T18:50:22 IST" duration-ms="5805" status="SKIP">
+    <test started-at="2022-12-07T18:56:11 IST" name="Default test" finished-at="2022-12-07T18:56:57 IST" duration-ms="45548">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" started-at="2022-12-07T18:56:11 IST" name="login" data-provider="getTestData" finished-at="2022-12-07T18:56:16 IST" duration-ms="4937" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[sanjay.bhatt371@webkul.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
                 <![CDATA[admin123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[jackaet]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <div class="add-to-cart-btn pl0">...</div> is not clickable at point (372, 19). Other element would receive the click: <input required="required" name="term" type="search" placeholder="Search products here" aria-label="Search" class="form-control">
-  (Session info: chrome=108.0.5359.94)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'sanjay237', ip: '192.168.15.237', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8a423e6a228cc43d9cbbf118bff7e414, clickElement {id=945b3517-5013-4266-9778-116c4620efd7}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.94, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /tmp/.com.google.Chrome.0WRbUj}, goog:chromeOptions: {debuggerAddress: localhost:35317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:35317/devtoo..., se:cdpVersion: 108.0.5359.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (8a423e6a228cc43d9cbbf118bff7e414)] -> css selector: *[class*='add-to-cart-btn']]
-Session ID: 8a423e6a228cc43d9cbbf118bff7e414]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="add-to-cart-btn pl0">...</div> is not clickable at point (372, 19). Other element would receive the click: <input required="required" name="term" type="search" placeholder="Search products here" aria-label="Search" class="form-control">
-  (Session info: chrome=108.0.5359.94)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'sanjay237', ip: '192.168.15.237', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8a423e6a228cc43d9cbbf118bff7e414, clickElement {id=945b3517-5013-4266-9778-116c4620efd7}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.94, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /tmp/.com.google.Chrome.0WRbUj}, goog:chromeOptions: {debuggerAddress: localhost:35317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:35317/devtoo..., se:cdpVersion: 108.0.5359.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (8a423e6a228cc43d9cbbf118bff7e414)] -> css selector: *[class*='add-to-cart-btn']]
-Session ID: 8a423e6a228cc43d9cbbf118bff7e414
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at helpers.productsActions.addProductTo(productsActions.java:47)
-at velocity.pageobjects.ProductListing.addItemToCart(ProductListing.java:68)
-at Shop.Tests.CustomerCheckoutTest.CustomerplaceOrder(CustomerCheckoutTest.java:21)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CustomerplaceOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckoutTest@66f57048]" started-at="2022-12-07T18:50:22 IST" name="closeBrowser" finished-at="2022-12-07T18:50:22 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method signature="CustomerplaceOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Shop.Tests.CustomerCheckoutTest@66f57048]" started-at="2022-12-07T18:50:22 IST" name="CustomerplaceOrder" data-provider="getTestData" finished-at="2022-12-07T18:50:40 IST" duration-ms="18028" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sanjay.bhatt371@webkul.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[jackaet]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CustomerplaceOrder -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Shop.Tests.CustomerCheckoutTest@66f57048]" started-at="2022-12-07T18:50:40 IST" name="closeBrowser" finished-at="2022-12-07T18:50:40 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.AdminLoginTest@36916eb0]" started-at="2022-12-07T18:56:16 IST" name="closeBrowser" finished-at="2022-12-07T18:56:16 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- Shop.Tests.CustomerCheckoutTest -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
+      <class name="admin.Tests.CreateSimpleProductTest">
+        <test-method signature="Create()[pri:0, instance:admin.Tests.CreateSimpleProductTest@25641d39]" started-at="2022-12-07T18:56:16 IST" name="Create" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-07T18:56:57 IST" duration-ms="40574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Create -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admin.Tests.CreateSimpleProductTest@25641d39]" started-at="2022-12-07T18:56:57 IST" name="closeBrowser" finished-at="2022-12-07T18:56:57 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- admin.Tests.CreateSimpleProductTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

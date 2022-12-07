@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import org.openqa.selenium.WebDriver;
-import bagisto.automationFramework.AbstractComponent;
+
+import abstraction.AbstractComponent;
 
 public class getProductsPrice extends AbstractComponent{
 	
