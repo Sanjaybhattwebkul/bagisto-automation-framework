@@ -124,7 +124,7 @@ public class BaseTest {
 		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.
 		File File = new File(System.getProperty("user.dir") + "//ExtentReport//" + testClassNmae + ".png");
 		FileUtils.copyFile(source, File); //copyFile is static method of FileUtils class
-		return System.getProperty("user.dir") + "//Reports//" + testClassNmae + ".png";
+		return System.getProperty("user.dir") + "//ExtentReport//" + testClassNmae + ".png";
 	}
 
 	/**
