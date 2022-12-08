@@ -41,11 +41,11 @@ public class StepDefinitionImpl extends BaseTest {
 		CheckoutObject.placeOrder();		
 	}
 	
-	 @Then("{string} message is displayed on ConfirmationPage")
-	    public void message_displayed_confirmationPage(String string) {
-		 	//String message = confirmMessagePage.getConfirmMessage();
-			//Assert.assertTrue(message.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-		 	driver.close();
-	    }
+	@Then("{string} message is displayed on ConfirmationPage")
+    public void message_displayed_confirmationPage(String string) {
+	 	//String message = confirmMessagePage.getConfirmMessage();
+		//Assert.assertTrue(message.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+	 	driver.close();
+	}
 	
 }

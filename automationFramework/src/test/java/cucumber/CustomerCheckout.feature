@@ -5,7 +5,7 @@ Feature: Purchase the order from Ecommerce Website
 	Background:
 	Given I landed on Velocity Page
 
-  @Regression
+  @CustomerCheckout
   Scenario Outline: Positive Test of Submitting the order
   
     Given I add product <productName> to Cart
