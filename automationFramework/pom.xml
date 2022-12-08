@@ -124,7 +124,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>CucumberTest</id>
+			<id>CheckoutCucumberTest</id>
 			<build>
 				<pluginManagement>
 					<!--bock down plugins versions to avoid using Maven defaults (may be moved to parent pom)-->
