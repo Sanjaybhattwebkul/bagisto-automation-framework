@@ -58,7 +58,7 @@ public class BaseTest {
 		} else {
 			//TODO
 
-		}
+		}	
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.manage().window().maximize();

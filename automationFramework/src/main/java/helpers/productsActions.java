@@ -27,7 +27,7 @@ public class productsActions extends AbstractComponent{
 	@FindBy(css="button[class*='buynow']")
 	List<WebElement> bynowButton;
 	
-	@FindBy(css=".a[class*='compare-icon']")
+	@FindBy(css="a[class*='compare-icon']")
 	List<WebElement> productCard;
 	
 	@FindBy(css=".wishlist-icon")

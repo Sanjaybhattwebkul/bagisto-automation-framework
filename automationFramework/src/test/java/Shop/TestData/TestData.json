@@ -1,14 +1,9 @@
 [
 
 	{
-		"email" 	  : "tom@example.com",
-		"password" 	  : "tom123",
-		"productName" : "Men's Bomber"
-	},
-	
-	{
-		"email"		  : "user@example.com",
-		"password"    : "admin123",
-		"productName" :  "Sunglasses"
+		"email" 	  : "sanjay.bhatt371@webkul.com",
+		"password" 	  : "admin123",
+		"productName" : "jackaet"
 	}
+	
 ]

@@ -121,8 +121,7 @@ public class EditProductPageObject extends AbstractComponent {
 		priceSection.click();
 		productsPrice.sendKeys("4500");
 		specialPrice.sendKeys("3500");
-		specialPriceFromDate.click();
-		
+		specialPriceFromDate.click();		
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		specialPriceToDate.click();
 		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
