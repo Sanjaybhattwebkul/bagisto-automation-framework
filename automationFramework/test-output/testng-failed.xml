@@ -6,7 +6,7 @@
       <class name="admin.Tests.AdminLoginTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="login" invocation-numbers="0"/>
+          <include name="login"/>
         </methods>
       </class> <!-- admin.Tests.AdminLoginTest -->
       <class name="admin.Tests.ApplyCataloRuleTest">

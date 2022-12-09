@@ -46,7 +46,7 @@ public class CatalogPageObject extends AbstractComponent{
 	WebElement endDate;
 	
 	@FindBy(xpath="//div[@class='accordian'][1]")
-	WebElement condition;
+	WebElement conditionSection;
 	
 	@FindBy(xpath="//div[@class='accordian active'][2]/div[2]/div/button")
 	WebElement addCondtionButton;
@@ -54,10 +54,25 @@ public class CatalogPageObject extends AbstractComponent{
 	@FindBy(xpath="//div[@class='attribute']/div/select")
 	WebElement selectAttribute;
 	
-	@FindBy(xpath="//div[@class='accordian'][2]")
+	@FindBy(xpath="//div[@class='operator']/div/select")
+	WebElement actionType;
+	
+	@FindBy(xpath="//div[@class='value']/div/div/div/input")
+	WebElement value;
+	
+	@FindBy(xpath="//div[@class='accordian']")
 	WebElement actions;
+	
+	@FindBy(id="action_type")
+	WebElement actionName;
+	
+	@FindBy(id="discount_amount")
+	WebElement discountAmount;
+	
+	@FindBy(xpath="//div[@class='page-action']/button")
+	WebElement saveButton;
 		
-	public void createCatalogRule() throws InterruptedException {
+	public void createCatalogRuleFor(String productsName) throws InterruptedException {
 		permotionIcon.click();
 		addCatalogButton.click();
 		catalogRuleName.sendKeys("Automated Catalog Rule");
@@ -70,6 +85,18 @@ public class CatalogPageObject extends AbstractComponent{
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		endDate.click();
 		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
+		conditionSection.click();
+		scrollDown(driver,200);
+		addCondtionButton.click();
+		scrollDown(driver,300);
+		handleMultiSelect(selectAttribute,"Name");
+		handleMultiSelect(actionType,"Is equal to");
+		value.sendKeys(productsName);
+		actions.click();
+		scrollDown(driver,300);
+		handleMultiSelect(actionName,"Fixed Amount");
+		discountAmount.sendKeys("100");
+		saveButton.click();
 		
 		
 	}

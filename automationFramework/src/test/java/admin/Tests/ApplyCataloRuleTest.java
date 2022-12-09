@@ -10,6 +10,6 @@ public class ApplyCataloRuleTest extends BaseTest{
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void create() throws InterruptedException {
 		CatalogPageObject CatalogObj = new CatalogPageObject(driver);
-		CatalogObj.createCatalogRule();
+		CatalogObj.createCatalogRuleFor("watch");
 	}
 }
