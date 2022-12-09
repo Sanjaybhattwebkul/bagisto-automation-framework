@@ -15,10 +15,8 @@ public class PricePageObject extends getProductsPrice{
 		this.driver = driver;
 	}
 	
-	public ArrayList<String> getPriceFromBackend() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-		gotoProductsPage();
-		int productId = getCreatedProductId();
-		ResultSet  data = getProductPriceFromDB("product_price_indices",productId,1);
+	public ArrayList<String> getPriceFromBackend(int productId,int customerGroupId) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+		ResultSet  data = getProductPriceFromDB("product_price_indices",productId,customerGroupId);
 		ArrayList<String> productsPrice = new ArrayList<String>();
 		while(data.next()) {			
 			productsPrice.add(data.getString("min_price"));

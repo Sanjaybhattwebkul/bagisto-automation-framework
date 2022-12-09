@@ -6,6 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -30,15 +31,13 @@ import velocity.pageobjects.ProductListing;
 public class BaseTest {
 	
 	public static WebDriver driver;
-	public 	String AdminURL; 
-	public 	String ShopURL; 
+	public String AdminURL; 
+	public String ShopURL; 
+	public Properties prop;
+	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException {
-
-		// Get GlobalData using Properties class
-		Properties prop = new Properties(); // create Properties() object for get GlobalData.properties file
-		FileInputStream files = new FileInputStream(
-				"/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
+		getGlobalData();
 		prop.load(files); // load the GlobalData.properties file.
 		AdminURL = prop.getProperty("AdminURL");
 		ShopURL = prop.getProperty("ShopURL");
@@ -141,7 +140,6 @@ public class BaseTest {
 	}
 
 	public static void uploadFile(String fileLocation) {
-
 		try {
 
 			// Setting ClipBoard with file location
@@ -154,16 +152,14 @@ public class BaseTest {
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-
 		} catch (Exception exp) {
 			exp.printStackTrace();
-
 		}
-
 	}
-	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		
-
+	
+	public void getGlobalData() throws FileNotFoundException {
+		prop = new Properties(); // create Properties() object for get GlobalData.properties file
+		files = new FileInputStream("/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
+				
 	}
 }

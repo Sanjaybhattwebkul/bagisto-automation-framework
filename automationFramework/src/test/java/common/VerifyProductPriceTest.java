@@ -12,8 +12,10 @@ public class VerifyProductPriceTest extends BaseTest {
 	
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void verifyPrice() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {		
-		PricePageObject priceObj = new PricePageObject(driver);			
-		List<String> price =    priceObj.getPriceFromBackend();		
+		PricePageObject priceObj = new PricePageObject(driver);	
+		priceObj.gotoProductsPage();
+		int productId = priceObj.getCreatedProductId();
+		List<String> price =    priceObj.getPriceFromBackend(productId,1);		
 		String backendPrice = price.get(0);
 		double expectedPrice = priceObj.getActualPrice(backendPrice);
 		SearchProduct ob = priceObj.visitShop();
