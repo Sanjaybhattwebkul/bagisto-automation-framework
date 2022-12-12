@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite  name="Suite">
+ <!-- TestNG listeners for Extent Report -->
+	<listeners>
+		<listener class-name="baseComponent.Listeners"/>
+	</listeners>
+	 <!-- Test -->
+	<test thread-count="5" name="ApplyCartRule">	
+		<classes>
+			<class name="admin.Tests.AdminLoginTest" />
+			<class name="admin.Tests.ApplyCartRule" />			
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="VeryCartRuleTest">
+		<classes>
+			<class name="Shop.Tests.VeryCartRuleTest" />	
+		</classes>	
+	</test>
+</suite> <!-- Suite -->

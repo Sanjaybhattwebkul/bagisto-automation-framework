@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-12T17:53:57 IST" name="Default suite" finished-at="2022-12-12T17:54:03 IST" duration-ms="6258">
+  <suite started-at="2022-12-12T18:05:16 IST" name="Suite" finished-at="2022-12-12T18:05:33 IST" duration-ms="16926">
     <groups>
+      <group name="AdminLoginTest.login">
+        <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@1fc32e4f]" name="login" class="admin.Tests.AdminLoginTest"/>
+      </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-12T17:53:57 IST" name="Default test" finished-at="2022-12-12T17:54:03 IST" duration-ms="6258">
+    <test started-at="2022-12-12T18:05:16 IST" name="ApplyCartRule" finished-at="2022-12-12T18:05:27 IST" duration-ms="11278">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@1fc32e4f]" started-at="2022-12-12T18:05:16 IST" name="login" data-provider="getTestData" finished-at="2022-12-12T18:05:20 IST" duration-ms="4231" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
+      <class name="admin.Tests.ApplyCartRule">
+        <test-method signature="apply()[pri:0, instance:admin.Tests.ApplyCartRule@5a755cc1]" started-at="2022-12-12T18:05:20 IST" name="apply" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-12T18:05:27 IST" duration-ms="7001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- apply -->
+      </class> <!-- admin.Tests.ApplyCartRule -->
+    </test> <!-- ApplyCartRule -->
+    <test started-at="2022-12-12T18:05:28 IST" name="VeryCartRuleTest" finished-at="2022-12-12T18:05:33 IST" duration-ms="5342">
       <class name="Shop.Tests.VeryCartRuleTest">
-        <test-method signature="veryfy()[pri:0, instance:Shop.Tests.VeryCartRuleTest@37d4349f]" started-at="2022-12-12T17:53:57 IST" name="veryfy" finished-at="2022-12-12T17:54:03 IST" duration-ms="6222" status="PASS">
+        <test-method signature="veryfy()[pri:0, instance:Shop.Tests.VeryCartRuleTest@3fc9504b]" started-at="2022-12-12T18:05:28 IST" name="veryfy" finished-at="2022-12-12T18:05:33 IST" duration-ms="5339" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- veryfy -->
       </class> <!-- Shop.Tests.VeryCartRuleTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- VeryCartRuleTest -->
+  </suite> <!-- Suite -->
 </testng-results>
