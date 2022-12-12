@@ -72,11 +72,11 @@ public class CatalogPageObject extends AbstractComponent{
 	@FindBy(xpath="//div[@class='page-action']/button")
 	WebElement saveButton;
 		
-	public void createCatalogRuleFor(String productsName) throws InterruptedException {
+	public void createCatalogRuleFor(String[] catalogRulevalues) throws InterruptedException {
 		permotionIcon.click();
 		addCatalogButton.click();
-		catalogRuleName.sendKeys("Automated Catalog Rule");
-		description.sendKeys("This Catalog Rule Is Created By Selenium Automation");
+		catalogRuleName.sendKeys(catalogRulevalues[0]);
+		description.sendKeys(catalogRulevalues[1]);
 		status.click();
 		scrollDown(driver,500);
 		handleMultiSelect(selectChannels,"");
@@ -89,13 +89,13 @@ public class CatalogPageObject extends AbstractComponent{
 		scrollDown(driver,200);
 		addCondtionButton.click();
 		scrollDown(driver,300);
-		handleMultiSelect(selectAttribute,"Name");
-		handleMultiSelect(actionType,"Is equal to");
-		value.sendKeys(productsName);
+		handleMultiSelect(selectAttribute,catalogRulevalues[2]);
+		handleMultiSelect(actionType,catalogRulevalues[3]);
+		value.sendKeys(catalogRulevalues[4]);
 		actions.click();
 		scrollDown(driver,300);
-		handleMultiSelect(actionName,"Fixed Amount");
-		discountAmount.sendKeys("100");
+		handleMultiSelect(actionName,catalogRulevalues[5]);
+		discountAmount.sendKeys(catalogRulevalues[6]);
 		saveButton.click();
 		
 		
