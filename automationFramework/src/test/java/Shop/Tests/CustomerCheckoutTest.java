@@ -18,7 +18,7 @@ public class CustomerCheckoutTest extends BaseTest {
 		//input.get("productName") if data is getting from JSON file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
 		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart("Product-By Selnium Automation");
-		CustomerLogin CustomerLoginobj = ProductListingObj.addProductsToCart();
+		CustomerLogin CustomerLoginobj = ProductListingObj.addProductsToCart(3);
 		CustomerLoginobj.goToLoginPage();
 		CustomerLoginobj.customerLogin(input.get("email"),input.get("password"));	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//

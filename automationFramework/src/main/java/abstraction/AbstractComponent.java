@@ -34,7 +34,7 @@ public class AbstractComponent {
 	
 	@FindBy(xpath = "//div[@id='mini-cart']")
 	WebElement cart;
-
+	
 	@FindBy(css = "a[class*='navbar-brand']")
 	WebElement logo;
 
@@ -61,6 +61,7 @@ public class AbstractComponent {
 	
 	@FindBy(css="span[title='Visit Shop']")
 	WebElement visitShop;
+	
 	
 	/*
 	 * @void

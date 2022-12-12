@@ -30,8 +30,7 @@ public class CustomerLogin extends AbstractComponent {
 	WebElement userEmail;
 	
 	@FindBy(id="password")
-	WebElement passwordElement;
-	
+	WebElement passwordElement;	
 	
 	@FindBy(css="input[type='submit']")
 	WebElement loginButton;

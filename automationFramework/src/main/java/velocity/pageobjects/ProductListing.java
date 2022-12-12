@@ -38,8 +38,8 @@ public class ProductListing extends productsActions{
 	 * @Object
 	 * Add Multiple products to the cart.
 	 */
-	public CustomerLogin addProductsToCart() throws InterruptedException {		
-		addProductTo("CART",3);	
+	public CustomerLogin addProductsToCart(int number) throws InterruptedException {		
+		addProductTo("CART",number);	
 		return new CustomerLogin(driver);
 	}
 	
