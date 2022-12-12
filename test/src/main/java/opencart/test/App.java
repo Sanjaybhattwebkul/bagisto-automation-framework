@@ -1,4 +1,4 @@
-package bagissto.testproject;
+package opencart.test;
 
 /**
  * Hello world!

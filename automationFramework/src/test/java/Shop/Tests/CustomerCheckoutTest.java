@@ -15,10 +15,10 @@ public class CustomerCheckoutTest extends BaseTest {
 	//@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
 	@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
 	public void CustomerplaceOrder(HashMap<String, String> input) throws IOException, InterruptedException {
-		//input.get("productName") if data is getting from json file // productName .json file m key ka name h.
+		//input.get("productName") if data is getting from JSON file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
-		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart(input.get("productName"));
-		CustomerLogin CustomerLoginobj = ProductListingObj.addItemToCart();
+		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart("Product-By Selnium Automation");
+		CustomerLogin CustomerLoginobj = ProductListingObj.addProductsToCart();
 		CustomerLoginobj.goToLoginPage();
 		CustomerLoginobj.customerLogin(input.get("email"),input.get("password"));	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//

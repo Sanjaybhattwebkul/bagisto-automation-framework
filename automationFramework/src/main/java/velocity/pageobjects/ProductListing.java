@@ -1,5 +1,4 @@
 package velocity.pageobjects;
-import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +15,6 @@ public class ProductListing extends productsActions{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(css=".card-body")
-	List<WebElement> products;
 
 	@FindBy(css=".alert-dismissible")  //alert alert-success 
 	WebElement flashMessage;
@@ -27,44 +23,22 @@ public class ProductListing extends productsActions{
 	By addToCartButton = By.cssSelector(".btn-add-to-cart");
 			
 	/*
-	 * @List 
-	 * Return List Of Product cards.
-	 */
-	public List<WebElement> getProductList() throws InterruptedException{
-		waitForElementToAppear(getProductsBy);
-		return (List<WebElement>) products;
-	}
-	
-	/*
-	 * @WebElement 
-	 * Filter products from prducts list using JavaStream.
-	 */
-	public WebElement getProductByName(String productName) throws InterruptedException {
-		WebElement prod =	getProductList().stream().filter(product->
-		product.findElement(By.cssSelector("span")).getText().equals(productName)).findFirst().orElse(null);
-		return prod;
-	}
-	
-	/*
-	 * @Object
 	 * Add Only the given product to the cart.
 	 */
-	public CustomerLogin addProductToCart(String ProductName) throws InterruptedException {
+	public void addProductToCart(String ProductName) throws InterruptedException {
 		//System.out.println(ProductName);
-		WebElement ProName = getProductByName(ProductName);
+		WebElement ProName = getProductCardByProductsName(ProductName);
 		ProName.findElement(addToCartButton).click();
-		waitForWebElementToAppear(flashMessage); // waite while flash message is displaying
-		Thread.sleep(1000);
-		//waiteForElementToDisAppear(); // waite till loader will display
-		scrollUp(driver);
-		return new CustomerLogin(driver);
+		waitForWebElementToAppear(flashMessage); 
+		Thread.sleep(1000);		
+		scrollUp(driver);		
 	}
 	
 	/*
 	 * @Object
 	 * Add Multiple products to the cart.
 	 */
-	public CustomerLogin addItemToCart() throws InterruptedException {		
+	public CustomerLogin addProductsToCart() throws InterruptedException {		
 		addProductTo("CART",3);	
 		return new CustomerLogin(driver);
 	}

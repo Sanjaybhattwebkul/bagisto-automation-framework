@@ -11,9 +11,28 @@ public class CreateSimpleProductTest extends BaseTest {
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void Create() throws IOException, InterruptedException {
 		//fullScreenMode();
+		getGlobalData();		
+		String[] productsValues = {
+				prop.getProperty("createdProductsName"),
+				prop.getProperty("shortDecriptionFrameID"),
+				prop.getProperty("shortDecriptionText"),
+				prop.getProperty("DecriptionFrameID"),
+				prop.getProperty("DecriptionText"),
+				prop.getProperty("productsPrice"),
+				prop.getProperty("productSpecialPrice"),
+				prop.getProperty("productsWeight"),
+				prop.getProperty("defaultInventory"),
+				prop.getProperty("productImagePath")
+			};
+		
+		String[] productsDetails = {
+				prop.getProperty("createProductType"),
+				prop.getProperty("attributeFamily"),
+				prop.getProperty("createProductSKU")
+			};
 		CreateProductPageObject CreateProduct = new CreateProductPageObject(driver);
-		EditProductPageObject editProductObj = CreateProduct.createSimpleProduct();	
-		editProductObj.editSimpleProduct();
+		EditProductPageObject editProductObj = CreateProduct.createSimpleProduct(productsDetails);	
+		editProductObj.editSimpleProduct(productsValues);
 	}
 	
 }

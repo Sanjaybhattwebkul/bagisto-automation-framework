@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-09T19:18:09 IST" name="Default suite" finished-at="2022-12-09T19:18:13 IST" duration-ms="4090">
+  <suite started-at="2022-12-12T14:05:56 IST" name="Default suite" finished-at="2022-12-12T14:06:41 IST" duration-ms="45054">
     <groups>
+      <group name="AdminLoginTest.login">
+        <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@21282ed8]" name="login" class="admin.Tests.AdminLoginTest"/>
+      </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-09T19:18:09 IST" name="Default test" finished-at="2022-12-09T19:18:13 IST" duration-ms="4090">
-      <class name="common.verifyCatalogRuleTest">
-        <test-method signature="verify()[pri:0, instance:common.verifyCatalogRuleTest@5b03b9fe]" started-at="2022-12-09T19:18:09 IST" name="verify" finished-at="2022-12-09T19:18:13 IST" duration-ms="4063" status="PASS">
+    <test started-at="2022-12-12T14:05:56 IST" name="Default test" finished-at="2022-12-12T14:06:41 IST" duration-ms="45054">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@21282ed8]" started-at="2022-12-12T14:05:56 IST" name="login" data-provider="getTestData" finished-at="2022-12-12T14:06:01 IST" duration-ms="4675" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify -->
-      </class> <!-- common.verifyCatalogRuleTest -->
+        </test-method> <!-- login -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
+      <class name="admin.Tests.CreateSimpleProductTest">
+        <test-method signature="Create()[pri:0, instance:admin.Tests.CreateSimpleProductTest@4a883b15]" started-at="2022-12-12T14:06:01 IST" name="Create" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-12T14:06:41 IST" duration-ms="40338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Create -->
+      </class> <!-- admin.Tests.CreateSimpleProductTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

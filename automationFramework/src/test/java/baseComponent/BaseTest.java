@@ -6,7 +6,6 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -19,11 +18,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import admin.pageobjects.LoginPageObject;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import velocity.pageobjects.ProductListing;
@@ -38,7 +35,6 @@ public class BaseTest {
 	
 	public WebDriver initlizeBrowser() throws IOException {
 		getGlobalData();
-		prop.load(files); // load the GlobalData.properties file.
 		AdminURL = prop.getProperty("AdminURL");
 		ShopURL = prop.getProperty("ShopURL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
@@ -46,7 +42,7 @@ public class BaseTest {
 		if (browserName.equalsIgnoreCase("chrome")) {	
 			WebDriverManager.chromedriver().setup();
 			/*ChromeOptions chromeOption = new ChromeOptions();
-			chromeOption.addArguments("--start-fullscreen");	*/	
+			chromeOption.addArguments("--start-fullscreen");*/	
 			driver = new ChromeDriver();
 			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {		
@@ -54,9 +50,10 @@ public class BaseTest {
 			driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			//TODO
+			
 		} else {
 			//TODO
-
+			
 		}	
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -68,8 +65,6 @@ public class BaseTest {
 		driver = initlizeBrowser();
 		goToAdminPanel();
 		return new LoginPageObject(driver);
-				
-		
 	}
 	
 	public void fullScreenMode() {
@@ -81,12 +76,10 @@ public class BaseTest {
 	}
 	
 	public ProductListing launcVelocity() throws IOException {
-
 		driver = initlizeBrowser();
-		goToVelocityShop(); // open browser/site
+		goToVelocityShop();
 		ProductListing ProductListing = new ProductListing(driver);
-		return ProductListing; // LandingPage object ko is liye return kiya kyuki loginApplication() function
-								// bhi call ho ra hai.
+		return ProductListing; 
 	}
 
 	public void goToVelocityShop() {
@@ -157,9 +150,10 @@ public class BaseTest {
 		}
 	}
 	
-	public void getGlobalData() throws FileNotFoundException {
+	public void getGlobalData() throws IOException {
 		prop = new Properties(); // create Properties() object for get GlobalData.properties file
 		files = new FileInputStream("/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
+		prop.load(files); // load the GlobalData.properties file.
 				
 	}
 }

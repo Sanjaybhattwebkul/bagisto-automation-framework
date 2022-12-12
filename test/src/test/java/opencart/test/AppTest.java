@@ -1,4 +1,4 @@
-package bagissto.testproject;
+package opencart.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

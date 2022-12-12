@@ -11,6 +11,7 @@ import abstraction.AbstractComponent;
 public class EditProductPageObject extends AbstractComponent {
 	
 	public WebDriver driver;
+	
 	/*
 	 * Assign driver object to PageFactory class AND EditProductPageObject class 
 	 */
@@ -41,11 +42,12 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
 	WebElement descriptionSection;
 	
+	//@FindBy(css="iframe[id='short_description_ifr']")
 	@FindBy(xpath="//iframe[@id='short_description_ifr']")
 	WebElement shortDescriptionIframe;
 	
 	@FindBy(id="short_description")
-	WebElement shoertDescriptionTextarea;
+	WebElement shortDescriptionTextarea;
 	
 	@FindBy(xpath="//iframe[@id='description_ifr']")
 	WebElement descriptionIframe;
@@ -92,8 +94,8 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(xpath="//div[@class='page-action']/button")
 	WebElement saveProductButton;	
 
-	public void editSimpleProduct() throws InterruptedException {	
-		productsName.sendKeys("Product-By Selnium Automation");
+	public void editSimpleProduct(String[] productsAttributes) throws InterruptedException {	
+		productsName.sendKeys(productsAttributes[0]);
 		scrollDown(driver,440);			
 		isNew.click();
 		isFeatured.click();
@@ -104,23 +106,23 @@ public class EditProductPageObject extends AbstractComponent {
 		descriptionSection.click();
 		scrollDown(driver,320);	
 		
-		if (shortDescriptionIframe.isDisplayed()) {
-			switchToFrame("short_description_ifr","Short description By Selenium Automation");			
+		if (shortDescriptionIframe.isEnabled()) {
+			switchToFrame(productsAttributes[1],productsAttributes[2]);				
 			backToMainPage();			
 		} else {
-			shoertDescriptionTextarea.sendKeys("Short description By Selenium Automation");
+			shortDescriptionTextarea.sendKeys(productsAttributes[2]);
 		}
 		
-		if (descriptionIframe.isDisplayed()) {
-			switchToFrame("description_ifr","This product is created by Selenium Aumatation");			
+		if (descriptionIframe.isEnabled()) {
+			switchToFrame(productsAttributes[3],productsAttributes[4]);				
 			backToMainPage();		
 		} else {
-			DescriptionTextarea.sendKeys("This product is created by Selenium Aumatation");
+			DescriptionTextarea.sendKeys(productsAttributes[4]);
 		}
 		scrollDown(driver,800);	//descriptionSection.click();
 		priceSection.click();
-		productsPrice.sendKeys("4500");
-		specialPrice.sendKeys("3500");
+		productsPrice.sendKeys(productsAttributes[5]);
+		specialPrice.sendKeys(productsAttributes[6]);
 		specialPriceFromDate.click();		
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		specialPriceToDate.click();
@@ -128,17 +130,16 @@ public class EditProductPageObject extends AbstractComponent {
 		scrollDown(driver,250);	//priceSection.click();
 		shippingSection.click();
 		scrollDown(driver,450);
-		productsWeight.sendKeys("0.6");
+		productsWeight.sendKeys(productsAttributes[7]);
 		inventorySection.click();
-		defaultInventory.sendKeys("450");
-		//inventorySection.click(); // hide inventory section
+		defaultInventory.sendKeys(productsAttributes[8]);		
 		imageSection.click();
 		addImage.click();
 		System.out.println(selectImage.isDisplayed());
 		Thread.sleep(1000);
 		System.out.println(selectImage.isDisplayed());
 		selectImage.click();
-		uploadFile("//home//users//sanjay.bhatt//Downloads//img-new.png");
+		uploadFile(productsAttributes[9]);
 		Thread.sleep(2000);
 		saveProductButton.click();
 		

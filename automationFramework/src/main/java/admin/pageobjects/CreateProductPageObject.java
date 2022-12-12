@@ -41,18 +41,18 @@ public class CreateProductPageObject extends AbstractComponent{
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	
-	public EditProductPageObject createSimpleProduct() { 
+	public EditProductPageObject createSimpleProduct(String[] productsDetails) { 
 		 gotoProductsPage();
 		 waitForElementToAppear(addButton); //explicitly wait
 		 addProduct.click();
 		 waitForElementToAppear(selectType);
 		 selectProductType.click();
 		 Select productType = new Select(selectProductType);
-		 productType.selectByVisibleText("Simple"); // Select Product Type
+		 productType.selectByVisibleText(productsDetails[0]);		
 		 attributeFamily.click();
 		 Select Family = new Select(attributeFamily);
-		 Family.selectByVisibleText("Default"); // Select Attribute Family
-		 productSKU.sendKeys("t-shirt-automate");
+		 Family.selectByVisibleText(productsDetails[1]);		
+		 productSKU.sendKeys(productsDetails[2]);		
 		 saveProduct.click();
 		 return new EditProductPageObject(driver);
 	}

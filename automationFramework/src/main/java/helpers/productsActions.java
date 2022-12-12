@@ -1,6 +1,8 @@
 package helpers;
 
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,6 +37,9 @@ public class productsActions extends AbstractComponent{
 	
 	@FindBy(css="a[title='Add product to compare list']")
 	List<WebElement> compareIcon;
+	
+	@FindBy(css=".card-body")
+	List<WebElement> products;
 	
 	/*
 	 * @void
@@ -79,4 +84,15 @@ public class productsActions extends AbstractComponent{
 	public void viewProduct(WebElement element) {
 		element.click();
 	}
+	
+	/*
+	 * @WebElement 
+	 * Filter products from prducts list using JavaStream.
+	 */
+	public WebElement getProductCardByProductsName(String productName) throws InterruptedException {
+		WebElement prod =	products.stream().filter(product->
+		product.findElement(By.cssSelector("span")).getText().equals(productName)).findFirst().orElse(null);
+		return prod;
+	}
+	
 }
