@@ -1,8 +1,7 @@
 package admin.Tests;
 
 import org.testng.annotations.Test;
-
-import admin.pageobjects.CatalogPageObject;
+import admin.pageobjects.PromotionsPageObject;
 import baseComponent.BaseTest;
 
 public class ApplyCataloRuleTest extends BaseTest{
@@ -19,7 +18,7 @@ public class ApplyCataloRuleTest extends BaseTest{
 					"100"
 				};
 		
-		CatalogPageObject CatalogObj = new CatalogPageObject(driver);
-		CatalogObj.createCatalogRuleFor(catalogRulevalues);
+		PromotionsPageObject obj = new PromotionsPageObject(driver);
+		obj.createCatalogRule(catalogRulevalues);
 	}
 }

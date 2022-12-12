@@ -265,5 +265,15 @@ public class AbstractComponent {
 			exp.printStackTrace();
 		}
 	}
+	
+	public void handleMultiSelect(WebElement selectBox,String value) {
+		Select options = new Select(selectBox);
+		if (options.isMultiple()) {			
+			options.selectByIndex(0);
+			options.selectByIndex(1);
+		} else {
+			options.selectByVisibleText(value);
+		}
+	}
 
 }
