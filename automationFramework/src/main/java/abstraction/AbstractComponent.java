@@ -60,8 +60,7 @@ public class AbstractComponent {
 	WebElement lastProductID;
 	
 	@FindBy(css="span[title='Visit Shop']")
-	WebElement visitShop;
-	
+	WebElement visitShop;	
 	
 	/*
 	 * @void

@@ -17,7 +17,7 @@ public class VeryCartRuleTest extends BaseTest{
 		CartRuleVerifyPageObject obj = new CartRuleVerifyPageObject(driver);
 		obj.clickOnCartIcon();
 		obj.gotoCartPage();	
-		obj.increaseNumber(1);
+		obj.increaseNumber(3);
 		obj.updateCart();
 		Assert.assertTrue(obj.isDiscount());
 	}

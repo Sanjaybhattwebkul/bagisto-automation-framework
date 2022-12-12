@@ -75,8 +75,11 @@ public class PromotionsPageObject extends AbstractComponent{
 	
 	@FindBy(xpath="//div[@class='page-action']/button")
 	WebElement saveButton;
+	
+	@FindBy(css="div[class='alert alert-success']")
+	WebElement adminFlashMessage;
 		
-	public void createCatalogRule(String[] catalogRulevalues) throws InterruptedException {
+	public boolean createCatalogRule(String[] catalogRulevalues) throws InterruptedException {
 		permotionIcon.click();
 		addCatalogButton.click();
 		name.sendKeys(catalogRulevalues[0]);
@@ -101,11 +104,17 @@ public class PromotionsPageObject extends AbstractComponent{
 		handleMultiSelect(actionName,catalogRulevalues[5]);
 		discountAmount.sendKeys(catalogRulevalues[6]);
 		saveButton.click();
+		if(isCreated()) {
+			System.out.println("Catalog Rule  Created SuccessFully");
+			return true;
+		} else {
+			return false;
+		}
 		
 		
 	}
 	
-	public void create(String[] cartRuleValues) throws InterruptedException {
+	public boolean createCartRule(String[] cartRuleValues) throws InterruptedException {
 		permotionIcon.click();
 		cartRuleTab.click();
 		addCartRuleButton.click();
@@ -131,5 +140,16 @@ public class PromotionsPageObject extends AbstractComponent{
 		handleMultiSelect(actionName,cartRuleValues[5]);
 		discountAmount.sendKeys(cartRuleValues[6]);
 		saveButton.click();
+		if(isCreated()) {
+			System.out.println("Cart Rule  Created SuccessFully");
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+	
+	public boolean isCreated() {
+		return adminFlashMessage.isDisplayed();
 	}
 }

@@ -1,5 +1,6 @@
 package admin.Tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import admin.pageobjects.PromotionsPageObject;
 import baseComponent.BaseTest;
@@ -18,7 +19,8 @@ public class ApplyCartRule extends BaseTest{
 				"100"
 			};
 		PromotionsPageObject obj = new PromotionsPageObject(driver);
-		obj.create(catalogRulevalues);
+		boolean isApplied = obj.createCartRule(catalogRulevalues);
+		Assert.assertTrue(isApplied);
 	}
 		
 }
