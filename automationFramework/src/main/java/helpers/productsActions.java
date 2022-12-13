@@ -108,7 +108,7 @@ public class productsActions extends AbstractComponent{
 		String name = productCard.findElement(By.xpath("//span[@class='price-label']")).getText();
 		System.out.println(name);		
 		if(name.equalsIgnoreCase("As low as")) {
-			return true;
+			return true; // Product is Configurable 
 		}
 		
 		return false;

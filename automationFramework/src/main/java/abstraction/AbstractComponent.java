@@ -13,17 +13,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-
 import velocity.pageobjects.CartPriceVerify;
 import velocity.pageobjects.SearchProduct;
 
-public class AbstractComponent {
+public class AbstractComponent extends Locators {
 
 	WebDriver driver;
 
@@ -32,39 +30,6 @@ public class AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//div[@id='mini-cart']")
-	WebElement cart;
-	
-	@FindBy(css = "a[class*='navbar-brand']")
-	WebElement logo;
-
-	@FindBy(xpath = "//a[@class='close']")
-	WebElement flashMessage;
-
-	@FindBy(css = "a[class*='remove-decoration']")
-	WebElement viewCart;
-
-	@FindBy(linkText = "View Shopping Cart")
-	WebElement viewShoppingCart;	
-	
-	@FindBy(xpath="//div[contains(@class,'open')]/div/div/div/select")				 
-	WebElement monthsDropdown;
-
-	@FindBy(xpath="//div[contains(@class,'open')]/div/span[2]")
-	WebElement nextMonth;
-	
-	@FindBy(xpath="//div[@class='navbar-left']/ul/li[3]")
-	WebElement catalogIcon;
-	
-	@FindBy(xpath="//tbody/tr[1]/td[2]")
-	WebElement lastProductID;
-	
-	@FindBy(css="span[title='Visit Shop']")
-	WebElement visitShop;	
-	
-	@FindBy(css="div[class='alert alert-success']")
-	WebElement adminFlashMessage;
-		
 	
 	/*
 	 * @void
