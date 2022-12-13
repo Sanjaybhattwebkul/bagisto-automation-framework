@@ -41,6 +41,9 @@ public class productsActions extends AbstractComponent{
 	@FindBy(css=".card-body")
 	List<WebElement> products;
 	
+	@FindBy(xpath="//div[@class='product-price']")  ///span[1]
+	List<WebElement> priceContainer;
+	
 	/*
 	 * @void
 	 * Add Three Products to the cart.
@@ -50,7 +53,13 @@ public class productsActions extends AbstractComponent{
 			
 			switch(actionType) {
 			  case "CART":
-				  cardButton.get(i).click();
+				  if(chechProductType(priceContainer.get(i))) {
+					  System.out.println("This is Comfigurable product");
+					  viewProduct(priceContainer.get(i));
+					  cardButton.get(1).click();					
+				  } else {
+					  cardButton.get(i).click(); 
+				  }
 			    break;
 			  case "COMPARE":
 				  mouseOver(productCard.get(i));				  
@@ -95,4 +104,13 @@ public class productsActions extends AbstractComponent{
 		return prod;
 	}
 	
+	public boolean chechProductType(WebElement productCard) {		
+		String name = productCard.findElement(By.xpath("//span[@class='price-label']")).getText();
+		System.out.println(name);		
+		if(name.equalsIgnoreCase("As low as")) {
+			return true;
+		}
+		
+		return false;
+	}	
 }

@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Shop.Tests.VeryCartRuleTest">
+      <class name="Shop.Tests.CustomerCheckoutTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="veryfy"/>
+          <include name="CustomerplaceOrder" invocation-numbers="0 0"/>
         </methods>
-      </class> <!-- Shop.Tests.VeryCartRuleTest -->
+      </class> <!-- Shop.Tests.CustomerCheckoutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

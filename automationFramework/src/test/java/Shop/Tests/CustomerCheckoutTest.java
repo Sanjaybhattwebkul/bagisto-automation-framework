@@ -18,8 +18,7 @@ public class CustomerCheckoutTest extends BaseTest {
 	public void CustomerplaceOrder(HashMap<String, String> input) throws IOException, InterruptedException, AWTException {
 		//input.get("productName") if data is getting from JSON file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
-		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart("Product-By Selnium Automation");
-		CustomerLogin CustomerLoginobj = ProductListingObj.addProductsToCart(3);
+		CustomerLogin CustomerLoginobj = ProductListingObj.addProductsToCart(1);		
 		CustomerLoginobj.goToLoginPage();
 		CustomerLoginobj.customerLogin(input.get("email"),input.get("password"));	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
