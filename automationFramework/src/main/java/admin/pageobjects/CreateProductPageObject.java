@@ -54,7 +54,12 @@ public class CreateProductPageObject extends AbstractComponent{
 		 Family.selectByVisibleText(productsDetails[1]);		
 		 productSKU.sendKeys(productsDetails[2]);		
 		 saveProduct.click();
-		 return new EditProductPageObject(driver);
+		 if(isCreated()) {	
+			 System.out.println("Product Created SuccessFully");
+			 return new EditProductPageObject(driver);
+			}
+		return null; 
+		
 	}
 	
 	public EditProductPageObject edit() {

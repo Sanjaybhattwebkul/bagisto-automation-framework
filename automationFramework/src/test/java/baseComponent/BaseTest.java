@@ -1,5 +1,6 @@
 package baseComponent;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -17,6 +18,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -33,49 +35,61 @@ public class BaseTest {
 	public Properties prop;
 	public FileInputStream files;
 	
-	public WebDriver initlizeBrowser() throws IOException {
+	public WebDriver initlizeBrowser() throws IOException, AWTException {
 		getGlobalData();
 		AdminURL = prop.getProperty("AdminURL");
 		ShopURL = prop.getProperty("ShopURL");
-		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
-				
-		if (browserName.equalsIgnoreCase("chrome")) {	
+		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");		
+		System.out.println("Browser="+ browserName);		
+		if(browserName.equalsIgnoreCase("chromeheadless")) {
 			WebDriverManager.chromedriver().setup();
-			/*ChromeOptions chromeOption = new ChromeOptions();
-			chromeOption.addArguments("--start-fullscreen");*/	
+			ChromeOptions chromeOption = new ChromeOptions();
+			chromeOption.addArguments("--headless");
+			driver = new ChromeDriver(chromeOption);
+			
+		}else if (browserName.equalsIgnoreCase("chrome")) {	
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			
-		} else if (browserName.equalsIgnoreCase("fireFox")) {		
+		} else if (browserName.equalsIgnoreCase("fireFox")) {	
+			
 			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
 			driver = new FirefoxDriver();
+			
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			//TODO
 			
 		} else {
 			//TODO
 			
-		}	
-
+		}
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		driver.manage().window().maximize();
+		fullScreenMode(browserName);
 		return driver;
 	}
 	
-	public LoginPageObject launcAdminPanel() throws IOException {
+	public LoginPageObject launcAdminPanel() throws IOException, AWTException {
 		driver = initlizeBrowser();
 		goToAdminPanel();
 		return new LoginPageObject(driver);
 	}
 	
-	public void fullScreenMode() {
-		driver.manage().window().fullscreen();
+	public void fullScreenMode(String mode) throws AWTException {
+		if(mode=="chromeheadless") {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_F11);	
+		} else {
+			driver.manage().window().maximize();
+		}
+			
 	}
 
 	public void goToAdminPanel() {
 		driver.get(AdminURL);
 	}
 	
-	public ProductListing launcVelocity() throws IOException {
+	public ProductListing launcVelocity() throws IOException, AWTException {
 		driver = initlizeBrowser();
 		goToVelocityShop();
 		ProductListing ProductListing = new ProductListing(driver);

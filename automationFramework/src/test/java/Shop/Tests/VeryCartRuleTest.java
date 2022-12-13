@@ -1,5 +1,6 @@
 package Shop.Tests;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -11,7 +12,7 @@ import velocity.pageobjects.ProductListing;
 public class VeryCartRuleTest extends BaseTest{
 	
 	@Test
-	public void veryfy() throws IOException, InterruptedException {
+	public void veryfy() throws IOException, InterruptedException, AWTException {
 		ProductListing ProductListingObj = launcVelocity();
 		ProductListingObj.addProductsToCart(1);	
 		CartRuleVerifyPageObject obj = new CartRuleVerifyPageObject(driver);

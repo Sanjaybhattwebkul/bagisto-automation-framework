@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import abstraction.AbstractComponent;
@@ -17,7 +18,7 @@ public class StepDefinitionImpl extends BaseTest {
 	public CheckoutPageObject CheckoutObject;
 	
 	@Given("I landed on Velocity Page")
-	public void I_landed_on_Velocity_Page() throws IOException {
+	public void I_landed_on_Velocity_Page() throws IOException, AWTException {
 		ProductListingObj = launcVelocity();
 	}
 	

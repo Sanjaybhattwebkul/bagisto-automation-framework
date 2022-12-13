@@ -1,5 +1,6 @@
 package common;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,7 +14,7 @@ import velocity.pageobjects.SearchProduct;
 public class verifyCatalogRuleTest extends BaseTest {
 
 	@Test
-	public void verify() throws IOException, NumberFormatException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+	public void verify() throws IOException, NumberFormatException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, AWTException {
 		launcVelocity();
 		getGlobalData();	
 		PricePageObject priceObj = new PricePageObject(driver);	

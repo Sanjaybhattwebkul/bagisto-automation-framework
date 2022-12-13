@@ -1,5 +1,6 @@
 package admin.Tests;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,10 +18,11 @@ public class AdminLoginTest extends BaseTest {
 	/**
 	 * 
 	 * We can call this method for testNG annotation from another class by its group name 
+	 * @throws AWTException 
 	 * 
 	 */
 	@Test(dataProvider = "getTestData",groups={"AdminLoginTest.login"})
-	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, AWTException {
 		LoginPageObject LoginPageObject = launcAdminPanel();
 		System.out.println("db_Email="+getCredentialsFromDB().get(0));	
 		LoginPageObject.adminLogin(getCredentialsFromDB().get(0),password);

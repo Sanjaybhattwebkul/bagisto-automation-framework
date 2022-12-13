@@ -94,7 +94,7 @@ public class EditProductPageObject extends AbstractComponent {
 	@FindBy(xpath="//div[@class='page-action']/button")
 	WebElement saveProductButton;	
 
-	public void editSimpleProduct(String[] productsAttributes) throws InterruptedException {	
+	public boolean editSimpleProduct(String[] productsAttributes) throws InterruptedException {	
 		productsName.sendKeys(productsAttributes[0]);
 		scrollDown(driver,440);			
 		isNew.click();
@@ -142,6 +142,11 @@ public class EditProductPageObject extends AbstractComponent {
 		uploadFile(productsAttributes[9]);
 		Thread.sleep(2000);
 		saveProductButton.click();
+		 if(isCreated()) {	
+			 System.out.println("Product Edited SuccessFully");
+			 return true;
+			}
+		return false; 
 		
 	}
 	

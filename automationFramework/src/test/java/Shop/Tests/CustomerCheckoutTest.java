@@ -1,5 +1,6 @@
 package Shop.Tests;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +15,7 @@ public class CustomerCheckoutTest extends BaseTest {
 	//CustomerplaceOrder(String userName ,String Password) // if getting data from object file	
 	//@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
 	@Test(dataProvider = "getTestData", retryAnalyzer = Retry.class)
-	public void CustomerplaceOrder(HashMap<String, String> input) throws IOException, InterruptedException {
+	public void CustomerplaceOrder(HashMap<String, String> input) throws IOException, InterruptedException, AWTException {
 		//input.get("productName") if data is getting from JSON file // productName .json file m key ka name h.
 		ProductListing ProductListingObj = launcVelocity();
 		//CustomerLogin CustomerLoginobj = ProductListingObj.addProductToCart("Product-By Selnium Automation");

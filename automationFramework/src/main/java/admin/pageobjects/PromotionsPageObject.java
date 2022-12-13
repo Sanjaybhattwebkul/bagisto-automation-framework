@@ -75,10 +75,7 @@ public class PromotionsPageObject extends AbstractComponent{
 	
 	@FindBy(xpath="//div[@class='page-action']/button")
 	WebElement saveButton;
-	
-	@FindBy(css="div[class='alert alert-success']")
-	WebElement adminFlashMessage;
-		
+
 	public boolean createCatalogRule(String[] catalogRulevalues) throws InterruptedException {
 		permotionIcon.click();
 		addCatalogButton.click();
@@ -147,9 +144,5 @@ public class PromotionsPageObject extends AbstractComponent{
 			return false;
 		}
 		
-	}
-	
-	public boolean isCreated() {
-		return adminFlashMessage.isDisplayed();
 	}
 }

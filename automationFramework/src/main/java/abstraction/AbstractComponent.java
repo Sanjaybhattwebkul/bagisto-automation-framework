@@ -62,6 +62,10 @@ public class AbstractComponent {
 	@FindBy(css="span[title='Visit Shop']")
 	WebElement visitShop;	
 	
+	@FindBy(css="div[class='alert alert-success']")
+	WebElement adminFlashMessage;
+		
+	
 	/*
 	 * @void
 	 * Visible miniCart
@@ -264,6 +268,10 @@ public class AbstractComponent {
 		} catch (Exception exp) {
 			exp.printStackTrace();
 		}
+	}
+	
+	public boolean isCreated() {
+		return adminFlashMessage.isDisplayed();
 	}
 	
 	public void handleMultiSelect(WebElement selectBox,String value) {
