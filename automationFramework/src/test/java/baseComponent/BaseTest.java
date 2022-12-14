@@ -1,7 +1,6 @@
 package baseComponent;
 
 import java.awt.AWTException;
-import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -13,6 +12,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
+import org.openqa.selenium.Dimension;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -77,8 +77,9 @@ public class BaseTest {
 	
 	public void fullScreenMode(String mode) throws AWTException {
 		if(mode=="chromeheadless") {
-			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_F11);	
+			driver.manage().window().setSize(new Dimension(1440,900));
+			/*Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_F11);*/	
 		} else {
 			driver.manage().window().maximize();
 		}
