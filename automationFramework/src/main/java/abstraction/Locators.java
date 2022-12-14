@@ -1,5 +1,7 @@
 package abstraction;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -45,6 +47,9 @@ public class Locators {
 	
 	@FindBy(css="div[class='alert alert-success']")
 	WebElement adminFlashMessage;
+	
+	@FindBy(css="*[class*='add-to-cart-btn']") //.btn-add-to-cart
+	protected WebElement addToCartButton;
 		
 	
 }

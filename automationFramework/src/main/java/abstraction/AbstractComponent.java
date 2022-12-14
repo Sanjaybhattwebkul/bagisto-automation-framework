@@ -76,18 +76,18 @@ public class AbstractComponent extends Locators {
 		return new CartPriceVerify(driver);
 	}
 
-	public void waitForElementToAppear(By findBy) {
+	public void waitForElementToAppear(By BY) {
 		WebDriverWait waite = new WebDriverWait(driver, Duration.ofSeconds(5));
-		waite.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+		waite.until(ExpectedConditions.visibilityOfElementLocated(BY));
 	}
 	
 	/*
 	 * @void
 	 * Explicitly wait for element Appear. 
 	 */
-	public void waitForWebElementToAppear(WebElement findBy) {
+	public void waitForWebElementToAppear(WebElement WebElement) {
 		WebDriverWait waite = new WebDriverWait(driver, Duration.ofSeconds(5));
-		waite.until(ExpectedConditions.visibilityOf(findBy));
+		waite.until(ExpectedConditions.visibilityOf(WebElement));
 	}
 	
 	/*

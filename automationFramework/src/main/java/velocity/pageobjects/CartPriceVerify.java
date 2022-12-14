@@ -30,7 +30,7 @@ public class CartPriceVerify extends getProductsPrice{
 	WebElement cartSummarySubTotal;
 	
 	@FindBy(id="discount-detail")
-	WebElement DiscountContainr;
+	List<WebElement> DiscountContainr;
 	
 	@FindBy(xpath="//div[@id='discount-detail']/span[2]")
 	WebElement discountAmount;
@@ -54,7 +54,7 @@ public class CartPriceVerify extends getProductsPrice{
 		int Qty=0;
 		double totalPrice =0;
 		double Subtotal = 0;
-		String totalDiscountPrice = null;
+		double GrandTotal=0;
 		List<Double> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
@@ -78,18 +78,15 @@ public class CartPriceVerify extends getProductsPrice{
 		System.out.println("Actual Price ="+cartSummaryTotalPrice+ " And Expected Price = "+sumOFprices);
 		// Match cart summary subTotal price and sumOfEachProductsPrice
 		Assert.assertEquals(sumOFprices,cartSummaryTotalPrice); // check if(givenAmout==actualAmount);
+		GrandTotal = cartSummaryTotalPrice;
 		
 		// Check If discount and verify Price after Discount
 		if(checkDiscount()) {
-			//TODO  Verify discount price
-			totalDiscountPrice = discountAmount.getText();
-			
-			System.out.println("Total Discount=" +getActualPrice(totalDiscountPrice));
-		}else {
-			System.out.println("No discunt");
+			//TODO  Verify discount price		
+			System.out.println("Total Discount=" +getActualPrice(discountAmount.getText()));
+			GrandTotal = (cartSummaryTotalPrice - getActualPrice(discountAmount.getText()));
 		}
 		
-		double GrandTotal = (cartSummaryTotalPrice - getActualPrice(totalDiscountPrice));
 		System.out.println("GrandTotal="+ GrandTotal);
 		
 	}
@@ -107,7 +104,15 @@ public class CartPriceVerify extends getProductsPrice{
 	}
 	
 	public boolean checkDiscount() {
-		return DiscountContainr.isDisplayed();
+		if(DiscountContainr.size()>0) {
+			System.out.println("Discount is not Available");
+			return true;
+		}else {
+			System.out.println("Discount is Available");
+			return false;
+		}
+		
+		//return DiscountContainr.isDisplayed();
 	}
 }
 

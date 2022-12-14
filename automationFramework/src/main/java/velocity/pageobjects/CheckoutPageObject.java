@@ -45,8 +45,7 @@ public class CheckoutPageObject extends AbstractComponent {
 		boolean isOrderConfirmed = orderConfirmation.isDisplayed();
 		SoftAssert softAssert = softAsset();			
 		softAssert.assertTrue(isOrderConfirmed);		
-		if(isOrderConfirmed) {
-			System.out.println(orderConfirmation.isDisplayed());					
+		if(isOrderConfirmed) {					
 			System.out.println(orderConfirmation.getText());
 			System.out.println("Your Order ID is "+ orderID.getText());
 		}

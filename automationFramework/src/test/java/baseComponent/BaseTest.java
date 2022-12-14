@@ -1,6 +1,7 @@
 package baseComponent;
 
 import java.awt.AWTException;
+import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -82,8 +83,7 @@ public class BaseTest {
 			robot.keyPress(KeyEvent.VK_F11);*/	
 		} else {
 			driver.manage().window().maximize();
-		}
-			
+		}	
 	}
 
 	public void goToAdminPanel() {
