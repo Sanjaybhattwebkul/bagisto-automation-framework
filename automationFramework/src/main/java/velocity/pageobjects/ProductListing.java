@@ -1,5 +1,8 @@
 package velocity.pageobjects;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,9 +22,13 @@ public class ProductListing extends productsActions{
 	@FindBy(css=".alert-dismissible")  //alert alert-success 
 	WebElement flashMessage;
 	
+	
+	@FindBy(css="div[class*='card grid-card']")
+	List<WebElement> productCard;
+	
 	By getProductsBy = By.cssSelector(".card-body");
-	By addToCartButton = By.cssSelector(".btn-add-to-cart");
-			
+	By addToCartButton = By.cssSelector(".btn-add-to-cart");	//button[class*='btn-add-to-cart']
+	
 	/*
 	 * Add Only the given product to the cart.
 	 */
@@ -38,9 +45,24 @@ public class ProductListing extends productsActions{
 	 * @Object
 	 * Add Multiple products to the cart.
 	 */
-	public CustomerLogin addProductsToCart(int number) throws InterruptedException {		
-		addProductTo("CART",number);	
+	public CustomerLogin addProductTo(String type, int number) throws InterruptedException {		
+		addProductsTo(type,number);	
 		return new CustomerLogin(driver);
 	}
 	
+	public void viewProduct(int i) {
+		boolean isOutOfStock = 	productCard.get(i).findElement(addToCartButton).isEnabled();	
+		if(i==productCard.size()){
+			
+			System.out.println("ALL PRODUCTS ARE OUT OF STOCK");
+			
+		}else if(isOutOfStock) {
+			
+			productCard.get(i).click();	
+			
+		}  else {
+			i=i+1;
+			viewProduct(i);
+		}
+	}
 }

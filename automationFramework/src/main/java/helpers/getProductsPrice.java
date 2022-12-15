@@ -32,15 +32,4 @@ public class getProductsPrice extends AbstractComponent{
 		return data;
 	}
 	
-	/*
-	 * @double
-	 * Remove $ and , from the price and return the actual price
-	 */
-	public double getActualPrice(String price) {
-		double amount=0;
-		String itemPrice =	removeComma(price);// remove , from price	
-		amount = Double.parseDouble(itemPrice); //convert string to double
-		return amount;
-		
-	}
 }

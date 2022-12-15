@@ -46,10 +46,11 @@ public class Locators {
 	WebElement visitShop;	
 	
 	@FindBy(css="div[class='alert alert-success']")
-	WebElement adminFlashMessage;
+	WebElement adminFlashMessage;	
 	
-	@FindBy(css="*[class*='add-to-cart-btn']") //.btn-add-to-cart
-	protected WebElement addToCartButton;
-		
+	@FindBy(css="i[class='rango-plus']")
+	WebElement plusIcon;
 	
+	@FindBy(id="quantity-changer")
+	List<WebElement> quantityBox;
 }

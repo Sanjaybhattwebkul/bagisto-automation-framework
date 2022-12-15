@@ -14,7 +14,7 @@ public class VeryCartRuleTest extends BaseTest{
 	@Test
 	public void veryfy() throws IOException, InterruptedException, AWTException {
 		ProductListing ProductListingObj = launcVelocity();
-		ProductListingObj.addProductsToCart(1);	
+		ProductListingObj.addProductTo("CART",1);	
 		CartRuleVerifyPageObject obj = new CartRuleVerifyPageObject(driver);
 		obj.clickOnCartIcon();
 		obj.gotoCartPage();	

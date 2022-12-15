@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -248,5 +249,31 @@ public class AbstractComponent extends Locators {
 			options.selectByVisibleText(value);
 		}
 	}
-
+	
+	/*
+	 * @double
+	 * Remove $ and , from the price and return the actual price
+	 */
+	public double getActualPrice(String price) {
+		double amount=0;
+		String itemPrice =	removeComma(price);// remove , from price	
+		amount = Double.parseDouble(itemPrice); //convert string to double
+		return amount;
+		
+	}
+	
+	public void increaseNumber(int number) {
+		for(int i=0;i<number;i++) {
+			plusIcon.click();
+		}
+	}
+	
+	public void setQuantity(String quantity) {
+		if(quantityBox.size()>0) {
+			System.out.println(quantityBox.size());
+			quantityBox.get(0).sendKeys(Keys.chord(Keys.CONTROL, "a"),"1");
+		}
+	}
 }
+
+

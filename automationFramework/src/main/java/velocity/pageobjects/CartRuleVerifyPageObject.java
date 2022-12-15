@@ -19,21 +19,11 @@ public class CartRuleVerifyPageObject extends AbstractComponent{
 	@FindBy(xpath="//div[@class='misc']/button")
 	WebElement updateCartButton;
 	
-	@FindBy(css="i[class='rango-plus']")
-	WebElement plusIcon;
-	
 	@FindBy(id="discount-detail")
 	WebElement discountSection;
 	
 	@FindBy(xpath="//div[@id='discount-detail']/span[2]")
 	WebElement discountAmount;
-	
-	public void increaseNumber(int number) {
-		for(int i=0;i<number;i++) {
-			plusIcon.click();
-		}
-		
-	}
 	
 	public void updateCart() {
 		updateCartButton.click();

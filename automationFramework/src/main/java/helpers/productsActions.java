@@ -26,7 +26,7 @@ public class productsActions extends AbstractComponent{
 	WebElement flashMessage;
 	
 	@FindBy(css="*[class*='add-to-cart-btn']") //.btn-add-to-cart
-	List<WebElement> cardButton;
+	List<WebElement> addToCartButton;
 	
 	@FindBy(css="button[class*='buynow']")
 	List<WebElement> bynowButton;
@@ -47,32 +47,30 @@ public class productsActions extends AbstractComponent{
 	List<WebElement> priceContainer;
 	
 	@FindBy(id="attribute_23")
-	WebElement attributeONE;
+	List<WebElement> attributeONE;
 	
 	@FindBy(id="attribute_24")
-	WebElement attributeTwo;
+	List<WebElement> attributeTwo;
 	
-	By configurable  = By.xpath("//*[text()='As low as']");
+	@FindBy(css="input[type='checkbox']")
+	List<WebElement> checkbox;
+	
+	@FindBy(xpath="//div[@class='form-group date']/span/input")
+	WebElement appointmentDate;
+	
+	@FindBy(css="div[class='form-group date']")
+	List<WebElement> appointmentInfo;
 	
 	/*
 	 * @void
 	 * Add Three Products to the cart.
 	 */
-	public void addProductTo(String actionType,int count) throws InterruptedException {
+	public void addProductsTo(String actionType,int count) throws InterruptedException {
 		for(int i=0;i<count; i++) {
 			
 			switch(actionType) {
 			  case "CART":
-				  if(chechProductType(priceContainer.get(i))) {
-					  System.out.println("This is Comfigurable product"+ i);
-					  viewProduct(cardButton.get(1));
-					  selectVarients(attributeONE,1);
-					  selectVarients(attributeTwo,1);
-					  addToCartButton.click();	
-					  i=count-1;
-				  } else {
-					  cardButton.get(i).click(); 
-				  }
+				  addToCartButton.get(i).click();
 			    break;
 			  case "COMPARE":
 				  mouseOver(productCard.get(i));				  
@@ -103,10 +101,7 @@ public class productsActions extends AbstractComponent{
 		 action.moveToElement(element).build().perform();
 	}
 	
-	public void viewProduct(WebElement element) {
-		element.click();
-		
-	}
+	
 	
 	/*
 	 * @WebElement 
@@ -117,19 +112,33 @@ public class productsActions extends AbstractComponent{
 		product.findElement(By.cssSelector("span")).getText().equals(productName)).findFirst().orElse(null);
 		return prod;
 	}
-	////span[@class='price-label']
-	public boolean chechProductType(WebElement productCard) {			
-		List<WebElement> isCOnfigurable = productCard.findElements(configurable);
-		System.out.println("Is configurable = " + isCOnfigurable.size());		
-		if(isCOnfigurable.size()>0) {
-			return true; // Product is Configurable 
-		}
-		
-		return false;
-	}	
 	
+	
+
 	public void selectVarients(WebElement attribute,int idex) {
 		 Select option = new Select(attribute);
 		 option.selectByIndex(idex);  
 	}
+	
+	
+	public void selectOptions() throws InterruptedException {	
+		if(attributeONE.size()>0) {
+			selectVarients(attributeONE.get(0),1);	
+		}
+		
+		if(attributeTwo.size()>0) {
+			selectVarients(attributeTwo.get(0),1);	
+		}
+		if(checkbox.size()>0) {
+			checkbox.get(0).click();
+		}
+		
+		if(appointmentInfo.size()>0) {
+			appointmentDate.click();
+			handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
+		}
+		setQuantity("1");	
+		scrollUp(driver);
+	}	
+	
 }

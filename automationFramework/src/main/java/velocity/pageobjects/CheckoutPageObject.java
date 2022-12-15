@@ -1,5 +1,7 @@
 package velocity.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +23,7 @@ public class CheckoutPageObject extends AbstractComponent {
 	WebElement billingAddress;
 	
 	@FindBy(id="flatrate_flatrate")
-	WebElement shippingMethod;
+	List<WebElement> shippingMethod;
 	
 	@FindBy(id="cashondelivery")
 	WebElement paymentMethod;
@@ -32,24 +34,37 @@ public class CheckoutPageObject extends AbstractComponent {
 	@FindBy(xpath="//div[contains(@class,'order-success-content')]/h1")
 	WebElement orderConfirmation;
 	
+	@FindBy(css="div[class*='order-success-content']")
+	List<WebElement> confirmationSection;
+	
 	@FindBy(xpath="//div[contains(@class,'order-success-content')]/p/a")
 	WebElement orderID;
 	
 	public void placeOrder() {
 		billingAddress.click();
 		scrollDown(driver,550);
-		shippingMethod.click();
+		if(shippingMethod.size()>0) {
+			shippingMethod.get(0).click();	
+		}
+		
 		paymentMethod.click();
 		scrollDown(driver,1000);
 		placeOrderButton.click();
-		boolean isOrderConfirmed = orderConfirmation.isDisplayed();
-		SoftAssert softAssert = softAsset();			
-		softAssert.assertTrue(isOrderConfirmed);		
-		if(isOrderConfirmed) {					
-			System.out.println(orderConfirmation.getText());
-			System.out.println("Your Order ID is "+ orderID.getText());
+		if(confirmationSection.size()>0) {
+			boolean isOrderConfirmed = orderConfirmation.isDisplayed();
+			SoftAssert softAssert = softAsset();			
+			softAssert.assertTrue(isOrderConfirmed);		
+			if (isOrderConfirmed) {					
+				System.out.println(orderConfirmation.getText());
+				System.out.println("Your Order ID is "+ orderID.getText());
+				softAssert.assertAll();
+			} else {
+				
+				System.out.println(driver.getCurrentUrl());
+			}
 		}
-		softAssert.assertAll();
+		
+		
 	}
 	
 	

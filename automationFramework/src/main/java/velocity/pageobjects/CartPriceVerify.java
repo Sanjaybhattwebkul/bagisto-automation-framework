@@ -55,19 +55,30 @@ public class CartPriceVerify extends getProductsPrice{
 		double totalPrice =0;
 		double Subtotal = 0;
 		double GrandTotal=0;
+		boolean isDownloadable=false;
 		List<Double> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);				
-			Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
+			List<WebElement> isQuantity = price.findElements(quantity);
+			if(isQuantity.size()>0) {
+				Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
+			}else {
+				Qty=1;
+				isDownloadable = true;
+			}
 		    System.out.println("One Products Quantity = " +Qty);	
 			totalPrice = (oneProductsPrice*Qty);
 			System.out.println("One Products total Price= " +totalPrice);				
 			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
 			System.out.println("SubTotal= " +Subtotal);				
+			if(isDownloadable) {
+				totalPrice=Subtotal;
+			}
+			
 			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==subTotal);
 			subtotal.add(Subtotal); // Add subTotal of each product in arrayList
-			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;			
+			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;	isDownloadable=false;		
 		}	
 		
 		double sumOFprices = sumOfEachProductsPrice(subtotal); // sum each price subtotal
