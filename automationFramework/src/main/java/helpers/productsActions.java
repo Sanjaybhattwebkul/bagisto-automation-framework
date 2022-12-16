@@ -111,23 +111,15 @@ public class productsActions extends AbstractComponent{
 		WebElement prod =	products.stream().filter(product->
 		product.findElement(By.cssSelector("span")).getText().equals(productName)).findFirst().orElse(null);
 		return prod;
-	}
-	
-	
-
-	public void selectVarients(WebElement attribute,int idex) {
-		 Select option = new Select(attribute);
-		 option.selectByIndex(idex);  
-	}
-	
+	}	
 	
 	public void selectOptions() throws InterruptedException {	
 		if(attributeONE.size()>0) {
-			selectVarients(attributeONE.get(0),1);	
+			selectByIndex(attributeONE.get(0),1);	
 		}
 		
 		if(attributeTwo.size()>0) {
-			selectVarients(attributeTwo.get(0),1);	
+			selectByIndex(attributeTwo.get(0),1);	
 		}
 		if(checkbox.size()>0) {
 			checkbox.get(0).click();

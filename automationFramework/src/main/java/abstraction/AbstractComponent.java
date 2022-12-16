@@ -240,7 +240,7 @@ public class AbstractComponent extends Locators {
 		return adminFlashMessage.isDisplayed();
 	}
 	
-	public void handleMultiSelect(WebElement selectBox,String value) {
+	public void selectOptions(WebElement selectBox,String value) {
 		Select options = new Select(selectBox);
 		if (options.isMultiple()) {			
 			options.selectByIndex(0);
@@ -273,6 +273,11 @@ public class AbstractComponent extends Locators {
 			System.out.println(quantityBox.size());
 			quantityBox.get(0).sendKeys(Keys.chord(Keys.CONTROL, "a"),"1");
 		}
+	}
+	
+	public void selectByIndex(WebElement attribute,int idex) {
+		 Select option = new Select(attribute);
+		 option.selectByIndex(idex);  
 	}
 }
 

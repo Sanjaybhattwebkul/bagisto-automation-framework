@@ -47,11 +47,9 @@ public class CreateProductRepository extends AbstractComponent{
 		 addProduct.click();
 		 waitForElementToAppear(selectType);
 		 selectProductType.click();
-		 Select productType = new Select(selectProductType);
-		 productType.selectByVisibleText(productsDetails[0]);		
+		 selectOptions(selectProductType,productsDetails[0]); 		 
 		 attributeFamily.click();
-		 Select Family = new Select(attributeFamily);
-		 Family.selectByVisibleText(productsDetails[1]);		
+		 selectOptions(attributeFamily,productsDetails[1]);		 
 		 productSKU.sendKeys(productsDetails[2]);		
 		 saveProduct.click();
 		 if(isCreated()) {	

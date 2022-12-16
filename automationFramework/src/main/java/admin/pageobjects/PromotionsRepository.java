@@ -83,8 +83,8 @@ public class PromotionsRepository extends AbstractComponent{
 		description.sendKeys(catalogRulevalues[1]);
 		status.click();
 		scrollDown(driver,500);
-		handleMultiSelect(selectChannels,"");
-		handleMultiSelect(selectCustomerGroup,"");
+		selectOptions(selectChannels,"");
+		selectOptions(selectCustomerGroup,"");
 		startDate.click();		
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		endDate.click();
@@ -93,12 +93,12 @@ public class PromotionsRepository extends AbstractComponent{
 		scrollDown(driver,200);
 		addCondtionButton.click();
 		scrollDown(driver,300);
-		handleMultiSelect(selectAttribute,catalogRulevalues[2]);
-		handleMultiSelect(actionType,catalogRulevalues[3]);
+		selectOptions(selectAttribute,catalogRulevalues[2]);
+		selectOptions(actionType,catalogRulevalues[3]);
 		value.sendKeys(catalogRulevalues[4]);
 		actions.click();
 		scrollDown(driver,300);
-		handleMultiSelect(actionName,catalogRulevalues[5]);
+		selectOptions(actionName,catalogRulevalues[5]);
 		discountAmount.sendKeys(catalogRulevalues[6]);
 		saveButton.click();
 		if(isCreated()) {
@@ -119,8 +119,8 @@ public class PromotionsRepository extends AbstractComponent{
 		description.sendKeys(cartRuleValues[1]);
 		status.click();
 		scrollDown(driver,500);
-		handleMultiSelect(selectChannels,"");
-		handleMultiSelect(selectCustomerGroup,"");
+		selectOptions(selectChannels,"");
+		selectOptions(selectCustomerGroup,"");
 		startDate.click();		
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		endDate.click();
@@ -129,12 +129,12 @@ public class PromotionsRepository extends AbstractComponent{
 		scrollDown(driver,200);
 		addCondtionButton.click();
 		scrollDown(driver,300);
-		handleMultiSelect(selectAttribute,cartRuleValues[2]);
-		handleMultiSelect(actionType,cartRuleValues[3]);
+		selectOptions(selectAttribute,cartRuleValues[2]);
+		selectOptions(actionType,cartRuleValues[3]);
 		value.sendKeys(cartRuleValues[4]);		
 		actions.click();
 		scrollDown(driver,300);
-		handleMultiSelect(actionName,cartRuleValues[5]);
+		selectOptions(actionName,cartRuleValues[5]);
 		discountAmount.sendKeys(cartRuleValues[6]);
 		saveButton.click();
 		if(isCreated()) {

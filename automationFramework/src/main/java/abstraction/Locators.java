@@ -30,12 +30,6 @@ public class Locators {
 	@FindBy(xpath="//div[@class='navbar-left']/ul/li[2]")
 	protected WebElement salesIcon;
 	
-	@FindBy(xpath="//tbody/tr[1]/td[9]/div/a")
-	protected WebElement viewOrder;
-	
-	@FindBy(css="a[class*='btn btn-lg btn-primary']:nth-child(3)")
-	protected WebElement shipButton;
-	
 	@FindBy(xpath="//div[@class='navbar-left']/ul/li[3]")
 	WebElement catalogIcon;
 	
