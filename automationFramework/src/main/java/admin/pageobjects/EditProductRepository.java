@@ -8,14 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import abstraction.AbstractComponent;
 
-public class EditProductPageObject extends AbstractComponent {
+public class EditProductRepository extends AbstractComponent {
 	
 	public WebDriver driver;
 	
 	/*
 	 * Assign driver object to PageFactory class AND EditProductPageObject class 
 	 */
-	public EditProductPageObject(WebDriver driver) {
+	public EditProductRepository(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

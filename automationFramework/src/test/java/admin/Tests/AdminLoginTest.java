@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import admin.pageobjects.LoginPageObject;
+import admin.pageobjects.LoginRepository;
 import baseComponent.BaseTest;
 
 
@@ -23,7 +23,7 @@ public class AdminLoginTest extends BaseTest {
 	 */
 	@Test(dataProvider = "getTestData",groups={"AdminLoginTest.login"})
 	public void login(String password) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, AWTException {
-		LoginPageObject LoginPageObject = launcAdminPanel();
+		LoginRepository LoginPageObject = launcAdminPanel();
 		System.out.println("db_Email="+getCredentialsFromDB().get(0));	
 		LoginPageObject.adminLogin(getCredentialsFromDB().get(0),password);
 		

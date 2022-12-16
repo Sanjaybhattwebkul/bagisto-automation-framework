@@ -2,7 +2,7 @@ package admin.Tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import admin.pageobjects.PromotionsPageObject;
+import admin.pageobjects.PromotionsRepository;
 import baseComponent.BaseTest;
 
 public class ApplyCartRule extends BaseTest{
@@ -18,7 +18,7 @@ public class ApplyCartRule extends BaseTest{
 				"Fixed Amount",
 				"100"
 			};
-		PromotionsPageObject obj = new PromotionsPageObject(driver);
+		PromotionsRepository obj = new PromotionsRepository(driver);
 		boolean isApplied = obj.createCartRule(catalogRulevalues);
 		Assert.assertTrue(isApplied);
 	}

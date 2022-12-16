@@ -6,11 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import abstraction.AbstractComponent;
 
-public class PromotionsPageObject extends AbstractComponent{
+public class PromotionsRepository extends AbstractComponent{
 	
 	WebDriver driver;
 	
-	public PromotionsPageObject(WebDriver driver) {
+	public PromotionsRepository(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver,this);

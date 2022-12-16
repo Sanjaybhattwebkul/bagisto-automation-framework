@@ -24,7 +24,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import admin.pageobjects.LoginPageObject;
+import admin.pageobjects.LoginRepository;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import velocity.pageobjects.ProductListing;
 
@@ -70,10 +70,10 @@ public class BaseTest {
 		return driver;
 	}
 	
-	public LoginPageObject launcAdminPanel() throws IOException, AWTException {
+	public LoginRepository launcAdminPanel() throws IOException, AWTException {
 		driver = initlizeBrowser();
 		goToAdminPanel();
-		return new LoginPageObject(driver);
+		return new LoginRepository(driver);
 	}
 	
 	public void fullScreenMode(String mode) throws AWTException {

@@ -26,6 +26,8 @@ public class StepDefinitionImpl extends BaseTest {
 	public void i_add_product_to_cart(String productName) throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
 		//CustomerLoginobj = ProductListingObj.addProductToCart(productName);
+		ProductListingObj.viewProduct(1);
+		ProductListingObj.selectOptions();
 		CustomerLoginobj = ProductListingObj.addProductTo("CART",3);
 	}
 

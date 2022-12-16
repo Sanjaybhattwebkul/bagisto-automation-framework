@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import abstraction.AbstractComponent;
 
-public class LoginPageObject extends AbstractComponent{
+public class LoginRepository extends AbstractComponent{
 	WebDriver driver;
-	public LoginPageObject(WebDriver driver) {
+	public LoginRepository(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this); //PageFactory TestNG ka part h is se annotation use kr skte h.

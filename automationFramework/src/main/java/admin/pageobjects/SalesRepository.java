@@ -5,10 +5,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import abstraction.AbstractComponent;
 
-public class SalesPageObject extends AbstractComponent {
+public class SalesRepository extends AbstractComponent {
 	
 	WebDriver driver;
-	public SalesPageObject(WebDriver driver) {
+	public SalesRepository(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);

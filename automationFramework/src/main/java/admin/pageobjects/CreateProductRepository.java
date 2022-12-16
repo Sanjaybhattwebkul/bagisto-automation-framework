@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import abstraction.*;
 
-public class CreateProductPageObject extends AbstractComponent{
+public class CreateProductRepository extends AbstractComponent{
 	WebDriver driver;
-	public CreateProductPageObject(WebDriver driver) {
+	public CreateProductRepository(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -41,7 +41,7 @@ public class CreateProductPageObject extends AbstractComponent{
 	By addButton = By.linkText("Add Product");
 	By selectType = By.id("type");
 	
-	public EditProductPageObject createSimpleProduct(String[] productsDetails) { 
+	public EditProductRepository createSimpleProduct(String[] productsDetails) { 
 		 gotoProductsPage();
 		 waitForElementToAppear(addButton); //explicitly wait
 		 addProduct.click();
@@ -56,17 +56,17 @@ public class CreateProductPageObject extends AbstractComponent{
 		 saveProduct.click();
 		 if(isCreated()) {	
 			 System.out.println("Product Created SuccessFully");
-			 return new EditProductPageObject(driver);
+			 return new EditProductRepository(driver);
 			}
 		return null; 
 		
 	}
 	
-	public EditProductPageObject edit() {
+	public EditProductRepository edit() {
 		gotoProductsPage();
 		waitForElementToAppear(addButton);
 		editIcon.click();
-		return new EditProductPageObject(driver);
+		return new EditProductRepository(driver);
 	}
 	
 }
