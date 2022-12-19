@@ -100,11 +100,11 @@ public class EditProductRepository extends AbstractComponent {
 		isNew.click();
 		isFeatured.click();
 		visibleIndividually.click();
+		guestCheckout.click();
 		productsStatus.click();
 		scrollDown(driver,440);		
-		guestCheckout.click();
 		descriptionSection.click();
-		scrollDown(driver,320);	
+		scrollDown(driver,250);	
 		
 		if (shortDescriptionIframe.isEnabled()) {
 			switchToFrame(productsAttributes[1],productsAttributes[2]);				
@@ -119,7 +119,7 @@ public class EditProductRepository extends AbstractComponent {
 		} else {
 			DescriptionTextarea.sendKeys(productsAttributes[4]);
 		}
-		scrollDown(driver,800);	//descriptionSection.click();
+		scrollDown(driver,500);	//descriptionSection.click();
 		priceSection.click();
 		productsPrice.sendKeys(productsAttributes[5]);
 		specialPrice.sendKeys(productsAttributes[6]);
@@ -127,9 +127,9 @@ public class EditProductRepository extends AbstractComponent {
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
 		specialPriceToDate.click();
 		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
-		scrollDown(driver,250);	//priceSection.click();
+		scrollDown(driver,230);	//priceSection.click();
 		shippingSection.click();
-		scrollDown(driver,450);
+		scrollDown(driver,420);
 		productsWeight.sendKeys(productsAttributes[7]);
 		inventorySection.click();
 		defaultInventory.sendKeys(productsAttributes[8]);		

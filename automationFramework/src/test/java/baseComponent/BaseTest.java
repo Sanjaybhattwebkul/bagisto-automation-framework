@@ -43,14 +43,12 @@ public class BaseTest {
 		ShopURL = prop.getProperty("ShopURL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");		
 		System.out.println("Browser="+ browserName);		
-		if(browserName.equalsIgnoreCase("chromeheadless")) {
-			//WebDriverManager.chromedriver().setup();
+		if(browserName.equalsIgnoreCase("chromeheadless")) {		
 			ChromeOptions chromeOption = new ChromeOptions();
 			chromeOption.addArguments("--headless");
 			driver = new ChromeDriver(chromeOption);
 			
-		}else if (browserName.equalsIgnoreCase("chrome")) {	
-			//WebDriverManager.chromedriver().setup();
+		}else if (browserName.equalsIgnoreCase("chrome")) {				
 			driver = new ChromeDriver();
 			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {	

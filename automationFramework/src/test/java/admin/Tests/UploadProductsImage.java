@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import baseComponent.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UploadProductsImage extends BaseTest{
 
@@ -14,7 +13,7 @@ public class UploadProductsImage extends BaseTest{
 	
 	@Test
 	public void testUpload() throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
+		
 		WebDriver driver = new ChromeDriver();
 		driver.get(URL);
 		WebElement element = driver.findElement(By.id("pickfiles"));
