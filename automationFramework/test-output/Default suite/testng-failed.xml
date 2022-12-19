@@ -9,12 +9,12 @@
           <include name="login"/>
         </methods>
       </class> <!-- admin.Tests.AdminLoginTest -->
-      <class name="admin.Tests.CreateSimpleProductTest">
+      <class name="admin.Tests.SalesTest">
         <methods>
-          <include name="Createproduct"/>
           <include name="closeBrowser"/>
+          <include name="createShipping"/>
         </methods>
-      </class> <!-- admin.Tests.CreateSimpleProductTest -->
+      </class> <!-- admin.Tests.SalesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

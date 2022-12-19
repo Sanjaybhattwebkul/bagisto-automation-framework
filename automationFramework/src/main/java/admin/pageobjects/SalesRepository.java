@@ -45,16 +45,11 @@ public class SalesRepository extends AbstractComponent {
 	By status = By.xpath("//td[@data-value='Status']/span");
 	
 	
-	public void createShipping() {
-		salesIcon.click();
-		if (checkOrderStatus().get("status")==1) {
-			int column = checkOrderStatus().get("column");			
-			driver.findElement(By.xpath("//tbody/tr["+column+"]/td[9]/div/a")).click();
-			viewOrder.click();
-			shipButton.click();
-			scrollDown(driver,950);
-			selectOptions(selectSource,"Default");
-			saveShipMentButton.click();
+	
+	public void completeOrderProcess() {
+		salesIcon.click();		
+		if(isPendingOrder()) {			
+			createShipping();			
 		} else {
 			System.out.println("No Pending Order");
 		}
@@ -77,5 +72,22 @@ public class SalesRepository extends AbstractComponent {
 		}
 		return orderStatus;
 	}
+	
+	public boolean isPendingOrder() {
+		if (checkOrderStatus().get("status")==1) {
+			int column = checkOrderStatus().get("column");
+			driver.findElement(By.xpath("//tbody/tr["+column+"]/td[9]/div/a")).click();
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
 
+	public void createShipping() {
+		shipButton.click();
+		scrollDown(driver,950);
+		selectOptions(selectSource,"Default");
+		saveShipMentButton.click();
+	}
 }

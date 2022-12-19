@@ -13,6 +13,6 @@ public class SalesTest extends BaseTest{
 	public void createShipping() throws IOException {
 		getGlobalData();
 		SalesRepository sales = new SalesRepository(driver);
-		sales.createShipping();
+		sales.completeOrderProcess();
 	}
 }
