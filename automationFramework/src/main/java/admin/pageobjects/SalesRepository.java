@@ -47,8 +47,7 @@ public class SalesRepository extends AbstractComponent {
 	
 	public void createShipping() {
 		salesIcon.click();
-		//System.out.println("inside fun"+checkOrderStatus().get("status"));
-		if(checkOrderStatus().get("status")==1) {
+		if (checkOrderStatus().get("status")==1) {
 			int column = checkOrderStatus().get("column");			
 			driver.findElement(By.xpath("//tbody/tr["+column+"]/td[9]/div/a")).click();
 			viewOrder.click();
@@ -56,10 +55,9 @@ public class SalesRepository extends AbstractComponent {
 			scrollDown(driver,950);
 			selectOptions(selectSource,"Default");
 			saveShipMentButton.click();
-		}else {
+		} else {
 			System.out.println("No Pending Order");
 		}
-		
 	}
 	
 	public Map<String, Integer> checkOrderStatus() {
@@ -67,19 +65,15 @@ public class SalesRepository extends AbstractComponent {
 		Map<String, Integer> orderStatus = new HashMap<String, Integer>();
 		int i;
 		for(i=1; i<11; i++) {
-			//System.out.println(orderTable.get(i).findElement(status).getText());
-			if(i==10) {
-				nextPage.click();
-			}else if(tableBody.findElement(By.xpath("//tr["+i+"]/td[6]/span")).getText().equalsIgnoreCase("Pending"))
-				{
-					System.out.println("true");
-					orderStatus.put("status", 1);
-					orderStatus.put("column", i);	
-					break;					
-				}else{
-					
-					continue;
-				}
+			handlePagination(i);					
+			String status = tableBody.findElement(By.xpath("//tr["+i+"]/td[6]/span")).getText();
+			if (status.equalsIgnoreCase("Pending")) {						
+				orderStatus.put("status", 1);
+				orderStatus.put("column", i);	
+				break;
+			}else{					
+				continue;
+			}
 		}
 		return orderStatus;
 	}

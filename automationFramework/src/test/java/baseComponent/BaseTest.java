@@ -25,7 +25,8 @@ import org.testng.annotations.AfterMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import admin.pageobjects.LoginRepository;
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
+
 import velocity.pageobjects.ProductListing;
 
 public class BaseTest {
@@ -43,13 +44,13 @@ public class BaseTest {
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");		
 		System.out.println("Browser="+ browserName);		
 		if(browserName.equalsIgnoreCase("chromeheadless")) {
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOption = new ChromeOptions();
 			chromeOption.addArguments("--headless");
 			driver = new ChromeDriver(chromeOption);
 			
 		}else if (browserName.equalsIgnoreCase("chrome")) {	
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {	

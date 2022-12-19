@@ -279,6 +279,12 @@ public class AbstractComponent extends Locators {
 		 Select option = new Select(attribute);
 		 option.selectByIndex(idex);  
 	}
+	
+	public void handlePagination(int i) {
+		if (i==10) {
+			nextPage.click();
+		}
+	}
 }
 
 

@@ -47,4 +47,7 @@ public class Locators {
 	
 	@FindBy(id="quantity-changer")
 	List<WebElement> quantityBox;
+	
+	@FindBy(className = "next")
+	WebElement nextPage;
 }
