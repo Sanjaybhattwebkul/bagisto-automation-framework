@@ -36,6 +36,9 @@ public class SalesRepository extends AbstractComponent {
 	@FindBy(xpath="//tbody/tr")
 	List<WebElement> orderTable;
 	
+	@FindBy(tagName="tbody")
+	WebElement tableBody;
+	
 	@FindBy(className = "next")
 	WebElement nextPage;
 	
@@ -63,22 +66,18 @@ public class SalesRepository extends AbstractComponent {
 		
 		Map<String, Integer> orderStatus = new HashMap<String, Integer>();
 		int i;
-		for(i=0; i<10; i++) {
+		for(i=1; i<11; i++) {
 			//System.out.println(orderTable.get(i).findElement(status).getText());
-			/*if(i==9) {
+			if(i==10) {
 				nextPage.click();
-			}else */
-				if(orderTable.get(i).findElement(status).getText() == "Pending")
+			}else if(tableBody.findElement(By.xpath("//tr["+i+"]/td[6]/span")).getText().equalsIgnoreCase("Pending"))
 				{
 					System.out.println("true");
-					/*orderStatus.put("status", 1);
-					orderStatus.put("column", i+1);	
-					System.out.println("after loop i="+i+"and"+orderTable.get(i).findElement(status).getText());
-					*/
-					break;
+					orderStatus.put("status", 1);
+					orderStatus.put("column", i);	
+					break;					
 				}else{
-					System.out.println("after loop i= "+i+" and  status"+orderTable.get(i).findElement(status).getText());
-					System.out.println("false");
+					
 					continue;
 				}
 		}

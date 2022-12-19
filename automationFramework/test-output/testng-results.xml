@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-16T19:27:22 IST" name="Default suite" finished-at="2022-12-16T19:27:30 IST" duration-ms="8192">
+  <suite started-at="2022-12-19T13:38:54 IST" name="Default suite" finished-at="2022-12-19T13:39:13 IST" duration-ms="19362">
     <groups>
       <group name="AdminLoginTest.login">
         <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@21282ed8]" name="login" class="admin.Tests.AdminLoginTest"/>
       </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-16T19:27:22 IST" name="Default test" finished-at="2022-12-16T19:27:30 IST" duration-ms="8192">
+    <test started-at="2022-12-19T13:38:54 IST" name="Default test" finished-at="2022-12-19T13:39:13 IST" duration-ms="19362">
       <class name="admin.Tests.AdminLoginTest">
-        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@21282ed8]" started-at="2022-12-16T19:27:22 IST" name="login" data-provider="getTestData" finished-at="2022-12-16T19:27:28 IST" duration-ms="6601" status="PASS">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@21282ed8]" started-at="2022-12-19T13:38:54 IST" name="login" data-provider="getTestData" finished-at="2022-12-19T13:38:58 IST" duration-ms="3989" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,14 +23,29 @@
         </test-method> <!-- login -->
       </class> <!-- admin.Tests.AdminLoginTest -->
       <class name="admin.Tests.SalesTest">
-        <test-method signature="createShipping()[pri:0, instance:admin.Tests.SalesTest@4a883b15]" started-at="2022-12-16T19:27:28 IST" name="createShipping" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-16T19:27:30 IST" duration-ms="1523" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="createShipping()[pri:0, instance:admin.Tests.SalesTest@4a883b15]" started-at="2022-12-19T13:38:58 IST" name="createShipping" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-19T13:39:13 IST" duration-ms="15325" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Cannot invoke "java.lang.Integer.intValue()" because the return value of "java.util.Map.get(Object)" is null]]>
+              <![CDATA[Unable to find element with locator By.cssSelector: a[class*='btn btn-lg btn-primary']:nth-child(3)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'sanjay237', ip: '192.168.15.237', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.3'
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "java.util.Map.get(Object)" is null
-at admin.pageobjects.SalesRepository.createShipping(SalesRepository.java:48)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.cssSelector: a[class*='btn btn-lg btn-primary']:nth-child(3)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'sanjay237', ip: '192.168.15.237', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.3'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+at admin.pageobjects.SalesRepository.createShipping(SalesRepository.java:55)
 at admin.Tests.SalesTest.createShipping(SalesTest.java:16)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -62,7 +77,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createShipping -->

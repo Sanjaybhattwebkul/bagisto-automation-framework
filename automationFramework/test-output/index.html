@@ -144,8 +144,19 @@
                   <a name="createShipping">
                   </a> <!-- createShipping -->
                   <span class="method-name">createShipping</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Integer.intValue()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
-	at admin.pageobjects.SalesRepository.createShipping(SalesRepository.java:48)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.cssSelector: a[class*=&apos;btn btn-lg btn-primary&apos;]:nth-child(3)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;sanjay237&apos;, ip: &apos;192.168.15.237&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.15.0-56-generic&apos;, java.version: &apos;17.0.3&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+	at admin.pageobjects.SalesRepository.createShipping(SalesRepository.java:55)
 	at admin.Tests.SalesTest.createShipping(SalesTest.java:16)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -200,7 +211,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/tmp/testng-eclipse--372362419/testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse-1834420056/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -260,18 +271,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'login')
-data.setCell(0, 2, 'admin.Tests.AdminLoginTest')
-data.setCell(0, 3, 6601);
+data.setCell(0, 1, 'createShipping')
+data.setCell(0, 2, 'admin.Tests.SalesTest')
+data.setCell(0, 3, 15325);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createShipping')
-data.setCell(1, 2, 'admin.Tests.SalesTest')
-data.setCell(1, 3, 1523);
+data.setCell(1, 1, 'login')
+data.setCell(1, 2, 'admin.Tests.AdminLoginTest')
+data.setCell(1, 3, 3989);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -309,7 +320,7 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">createShipping</span>
-                <span class="method-start">6626 ms</span>
+                <span class="method-start">3994 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
