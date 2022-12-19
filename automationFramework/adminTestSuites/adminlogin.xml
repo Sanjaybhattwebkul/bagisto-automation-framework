@@ -5,7 +5,7 @@
 		<listener class-name="baseComponent.Listeners"/>
 	</listeners>
 	 <!-- Test -->
-	<test thread-count="5" name="AAdminLogin">
+	<test thread-count="5" name="AdminLogin">
 		<classes>
 			<class name="admin.Tests.AdminLoginTest" />
 		</classes>

@@ -2,6 +2,7 @@ package admin.Tests;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import admin.pageobjects.SalesRepository;
@@ -13,6 +14,7 @@ public class SalesTest extends BaseTest{
 	public void createShipping() throws IOException {
 		getGlobalData();
 		SalesRepository sales = new SalesRepository(driver);
-		sales.completeOrderProcess();
+		boolean isComplete = sales.completeOrderProcess();
+		Assert.assertTrue(isComplete);
 	}
 }

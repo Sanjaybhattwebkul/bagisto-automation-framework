@@ -25,7 +25,14 @@ public class SalesRepository extends AbstractComponent {
 	 WebElement viewOrder;
 	
 	@FindBy(css="a[class*='btn btn-lg btn-primary']:nth-child(3)")
-	WebElement shipButton;
+	List<WebElement> shipButton;
+	
+	@FindBy(css="a[class*='btn btn-lg btn-primary']:nth-child(2)")
+	List<WebElement> invoiceButton;
+	
+	@FindBy(css="button[class*='btn btn-lg btn-primary']")
+	WebElement saveInvoice;
+
 	
 	@FindBy(css="select[name*='shipmen']")	
 	WebElement selectSource;
@@ -46,12 +53,19 @@ public class SalesRepository extends AbstractComponent {
 	
 	
 	
-	public void completeOrderProcess() {
+	public boolean completeOrderProcess() {
 		salesIcon.click();		
 		if(isPendingOrder()) {			
-			createShipping();			
+			if(createShipping()){
+				System.out.println("Shipping Created SucessFully");
+			}
+			if(createInvoice()) {
+				System.out.println("Shipping Created SucessFully");
+			}
+			return isCreated();
 		} else {
 			System.out.println("No Pending Order");
+			return true;
 		}
 	}
 	
@@ -84,10 +98,31 @@ public class SalesRepository extends AbstractComponent {
 		
 	}
 
-	public void createShipping() {
-		shipButton.click();
-		scrollDown(driver,950);
-		selectOptions(selectSource,"Default");
-		saveShipMentButton.click();
+	public boolean createShipping() {
+		if(shipButton.size()>0) {
+			shipButton.get(0).click();
+			scrollDown(driver,950);
+			selectOptions(selectSource,"Default");
+			saveShipMentButton.click();
+			return true;
+		}else {
+			boolean isCreated = createInvoice();
+			if(isCreated) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	public boolean createInvoice() {
+		if (invoiceButton.size()>0) {
+			invoiceButton.get(0).click();
+			saveInvoice.click();
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 }

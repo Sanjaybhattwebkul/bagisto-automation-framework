@@ -4,14 +4,14 @@
   <listeners>
     <listener class-name="baseComponent.Listeners"/>
   </listeners>
-  <test thread-count="5" name="CreateSimpleProductTest(failed)">
+  <test thread-count="5" name="SalesTest(failed)">
     <classes>
-      <class name="admin.Tests.CreateSimpleProductTest">
+      <class name="admin.Tests.SalesTest">
         <methods>
-          <include name="Createproduct"/>
           <include name="closeBrowser"/>
+          <include name="createShipping"/>
         </methods>
-      </class> <!-- admin.Tests.CreateSimpleProductTest -->
+      </class> <!-- admin.Tests.SalesTest -->
       <class name="admin.Tests.AdminLoginTest">
         <methods>
           <include name="closeBrowser"/>
@@ -19,5 +19,5 @@
         </methods>
       </class> <!-- admin.Tests.AdminLoginTest -->
     </classes>
-  </test> <!-- CreateSimpleProductTest(failed) -->
+  </test> <!-- SalesTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
