@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import abstraction.AbstractComponent;
 
-public class CartRuleVerifyPageObject extends AbstractComponent{
+public class CartRuleRepository extends AbstractComponent{
 	
 	WebDriver driver;
-	public CartRuleVerifyPageObject(WebDriver driver) {
+	public CartRuleRepository(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);

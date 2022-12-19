@@ -10,10 +10,10 @@ import org.testng.asserts.SoftAssert;
 
 import abstraction.AbstractComponent;
 
-public class CheckoutPageObject extends AbstractComponent {
+public class CheckoutRepository extends AbstractComponent {
 	WebDriver driver;
 	
-	public CheckoutPageObject(WebDriver driver) {
+	public CheckoutRepository(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);

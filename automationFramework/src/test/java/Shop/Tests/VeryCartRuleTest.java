@@ -6,16 +6,16 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import baseComponent.BaseTest;
-import velocity.pageobjects.CartRuleVerifyPageObject;
-import velocity.pageobjects.ProductListing;
+import velocity.pageobjects.CartRuleRepository;
+import velocity.pageobjects.ProductListingRepository;
 
 public class VeryCartRuleTest extends BaseTest{
 	
 	@Test
 	public void veryfy() throws IOException, InterruptedException, AWTException {
-		ProductListing ProductListingObj = launcVelocity();
+		ProductListingRepository ProductListingObj = launcVelocity();
 		ProductListingObj.addProductTo("CART",1);	
-		CartRuleVerifyPageObject obj = new CartRuleVerifyPageObject(driver);
+		CartRuleRepository obj = new CartRuleRepository(driver);
 		obj.clickOnCartIcon();
 		obj.gotoCartPage();	
 		obj.increaseNumber(3);

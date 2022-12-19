@@ -11,9 +11,9 @@ public class VerifyMiniCartTest extends BaseTest {
 
 	@Test
 	public void VerifyMiniCartPrice() throws InterruptedException, IOException, AWTException {
-		ProductListing ProductListingObj = launcVelocity();
+		ProductListingRepository ProductListingObj = launcVelocity();
 		ProductListingObj.addProductToCart("Sunglasses");
-		MiniCarPriceValidate MiniCarobj = new MiniCarPriceValidate(driver);
+		MiniCarRepository MiniCarobj = new MiniCarRepository(driver);
 		MiniCarobj.verifyMiniCartPrice();
 	}	
 }

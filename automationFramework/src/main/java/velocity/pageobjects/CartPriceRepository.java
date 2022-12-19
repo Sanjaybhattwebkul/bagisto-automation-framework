@@ -10,10 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import helpers.getProductsPrice;
 
-public class CartPriceVerify extends getProductsPrice{
+public class CartPriceRepository extends getProductsPrice{
 	
 	WebDriver driver;
-	public CartPriceVerify(WebDriver driver) {
+	public CartPriceRepository(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, driver); //PageFactory TestNG ka part h is se annotation use kr skte h.
@@ -102,9 +102,9 @@ public class CartPriceVerify extends getProductsPrice{
 		
 	}
 	
-	public CheckoutPageObject processToCheckout() {
+	public CheckoutRepository processToCheckout() {
 		processToCheckOut.click();
-		return new CheckoutPageObject(driver);
+		return new CheckoutRepository(driver);
 	}
 
 	public double sumOfEachProductsPrice(List<Double> subtotal ) {

@@ -19,8 +19,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-import velocity.pageobjects.CartPriceVerify;
-import velocity.pageobjects.SearchProduct;
+import velocity.pageobjects.CartPriceRepository;
+import velocity.pageobjects.SearchProductRepository;
 
 public class AbstractComponent extends Locators {
 
@@ -55,9 +55,9 @@ public class AbstractComponent extends Locators {
 	 * @Void
 	 * Go to shop
 	 */
-	public SearchProduct visitShop() {
+	public SearchProductRepository visitShop() {
 		visitShop.click();
-		return new SearchProduct(driver);
+		return new SearchProductRepository(driver);
 	}
 	
 	/*
@@ -72,9 +72,9 @@ public class AbstractComponent extends Locators {
 	 * @void
 	 * Redirect to cart page
 	 */
-	public CartPriceVerify gotoCartPage() {
+	public CartPriceRepository gotoCartPage() {
 		viewShoppingCart.click();
-		return new CartPriceVerify(driver);
+		return new CartPriceRepository(driver);
 	}
 
 	public void waitForElementToAppear(By BY) {

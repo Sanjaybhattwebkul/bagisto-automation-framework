@@ -11,11 +11,11 @@ import velocity.pageobjects.*;
 
 public class StepDefinitionImpl extends BaseTest {
 	
-	public ProductListing ProductListingObj;
-	public CustomerLogin CustomerLoginobj;
+	public ProductListingRepository ProductListingObj;
+	public CustomerLoginRepository CustomerLoginobj;
 	public AbstractComponent AbstractObj;
-	public CartPriceVerify CartPagobj;
-	public CheckoutPageObject CheckoutObject;
+	public CartPriceRepository CartPagobj;
+	public CheckoutRepository CheckoutObject;
 	
 	@Given("I landed on Velocity Page")
 	public void I_landed_on_Velocity_Page() throws IOException, AWTException {

@@ -9,11 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import helpers.productsActions;
 
-public class ProductListing extends productsActions{
+public class ProductListingRepository extends productsActions{
 	
 	WebDriver driver;
 	
-	public ProductListing(WebDriver driver) {
+	public ProductListingRepository(WebDriver driver) {
 		super(driver); // initialize driver to parent class constructor
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -45,9 +45,9 @@ public class ProductListing extends productsActions{
 	 * @Object
 	 * Add Multiple products to the cart.
 	 */
-	public CustomerLogin addProductTo(String type, int number) throws InterruptedException {		
+	public CustomerLoginRepository addProductTo(String type, int number) throws InterruptedException {		
 		addProductsTo(type,number);	
-		return new CustomerLogin(driver);
+		return new CustomerLoginRepository(driver);
 	}
 	
 	public void viewProduct(int i) {

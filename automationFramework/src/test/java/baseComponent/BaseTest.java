@@ -27,7 +27,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import admin.pageobjects.LoginRepository;
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
-import velocity.pageobjects.ProductListing;
+import velocity.pageobjects.ProductListingRepository;
 
 public class BaseTest {
 	
@@ -89,10 +89,10 @@ public class BaseTest {
 		driver.get(AdminURL);
 	}
 	
-	public ProductListing launcVelocity() throws IOException, AWTException {
+	public ProductListingRepository launcVelocity() throws IOException, AWTException {
 		driver = initlizeBrowser();
 		goToVelocityShop();
-		ProductListing ProductListing = new ProductListing(driver);
+		ProductListingRepository ProductListing = new ProductListingRepository(driver);
 		return ProductListing; 
 	}
 

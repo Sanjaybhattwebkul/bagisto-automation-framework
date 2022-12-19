@@ -6,7 +6,7 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import baseComponent.BaseTest;
-import velocity.pageobjects.SearchProduct;
+import velocity.pageobjects.SearchProductRepository;
 
 public class ProductPriceTest extends BaseTest {
 	
@@ -19,7 +19,7 @@ public class ProductPriceTest extends BaseTest {
 		List<String> price =    priceObj.getPriceFromBackend(prop.getProperty("tableName"),productId,Integer.parseInt(prop.getProperty("customerGroupId")));		
 		String backendPrice = price.get(0);
 		double expectedPrice = priceObj.getActualPrice(backendPrice);
-		SearchProduct shopObj = priceObj.visitShop();
+		SearchProductRepository shopObj = priceObj.visitShop();
 	    ArrayList<String> allTabs = new ArrayList<String>(driver.getWindowHandles()); // hold all window handles in array list
 	    driver.switchTo().window(allTabs.get(1));  //switch to new tab
 	    System.out.println("Page title of new tab: " + driver.getTitle());	      

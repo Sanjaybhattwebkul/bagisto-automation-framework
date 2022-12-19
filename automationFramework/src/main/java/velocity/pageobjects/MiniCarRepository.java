@@ -9,9 +9,9 @@ import org.testng.Assert;
 
 import abstraction.AbstractComponent;
 
-public class MiniCarPriceValidate  extends AbstractComponent{
+public class MiniCarRepository  extends AbstractComponent{
 	WebDriver driver;
-	public MiniCarPriceValidate(WebDriver driver) {
+	public MiniCarRepository(WebDriver driver) {
 		super(driver); //Assign driver to AbstractComponent class
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -26,7 +26,7 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 	@FindBy(css=".modal-footer h5:nth-child(2)")
 	WebElement FormattedPrice;
 	
-	public CartPriceVerify verifyMiniCartPrice() throws InterruptedException {	
+	public CartPriceRepository verifyMiniCartPrice() throws InterruptedException {	
 		CloseFlashMessage.click();
 		clickOnCartIcon();	
 		System.out.println("INSIDE THE VERIFY MINICART METHOD");
@@ -48,7 +48,7 @@ public class MiniCarPriceValidate  extends AbstractComponent{
 		int grandTotalAmount = (int)total;	 // convert into int		 
 		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
 		System.out.println("Test case is pass");
-		return new CartPriceVerify(driver);
+		return new CartPriceRepository(driver);
 	}
 	
 }

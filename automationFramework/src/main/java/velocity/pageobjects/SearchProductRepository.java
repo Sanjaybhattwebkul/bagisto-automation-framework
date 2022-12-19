@@ -11,10 +11,10 @@ import org.testng.Assert;
 
 import helpers.getProductsPrice;
 
-public class SearchProduct extends getProductsPrice{
+public class SearchProductRepository extends getProductsPrice{
 
 	WebDriver driver;
-	public SearchProduct(WebDriver driver) {
+	public SearchProductRepository(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver,this);

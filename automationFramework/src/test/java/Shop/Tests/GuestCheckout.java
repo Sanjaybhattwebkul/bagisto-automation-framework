@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 import baseComponent.*;
-import velocity.pageobjects.ProductListing;
+import velocity.pageobjects.ProductListingRepository;
 
 public class GuestCheckout extends BaseTest {
 	
@@ -12,7 +12,7 @@ public class GuestCheckout extends BaseTest {
 	@Test
 	public void placeOrder() throws IOException, InterruptedException, AWTException {
 		String productName = "Sunglasses";			
-		ProductListing ProductListingObj = launcVelocity();
+		ProductListingRepository ProductListingObj = launcVelocity();
 		ProductListingObj.addProductToCart(productName);	
 	}
 

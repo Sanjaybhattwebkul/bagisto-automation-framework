@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 
 import abstraction.AbstractComponent;
 
-public class CustomerLogin extends AbstractComponent {
+public class CustomerLoginRepository extends AbstractComponent {
 	
 	WebDriver driver;
 	
-	public CustomerLogin(WebDriver driver) {
+	public CustomerLoginRepository(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -50,11 +50,11 @@ public class CustomerLogin extends AbstractComponent {
 		return new LandingPage(driver);
 	}
 	*/
-	public MiniCarPriceValidate customerLogin(String email, String Password) throws InterruptedException {
+	public MiniCarRepository customerLogin(String email, String Password) throws InterruptedException {
 		userEmail.sendKeys(email);
 		passwordElement.sendKeys(Password);
 		loginButton.click();
-		return new MiniCarPriceValidate(driver);
+		return new MiniCarRepository(driver);
 	}
 	
 }
