@@ -1,8 +1,7 @@
 package velocity.pageobjects;
-import java.util.List;
 
+import java.util.List;
 import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,13 +49,16 @@ public class ProductListingRepository extends productsActions{
 		return new CustomerLoginRepository(driver);
 	}
 	
+	/*
+	 * Check if add to cart button enable.
+	 */
 	public void viewProduct(int i) {
-		boolean isOutOfStock = 	productCard.get(i).findElement(addToCartButton).isEnabled();	
+		boolean isInStock = 	productCard.get(i).findElement(addToCartButton).isEnabled();	
 		if(i==productCard.size()){
 			
 			System.out.println("ALL PRODUCTS ARE OUT OF STOCK");
 			
-		}else if(isOutOfStock) {
+		}else if(isInStock) {
 			
 			productCard.get(i).click();	
 			

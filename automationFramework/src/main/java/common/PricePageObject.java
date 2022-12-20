@@ -17,6 +17,9 @@ public class PricePageObject extends getProductsPrice{
 		this.driver = driver;
 	}
 	
+	/*
+	 * This method is get product's price from Database and return a ArrayList or product's price.
+	 */
 	public ArrayList<String> getPriceFromBackend(String tableName,int productId,int customerGroupId) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		ResultSet  data = getProductPriceFromDB(tableName,productId,customerGroupId);
 		ArrayList<String> productsPrice = new ArrayList<String>();

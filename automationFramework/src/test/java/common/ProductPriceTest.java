@@ -10,6 +10,9 @@ import velocity.pageobjects.SearchProductRepository;
 
 public class ProductPriceTest extends BaseTest {
 	
+	/*
+	 * This test will verify the products price with the database
+	 */
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void verify() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {		
 		PricePageObject priceObj = new PricePageObject(driver);	

@@ -22,13 +22,11 @@ public class getProductsPrice extends AbstractComponent{
 	 * get data from database
 	 */
 	public ResultSet getProductPriceFromDB(String tableName,int productID,int customerGroupID) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-		
-		System.out.println("Select * from "+tableName+" Where product_id  ='"+productID+"' AND customer_group_id='"+customerGroupID+"';");
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		System.out.println("Driver JDBC loaded!");
+		Class.forName("com.mysql.jdbc.Driver").newInstance();		
 		java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bagisto_automation", "root", "webkul");       
 		Statement s = con.createStatement();   
 		ResultSet data = s.executeQuery("Select * from "+tableName+" Where product_id  ='"+productID+"' AND customer_group_id='"+customerGroupID+"';");		 
+		System.out.println("Select * from "+tableName+" Where product_id  ='"+productID+"' AND customer_group_id='"+customerGroupID+"';");
 		return data;
 	}
 	

@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-19T18:13:23 IST" name="Default suite" finished-at="2022-12-19T18:13:33 IST" duration-ms="10604">
+  <suite started-at="2022-12-20T11:49:20 IST" name="Default suite" finished-at="2022-12-20T11:49:33 IST" duration-ms="12835">
     <groups>
       <group name="AdminLoginTest.login">
         <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@37d4349f]" name="login" class="admin.Tests.AdminLoginTest"/>
       </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-19T18:13:23 IST" name="Default test" finished-at="2022-12-19T18:13:33 IST" duration-ms="10604">
+    <test started-at="2022-12-20T11:49:20 IST" name="Default test" finished-at="2022-12-20T11:49:33 IST" duration-ms="12835">
       <class name="admin.Tests.AdminLoginTest">
-        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@37d4349f]" started-at="2022-12-19T18:13:23 IST" name="login" data-provider="getTestData" finished-at="2022-12-19T18:13:27 IST" duration-ms="4364" status="PASS">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@37d4349f]" started-at="2022-12-20T11:49:20 IST" name="login" data-provider="getTestData" finished-at="2022-12-20T11:49:27 IST" duration-ms="7320" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,12 +22,12 @@
           </reporter-output>
         </test-method> <!-- login -->
       </class> <!-- admin.Tests.AdminLoginTest -->
-      <class name="admin.Tests.SalesTest">
-        <test-method signature="createShipping()[pri:0, instance:admin.Tests.SalesTest@771a660]" started-at="2022-12-19T18:13:27 IST" name="createShipping" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-19T18:13:33 IST" duration-ms="6198" status="PASS">
+      <class name="common.ProductPriceTest">
+        <test-method signature="verify()[pri:0, instance:common.ProductPriceTest@771a660]" started-at="2022-12-20T11:49:27 IST" name="verify" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-20T11:49:33 IST" duration-ms="5438" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createShipping -->
-      </class> <!-- admin.Tests.SalesTest -->
+        </test-method> <!-- verify -->
+      </class> <!-- common.ProductPriceTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

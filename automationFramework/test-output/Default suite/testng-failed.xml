@@ -3,18 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="admin.Tests.AdminLoginTest">
+      <class name="common.verifyCatalogRuleTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="login"/>
+          <include name="verify"/>
         </methods>
-      </class> <!-- admin.Tests.AdminLoginTest -->
-      <class name="admin.Tests.SalesTest">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="createShipping"/>
-        </methods>
-      </class> <!-- admin.Tests.SalesTest -->
+      </class> <!-- common.verifyCatalogRuleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
