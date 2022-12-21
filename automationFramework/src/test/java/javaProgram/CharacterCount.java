@@ -10,14 +10,14 @@ public class CharacterCount {
 		System.out.println("Enter String:");
 		String inputString = sc.nextLine().replaceAll("\\s", "");
 		char[] inputArray = inputString.toCharArray();
-		HashMap<Character,Integer> shashMap = new HashMap<Character,Integer>();
+		HashMap<Character,Integer> hashMap = new HashMap<Character,Integer>();
 		for(char word:inputArray) {
-			if(shashMap.containsKey(word)) {
-				shashMap.put(word, shashMap.get(word)+1);
+			if(hashMap.containsKey(word)) {
+				hashMap.put(word, hashMap.get(word)+1);
 			}else {
-				shashMap.put(word, 1);
+				hashMap.put(word, 1);
 			}
 		}
-		System.out.println(shashMap);
+		System.out.println(hashMap);
 	}
 }
