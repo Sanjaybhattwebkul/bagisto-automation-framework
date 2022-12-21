@@ -13,7 +13,7 @@ public class Locators {
 	WebElement logo;
 
 	@FindBy(xpath = "//a[@class='close']")
-	WebElement flashMessage;
+	List<WebElement> flashMessage;
 
 	@FindBy(css = "a[class*='remove-decoration']")
 	WebElement viewCart;

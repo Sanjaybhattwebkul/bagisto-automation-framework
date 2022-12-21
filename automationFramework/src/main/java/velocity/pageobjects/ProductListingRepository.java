@@ -22,9 +22,13 @@ public class ProductListingRepository extends productsActions{
 	WebElement flashMessage;
 	
 	
-	@FindBy(css="div[class*='card grid-card']")
+	@FindBy(xpath="//div[@class='card-body']")
 	List<WebElement> productCard;
 	
+	/*@FindBy(css="div[class*='card grid-card']")
+	List<WebElement> productCard;*/
+	
+	By productName = By.xpath("//div[contains(@class,'product-name')]/a");
 	By getProductsBy = By.cssSelector(".card-body");
 	By addToCartButton = By.cssSelector(".btn-add-to-cart");	//button[class*='btn-add-to-cart']
 	
@@ -59,10 +63,10 @@ public class ProductListingRepository extends productsActions{
 			System.out.println("ALL PRODUCTS ARE OUT OF STOCK");
 			
 		}else if(isInStock) {
+			productCard.get(i).findElement(productName).click();
+			//productCard.get(i).click();	
 			
-			productCard.get(i).click();	
-			
-		}  else {
+		}  else {			
 			i=i+1;
 			viewProduct(i);
 		}

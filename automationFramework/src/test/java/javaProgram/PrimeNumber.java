@@ -11,17 +11,17 @@ public class PrimeNumber {
 		int inputNumber = sc.nextInt();
 		
 		if(checkPrime(inputNumber)) {
-			System.out.println(inputNumber+ "  is not a prime number");
+			System.out.println(inputNumber+ "  is a prime number");
 		}else {
-			System.out.println(inputNumber+ "  is  a prime number");
+			System.out.println(inputNumber+ "  is not a prime number");
 		}
 	}
 	
 	public static boolean checkPrime(int inputNumber) {
-		boolean isPrime  = false;
+		boolean isPrime  = true;
 		for (int i=2; i<inputNumber/2;i++) {
 			if(inputNumber%2==0) {
-				isPrime = true;
+				isPrime = false;
 				
 			} else {
 				

@@ -54,31 +54,29 @@ public class CartPriceRepository extends getProductsPrice{
 		int Qty=0;
 		double totalPrice =0;
 		double Subtotal = 0;
-		double GrandTotal=0;
-		boolean isDownloadable=false;
+		double GrandTotal=0;		
 		List<Double> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
-			System.out.println("One Products Price = " +oneProductsPrice);				
+			System.out.println("One Products Price = " +oneProductsPrice);		
+			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
+			System.out.println("SubTotal= " +Subtotal);	
+			
 			List<WebElement> isQuantity = price.findElements(quantity);
 			if(isQuantity.size()>0) {
+				
 				Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
+				System.out.println("One Products Quantity = " +Qty);	
+				totalPrice = (oneProductsPrice*Qty);
+				
 			}else {
-				Qty=1;
-				isDownloadable = true;
+				totalPrice=Subtotal;				
 			}
-		    System.out.println("One Products Quantity = " +Qty);	
-			totalPrice = (oneProductsPrice*Qty);
-			System.out.println("One Products total Price= " +totalPrice);				
-			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
-			System.out.println("SubTotal= " +Subtotal);				
-			if(isDownloadable) {
-				totalPrice=Subtotal;
-			}
-			
+		   
+			System.out.println("One Products total Price= " +totalPrice);
 			Assert.assertEquals(totalPrice,Subtotal); // check if(totalPrice==subTotal);
 			subtotal.add(Subtotal); // Add subTotal of each product in arrayList
-			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;	isDownloadable=false;		
+			totalPrice=0; Subtotal=0; oneProductsPrice=0; Qty=0;		
 		}	
 		
 		double sumOFprices = sumOfEachProductsPrice(subtotal); // sum each price subtotal

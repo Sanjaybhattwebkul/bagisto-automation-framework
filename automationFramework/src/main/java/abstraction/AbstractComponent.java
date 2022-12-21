@@ -133,7 +133,10 @@ public class AbstractComponent extends Locators {
 	 * Close the flash message
 	 */
 	public void closeFlashMessage() {
-		flashMessage.click();
+		if(flashMessage.size()>0) {
+			flashMessage.get(0).click();
+		}
+		
 	}
 
 	/*

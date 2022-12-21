@@ -37,7 +37,7 @@ public class CustomerLoginRepository extends AbstractComponent {
 	
 	@Test
 	public void goToLoginPage() {
-		closeFlashMessage();
+		//closeFlashMessage();
 		loginPoPup.click();
 		loginPopButton.click();
 	}

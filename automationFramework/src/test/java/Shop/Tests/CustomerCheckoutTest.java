@@ -18,7 +18,7 @@ public class CustomerCheckoutTest extends BaseTest {
 	public void CustomerplaceOrder(HashMap<String, String> input) throws IOException, InterruptedException, AWTException {
 		//input.get("productName") if data is getting from JSON file // productName .json file m key ka name h.
 		ProductListingRepository ProductListingObj = launcVelocity();
-		//ProductListingObj.scrollDown(driver,800);
+		//ProductListingObj.scrollDown(driver,950);
 		ProductListingObj.viewProduct(1);
 		ProductListingObj.selectOptions();
 		CustomerLoginRepository CustomerLoginobj = ProductListingObj.addProductTo("CART",1);		
