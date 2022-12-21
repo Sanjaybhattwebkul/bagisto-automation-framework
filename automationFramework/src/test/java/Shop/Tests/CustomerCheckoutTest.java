@@ -26,7 +26,7 @@ public class CustomerCheckoutTest extends BaseTest {
 		CustomerLoginobj.customerLogin(input.get("email"),input.get("password"));	
 		AbstractComponent AbstractObj  = new AbstractComponent(driver);//
 		AbstractObj.clickOnCartIcon();
-		CartPriceRepository CartPagobj = AbstractObj.gotoCartPage();		
+		CartRepository CartPagobj = AbstractObj.gotoCartPage();		
 		CartPagobj.calCulatePrice();
 		CheckoutRepository CheckoutObject = CartPagobj.processToCheckout();
 		CheckoutObject.placeOrder();

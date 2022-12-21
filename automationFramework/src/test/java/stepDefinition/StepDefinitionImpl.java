@@ -14,7 +14,7 @@ public class StepDefinitionImpl extends BaseTest {
 	public ProductListingRepository ProductListingObj;
 	public CustomerLoginRepository CustomerLoginobj;
 	public AbstractComponent AbstractObj;
-	public CartPriceRepository CartPagobj;
+	public CartRepository CartPagobj;
 	public CheckoutRepository CheckoutObject;
 	
 	@Given("I landed on Velocity Page")

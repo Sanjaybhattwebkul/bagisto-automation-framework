@@ -10,10 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import helpers.getProductsPrice;
 
-public class CartPriceRepository extends getProductsPrice{
+public class CartRepository extends getProductsPrice{
 	
 	WebDriver driver;
-	public CartPriceRepository(WebDriver driver) {
+	public CartRepository(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, driver); //PageFactory TestNG ka part h is se annotation use kr skte h.

@@ -26,7 +26,7 @@ public class MiniCarRepository  extends AbstractComponent{
 	@FindBy(css=".modal-footer h5:nth-child(2)")
 	WebElement FormattedPrice;
 	
-	public CartPriceRepository verifyMiniCartPrice() throws InterruptedException {	
+	public CartRepository verifyMiniCartPrice() throws InterruptedException {	
 		CloseFlashMessage.click();
 		clickOnCartIcon();	
 		System.out.println("INSIDE THE VERIFY MINICART METHOD");
@@ -48,7 +48,7 @@ public class MiniCarRepository  extends AbstractComponent{
 		int grandTotalAmount = (int)total;	 // convert into int		 
 		Assert.assertEquals(grandTotalAmount,actualAmount); // check if(givenAmout==actualAmount);
 		System.out.println("Test case is pass");
-		return new CartPriceRepository(driver);
+		return new CartRepository(driver);
 	}
 	
 }
