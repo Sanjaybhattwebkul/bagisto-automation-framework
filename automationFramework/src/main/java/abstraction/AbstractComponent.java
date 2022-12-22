@@ -133,7 +133,7 @@ public class AbstractComponent extends Locators {
 	 * Close the flash message
 	 */
 	public void closeFlashMessage() {
-		if(flashMessage.size()>0) {
+		if(isPresent(flashMessage)) {
 			flashMessage.get(0).click();
 		}
 		
@@ -173,7 +173,7 @@ public class AbstractComponent extends Locators {
 	     handleLastDatesOfMonth(date); // check if next date is greater then last date of months.	     
 	     List<WebElement> currentMonthsDates = driver.findElements(By.xpath("//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,"+currentMonth+")]"));
 	     for (int i = 0; i < currentMonthsDates.size(); i++) {
-			String text = currentMonthsDates.get(i).getText(); // get text of dateBox
+			 String text = currentMonthsDates.get(i).getText(); // get text of dateBox
 			if (text.equalsIgnoreCase(date)) {								
 				currentMonthsDates.get(i).click(); // click on dateBox
 				break;
@@ -184,9 +184,8 @@ public class AbstractComponent extends Locators {
 	/*
 	 * Click on next button if next date if greater then 30 or 31
 	 */
-	public void handleLastDatesOfMonth(String date) {
-		
-		if(Integer.parseInt(date) >= 27) {
+	public void handleLastDatesOfMonth(String date) {		
+		if (Integer.parseInt(date) >= 27) {
 			nextMonth.click();
 		}
 	}
@@ -197,7 +196,7 @@ public class AbstractComponent extends Locators {
 	public String getDate(String rquestType,String formatType) {
 		Calendar calendar = Calendar.getInstance();  // get a calendar instance, which defaults to "now"	   	
 		Date requestFormat = calendar.getTime();		 
-		if(rquestType=="AFTER_DATE") {
+		if (rquestType=="AFTER_DATE") {
 			calendar.add(Calendar.DAY_OF_YEAR, 5);
 			requestFormat = calendar.getTime();
 		}
@@ -266,13 +265,13 @@ public class AbstractComponent extends Locators {
 	}
 	
 	public void increaseNumber(int number) {
-		for(int i=0;i<number;i++) {
+		for (int i=0;i<number;i++) {
 			plusIcon.click();
 		}
 	}
 	
 	public void setQuantity(String quantity) {
-		if(quantityBox.size()>0) {
+		if (isPresent(quantityBox)) {
 			System.out.println(quantityBox.size());
 			quantityBox.get(0).sendKeys(Keys.chord(Keys.CONTROL, "a"),"1");
 		}
@@ -290,12 +289,7 @@ public class AbstractComponent extends Locators {
 	}
 	
 	public boolean isPresent(List<WebElement> element) {
-		if(element.size()>0) {	
-			return true;
-			
-		}else {
-			return false;
-		}
+		return ((element.size()>0) ? true : false);
 	}
 }
 

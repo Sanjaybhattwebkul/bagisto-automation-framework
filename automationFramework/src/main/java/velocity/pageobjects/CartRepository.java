@@ -58,7 +58,7 @@ public class CartRepository extends getProductsPrice{
 		double Subtotal = 0;
 		double GrandTotal=0;		
 		List<Double> subtotal = new ArrayList<>();
-		for(WebElement price:itemContainer) {
+		for (WebElement price:itemContainer) {
 			
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);		
@@ -66,11 +66,11 @@ public class CartRepository extends getProductsPrice{
 			System.out.println("SubTotal= " +Subtotal);	
 			List<WebElement> Quantity = price.findElements(quantity);
 			
-			if(isPresent(Quantity)) {				
+			if (isPresent(Quantity)) {				
 				Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
 				System.out.println("One Products Quantity = " +Qty);	
 				totalPrice = (oneProductsPrice*Qty);				
-			}else {
+			} else {
 				totalPrice=Subtotal;				
 			}
 		   
@@ -91,7 +91,7 @@ public class CartRepository extends getProductsPrice{
 		GrandTotal = cartSummaryTotalPrice;
 		
 		// Check If discount and verify Price after Discount
-		if(checkDiscount()) {
+		if (checkDiscount()) {
 			//TODO  Verify discount price		
 			System.out.println("Total Discount=" +getActualPrice(discountAmount.getText()));
 			GrandTotal = (cartSummaryTotalPrice - getActualPrice(discountAmount.getText()));
@@ -108,21 +108,13 @@ public class CartRepository extends getProductsPrice{
 
 	public double sumOfEachProductsPrice(List<Double> subtotal ) {
 		double sum = 0;
-		for(Double price : subtotal)
+		for (Double price : subtotal)
 		    sum += price;
 		return sum;
 	}
 	
 	public boolean checkDiscount() {
-		if(isPresent(DiscountContainr)) {
-			System.out.println("Discount is not Available");
-			return true;
-		}else {
-			System.out.println("Discount is Available");
-			return false;
-		}
-		
-		//return DiscountContainr.isDisplayed();
+		return ((isPresent(DiscountContainr)) ? true : false);
 	}
 }
 

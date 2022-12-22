@@ -111,18 +111,18 @@ public class productsActions extends AbstractComponent{
 	}	
 	
 	public void selectOptions() throws InterruptedException {	
-		if(attributeONE.size()>0) {
+		if(isPresent(attributeONE)) {
 			selectByIndex(attributeONE.get(0),1);	
 		}
 		
-		if(attributeTwo.size()>0) {
+		if(isPresent(attributeTwo)) {
 			selectByIndex(attributeTwo.get(0),1);	
 		}
-		if(checkbox.size()>0) {
+		if(isPresent(checkbox) && (!checkbox.get(0).isSelected())) {
 			checkbox.get(0).click();
 		}
 		
-		if(appointmentInfo.size()>0) {
+		if(isPresent(appointmentInfo)) {
 			appointmentDate.click();
 			handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
 		}

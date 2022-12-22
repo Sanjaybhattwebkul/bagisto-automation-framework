@@ -43,7 +43,7 @@ public class CheckoutRepository extends AbstractComponent {
 	public void placeOrder() {
 		billingAddress.click();
 		scrollDown(driver,550);
-		if(shippingMethod.size()>0) {
+		if (isPresent(shippingMethod)) {
 			shippingMethod.get(0).click();	
 		}
 		
@@ -51,15 +51,13 @@ public class CheckoutRepository extends AbstractComponent {
 		scrollDown(driver,1000);
 		placeOrderButton.click();
 		
-		if(isPresent(confirmationSection)) {
-			
+		if (isPresent(confirmationSection)) {			
 			boolean isOrderConfirmed = orderConfirmation.isDisplayed();
 			SoftAssert softAssert = softAsset();			
 			softAssert.assertTrue(isOrderConfirmed);
 			
 			if (isOrderConfirmed) {					
-				System.out.println(orderConfirmation.getText());
-				System.out.println("Your Order ID is "+ orderID.getText());
+				getConfirmationMessage();
 				softAssert.assertAll();
 			} else {
 				
@@ -68,6 +66,11 @@ public class CheckoutRepository extends AbstractComponent {
 		}
 		
 		
+	}
+	
+	public void getConfirmationMessage() {
+		System.out.println(orderConfirmation.getText());
+		System.out.println("Your Order ID is "+ orderID.getText());
 	}
 	
 	
