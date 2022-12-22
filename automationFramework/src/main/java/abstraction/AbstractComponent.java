@@ -259,7 +259,7 @@ public class AbstractComponent extends Locators {
 	 */
 	public double getActualPrice(String price) {
 		double amount=0;
-		String itemPrice =	removeComma(price);// remove , from price	
+		String itemPrice =	removeComma(price);
 		amount = Double.parseDouble(itemPrice); //convert string to double
 		return amount;
 		
@@ -286,6 +286,15 @@ public class AbstractComponent extends Locators {
 	public void handlePagination(int i) {
 		if (i==10) {
 			nextPage.click();
+		}
+	}
+	
+	public boolean isPresent(List<WebElement> element) {
+		if(element.size()>0) {	
+			return true;
+			
+		}else {
+			return false;
 		}
 	}
 }

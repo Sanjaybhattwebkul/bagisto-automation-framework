@@ -50,10 +50,13 @@ public class CheckoutRepository extends AbstractComponent {
 		paymentMethod.click();
 		scrollDown(driver,1000);
 		placeOrderButton.click();
-		if(confirmationSection.size()>0) {
+		
+		if(isPresent(confirmationSection)) {
+			
 			boolean isOrderConfirmed = orderConfirmation.isDisplayed();
 			SoftAssert softAssert = softAsset();			
-			softAssert.assertTrue(isOrderConfirmed);		
+			softAssert.assertTrue(isOrderConfirmed);
+			
 			if (isOrderConfirmed) {					
 				System.out.println(orderConfirmation.getText());
 				System.out.println("Your Order ID is "+ orderID.getText());

@@ -7,7 +7,7 @@ public class CheckUniqueNumber {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Any Number");
-		int inputNumber = sc.nextInt();
+		int inputNumber = sc.nextInt();		
 		if(checkNumber(inputNumber)) {
 			
 			System.out.println(inputNumber +" is unique Number");

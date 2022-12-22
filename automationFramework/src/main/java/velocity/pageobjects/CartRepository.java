@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import abstraction.AbstractComponent;
 import helpers.getProductsPrice;
 
 public class CartRepository extends getProductsPrice{
@@ -57,18 +59,17 @@ public class CartRepository extends getProductsPrice{
 		double GrandTotal=0;		
 		List<Double> subtotal = new ArrayList<>();
 		for(WebElement price:itemContainer) {
+			
 			oneProductsPrice = getActualPrice(price.findElement(formattedPrice).getText().substring(1));			
 			System.out.println("One Products Price = " +oneProductsPrice);		
 			Subtotal =getActualPrice(price.findElement(subTotalPrice ).getText().substring(1));
 			System.out.println("SubTotal= " +Subtotal);	
+			List<WebElement> Quantity = price.findElements(quantity);
 			
-			List<WebElement> isQuantity = price.findElements(quantity);
-			if(isQuantity.size()>0) {
-				
+			if(isPresent(Quantity)) {				
 				Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
 				System.out.println("One Products Quantity = " +Qty);	
-				totalPrice = (oneProductsPrice*Qty);
-				
+				totalPrice = (oneProductsPrice*Qty);				
 			}else {
 				totalPrice=Subtotal;				
 			}
@@ -113,7 +114,7 @@ public class CartRepository extends getProductsPrice{
 	}
 	
 	public boolean checkDiscount() {
-		if(DiscountContainr.size()>0) {
+		if(isPresent(DiscountContainr)) {
 			System.out.println("Discount is not Available");
 			return true;
 		}else {

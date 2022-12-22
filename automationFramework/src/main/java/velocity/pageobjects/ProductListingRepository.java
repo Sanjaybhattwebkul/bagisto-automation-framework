@@ -63,8 +63,7 @@ public class ProductListingRepository extends productsActions{
 			System.out.println("ALL PRODUCTS ARE OUT OF STOCK");
 			
 		}else if(isInStock) {
-			productCard.get(i).findElement(productName).click();
-			//productCard.get(i).click();	
+			productCard.get(i).findElement(productName).click();	
 			
 		}  else {			
 			i=i+1;
