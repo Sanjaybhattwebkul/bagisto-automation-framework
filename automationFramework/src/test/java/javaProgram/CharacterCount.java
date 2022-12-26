@@ -9,8 +9,15 @@ public class CharacterCount {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Enter Any Number or String");
 		String inputs = sc.nextLine().replaceAll("\\s", "");
-		System.out.println(inputs.length()-1+ "and"+inputs.charAt(0));
-		
+		countCharWithHashMap(inputs);
+		countCharWithoutHashMap(inputs);
+	}	
+
+	
+	/*
+	 * Count each character's occurrence using HashMap
+	 */
+	public static void countCharWithHashMap(String inputs) {
 		char[] charArray = inputs.toCharArray();
 		HashMap<Character,Integer>map= new HashMap<Character,Integer>();
 		for(char words:charArray) {
@@ -41,14 +48,12 @@ public class CharacterCount {
 				System.out.println("\nSecond Heighest Occoring word is: "+ entry.getKey() + " -> "+ entry.getValue());
 			}
 		}
-		countCharWthoutHashMap(inputs);
-	}	
-
+	}
 	
 	/*
 	 * Count occurrence of each word is string witout HashMap
 	 */
-	public static void countCharWthoutHashMap(String str) {
+	public static void countCharWithoutHashMap(String str) {
         ArrayList<String> newArray = new ArrayList<String>();
          for(int s = 0; s<str.length();s++) {
         	 char ch = str.charAt(s);
