@@ -1,23 +1,74 @@
 package javaProgram;
 
 import java.util.*;
-import java.util.Scanner;
+import java.util.Map.Entry;
 
 public class CharacterCount {
 
 	public static void main(String[] args) {		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String:");
-		String inputString = sc.nextLine().replaceAll("\\s", "");
-		char[] inputArray = inputString.toCharArray();
-		HashMap<Character,Integer> hashMap = new HashMap<Character,Integer>();
-		for(char word:inputArray) {
-			if(hashMap.containsKey(word)) {
-				hashMap.put(word, hashMap.get(word)+1);
-			}else {
-				hashMap.put(word, 1);
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Any Number or String");
+		String inputs = sc.nextLine().replaceAll("\\s", "");
+		System.out.println(inputs.length()-1+ "and"+inputs.charAt(0));
+		
+		char[] charArray = inputs.toCharArray();
+		HashMap<Character,Integer>map= new HashMap<Character,Integer>();
+		for(char words:charArray) {
+			if(map.containsKey(words)) {
+				map.put(words, map.get(words)+1);
+			} else { 
+				map.put(words, 1);
 			}
 		}
-		System.out.println(hashMap);
+		
+		System.out.println(map);
+		
+		Collection<Integer> values = map.values();
+		Object[] obj = values.toArray();
+		for(int i=0; i<obj.length;i++) {
+			int temp;
+			for(int j=0; j<obj.length;j++) {
+				if((int)obj[i]> (int)obj[j]) {
+					temp = (int)obj[i];
+					obj[i] = obj[j];
+					obj[j] = temp;
+				}
+			}
+		}
+		
+		for(Entry<Character,Integer> entry:map.entrySet()) {
+			if(entry.getValue()== obj[1]) {
+				System.out.println("\nSecond Heighest Occoring word is: "+ entry.getKey() + " -> "+ entry.getValue());
+			}
+		}
+		countCharWthoutHashMap(inputs);
+	}	
+
+	
+	/*
+	 * Count occurrence of each word is string witout HashMap
+	 */
+	public static void countCharWthoutHashMap(String str) {
+        ArrayList<String> newArray = new ArrayList<String>();
+         for(int s = 0; s<str.length();s++) {
+        	 char ch = str.charAt(s);
+             int count = 0;
+             int i;
+        	 for (i = 0; i < str.length(); i++) {
+                 if (str.charAt(i) == ch) {
+                     count++;
+                     newArray.add(str.charAt(i)+"-"+count);
+                 }else {
+                	 newArray.add(str.charAt(i)+"-1");
+                 }
+             }
+        	
+             System.out.println(ch+" -> " +count);
+            
+         }
+         System.out.println(newArray);
+        
 	}
+	
+	
 }
