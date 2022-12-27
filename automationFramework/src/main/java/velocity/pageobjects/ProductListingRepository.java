@@ -64,7 +64,7 @@ public class ProductListingRepository extends productsActions{
 			
 		}else if(isInStock) {
 			productCard.get(i).findElement(productName).click();
-			System.out.println(productCard.get(i).findElement(productName).getText()+ "Is "+ isInStock);
+			//System.out.println(productCard.get(i).findElement(productName).getText()+ "Is "+ isInStock);
 			
 		}  else {			
 			i=i+1;

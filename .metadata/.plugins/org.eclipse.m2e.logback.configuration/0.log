@@ -22608,3 +22608,7 @@ org.eclipse.core.runtime.CoreException: Launch configuration demo references non
 2022-12-26 19:13:23,512 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/resources
 2022-12-26 19:13:23,513 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-12-26 19:13:23,514 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/test/resources
+2022-12-27 13:23:12,311 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-12-27 13:23:12,313 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/resources
+2022-12-27 13:23:12,317 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-12-27 13:23:12,317 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/test/resources
