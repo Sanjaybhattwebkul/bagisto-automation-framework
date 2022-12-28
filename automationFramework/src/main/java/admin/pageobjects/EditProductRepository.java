@@ -124,9 +124,9 @@ public class EditProductRepository extends AbstractComponent {
 		productsPrice.sendKeys(productsAttributes[5]);
 		specialPrice.sendKeys(productsAttributes[6]);
 		specialPriceFromDate.click();		
-		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
+		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM"),false); /* handling calendar */
 		specialPriceToDate.click();
-		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
+		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM"),true); /* Select current date */
 		scrollDown(driver,230);	//priceSection.click();
 		shippingSection.click();
 		scrollDown(driver,420);

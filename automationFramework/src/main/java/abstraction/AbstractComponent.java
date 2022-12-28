@@ -158,7 +158,7 @@ public class AbstractComponent extends Locators {
 	/*
 	 * Handle calendar dates and click on request date for special price apply.
 	 */
-	public void handleCalendarDate(String date,String currentMonth) throws InterruptedException {
+	public void handleCalendarDate(String date,String currentMonth,boolean istodate) throws InterruptedException {
 		 Select selectMonth = new Select(monthsDropdown); 	
 		 WebElement month = selectMonth.getFirstSelectedOption();
 	     String selectedoption = month.getText();
@@ -170,7 +170,7 @@ public class AbstractComponent extends Locators {
 			}
 	     }
 	     
-	     handleLastDatesOfMonth(date); // check if next date is greater then last date of months.	     
+	     handleLastDatesOfMonth(istodate); // check if next date is greater then last date of months.	     
 	     List<WebElement> currentMonthsDates = driver.findElements(By.xpath("//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,"+currentMonth+")]"));
 	     for (int i = 0; i < currentMonthsDates.size(); i++) {
 			 String text = currentMonthsDates.get(i).getText(); // get text of dateBox
@@ -184,9 +184,10 @@ public class AbstractComponent extends Locators {
 	/*
 	 * Click on next button if next date if greater then 30 or 31
 	 */
-	public void handleLastDatesOfMonth(String date) {		
-		if (Integer.parseInt(date) >= 27) {
-			nextMonth.click();
+	public void handleLastDatesOfMonth(boolean istodate) {	
+		
+		if ((istodate) && (Integer.parseInt(getDate("TODAY_DATE","d"))) >= 27) {			
+			nextMonth.click();			
 		}
 	}
 	

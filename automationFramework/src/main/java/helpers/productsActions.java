@@ -124,7 +124,7 @@ public class productsActions extends AbstractComponent{
 		
 		if(isPresent(appointmentInfo)) {
 			appointmentDate.click();
-			handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
+			handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM"),true); /* Select current date */
 		}
 		setQuantity("1");	
 		scrollUp(driver);

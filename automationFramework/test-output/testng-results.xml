@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-27T13:23:26 IST" name="Default suite" finished-at="2022-12-27T13:24:30 IST" duration-ms="63672">
+  <suite started-at="2022-12-28T17:13:49 IST" name="Default suite" finished-at="2022-12-28T17:14:34 IST" duration-ms="45199">
     <groups>
+      <group name="AdminLoginTest.login">
+        <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@37d4349f]" name="login" class="admin.Tests.AdminLoginTest"/>
+      </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2022-12-27T13:23:26 IST" name="Default test" finished-at="2022-12-27T13:24:30 IST" duration-ms="63672">
-      <class name="Shop.Tests.CustomerCheckoutTest">
-        <test-method signature="CustomerplaceOrder(java.util.HashMap)[pri:0, instance:Shop.Tests.CustomerCheckoutTest@7c711375]" started-at="2022-12-27T13:23:26 IST" name="CustomerplaceOrder" data-provider="getTestData" finished-at="2022-12-27T13:24:30 IST" duration-ms="63451" status="PASS">
+    <test started-at="2022-12-28T17:13:49 IST" name="Default test" finished-at="2022-12-28T17:14:34 IST" duration-ms="45199">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@37d4349f]" started-at="2022-12-28T17:13:49 IST" name="login" data-provider="getTestData" finished-at="2022-12-28T17:13:53 IST" duration-ms="4587" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=admin123, email=sanjay.bhatt371@webkul.com, productName=jackaet}]]>
+                <![CDATA[admin123]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CustomerplaceOrder -->
-      </class> <!-- Shop.Tests.CustomerCheckoutTest -->
+        </test-method> <!-- login -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
+      <class name="admin.Tests.CreateSimpleProductTest">
+        <test-method signature="Createproduct()[pri:0, instance:admin.Tests.CreateSimpleProductTest@771a660]" started-at="2022-12-28T17:13:53 IST" name="Createproduct" depends-on-groups="AdminLoginTest.login" finished-at="2022-12-28T17:14:34 IST" duration-ms="40567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Createproduct -->
+      </class> <!-- admin.Tests.CreateSimpleProductTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

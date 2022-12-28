@@ -4,14 +4,20 @@
   <listeners>
     <listener class-name="baseComponent.Listeners"/>
   </listeners>
-  <test thread-count="5" name="CustomerCheckoutTest(failed)">
+  <test thread-count="5" name="CreateSimpleProductTest(failed)">
     <classes>
-      <class name="Shop.Tests.CustomerCheckoutTest">
+      <class name="admin.Tests.CreateSimpleProductTest">
+        <methods>
+          <include name="Createproduct"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- admin.Tests.CreateSimpleProductTest -->
+      <class name="admin.Tests.AdminLoginTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="CustomerplaceOrder" invocation-numbers="0 0 0"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- Shop.Tests.CustomerCheckoutTest -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
     </classes>
-  </test> <!-- CustomerCheckoutTest(failed) -->
+  </test> <!-- CreateSimpleProductTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

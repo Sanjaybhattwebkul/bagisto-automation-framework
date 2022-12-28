@@ -86,9 +86,9 @@ public class PromotionsRepository extends AbstractComponent{
 		selectOptions(selectChannels,"");
 		selectOptions(selectCustomerGroup,"");
 		startDate.click();		
-		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
+		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM"),false); /* handling calendar */
 		endDate.click();
-		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */
+		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM"),true); /* Select current date */
 		conditionSection.click();
 		scrollDown(driver,200);
 		addCondtionButton.click();
@@ -122,9 +122,9 @@ public class PromotionsRepository extends AbstractComponent{
 		selectOptions(selectChannels,"");
 		selectOptions(selectCustomerGroup,"");
 		startDate.click();		
-		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM")); /* handling calendar */
+		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM"),false); /* handling calendar */
 		endDate.click();
-		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM")); /* Select current date */		
+		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM"),true); /* Select current date */		
 		conditionSection.click();
 		scrollDown(driver,200);
 		addCondtionButton.click();

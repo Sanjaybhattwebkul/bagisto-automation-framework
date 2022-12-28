@@ -33,7 +33,8 @@ public class CreateSimpleProductTest extends BaseTest {
 				prop.getProperty("createProductSKU")
 			};
 		CreateProductRepository CreateProduct = new CreateProductRepository(driver);
-		EditProductRepository editProductObj = CreateProduct.createSimpleProduct(productsDetails);	
+		//EditProductRepository editProductObj = CreateProduct.createSimpleProduct(productsDetails);	
+		EditProductRepository editProductObj = CreateProduct.edit();
 		boolean created = editProductObj.editSimpleProduct(productsValues);
 		Assert.assertTrue(created);
 	}

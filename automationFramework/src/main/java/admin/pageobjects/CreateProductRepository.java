@@ -35,7 +35,7 @@ public class CreateProductRepository extends AbstractComponent{
 	@FindBy(xpath="//p[text()='Product created successfully.']")
 	WebElement successMessage;
 	
-	@FindBy(xpath="//a[@id='335'][1]")
+	@FindBy(xpath="//tbody/tr[1]/td[11]/div/a[1]")
 	WebElement editIcon;
 	
 	By addButton = By.linkText("Add Product");

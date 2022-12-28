@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 19 16:23:38 IST 2022</td>
+<td>Started on:</td><td>Wed Dec 28 15:46:52 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>39 seconds (39988 ms)</td>
+<tr><td>Total time:</td><td>60 seconds (60386 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='admin.Tests.CreateSimpleProductTest.Createproduct()'><b>Createproduct</b><br>Test class: admin.Tests.CreateSimpleProductTest</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;accordian-header&quot;&gt;...&lt;/div&gt; is not clickable at point (667, 125). Other element would receive the click: &lt;select id=&quot;locale-switcher&quot; name=&quot;locale&quot; class=&quot;control&quot;&gt;...&lt;/select&gt;
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div[class=&apos;alert alert-success&apos;]&quot;}
   (Session info: chrome=108.0.5359.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.7.1&apos;, revision: &apos;c6795baf1a3&apos;
 System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.15.0-56-generic&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [379700b2b94cc142da335407eb411dae, clickElement {id=65f9f359-42b2-4b1d-8405-8ca665eff7af}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /tmp/.com.google.Chrome.hWJwqc}, goog:chromeOptions: {debuggerAddress: localhost:41705}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:41705/devtoo..., se:cdpVersion: 108.0.5359.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (379700b2b94cc142da335407eb411dae)] -&gt; xpath: //div[@class=&apos;page-content&apos;]/div[4]/div[1]]
-Session ID: 379700b2b94cc142da335407eb411dae
+Command: [c0c1075a8621419dae6c93a970058a78, findElement {using=css selector, value=div[class=&apos;alert alert-success&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /tmp/.com.google.Chrome.muiCXy}, goog:chromeOptions: {debuggerAddress: localhost:36475}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:36475/devtoo..., se:cdpVersion: 108.0.5359.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c0c1075a8621419dae6c93a970058a78
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -92,23 +92,27 @@ Session ID: 379700b2b94cc142da335407eb411dae
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
-	at admin.pageobjects.EditProductRepository.editSimpleProduct(EditProductRepository.java:123)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+	at abstraction.AbstractComponent.isCreated(AbstractComponent.java:242)
+	at admin.pageobjects.EditProductRepository.editSimpleProduct(EditProductRepository.java:145)
 	at admin.Tests.CreateSimpleProductTest.Createproduct(CreateSimpleProductTest.java:37)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1688151539", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1688151539'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;accordian-header&quot;&gt;...&lt;/div&gt; is not clickable at point (667, 125). Other element would receive the click: &lt;select id=&quot;locale-switcher&quot; name=&quot;locale&quot; class=&quot;control&quot;&gt;...&lt;/select&gt;
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1235151206", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1235151206'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div[class=&apos;alert alert-success&apos;]&quot;}
   (Session info: chrome=108.0.5359.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.7.1&apos;, revision: &apos;c6795baf1a3&apos;
 System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.15.0-56-generic&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [379700b2b94cc142da335407eb411dae, clickElement {id=65f9f359-42b2-4b1d-8405-8ca665eff7af}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /tmp/.com.google.Chrome.hWJwqc}, goog:chromeOptions: {debuggerAddress: localhost:41705}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:41705/devtoo..., se:cdpVersion: 108.0.5359.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (379700b2b94cc142da335407eb411dae)] -&gt; xpath: //div[@class=&apos;page-content&apos;]/div[4]/div[1]]
-Session ID: 379700b2b94cc142da335407eb411dae
+Command: [c0c1075a8621419dae6c93a970058a78, findElement {using=css selector, value=div[class=&apos;alert alert-success&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /tmp/.com.google.Chrome.muiCXy}, goog:chromeOptions: {debuggerAddress: localhost:36475}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:36475/devtoo..., se:cdpVersion: 108.0.5359.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c0c1075a8621419dae6c93a970058a78
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -121,15 +125,15 @@ Session ID: 379700b2b94cc142da335407eb411dae
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
-	at admin.pageobjects.EditProductRepository.editSimpleProduct(EditProductRepository.java:123)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+	at abstraction.AbstractComponent.isCreated(AbstractComponent.java:242)
+	at admin.pageobjects.EditProductRepository.editSimpleProduct(EditProductRepository.java:145)
 	at admin.Tests.CreateSimpleProductTest.Createproduct(CreateSimpleProductTest.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -160,7 +164,7 @@ Session ID: 379700b2b94cc142da335407eb411dae
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>35</td>
+<td>56</td>
 <td>admin.Tests.CreateSimpleProductTest@1603cd68</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -173,7 +177,7 @@ Session ID: 379700b2b94cc142da335407eb411dae
 <tr>
 <td title='admin.Tests.AdminLoginTest.login()'><b>login</b><br>Test class: admin.Tests.AdminLoginTest<br>Parameters: admin123</td>
 <td></td>
-<td>4</td>
+<td>3</td>
 <td>admin.Tests.AdminLoginTest@7a67e3c6</td></tr>
 </table><p>
 </body>
