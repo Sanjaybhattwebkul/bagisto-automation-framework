@@ -12,7 +12,26 @@ public class GetIndex {
 				break;
 			}
 		}
-
+		checunique(0);
+	}
+	
+	public static void checunique(int number) {
+		  int r,sum=0,temp;    
+		  int n=454;//It is the number variable to be checked for palindrome  
+		  
+		  temp=n;    
+		  while(n>0){    
+		   r=n%10;  //getting remainder  
+		   System.out.print("\n r = "+r);
+		   sum=(sum*10)+r;  
+		   System.out.print("\n sum = "+sum);
+		   n=n/10;    
+		   System.out.print("\n n = "+n);
+		  }    
+		  if(temp==sum)    
+		   System.out.println("\n palindrome number ");    
+		  else    
+		   System.out.println("\n not palindrome");     
 	}
 
 }

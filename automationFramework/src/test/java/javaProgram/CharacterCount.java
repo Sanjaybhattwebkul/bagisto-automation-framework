@@ -9,7 +9,7 @@ public class CharacterCount {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Enter Any Number or String");
 		String inputs = sc.nextLine().replaceAll("\\s", "");
-		countCharWithHashMap(inputs);
+		//countCharWithHashMap(inputs);
 		countCharWithoutHashMap(inputs);
 	}	
 
@@ -51,7 +51,7 @@ public class CharacterCount {
 	}
 	
 	/*
-	 * Count occurrence of each word is string witout HashMap
+	 * Count occurrence of each word is string without HashMap
 	 */
 	public static void countCharWithoutHashMap(String str) {
         ArrayList<String> newArray = new ArrayList<String>();
@@ -62,16 +62,20 @@ public class CharacterCount {
         	 for (i = 0; i < str.length(); i++) {
                  if (str.charAt(i) == ch) {
                      count++;
-                     newArray.add(str.charAt(i)+"-"+count);
-                 }else {
-                	 newArray.add(str.charAt(i)+"-1");
-                 }
+                  }
              }
+        	 
+        	 System.out.println(ch+" -> " +count);
+        	 str = str.replaceAll(""+ch, "");
+        	 if(str.length()>0) {
+        		 countCharWithoutHashMap(str);
+        	 }
+        	 break;
         	
-             System.out.println(ch+" -> " +count);
+            // System.out.println(ch+" -> " +count);
             
          }
-         System.out.println(newArray);
+         //System.out.println(newArray);
         
 	}
 	
