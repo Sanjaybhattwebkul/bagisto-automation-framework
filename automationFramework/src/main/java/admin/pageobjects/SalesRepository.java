@@ -60,7 +60,7 @@ public class SalesRepository extends AbstractComponent {
 				System.out.println("Shipping Created SucessFully");
 			}
 			if(createInvoice()) {
-				System.out.println("Shipping Created SucessFully");
+				System.out.println("Invoice Created SucessFully");
 			}
 			return isCreated();
 		} else {
@@ -99,7 +99,7 @@ public class SalesRepository extends AbstractComponent {
 	}
 
 	public boolean createShipping() {
-		if(shipButton.size()>0) {
+		if(isPresent(shipButton)) {
 			shipButton.get(0).click();
 			scrollDown(driver,950);
 			selectOptions(selectSource,"Default");

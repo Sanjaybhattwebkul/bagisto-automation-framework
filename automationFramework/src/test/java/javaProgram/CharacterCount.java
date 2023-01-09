@@ -10,7 +10,7 @@ public class CharacterCount {
 		System.out.println("Enter Any Number or String");
 		String inputs = sc.nextLine().replaceAll("\\s", "");
 		//countCharWithHashMap(inputs);
-		countCharWithoutHashMap(inputs);
+		countCharWithoutHashMap(inputs);		
 	}	
 
 	
@@ -65,19 +65,17 @@ public class CharacterCount {
                   }
              }
         	 
-        	 System.out.println(ch+" -> " +count);
+        	 System.out.println(ch+"  " +count);
         	 str = str.replaceAll(""+ch, "");
         	 if(str.length()>0) {
         		 countCharWithoutHashMap(str);
         	 }
         	 break;
-        	
-            // System.out.println(ch+" -> " +count);
-            
+          
          }
-         //System.out.println(newArray);
-        
-	}
+    }
+	
+	
 	
 	
 }

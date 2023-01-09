@@ -1,5 +1,7 @@
 package admin.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,15 +44,14 @@ public class EditProductRepository extends AbstractComponent {
 	@FindBy(xpath="//div[@class='page-content']/div[2]/div[1]")
 	WebElement descriptionSection;
 	
-	//@FindBy(css="iframe[id='short_description_ifr']")
-	@FindBy(xpath="//iframe[@id='short_description_ifr']")
-	WebElement shortDescriptionIframe;
+	@FindBy(xpath="//label[@for='short_description']/parent::div[contains(@class,'have-wysiwyg')]")
+	List<WebElement> shortDescriptionIframe;
 	
 	@FindBy(id="short_description")
 	WebElement shortDescriptionTextarea;
 	
-	@FindBy(xpath="//iframe[@id='description_ifr']")
-	WebElement descriptionIframe;
+	@FindBy(xpath="//label[@for='description']/parent::div[contains(@class,'have-wysiwyg')]")
+	List<WebElement> descriptionIframe;
 	
 	@FindBy(id="description")
 	WebElement DescriptionTextarea;
@@ -104,22 +105,22 @@ public class EditProductRepository extends AbstractComponent {
 		productsStatus.click();
 		scrollDown(driver,440);		
 		descriptionSection.click();
-		scrollDown(driver,250);	
+		scrollDown(driver,150);	
 		
-		if (shortDescriptionIframe.isEnabled()) {
+		if (isPresent(shortDescriptionIframe)) {
 			switchToFrame(productsAttributes[1],productsAttributes[2]);				
 			backToMainPage();			
 		} else {
 			shortDescriptionTextarea.sendKeys(productsAttributes[2]);
 		}
 		
-		if (descriptionIframe.isEnabled()) {
+		if (isPresent(descriptionIframe)) {
 			switchToFrame(productsAttributes[3],productsAttributes[4]);				
 			backToMainPage();		
 		} else {
 			DescriptionTextarea.sendKeys(productsAttributes[4]);
 		}
-		scrollDown(driver,500);	//descriptionSection.click();
+		descriptionSection.click();
 		priceSection.click();
 		productsPrice.sendKeys(productsAttributes[5]);
 		specialPrice.sendKeys(productsAttributes[6]);
@@ -127,7 +128,7 @@ public class EditProductRepository extends AbstractComponent {
 		handleCalendarDate(getDate("TODAY_DATE","d"),getDate("TODAY_DATE","MMMM"),false); /* handling calendar */
 		specialPriceToDate.click();
 		handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM"),true); /* Select current date */
-		scrollDown(driver,230);	//priceSection.click();
+		specialPriceFromDate.click();
 		shippingSection.click();
 		scrollDown(driver,420);
 		productsWeight.sendKeys(productsAttributes[7]);
@@ -151,7 +152,7 @@ public class EditProductRepository extends AbstractComponent {
 	}
 	
 	public void switchToFrame(String frameId,String value) {
-		driver.switchTo().frame(frameId); // Switch to short description frame
+		driver.switchTo().frame(frameId); 
 		driver.findElement(By.tagName("p")).sendKeys(value);
 	}
 	
