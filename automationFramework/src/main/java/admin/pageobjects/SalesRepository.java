@@ -49,6 +49,12 @@ public class SalesRepository extends AbstractComponent {
 	@FindBy(className = "next")
 	WebElement nextPage;
 	
+	@FindBy(linkText = "Refund")
+	List<WebElement> refundButton;
+	
+	@FindBy(xpath="//div[@class='page-action']/button")
+	WebElement createRefund;
+	
 	By status = By.xpath("//td[@data-value='Status']/span");
 	
 	
@@ -62,6 +68,10 @@ public class SalesRepository extends AbstractComponent {
 			if(createInvoice()) {
 				System.out.println("Invoice Created SucessFully");
 			}
+			
+			if (createRefund()) {
+				System.out.println("Invoice Created SucessFully");
+			}
 			return isCreated();
 		} else {
 			System.out.println("No Pending Order");
@@ -69,6 +79,11 @@ public class SalesRepository extends AbstractComponent {
 		}
 	}
 	
+	private Object linkText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public Map<String, Integer> checkOrderStatus() {
 		
 		Map<String, Integer> orderStatus = new HashMap<String, Integer>();
@@ -104,10 +119,10 @@ public class SalesRepository extends AbstractComponent {
 			scrollDown(driver,950);
 			selectOptions(selectSource,"Default");
 			saveShipMentButton.click();
-			return true;
+			return isCreated();
 		}else {
-			boolean isCreated = createInvoice();
-			if(isCreated) {
+			boolean isInvoiceCreated = createInvoice();
+			if(isInvoiceCreated) {
 				return true;
 			} else {
 				return false;
@@ -116,13 +131,22 @@ public class SalesRepository extends AbstractComponent {
 	}
 	
 	public boolean createInvoice() {
-		if (invoiceButton.size()>0) {
+		if (isPresent(invoiceButton)) {
 			invoiceButton.get(0).click();
 			saveInvoice.click();
-			return true;
+			return isCreated();
 		}else {
 			return false;
+		}	
+	}
+	
+	public boolean createRefund() {
+		if (isPresent(refundButton)) {
+			refundButton.get(0).click();
+			createRefund.click();
+			return isCreated();
+		} else {
+			return false;
 		}
-		
 	}
 }
