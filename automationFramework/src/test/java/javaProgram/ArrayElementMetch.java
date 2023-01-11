@@ -10,8 +10,7 @@ public class ArrayElementMetch {
 	}
 
 	public static boolean metch(int[] array_one, int[] array_two) {
-		int j;
-		int count = 0;
+		int  j, count = 0;
 		boolean value = false;
 		for (int i = 0; i < array_one.length; i++) {
 
@@ -19,13 +18,13 @@ public class ArrayElementMetch {
 				if (array_one[i] == array_two[j]) {
 					count++;
 					break;
-
 				}
 			}
 			if (count == array_two.length) {
 				value = true;
 			}
 		}
+		
 		return value;
 	}
 
