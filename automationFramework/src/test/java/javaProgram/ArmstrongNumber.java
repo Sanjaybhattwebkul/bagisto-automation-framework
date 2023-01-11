@@ -23,8 +23,6 @@ public class ArmstrongNumber {
 		}
 		// calling another function
 		test(input);
-
-
 	}
 	
 	public static void test(int number) {
