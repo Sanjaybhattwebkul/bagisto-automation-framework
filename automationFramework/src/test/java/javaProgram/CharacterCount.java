@@ -75,7 +75,5 @@ public class CharacterCount {
          }
     }
 	
-	
-	
-	
+		
 }

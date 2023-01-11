@@ -20,7 +20,7 @@ public class PrimeNumber {
 	public static boolean checkPrime(int inputNumber) {
 		boolean isPrime  = true;
 		for (int i=2; i<inputNumber/2;i++) {
-			if(inputNumber%2==0) {
+			if(inputNumber%i==0) {
 				isPrime = false;
 				
 			} else {
@@ -29,4 +29,7 @@ public class PrimeNumber {
 		}
 		return isPrime;
 	}
+	
+	
+	
 }

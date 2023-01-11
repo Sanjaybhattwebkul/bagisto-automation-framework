@@ -4,7 +4,7 @@ public class ArrayElementMetch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] array_one = { 1, 2, 3, 4 };
+		int[] array_one = { 1, 5, 3, 2 };
 		int[] array_two = { 1, 2, 3, 5 };
 		System.out.print(metch(array_one, array_two));
 	}
