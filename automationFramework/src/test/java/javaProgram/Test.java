@@ -9,6 +9,7 @@ import java.util.Collection;
 public class Test {
 
 	public static void main(String[] args) {
+		first();
 		palindrom(111);
 		characterOccuring();
 		printOccuring("sanjuji");
@@ -101,5 +102,21 @@ public class Test {
 		}
 	}
 	
+	public static void first() {
+		int num = 121;
+		int input = num;
+		int rev = 0;
+		while(num !=0) {
+			rev = (rev*10) + (num%10);
+			num = num/10;
+		}
+		
+		System.out.println(rev);
+		if(rev == input) {
+			System.out.println("Number is palindrom");
+		}else {
+			System.out.println("Number is not  palindrom");
+		}
+	}
 
 }
