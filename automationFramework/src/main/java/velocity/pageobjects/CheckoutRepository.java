@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
-import abstraction.AbstractComponent;
+import baseComponents.BaseRepository;
 
-public class CheckoutRepository extends AbstractComponent {
+public class CheckoutRepository extends BaseRepository {
 	WebDriver driver;
 	
 	public CheckoutRepository(WebDriver driver) {

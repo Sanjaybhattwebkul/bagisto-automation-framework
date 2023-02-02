@@ -4,9 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import abstraction.AbstractComponent;
 
-public class PromotionsRepository extends AbstractComponent{
+import baseComponents.BaseRepository;
+
+public class PromotionsRepository extends BaseRepository{
 	
 	WebDriver driver;
 	

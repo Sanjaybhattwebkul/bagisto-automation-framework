@@ -18,7 +18,7 @@ public class ProductPriceTest extends BaseTest {
 		PricePageObject priceObj = new PricePageObject(driver);	
 		priceObj.gotoProductsPage();
 		int productId = priceObj.getCreatedProductId();
-		getGlobalData();	
+		getGlobalData("GlobalData.properties");	
 		List<String> price =    priceObj.getPriceFromBackend(prop.getProperty("tableName"),productId,Integer.parseInt(prop.getProperty("customerGroupId")));		
 		String backendPrice = price.get(0);
 		double expectedPrice = priceObj.getActualPrice(backendPrice);

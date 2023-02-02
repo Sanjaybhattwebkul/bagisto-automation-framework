@@ -13,7 +13,7 @@ public class CreateSimpleProductTest extends BaseTest {
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void Createproduct() throws IOException, InterruptedException {
 		//fullScreenMode();
-		getGlobalData();		
+		getGlobalData("GlobalData.properties");
 		String[] productsValues = {
 				prop.getProperty("createdProductsName"),
 				prop.getProperty("shortDecriptionFrameID"),

@@ -12,7 +12,7 @@ public class SalesTest extends BaseTest{
 	
 	@Test(dependsOnGroups={"AdminLoginTest.login"})
 	public void createShipping() throws IOException {
-		getGlobalData();
+		getGlobalData("GlobalData.properties");
 		SalesRepository sales = new SalesRepository(driver);
 		boolean isComplete = sales.completeOrderProcess();
 		Assert.assertTrue(isComplete);

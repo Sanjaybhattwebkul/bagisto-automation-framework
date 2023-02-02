@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import abstraction.AbstractComponent;
+import baseComponents.BaseRepository;
 
-public class SalesRepository extends AbstractComponent {
+public class SalesRepository extends BaseRepository {
 	
 	WebDriver driver;
 	public SalesRepository(WebDriver driver) {

@@ -3,8 +3,8 @@ package stepDefinition;
 import java.awt.AWTException;
 import java.io.IOException;
 
-import abstraction.AbstractComponent;
 import baseComponent.BaseTest;
+import baseComponents.BaseRepository;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import velocity.pageobjects.*;
@@ -12,8 +12,8 @@ import velocity.pageobjects.*;
 public class StepDefinitionImpl extends BaseTest {
 	
 	public ProductListingRepository ProductListingObj;
-	public CustomerLoginRepository CustomerLoginobj;
-	public AbstractComponent AbstractObj;
+	public CustomerRepository CustomerLoginobj;
+	public BaseRepository AbstractObj;
 	public CartRepository CartPagobj;
 	public CheckoutRepository CheckoutObject;
 	
@@ -36,7 +36,7 @@ public class StepDefinitionImpl extends BaseTest {
 	public void Logged_in_username_and_password(String userName,String Passsword) throws InterruptedException {
 		CustomerLoginobj.goToLoginPage();	
 		CustomerLoginobj.customerLogin(userName,Passsword);	
-		AbstractObj  = new AbstractComponent(driver);//
+		AbstractObj  = new BaseRepository(driver);//
 		AbstractObj.clickOnCartIcon();
 		CartPagobj = AbstractObj.gotoCartPage();		
 		CartPagobj.calCulatePrice();

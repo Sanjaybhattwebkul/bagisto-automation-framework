@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import abstraction.AbstractComponent;
+import baseComponents.BaseRepository;
 import helpers.getProductsPrice;
 
 public class CartRepository extends getProductsPrice{

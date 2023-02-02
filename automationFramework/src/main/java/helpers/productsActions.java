@@ -8,9 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import abstraction.AbstractComponent;
 
-public class productsActions extends AbstractComponent{
+import baseComponents.BaseRepository;
+
+public class productsActions extends BaseRepository{
 	WebDriver driver;
 	
 	public productsActions(WebDriver driver) {

@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import abstraction.*;
+import baseComponents.*;
 
-public class CreateProductRepository extends AbstractComponent{
+public class CreateProductRepository extends BaseRepository{
 	WebDriver driver;
 	public CreateProductRepository(WebDriver driver) {
 		super(driver);

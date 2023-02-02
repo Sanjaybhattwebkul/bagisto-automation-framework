@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import org.openqa.selenium.WebDriver;
 
-import abstraction.AbstractComponent;
+import baseComponents.BaseRepository;
 
-public class getProductsPrice extends AbstractComponent{
+public class getProductsPrice extends BaseRepository{
 	
 	WebDriver driver;
 	public getProductsPrice(WebDriver driver) {

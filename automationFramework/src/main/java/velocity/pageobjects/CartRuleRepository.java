@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import abstraction.AbstractComponent;
+import baseComponents.BaseRepository;
 
-public class CartRuleRepository extends AbstractComponent{
+public class CartRuleRepository extends BaseRepository{
 	
 	WebDriver driver;
 	public CartRuleRepository(WebDriver driver) {

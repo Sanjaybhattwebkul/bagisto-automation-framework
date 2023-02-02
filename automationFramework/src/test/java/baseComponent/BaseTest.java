@@ -22,6 +22,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import admin.pageobjects.LoginRepository;
@@ -38,7 +40,7 @@ public class BaseTest {
 	public FileInputStream files;
 	
 	public WebDriver initlizeBrowser() throws IOException, AWTException {
-		getGlobalData();
+		getGlobalData("GlobalData.properties");
 		AdminURL = prop.getProperty("AdminURL");
 		ShopURL = prop.getProperty("ShopURL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");		
@@ -164,10 +166,23 @@ public class BaseTest {
 		}
 	}
 	
-	public void getGlobalData() throws IOException {
+	public void getGlobalData(String fileName) throws IOException {
 		prop = new Properties(); // create Properties() object for get GlobalData.properties file
-		files = new FileInputStream("/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/GlobalData.properties");
+		files = new FileInputStream("/home/users/sanjay.bhatt/www/html/Bagisto-Automation/automationFramework/src/main/java/resources/"+fileName);
 		prop.load(files); // load the GlobalData.properties file.
 				
+	}
+	
+	/*
+	 * Getting the test data from JSON file then use this method. 
+	 */
+	@DataProvider
+	public Object[][] getTestData() throws IOException {
+		// We can use Object,HashMap and JSON file for send data
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				System.getProperty("user.dir") + "//src//test//java//Shop//TestData//TestData.json");
+		return new Object[][] { { data.get(0) } }; // data.get(0) mtlb .JSON File ka 0th set of data.
+		//if in TestData.json file thre will be multiple set of data then then test will run multiple time with different-2. data.
+		
 	}
 }

@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import abstraction.AbstractComponent;
+import baseComponents.BaseRepository;
 
-public class MiniCarRepository  extends AbstractComponent{
+public class MiniCarRepository  extends BaseRepository{
 	WebDriver driver;
 	public MiniCarRepository(WebDriver driver) {
 		super(driver); //Assign driver to AbstractComponent class

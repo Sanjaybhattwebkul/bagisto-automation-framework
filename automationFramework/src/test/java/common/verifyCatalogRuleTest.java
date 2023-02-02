@@ -16,7 +16,7 @@ public class verifyCatalogRuleTest extends BaseTest {
 	@Test
 	public void verify() throws IOException, NumberFormatException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, AWTException {
 		launcVelocity();
-		getGlobalData();	
+		getGlobalData("GlobalData.properties");	
 		PricePageObject priceObj = new PricePageObject(driver);	
 		List<String> price =    priceObj.getPriceFromBackend(prop.getProperty("tableName"),Integer.parseInt(prop.getProperty("productId")),Integer.parseInt(prop.getProperty("customerGroupId")));		
 		String backendPrice = price.get(0);

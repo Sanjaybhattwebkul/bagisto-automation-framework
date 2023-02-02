@@ -48,9 +48,9 @@ public class ProductListingRepository extends productsActions{
 	 * @Object
 	 * Add Multiple products to the cart.
 	 */
-	public CustomerLoginRepository addProductTo(String type, int number) throws InterruptedException {		
+	public CustomerRepository addProductTo(String type, int number) throws InterruptedException {		
 		addProductsTo(type,number);	
-		return new CustomerLoginRepository(driver);
+		return new CustomerRepository(driver);
 	}
 	
 	/*
