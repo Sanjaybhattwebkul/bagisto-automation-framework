@@ -10,12 +10,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+import java.io.IOException;
+import java.net.URL;
+
 public class FlipKartSearch {
 	
 	@Test
-	public void flipKartTest()  {	
+	public void flipKartTest() throws ClientProtocolException, IOException 
+	{		
 		WebDriver driver = new ChromeDriver();
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		driver.manage().window().maximize();
+		driver.get("http://192.168.15.86/bagisto/public/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		WebElement img = driver.findElement(By.xpath("//div[contains(@class,'advertisement-container-block')][2]/a[1]/img"));
+		isBrokenImage(img);
+		
+		/*ArrayList<Integer> list = new ArrayList<Integer>();
 		String input="core i5";
 		driver.get("https://www.flipkart.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -45,6 +61,21 @@ public class FlipKartSearch {
 					}
 				}				
 			}
-		}		
+		}*/		
+	}
+	
+	public  static void isBrokenImage(WebElement img) throws ClientProtocolException, IOException
+	{
+		 HttpClient client = HttpClientBuilder.create().build();
+         HttpGet request = new HttpGet(img.getAttribute("src"));
+         HttpResponse response = client.execute(request);
+         /* For valid images, the HttpStatus will be 200 */
+         if (response.getStatusLine().getStatusCode() != 200) {
+             System.out.println("True");
+        	 System.out.println(img.getAttribute("outerHTML") + " is broken.");
+             
+         } else {
+        	 System.out.println("False"+ response.getStatusLine().getStatusCode());
+         }
 	}
 }

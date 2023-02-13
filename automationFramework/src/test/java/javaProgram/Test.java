@@ -14,6 +14,11 @@ public class Test {
 		characterOccuring();
 		printOccuring("sanjuji");
 		secondHeighestword("sanju ji is sanju ji sanju");
+		
+		int  Integer = 24;
+		char String = 'i';
+		System.out.println(Integer);
+		System.out.println(String);
 	}
 	
 	public static void characterOccuring() {
