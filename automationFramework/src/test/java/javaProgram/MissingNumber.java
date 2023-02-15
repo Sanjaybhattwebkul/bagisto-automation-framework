@@ -1,13 +1,24 @@
 package javaProgram;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class MissingNumber {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) 
+	{		
+		missingNumber();		
+	}	
+	
+	/*
+	 * Find missing number from array
+	 * 
+	 * @Return missing number from given array
+	 */
+	public static void missingNumber() {
 		int[] array = {1,2,3,5,6,8,10};
-				
+		
 		int previousNumber = array[0];
 		
 		ArrayList<Integer> missingNumbers = new ArrayList<Integer>();
@@ -24,7 +35,5 @@ public class MissingNumber {
 		}
 		
 		System.out.print(missingNumbers);
-
-	}	
-
+	}
 }
