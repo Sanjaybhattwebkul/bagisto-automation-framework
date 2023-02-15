@@ -15,6 +15,9 @@ public class GetIndex {
 		checunique(0);
 	}
 	
+	/*
+	 * Check Palindrom Number
+	 */
 	public static void checunique(int number) {
 		  int r,sum=0,temp;    
 		  int n=454;//It is the number variable to be checked for palindrome  
@@ -22,9 +25,9 @@ public class GetIndex {
 		  temp=n;    
 		  while(n>0){    
 		   r=n%10;  //getting remainder  
-		   System.out.print("\n r = "+r);
+		  
 		   sum=(sum*10)+r;  
-		   System.out.print("\n sum = "+sum);
+		   
 		   n=n/10;    
 		   System.out.print("\n n = "+n);
 		  }    

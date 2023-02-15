@@ -9,8 +9,11 @@ public class ArrayElementMetch {
 		System.out.print(metch(array_one, array_two));
 	}
 
+	/*
+	 * Compare two array's if both are same or not.
+	 */
 	public static boolean metch(int[] array_one, int[] array_two) {
-		int  j, count = 0;
+		int j, count = 0;
 		boolean value = false;
 		for (int i = 0; i < array_one.length; i++) {
 
@@ -24,7 +27,7 @@ public class ArrayElementMetch {
 				value = true;
 			}
 		}
-		
+
 		return value;
 	}
 
