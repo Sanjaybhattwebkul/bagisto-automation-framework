@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Shop.Tests.AddCustomerAddressTest">
+      <class name="Shop.Tests.FlipKartSearch">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="addCustomerAddress" invocation-numbers="0"/>
+          <include name="flipKartTest"/>
         </methods>
-      </class> <!-- Shop.Tests.AddCustomerAddressTest -->
+      </class> <!-- Shop.Tests.FlipKartSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

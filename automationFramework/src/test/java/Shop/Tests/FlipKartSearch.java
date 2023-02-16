@@ -26,10 +26,8 @@ public class FlipKartSearch {
 	{		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://192.168.15.86/bagisto/public/");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		WebElement img = driver.findElement(By.xpath("//div[contains(@class,'advertisement-container-block')][2]/a[1]/img"));
-		isBrokenImage(img);
+		dripDown(driver);
+		
 		
 		/*ArrayList<Integer> list = new ArrayList<Integer>();
 		String input="core i5";
@@ -61,12 +59,18 @@ public class FlipKartSearch {
 					}
 				}				
 			}
-		}*/		
+		}*/	
 	}
 	
-	public  static void isBrokenImage(WebElement img) throws ClientProtocolException, IOException
+	public  static void isBrokenImage(WebDriver driver) throws ClientProtocolException, IOException
 	{
-		 HttpClient client = HttpClientBuilder.create().build();
+		
+		
+		driver.get("http://192.168.15.86/bagisto/public/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		WebElement img = driver.findElement(By.xpath("//div[contains(@class,'advertisement-container-block')][2]/a[1]/img"));
+		
+		HttpClient client = HttpClientBuilder.create().build();
          HttpGet request = new HttpGet(img.getAttribute("src"));
          HttpResponse response = client.execute(request);
          /* For valid images, the HttpStatus will be 200 */
@@ -78,4 +82,21 @@ public class FlipKartSearch {
         	 System.out.println("False"+ response.getStatusLine().getStatusCode());
          }
 	}
+	
+	
+	public static void dripDown(WebDriver driver)
+	{
+		driver.get("https://www.zoopla.co.uk/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
+		driver.findElement(By.xpath("//input[contains(@id,'downshift-')]")).sendKeys("s");		
+		List<WebElement> resultContainer = driver.findElements(By.xpath("//ul[contains(@id,'downshift-')]/li/span[2]"));		
+		System.out.println(resultContainer.size());		
+		for(int i=0; i < resultContainer.size(); i++) {
+			String Text = resultContainer.get(i).getText();
+			System.out.println(Text);
+			
+		}
+	}
+	
+	
 }
