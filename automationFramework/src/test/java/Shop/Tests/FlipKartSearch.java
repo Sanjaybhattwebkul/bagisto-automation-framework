@@ -26,10 +26,16 @@ public class FlipKartSearch {
 	{		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		dripDown(driver);
+		dynamicDropDown(driver);
 		
-		
-		/*ArrayList<Integer> list = new ArrayList<Integer>();
+		filpKartTest(driver);
+		isBrokenImage(driver);
+	}
+	
+	
+	public void filpKartTest(WebDriver driver)
+	{
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		String input="core i5";
 		driver.get("https://www.flipkart.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -59,8 +65,9 @@ public class FlipKartSearch {
 					}
 				}				
 			}
-		}*/	
+		}
 	}
+	
 	
 	public  static void isBrokenImage(WebDriver driver) throws ClientProtocolException, IOException
 	{
@@ -84,7 +91,7 @@ public class FlipKartSearch {
 	}
 	
 	
-	public static void dripDown(WebDriver driver)
+	public static void dynamicDropDown(WebDriver driver)
 	{
 		driver.get("https://www.zoopla.co.uk/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
