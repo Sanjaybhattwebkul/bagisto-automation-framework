@@ -2,16 +2,26 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-16T19:35:38 IST" name="Default suite" finished-at="2023-02-16T19:35:42 IST" duration-ms="4268">
+  <suite started-at="2023-02-20T16:45:26 IST" name="Default suite" finished-at="2023-02-20T16:45:32 IST" duration-ms="5329">
     <groups>
+      <group name="AdminLoginTest.login">
+        <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@3ee37e5a]" name="login" class="admin.Tests.AdminLoginTest"/>
+      </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2023-02-16T19:35:38 IST" name="Default test" finished-at="2023-02-16T19:35:42 IST" duration-ms="4268">
-      <class name="Shop.Tests.FlipKartSearch">
-        <test-method signature="flipKartTest()[pri:0, instance:Shop.Tests.FlipKartSearch@4fb3ee4e]" started-at="2023-02-16T19:35:38 IST" name="flipKartTest" finished-at="2023-02-16T19:35:42 IST" duration-ms="4240" status="PASS">
+    <test started-at="2023-02-20T16:45:26 IST" name="Default test" finished-at="2023-02-20T16:45:32 IST" duration-ms="5329">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@3ee37e5a]" started-at="2023-02-20T16:45:26 IST" name="login" data-provider="getTestData" finished-at="2023-02-20T16:45:32 IST" duration-ms="5298" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- flipKartTest -->
-      </class> <!-- Shop.Tests.FlipKartSearch -->
+        </test-method> <!-- login -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
