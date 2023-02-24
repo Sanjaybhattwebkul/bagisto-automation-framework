@@ -30,8 +30,8 @@ public class ProductListingRepository extends BaseRepository {
 	List<WebElement> categories;
 
 	@FindBys({ 
-			@FindBy(className = "product-price"),
-			@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") 
+		@FindBy(className = "product-price"),
+		@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") 
 	})
 	List<WebElement> productsPrices;
 
