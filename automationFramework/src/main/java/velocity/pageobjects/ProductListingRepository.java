@@ -29,8 +29,10 @@ public class ProductListingRepository extends BaseRepository {
 	@FindBy(xpath = "//ul[@class='main-category']/li")
 	List<WebElement> categories;
 
-	@FindBys({ @FindBy(className = "product-price"),
-			@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") })
+	@FindBys({ 
+			@FindBy(className = "product-price"),
+			@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") 
+	})
 	List<WebElement> productsPrices;
 
 	/*
