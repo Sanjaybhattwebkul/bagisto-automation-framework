@@ -11,7 +11,7 @@ import velocity.pageobjects.*;
 
 public class StepDefinitionImpl extends BaseTest {
 	
-	public ProductListingRepository ProductListingObj;
+	public HomePageRepository ProductListingObj;
 	public CustomerRepository CustomerLoginobj;
 	public BaseRepository AbstractObj;
 	public CartRepository CartPagobj;

@@ -55,7 +55,7 @@ public class CharacterCount {
 	 */
 	public static void countCharWithoutHashMap(String str) {
         ArrayList<String> newArray = new ArrayList<String>();
-         for(int s = 0; s<str.length();s++) {
+         for (int s = 0; s<str.length();s++) {
         	 char ch = str.charAt(s);
              int count = 0;
              int i;

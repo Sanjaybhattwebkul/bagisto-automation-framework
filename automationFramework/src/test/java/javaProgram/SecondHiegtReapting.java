@@ -22,7 +22,7 @@ public class SecondHiegtReapting {
 			}
 		}
 		
-		 System.out.println(hashMap); // print count of each character
+		// System.out.println(hashMap); // print count of each character
 		
 		// Sort the count of each character in descending order.
 		Collection<Integer> values = hashMap.values();

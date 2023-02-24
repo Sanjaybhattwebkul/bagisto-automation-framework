@@ -7,13 +7,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import baseComponent.BaseTest;
 import velocity.pageobjects.CartRuleRepository;
-import velocity.pageobjects.ProductListingRepository;
+import velocity.pageobjects.HomePageRepository;
 
 public class VeryCartRuleTest extends BaseTest{
 	
 	@Test
 	public void veryfy() throws IOException, InterruptedException, AWTException {
-		ProductListingRepository ProductListingObj = launcVelocity();
+		HomePageRepository ProductListingObj = launcVelocity();
 		ProductListingObj.addProductTo("CART",1);	
 		CartRuleRepository obj = new CartRuleRepository(driver);
 		obj.clickOnCartIcon();

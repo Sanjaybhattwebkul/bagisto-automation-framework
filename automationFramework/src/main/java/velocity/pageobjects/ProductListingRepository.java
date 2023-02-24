@@ -1,74 +1,56 @@
 package velocity.pageobjects;
 
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import helpers.productsActions;
 
-public class ProductListingRepository extends productsActions{
-	
+import baseComponents.BaseRepository;
+
+public class ProductListingRepository extends BaseRepository {
+
 	WebDriver driver;
-	
+
 	public ProductListingRepository(WebDriver driver) {
-		super(driver); // initialize driver to parent class constructor
-		this.driver=driver;
+		super(driver);
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(css=".alert-dismissible")  //alert alert-success 
-	WebElement flashMessage;
-	
-	
-	@FindBy(xpath="//div[@class='card-body']")
-	List<WebElement> productCard;
-	
-	/*@FindBy(css="div[class*='card grid-card']")
-	List<WebElement> productCard;*/
-	
-	By productName = By.xpath("//div[contains(@class,'product-name')]/a");
-	By getProductsBy = By.cssSelector(".card-body");
-	By addToCartButton = By.cssSelector(".btn-add-to-cart");	//button[class*='btn-add-to-cart']
-	
+	@FindAll(@FindBy(how = How.ID, using = "main-category"))
+	WebElement categorySection;
+
+	@FindBy(xpath = "//ul[@class='main-category']/li")
+	List<WebElement> categories;
+
+	@FindBys({ @FindBy(className = "product-price"),
+			@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") })
+	List<WebElement> productsPrices;
+
 	/*
-	 * Add Only the given product to the cart.
+	 * Select last category from category list on top left corner of home page
 	 */
-	public void addProductToCart(String ProductName) throws InterruptedException {
-		//System.out.println(ProductName);
-		WebElement ProName = getProductCardByProductsName(ProductName);
-		ProName.findElement(addToCartButton).click();
-		waitForWebElementToAppear(flashMessage); 
-		Thread.sleep(1000);		
-		scrollUp(driver);		
+	public void listByCategory() {
+		categorySection.click();
+		driver.findElement(By.xpath("//ul[@class='main-category']/li[" + categories.size() + "]")).click();
+
 	}
-	
+
 	/*
-	 * @Object
-	 * Add Multiple products to the cart.
+	 * Verify the price of price range filter
 	 */
-	public CustomerRepository addProductTo(String type, int number) throws InterruptedException {		
-		addProductsTo(type,number);	
-		return new CustomerRepository(driver);
-	}
-	
-	/*
-	 * Check if add to cart button enable.
-	 */
-	public void viewProduct(int i) {
-		boolean isInStock = 	productCard.get(i).findElement(addToCartButton).isEnabled();	
-		if(i==productCard.size()){
-			
-			System.out.println("ALL PRODUCTS ARE OUT OF STOCK");
-			
-		}else if(isInStock) {
-			productCard.get(i).findElement(productName).click();
-			//System.out.println(productCard.get(i).findElement(productName).getText()+ "Is "+ isInStock);
-			
-		}  else {			
-			i=i+1;
-			viewProduct(i);
+	public void verifyPriceFilter() {
+		for (WebElement price : productsPrices) {
+			price.getText();
+			System.out.println(price.getText());
 		}
+
 	}
+
 }

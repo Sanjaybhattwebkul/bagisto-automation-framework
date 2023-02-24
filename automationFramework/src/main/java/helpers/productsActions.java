@@ -91,17 +91,6 @@ public class productsActions extends BaseRepository{
 	}
 	
 	/*
-	 * @void
-	 * Perform Mouse over event
-	 */
-	public void mouseOver(WebElement element) {
-		 Actions action = new Actions(driver);
-		 action.moveToElement(element).build().perform();
-	}
-	
-	
-	
-	/*
 	 * @WebElement 
 	 * Filter products from prducts list using JavaStream.
 	 */
