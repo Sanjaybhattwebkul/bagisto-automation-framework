@@ -41,9 +41,7 @@ public class ProductListingRepository extends BaseRepository {
 	@FindBy(id="price_to") 
 	WebElement SelectMaxPrice;
 		
-	//By category = By.xpath("//ul[@class='main-category']/li["+categoryList.size()+"]");
-	By category = By.cssSelector("li[id*='category-2']");
-							
+	By category = By.xpath("//ul[@class='main-category']/li["+categoryList.size()+"]");
 	
 	/*
 	 * Select last category from category list on top left corner of home page
