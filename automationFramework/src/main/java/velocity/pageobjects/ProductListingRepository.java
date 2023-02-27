@@ -17,7 +17,8 @@ public class ProductListingRepository extends BaseRepository {
 
 	WebDriver driver;
 
-	public ProductListingRepository(WebDriver driver) {
+	public ProductListingRepository(WebDriver driver) 
+	{
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -56,11 +57,10 @@ public class ProductListingRepository extends BaseRepository {
 	/*
 	 * Verify the price of price range filter
 	 */
-	public boolean verifyPriceFilter() {
-		
+	public boolean verifyPriceFilter() {		
 		String selectedFilter = SelectMaxPrice.getAttribute("value")+".00";
-		if (productsPrices.stream().anyMatch(selectedFilter::equals)) {
-			
+		
+		if (productsPrices.stream().anyMatch(selectedFilter::equals)) {			
 			return true;
 		} 
 		
