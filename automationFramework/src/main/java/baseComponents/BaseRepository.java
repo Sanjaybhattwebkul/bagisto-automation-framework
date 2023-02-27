@@ -145,7 +145,7 @@ public class BaseRepository extends BaseLocators {
 	 * Remove comma from given string
 	 */
 	public static String removeComma(String str) {
-		return str.replaceAll("[^a-zA-Z0-9.]", ""); // remove , from price
+		return str.replaceAll("[a-zA-Z$.]", ""); // remove , from price
 	}
 
 	/*
