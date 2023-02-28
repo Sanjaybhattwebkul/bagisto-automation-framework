@@ -3,7 +3,6 @@ package velocity.pageobjects;
 
 import java.util.List;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -34,7 +33,7 @@ public class ProductListingRepository extends BaseRepository {
 	List<WebElement> categories;
 
 	@FindBys({ 
-		@FindBy(className = "product-price"),
+		@FindBy(css = "div.product-price>span:last-child"),
 		@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") 
 	})
 	List<WebElement> productsPrices;
