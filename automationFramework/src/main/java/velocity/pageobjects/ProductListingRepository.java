@@ -2,6 +2,8 @@ package velocity.pageobjects;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,10 +34,14 @@ public class ProductListingRepository extends BaseRepository {
 	@FindBy(xpath = "//ul[@class='main-category']/li")
 	List<WebElement> categories;
 
-	@FindBys({ 
+	/*@FindBys({ 
 		@FindBy(css = "div.product-price>span:last-child"),
 		@FindBy(xpath = "//div[@class='card-body']  //div[@class='product-price']") 
 	})
+	List<WebElement> productsPrices;*/
+	
+	
+	@FindBy(xpath="//div/span[@class='special-price'] | //div/span[@class='final-price']")
 	List<WebElement> productsPrices;
 	
 	@FindBy(id="price_to") 
@@ -54,16 +60,17 @@ public class ProductListingRepository extends BaseRepository {
 	}
 
 	/*
-	 * Verify the price of price range filter
+	 * Verify the selected price of price range filter
 	 */
-	public boolean verifyPriceFilter() {		
+	public boolean verifyPriceFilter() {	
+		
+		waitForWebElementToAppear(SelectMaxPrice);
 		String selectedFilter = SelectMaxPrice.getAttribute("value")+".00";
 		
-		if (productsPrices.stream().anyMatch(selectedFilter::equals)) {			
-			return true;
-		} 
+		List<WebElement> isPriceFound = productsPrices.stream()
+				.filter(price -> removeComma(price.getText()).equalsIgnoreCase(selectedFilter)).collect(Collectors.toList());	
 		
-		return false;
+		return ((isPriceFound.size()>0) ? true : false);
 	}
 
 }
