@@ -65,12 +65,13 @@ public class ProductListingRepository extends BaseRepository {
 	public boolean verifyPriceFilter() {	
 		
 		waitForWebElementToAppear(SelectMaxPrice);
-		String selectedFilter = SelectMaxPrice.getAttribute("value")+".00";
+		String selectedFilter = SelectMaxPrice.getAttribute("value");
 		
-		List<WebElement> isPriceFound = productsPrices.stream()
-				.filter(price -> removeComma(price.getText()).equalsIgnoreCase(selectedFilter)).collect(Collectors.toList());	
+		List<WebElement> isPriceMatch = productsPrices.stream()
+				.filter(price -> removeComma(price.getText().substring(0, price.getText().length()-3))
+				.equalsIgnoreCase(selectedFilter)).collect(Collectors.toList());	
 		
-		return ((isPriceFound.size()>0) ? true : false);
+		return ((isPriceMatch.size()>0) ? true : false);
 	}
 
 }
