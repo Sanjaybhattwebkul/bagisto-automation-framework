@@ -50,8 +50,10 @@ public class BaseTest {
 			chromeOption.addArguments("--headless");
 			driver = new ChromeDriver(chromeOption);
 			
-		}else if (browserName.equalsIgnoreCase("chrome")) {				
-			driver = new ChromeDriver();
+		}else if (browserName.equalsIgnoreCase("chrome")) {		
+			ChromeOptions chromeOptions = new ChromeOptions();
+			 chromeOptions.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(chromeOptions);
 			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {	
 			
