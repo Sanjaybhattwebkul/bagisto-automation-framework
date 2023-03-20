@@ -28,14 +28,14 @@ public class ArmstrongNumber {
 	public static void test(int number) {
 		String str = Integer.toString(number);
 		double total =0;
-		for(int i=0; i < str.length(); i++) {
+		for (int i=0; i < str.length(); i++) {
 			double n= Integer.parseInt(str.valueOf(str.charAt(i)));
 			total = total+(Math.pow(n, str.length()));
 		}
 		
-		if(total == number) {
+		if (total == number) {
 			System.out.println("NUmber is armstrong-number");
-		}else {
+		} else {
 			System.out.println("NUmber is not armstrong-number");
 		}
 	}

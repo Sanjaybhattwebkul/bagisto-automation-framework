@@ -114,7 +114,7 @@ public class SalesRepository extends BaseRepository {
 	}
 
 	public boolean createShipping() {
-		if(isPresent(shipButton)) {
+		if(isElementPresent(shipButton)) {
 			shipButton.get(0).click();
 			scrollDown(driver,950);
 			selectOptions(selectSource,"Default");
@@ -131,7 +131,7 @@ public class SalesRepository extends BaseRepository {
 	}
 	
 	public boolean createInvoice() {
-		if (isPresent(invoiceButton)) {
+		if (isElementPresent(invoiceButton)) {
 			invoiceButton.get(0).click();
 			saveInvoice.click();
 			return isCreated();
@@ -141,7 +141,7 @@ public class SalesRepository extends BaseRepository {
 	}
 	
 	public boolean createRefund() {
-		if (isPresent(refundButton)) {
+		if (isElementPresent(refundButton)) {
 			refundButton.get(0).click();
 			createRefund.click();
 			return isCreated();

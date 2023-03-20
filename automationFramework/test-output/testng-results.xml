@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-16T16:14:30 IST" name="Default suite" finished-at="2023-03-16T16:14:50 IST" duration-ms="20105">
+  <suite started-at="2023-03-16T17:16:04 IST" name="Default suite" finished-at="2023-03-16T17:16:25 IST" duration-ms="21133">
     <groups>
     </groups>
-    <test started-at="2023-03-16T16:14:30 IST" name="Default test" finished-at="2023-03-16T16:14:50 IST" duration-ms="20105">
+    <test started-at="2023-03-16T17:16:04 IST" name="Default test" finished-at="2023-03-16T17:16:25 IST" duration-ms="21133">
       <class name="Shop.Tests.ShopByCategory">
-        <test-method signature="veryfyListingPage()[pri:0, instance:Shop.Tests.ShopByCategory@194bcebf]" started-at="2023-03-16T16:14:30 IST" name="veryfyListingPage" finished-at="2023-03-16T16:14:50 IST" duration-ms="20079" status="FAIL">
+        <test-method signature="veryfyListingPage()[pri:0, instance:Shop.Tests.ShopByCategory@434a63ab]" started-at="2023-03-16T17:16:04 IST" name="veryfyListingPage" finished-at="2023-03-16T17:16:25 IST" duration-ms="21100" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>

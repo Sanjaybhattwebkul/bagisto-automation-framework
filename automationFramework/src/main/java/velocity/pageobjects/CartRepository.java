@@ -66,7 +66,7 @@ public class CartRepository extends getProductsPrice{
 			System.out.println("SubTotal= " +Subtotal);	
 			List<WebElement> Quantity = price.findElements(quantity);
 			
-			if (isPresent(Quantity)) {				
+			if (isElementPresent(Quantity)) {				
 				Qty = Integer.parseInt(price.findElement(quantity).getAttribute("model"));
 				System.out.println("One Products Quantity = " +Qty);	
 				totalPrice = (oneProductsPrice*Qty);				
@@ -114,7 +114,7 @@ public class CartRepository extends getProductsPrice{
 	}
 	
 	public boolean checkDiscount() {
-		return ((isPresent(DiscountContainr)) ? true : false);
+		return ((isElementPresent(DiscountContainr)) ? true : false);
 	}
 }
 

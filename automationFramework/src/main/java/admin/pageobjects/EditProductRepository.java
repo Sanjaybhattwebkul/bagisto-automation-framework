@@ -107,14 +107,14 @@ public class EditProductRepository extends BaseRepository {
 		descriptionSection.click();
 		scrollDown(driver,150);	
 		
-		if (isPresent(shortDescriptionIframe)) {
+		if (isElementPresent(shortDescriptionIframe)) {
 			switchToFrame(productsAttributes[1],productsAttributes[2]);				
 			backToMainPage();			
 		} else {
 			shortDescriptionTextarea.sendKeys(productsAttributes[2]);
 		}
 		
-		if (isPresent(descriptionIframe)) {
+		if (isElementPresent(descriptionIframe)) {
 			switchToFrame(productsAttributes[3],productsAttributes[4]);				
 			backToMainPage();		
 		} else {

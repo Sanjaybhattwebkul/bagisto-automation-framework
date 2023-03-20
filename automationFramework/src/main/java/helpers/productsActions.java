@@ -101,18 +101,18 @@ public class productsActions extends BaseRepository{
 	}	
 	
 	public void selectOptions() throws InterruptedException {	
-		if(isPresent(attributeONE)) {
+		if(isElementPresent(attributeONE)) {
 			selectByIndex(attributeONE.get(0),1);	
 		}
 		
-		if(isPresent(attributeTwo)) {
+		if(isElementPresent(attributeTwo)) {
 			selectByIndex(attributeTwo.get(0),1);	
 		}
-		if(isPresent(checkbox) && (!checkbox.get(0).isSelected())) {
+		if(isElementPresent(checkbox) && (!checkbox.get(0).isSelected())) {
 			checkbox.get(0).click();
 		}
 		
-		if(isPresent(appointmentInfo)) {
+		if(isElementPresent(appointmentInfo)) {
 			appointmentDate.click();
 			handleCalendarDate(getDate("AFTER_DATE","d"),getDate("TODAY_DATE","MMMM"),true); /* Select current date */
 		}

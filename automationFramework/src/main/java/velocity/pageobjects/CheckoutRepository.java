@@ -43,7 +43,7 @@ public class CheckoutRepository extends BaseRepository {
 	public void placeOrder() {
 		billingAddress.click();
 		scrollDown(driver,550);
-		if (isPresent(shippingMethod)) {
+		if (isElementPresent(shippingMethod)) {
 			shippingMethod.get(0).click();	
 		}
 		
@@ -51,7 +51,7 @@ public class CheckoutRepository extends BaseRepository {
 		scrollDown(driver,1000);
 		placeOrderButton.click();
 		
-		if (isPresent(confirmationSection)) {			
+		if (isElementPresent(confirmationSection)) {			
 			boolean isOrderConfirmed = orderConfirmation.isDisplayed();
 			SoftAssert softAssert = softAsset();			
 			softAssert.assertTrue(isOrderConfirmed);

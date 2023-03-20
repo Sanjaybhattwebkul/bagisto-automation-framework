@@ -18,6 +18,7 @@ public class ArrayQuestion {
 				list.add(Array[i]);
 			}
 		}
+		
 		for (int j = 0; j < count; j++) {
 			list.add(0);
 		}

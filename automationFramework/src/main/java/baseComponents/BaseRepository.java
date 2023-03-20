@@ -134,7 +134,7 @@ public class BaseRepository extends BaseLocators {
 	 * Close the flash message
 	 */
 	public void closeFlashMessage() {
-		if(isPresent(flashMessage)) {
+		if(isElementPresent(flashMessage)) {
 			flashMessage.get(0).click();
 		}
 		
@@ -273,7 +273,7 @@ public class BaseRepository extends BaseLocators {
 	}
 	
 	public void setQuantity(String quantity) {
-		if (isPresent(quantityBox)) {
+		if (isElementPresent(quantityBox)) {
 			System.out.println(quantityBox.size());
 			quantityBox.get(0).sendKeys(Keys.chord(Keys.CONTROL, "a"),"1");
 		}
@@ -290,7 +290,7 @@ public class BaseRepository extends BaseLocators {
 		}
 	}
 	
-	public boolean isPresent(List<WebElement> element) {
+	public boolean isElementPresent(List<WebElement> element) {
 		return ((element.size()>0) ? true : false);
 	}
 	
