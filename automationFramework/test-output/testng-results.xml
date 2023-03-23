@@ -1,24 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-16T17:16:04 IST" name="Default suite" finished-at="2023-03-16T17:16:25 IST" duration-ms="21133">
+  <suite started-at="2023-03-23T14:16:16 IST" name="Suite" finished-at="2023-03-23T14:17:19 IST" duration-ms="63273">
     <groups>
+      <group name="AdminLoginTest.login">
+        <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@26ceffa8]" name="login" class="admin.Tests.AdminLoginTest"/>
+      </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2023-03-16T17:16:04 IST" name="Default test" finished-at="2023-03-16T17:16:25 IST" duration-ms="21133">
-      <class name="Shop.Tests.ShopByCategory">
-        <test-method signature="veryfyListingPage()[pri:0, instance:Shop.Tests.ShopByCategory@434a63ab]" started-at="2023-03-16T17:16:04 IST" name="veryfyListingPage" finished-at="2023-03-16T17:16:25 IST" duration-ms="21100" status="FAIL">
-          <exception class="java.lang.AssertionError">
+    <test started-at="2023-03-23T14:16:16 IST" name="CreateSimpleProductTest" finished-at="2023-03-23T14:17:19 IST" duration-ms="63273">
+      <class name="admin.Tests.AdminLoginTest">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@26ceffa8]" started-at="2023-03-23T14:16:16 IST" name="login" data-provider="getTestData" finished-at="2023-03-23T14:16:22 IST" duration-ms="6086" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- admin.Tests.AdminLoginTest -->
+      <class name="admin.Tests.CreateSimpleProductTest">
+        <test-method signature="Createproduct()[pri:0, instance:admin.Tests.CreateSimpleProductTest@30e868be]" started-at="2023-03-23T14:16:22 IST" name="Createproduct" depends-on-groups="AdminLoginTest.login" finished-at="2023-03-23T14:17:19 IST" duration-ms="57013" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"div[class='alert alert-success']"}
+  (Session info: chrome=111.0.5563.64)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-67-generic', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4b43e8bab1a243cd9aca2358e61b2dbd, findElement {using=css selector, value=div[class='alert alert-success']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.64, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /tmp/.com.google.Chrome.2TLmnE}, goog:chromeOptions: {debuggerAddress: localhost:42765}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42765/devtoo..., se:cdpVersion: 111.0.5563.64, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4b43e8bab1a243cd9aca2358e61b2dbd]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at org.testng.Assert.assertTrue(Assert.java:55)
-at Shop.Tests.ShopByCategory.veryfyListingPage(ShopByCategory.java:19)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='alert alert-success']"}
+  (Session info: chrome=111.0.5563.64)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-67-generic', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4b43e8bab1a243cd9aca2358e61b2dbd, findElement {using=css selector, value=div[class='alert alert-success']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.64, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /tmp/.com.google.Chrome.2TLmnE}, goog:chromeOptions: {debuggerAddress: localhost:42765}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42765/devtoo..., se:cdpVersion: 111.0.5563.64, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4b43e8bab1a243cd9aca2358e61b2dbd
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+at baseComponents.BaseRepository.isCreated(BaseRepository.java:244)
+at admin.pageobjects.EditProductRepository.editSimpleProduct(EditProductRepository.java:146)
+at admin.Tests.CreateSimpleProductTest.Createproduct(CreateSimpleProductTest.java:38)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -49,11 +98,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- veryfyListingPage -->
-      </class> <!-- Shop.Tests.ShopByCategory -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- Createproduct -->
+      </class> <!-- admin.Tests.CreateSimpleProductTest -->
+    </test> <!-- CreateSimpleProductTest -->
+  </suite> <!-- Suite -->
 </testng-results>

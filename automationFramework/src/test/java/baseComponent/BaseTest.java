@@ -130,10 +130,9 @@ public class BaseTest {
 	 * 
 	 */
 	public String getScreenshot(String testClassNmae, WebDriver driver) throws IOException {
-		TakesScreenshot ss = (TakesScreenshot) driver; //TakesScreenshot IS INTERFACE.
-		File source = ss.getScreenshotAs(OutputType.FILE); //getScreenshotAs Is method of TakesScreenshot interface.
-		File File = new File(System.getProperty("user.dir") + "//ExtentReport//" + testClassNmae + ".png");
-		FileUtils.copyFile(source, File); //copyFile is static method of FileUtils class
+		
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "//ExtentReport//" + testClassNmae + ".png"));
 		return System.getProperty("user.dir") + "//ExtentReport//" + testClassNmae + ".png";
 	}
 
