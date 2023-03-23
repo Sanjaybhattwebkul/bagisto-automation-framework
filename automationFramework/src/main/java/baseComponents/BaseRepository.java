@@ -23,11 +23,13 @@ import org.testng.asserts.SoftAssert;
 import velocity.pageobjects.CartRepository;
 import velocity.pageobjects.SearchProductRepository;
 
-public class BaseRepository extends BaseLocators {
+public class BaseRepository extends BaseLocators 
+{
 
 	WebDriver driver;
 
-	public BaseRepository(WebDriver driver) {
+	public BaseRepository(WebDriver driver) 
+	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -37,18 +39,21 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Visible miniCart
 	 */
-	public void clickOnCartIcon() {
+	public void clickOnCartIcon()
+	{
 		cart.click();
 	}
 	
-	public void gotoProductsPage() {
+	public void gotoProductsPage()
+	{
 		catalogIcon.click();
 	}
 	
 	/*
 	 * Soft assertion
 	 */
-	public SoftAssert softAsset() {
+	public SoftAssert softAsset() 
+	{
 		return  new SoftAssert();
 	}
 
@@ -56,7 +61,8 @@ public class BaseRepository extends BaseLocators {
 	 * @Void
 	 * Go to shop
 	 */
-	public SearchProductRepository visitShop() {
+	public SearchProductRepository visitShop() 
+	{
 		visitShop.click();
 		return new SearchProductRepository(driver);
 	}
@@ -65,7 +71,8 @@ public class BaseRepository extends BaseLocators {
 	 * @Integer
 	 * get Last created  product's ID	
 	 */
-	public int getCreatedProductId() {
+	public int getCreatedProductId() 
+	{
 		return Integer.parseInt(lastProductID.getText());
 	}
 	
@@ -73,12 +80,14 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Redirect to cart page
 	 */
-	public CartRepository gotoCartPage() {
+	public CartRepository gotoCartPage()
+	{
 		viewShoppingCart.click();
 		return new CartRepository(driver);
 	}
 
-	public void waitForElementToAppear(By BY) {
+	public void waitForElementToAppear(By BY) 
+	{
 		WebDriverWait waite = new WebDriverWait(driver, Duration.ofSeconds(5));
 		waite.until(ExpectedConditions.visibilityOfElementLocated(BY));
 	}
@@ -87,7 +96,8 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Explicitly wait for element Appear. 
 	 */
-	public void waitForWebElementToAppear(WebElement WebElement) {
+	public void waitForWebElementToAppear(WebElement WebElement)
+	{
 		WebDriverWait waite = new WebDriverWait(driver, Duration.ofSeconds(5));
 		waite.until(ExpectedConditions.visibilityOf(WebElement));
 	}
@@ -96,7 +106,8 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Scroll Down the DOM
 	 */
-	public static void scrollDown(WebDriver driver, int to) {
+	public static void scrollDown(WebDriver driver, int to)
+	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0," + to + ")");
 	}
@@ -105,7 +116,8 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Scroll UP the DOM
 	 */
-	public static void scrollUp(WebDriver driver) {
+	public static void scrollUp(WebDriver driver)
+	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-900)");
 	}
@@ -114,7 +126,8 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Explicitly wait for element disappear. 
 	 */
-	public void waiteForElementToDisAppear(WebElement element) throws InterruptedException {
+	public void waiteForElementToDisAppear(WebElement element) throws InterruptedException
+	{
 		
 		 WebDriverWait waite = new WebDriverWait(driver,Duration.ofSeconds(5));
 		 waite.until(ExpectedConditions.invisibilityOf(element));
@@ -133,7 +146,8 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Close the flash message
 	 */
-	public void closeFlashMessage() {
+	public void closeFlashMessage() 
+	{
 		if(isElementPresent(flashMessage)) {
 			flashMessage.get(0).click();
 		}
@@ -144,7 +158,8 @@ public class BaseRepository extends BaseLocators {
 	 * @Srting
 	 * Remove comma from given string
 	 */
-	public static String removeComma(String str) {
+	public static String removeComma(String str) 
+	{
 		return str.replaceAll("[a-zA-Z$]", ""); // remove , from price
 	}
 
@@ -152,14 +167,16 @@ public class BaseRepository extends BaseLocators {
 	 * @String
 	 * Get the subTotal from cart-summary secTnion.
 	 */
-	public String getSubTotalOfCartSummary(WebElement cartSummarySubTotal) {
+	public String getSubTotalOfCartSummary(WebElement cartSummarySubTotal)
+	{
 		return cartSummarySubTotal.getText();
 	}
 
 	/*
 	 * Handle calendar dates and click on request date for special price apply.
 	 */
-	public void handleCalendarDate(String date,String currentMonth,boolean istodate) throws InterruptedException {
+	public void handleCalendarDate(String date,String currentMonth,boolean istodate) throws InterruptedException 
+	{
 		 Select selectMonth = new Select(monthsDropdown); 	
 		 WebElement month = selectMonth.getFirstSelectedOption();
 	     String selectedoption = month.getText();
@@ -195,7 +212,8 @@ public class BaseRepository extends BaseLocators {
 	/*
 	 * Get After Date
 	 */
-	public String getDate(String rquestType,String formatType) {
+	public String getDate(String rquestType,String formatType)
+	{
 		Calendar calendar = Calendar.getInstance();  // get a calendar instance, which defaults to "now"	   	
 		Date requestFormat = calendar.getTime();		 
 		if (rquestType=="AFTER_DATE") {
@@ -211,7 +229,8 @@ public class BaseRepository extends BaseLocators {
 	 * This method will set any parameter string to the system's clipboard.
 	 * 
 	 */
-	public static void setClipboardData(String string) {
+	public static void setClipboardData(String string) 
+	{
 		//StringSelection is a class that can be used for copy and paste operations.
 		StringSelection stringSelection = new StringSelection(string);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
@@ -223,7 +242,8 @@ public class BaseRepository extends BaseLocators {
 	 * Upload the image from local system
 	 * 
 	 */
-	public static void uploadFile(String fileLocation) {
+	public static void uploadFile(String fileLocation)
+	{
 		try {
 			// Setting ClipBoard with file location
 			setClipboardData(fileLocation);
@@ -240,11 +260,13 @@ public class BaseRepository extends BaseLocators {
 		}
 	}
 	
-	public boolean isCreated() {
+	public boolean isCreated()
+	{
 		return adminFlashMessage.isDisplayed();
 	}
 	
-	public void selectOptions(WebElement selectBox,String value) {
+	public void selectOptions(WebElement selectBox,String value) 
+	{
 		Select options = new Select(selectBox);
 		if (options.isMultiple()) {			
 			options.selectByIndex(0);
@@ -258,7 +280,8 @@ public class BaseRepository extends BaseLocators {
 	 * @double
 	 * Remove $ and , from the price and return the actual price
 	 */
-	public double getActualPrice(String price) {
+	public double getActualPrice(String price) 
+	{
 		double amount=0;
 		String itemPrice =	removeComma(price);
 		amount = Double.parseDouble(itemPrice); //convert string to double
@@ -266,31 +289,36 @@ public class BaseRepository extends BaseLocators {
 		
 	}
 	
-	public void increaseNumber(int number) {
+	public void increaseNumber(int number)
+	{
 		for (int i=0;i<number;i++) {
 			plusIcon.click();
 		}
 	}
 	
-	public void setQuantity(String quantity) {
+	public void setQuantity(String quantity) 
+	{
 		if (isElementPresent(quantityBox)) {
 			System.out.println(quantityBox.size());
 			quantityBox.get(0).sendKeys(Keys.chord(Keys.CONTROL, "a"),"1");
 		}
 	}
 	
-	public void selectByIndex(WebElement attribute,int idex) {
+	public void selectByIndex(WebElement attribute,int idex)
+	{
 		 Select option = new Select(attribute);
 		 option.selectByIndex(idex);  
 	}
 	
-	public void handlePagination(int i) {
+	public void handlePagination(int i) 
+	{
 		if (i==10) {
 			nextPage.click();
 		}
 	}
 	
-	public boolean isElementPresent(List<WebElement> element) {
+	public boolean isElementPresent(List<WebElement> element) 
+	{
 		return ((element.size()>0) ? true : false);
 	}
 	
@@ -298,7 +326,8 @@ public class BaseRepository extends BaseLocators {
 	 * @void
 	 * Perform Mouse over event
 	 */
-	public void mouseOver(WebElement element) {
+	public void mouseOver(WebElement element) 
+	{
 		 Actions action = new Actions(driver);
 		 action.moveToElement(element).build().perform();
 	}
