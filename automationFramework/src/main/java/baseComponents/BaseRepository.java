@@ -268,9 +268,10 @@ public class BaseRepository extends BaseLocators
 	public void selectOptions(WebElement selectBox,String value) 
 	{
 		Select options = new Select(selectBox);
-		if (options.isMultiple()) {			
+		if (options.isMultiple()) {		
+			selectBox.click();
+			selectBox.sendKeys(Keys.chord(Keys.CONTROL + "A"));
 			options.selectByIndex(0);
-			options.selectByIndex(1);
 		} else {
 			options.selectByVisibleText(value);
 		}

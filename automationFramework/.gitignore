@@ -1,2 +1,7 @@
 /target/
 /.metadata/
+/.settings/
+/ExtentReport/
+/geckodriver/
+/project/
+/classpath/
