@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-27T13:14:33 IST" name="Default suite" finished-at="2023-03-27T13:14:42 IST" duration-ms="8676">
+  <suite started-at="2023-03-28T15:45:31 IST" name="Default suite" finished-at="2023-03-28T15:46:17 IST" duration-ms="46395">
     <groups>
       <group name="AdminLoginTest.login">
         <method signature="AdminLoginTest.login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@3ee37e5a]" name="login" class="admin.Tests.AdminLoginTest"/>
       </group> <!-- AdminLoginTest.login -->
     </groups>
-    <test started-at="2023-03-27T13:14:33 IST" name="Default test" finished-at="2023-03-27T13:14:42 IST" duration-ms="8676">
+    <test started-at="2023-03-28T15:45:31 IST" name="Default test" finished-at="2023-03-28T15:46:17 IST" duration-ms="46395">
       <class name="admin.Tests.AdminLoginTest">
-        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@3ee37e5a]" started-at="2023-03-27T13:14:33 IST" name="login" data-provider="getTestData" finished-at="2023-03-27T13:14:37 IST" duration-ms="3789" status="PASS">
+        <test-method signature="login(java.lang.String)[pri:0, instance:admin.Tests.AdminLoginTest@3ee37e5a]" started-at="2023-03-28T15:45:31 IST" name="login" data-provider="getTestData" finished-at="2023-03-28T15:45:34 IST" duration-ms="3843" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,12 +22,12 @@
           </reporter-output>
         </test-method> <!-- login -->
       </class> <!-- admin.Tests.AdminLoginTest -->
-      <class name="admin.Tests.ApplyCataloRuleTest">
-        <test-method signature="create()[pri:0, instance:admin.Tests.ApplyCataloRuleTest@3527942a]" started-at="2023-03-27T13:14:37 IST" name="create" depends-on-groups="AdminLoginTest.login" finished-at="2023-03-27T13:14:42 IST" duration-ms="4842" status="PASS">
+      <class name="admin.Tests.CreateSimpleProductTest">
+        <test-method signature="Createproduct()[pri:0, instance:admin.Tests.CreateSimpleProductTest@3527942a]" started-at="2023-03-28T15:45:34 IST" name="Createproduct" depends-on-groups="AdminLoginTest.login" finished-at="2023-03-28T15:46:17 IST" duration-ms="42518" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- create -->
-      </class> <!-- admin.Tests.ApplyCataloRuleTest -->
+        </test-method> <!-- Createproduct -->
+      </class> <!-- admin.Tests.CreateSimpleProductTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

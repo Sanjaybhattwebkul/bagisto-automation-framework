@@ -181,7 +181,8 @@ public class BaseRepository extends BaseLocators
 		 WebElement month = selectMonth.getFirstSelectedOption();
 	     String selectedoption = month.getText();
 	     boolean  selectedMonthIsCurrentMonth = selectedoption.equalsIgnoreCase(currentMonth);
-	     if (! selectedMonthIsCurrentMonth) {
+	     
+	      if (! selectedMonthIsCurrentMonth) {
 	    	 while (selectedoption != currentMonth) {
 				 Thread.sleep(1000);
 				 nextMonth.click(); // click on next arrow
@@ -191,8 +192,10 @@ public class BaseRepository extends BaseLocators
 	     handleLastDatesOfMonth(istodate); // check if next date is greater then last date of months.	     
 	     List<WebElement> currentMonthsDates = driver.findElements(By.xpath("//div[contains(@class,'open')]/div[2]/div[2]/div[2]//span[contains(@aria-label,"+currentMonth+")]"));
 	     for (int i = 0; i < currentMonthsDates.size(); i++) {
-			 String text = currentMonthsDates.get(i).getText(); // get text of dateBox
-			if (text.equalsIgnoreCase(date)) {								
+	    	 String dateClass = currentMonthsDates.get(i).getAttribute("class");	    	
+	    	 String text = currentMonthsDates.get(i).getText(); // get text of dateBox	 	    	
+	    	 
+			if ((text.equalsIgnoreCase(date)) && (filterDates(dateClass))) {					
 				currentMonthsDates.get(i).click(); // click on dateBox
 				break;
 			}
@@ -207,6 +210,19 @@ public class BaseRepository extends BaseLocators
 		if ((istodate) && (Integer.parseInt(getDate("TODAY_DATE","d"))) >= 27) {			
 			nextMonth.click();			
 		}
+	}
+	
+	/*
+	 * Check if date is previous/next month's date
+	 */
+	public boolean filterDates(String dateClass)
+	{
+		if ((! dateClass.contains("prevMonthDay")) && (! dateClass.contains("nextMonthDay"))) {
+			return true;
+		}
+		
+		return false;
+		
 	}
 	
 	/*
