@@ -44,7 +44,6 @@ public class BaseTest {
 		AdminURL = prop.getProperty("AdminURL");
 		ShopURL = prop.getProperty("ShopURL");
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");		
-		System.out.println("Browser="+ browserName);		
 		if(browserName.equalsIgnoreCase("chromeheadless")) {		
 			ChromeOptions chromeOption = new ChromeOptions();
 			chromeOption.addArguments("--headless");
