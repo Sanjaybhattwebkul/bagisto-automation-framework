@@ -3,6 +3,7 @@ package javaProgram;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Collection;
 
 public class SecondHiegtReapting {
@@ -27,21 +28,9 @@ public class SecondHiegtReapting {
 		// Sort the count of each character in descending order.
 		Collection<Integer> values = hashMap.values();
 		Object[] objectValues = values.toArray();		
-		//System.out.println(Arrays.toString(objectValues));		
-		int temp;
-		for(int i=0; i<objectValues.length;i++) {
-			
-			for(int j=0; j<objectValues.length-1;j++) {
-				
-				if((int)objectValues[i]>(int)objectValues[j]) {
-					temp = (int)objectValues[i];
-					objectValues[i] = (int)objectValues[j];
-					objectValues[j] = temp;
-				}
-			}
-		}
-		//System.out.println(Arrays.toString(objectValues));
-		//System.out.println("obj= "+objectValues[1]);
+		
+		 Arrays.sort(objectValues);
+		 
 		for(Entry<String, Integer> entry: hashMap.entrySet()) {
 			if(entry.getValue()==objectValues[1]) {
 				System.out.println(entry.getKey()+ " -> "+entry.getValue());

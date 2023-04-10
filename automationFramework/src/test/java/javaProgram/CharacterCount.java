@@ -31,17 +31,8 @@ public class CharacterCount {
 		System.out.println(map);
 		
 		Collection<Integer> values = map.values();
-		Object[] obj = values.toArray();
-		for(int i=0; i<obj.length;i++) {
-			int temp;
-			for(int j=0; j<obj.length;j++) {
-				if((int)obj[i]> (int)obj[j]) {
-					temp = (int)obj[i];
-					obj[i] = obj[j];
-					obj[j] = temp;
-				}
-			}
-		}
+		Object[] obj = values.toArray();		
+		Arrays.sort(obj); // sort array in descing roder
 		
 		for(Entry<Character,Integer> entry:map.entrySet()) {
 			if(entry.getValue()== obj[1]) {

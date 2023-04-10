@@ -43,7 +43,11 @@ public class BaseTest {
 		getGlobalData("GlobalData.properties");
 		AdminURL = prop.getProperty("AdminURL");
 		ShopURL = prop.getProperty("ShopURL");
+		
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");		
+		
+		System.out.println("Browser is : "+System.getProperty("browser"));
+		
 		if(browserName.equalsIgnoreCase("chromeheadless")) {		
 			ChromeOptions chromeOption = new ChromeOptions();
 			chromeOption.addArguments("--headless");
@@ -55,7 +59,7 @@ public class BaseTest {
 			
 		} else if (browserName.equalsIgnoreCase("fireFox")) {	
 			
-			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");
+			System.getProperty("webdriver.gecko.driver", "user.dir"+ "/geckodriver");			
 			driver = new FirefoxDriver();
 			
 		} else if (browserName.equalsIgnoreCase("edge")) {

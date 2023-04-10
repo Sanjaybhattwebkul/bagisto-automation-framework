@@ -195,10 +195,15 @@ public class BaseRepository extends BaseLocators
 	    	 String dateClass = currentMonthsDates.get(i).getAttribute("class");	    	
 	    	 String text = currentMonthsDates.get(i).getText(); // get text of dateBox	 	    	
 	    	 
-			if ((text.equalsIgnoreCase(date)) && (filterDates(dateClass))) {					
-				currentMonthsDates.get(i).click(); // click on dateBox
-				break;
-			}
+	    	 if (! dateClass.contains("prevMonthDay") 
+	    		 && ! dateClass.contains("nextMonthDay")
+	    		 && text.equalsIgnoreCase(date)	    			 
+	    		) {
+	    		 
+	    		 currentMonthsDates.get(i).click(); // click on dateBox
+					break;	 			
+	 		}
+			
 		}
 	}
 	
@@ -212,18 +217,6 @@ public class BaseRepository extends BaseLocators
 		}
 	}
 	
-	/*
-	 * Check if date is previous/next month's date
-	 */
-	public boolean filterDates(String dateClass)
-	{
-		if ((! dateClass.contains("prevMonthDay")) && (! dateClass.contains("nextMonthDay"))) {
-			return true;
-		}
-		
-		return false;
-		
-	}
 	
 	/*
 	 * Get After Date
